@@ -1,0 +1,82 @@
+From: Cindy Zheng [mailto:zhengc@sdsc.edu] 
+Sent: Wednesday, May 11, 2005 5:40 PM
+To: pragma-resources@pragma-grid.org
+Cc: pragma-discussion@pragma-grid.org
+Subject: PRAGMA8 discussion
+
+Dear friends,
+(cc'ed to pragma-discussion to include other groups)
+
+I'm very happy to have met many of you in Singapore!
+I also missed those of you who couldn't make it!
+Let me summarize what I learned from the workshop and start the discussion we said to do after PRAGMA8.
+Others, please add and correct.
+
+PRAGMA is growing. We are not only have more member participation, but also there are more interests for collaborations from more pacific rim countries, organizations and scientific domains. A lot contacts and collaboration plans are initiated or renewed at the PRAGMA8 gathering.
+
+Peter, Phil and Mason's presentations at PRAGMA8 all recognized our routine basis experiments work as a continuous heroic effort! :-) All our application drivers gave very impressive presentations of their application runs. We have made a lot of progress. 
+
+Many people made presentations and point out many issues which need to be resolved. We did not have much time to discuss in detail during PRAGMA8 and have promised to do the discussion after PRAGMA8 via our mailing lists. Might as well, since we do need to include everyone in the discussion.
+
+1. Peter has made the following challenges to resources group: (in my own words)
+- Publish our experiences, share our lessons learned with broader communities
+- Have more users run an application. Not just by the experts of application/middleware developers. Make it easy for non-experts to run.
+- Run real science applications in a routine and long-running fashion. Produce meaningful scientific results, not limited to creating short demo's.
+
+About publications, perhaps we can write about different aspects of our experiments and lessons learned and compose a group paper? With all testbed supporters help, also Peter, Phil and Mason already promised to help as well, I can start on some Grid operation aspects of it. If you like to par-take in this group paper, you are welcome to. We can also have more than one group papers. All suggestions are welcome.
+
+About more users run an application, after an application run stablizes in our testbed, how about that our application driver packages the application setup, then our site admins can test run it in our testbed? Is this do-able and sufficient? Any other suggestions?
+
+As of routine-long-runs, is it feasible to set a minimum time duration in which all applications should continuously run to produce some meaningful results?
+This includes scientific results, as well as performance and lessons learned results. If to add packaging application setup, I think it would take at least 3 months from the first launch of an application in testbed to the end of the application package testings and runs.
+
+2. Yoshio mensioned that testbed supporters are exhausted from doing testbed work as add-on's to their normal jobs. Peter indicated in his presentation that there is an effort to obtain fundings for more support at testbed sites.
+
+3. Arun Krishnan asked how can we convince application developers the usefulness of Grid.
+
+Perhaps more resources sharing, more computational power? Some applications need, but not all.
+
+There are also many application developers would like their applications to run on grid, but don't know how. Perhaps we should provide more middleware trainings and hands-on help to them.
+
+4. Habibah pointed out the problem of conflicting requirements between systems and applications, between keeping stable and compatible environment for existing applications and maintaining leading role in new software and new technologies.
+
+Where should we strike the balance for our testbed?
+We either strive to be a production grid or to be on the leading edge of technology. It's hard, if not impossible to do both in one environment. 
+ 
+There is also the problem with conflicting requirements among different applications. For example, some applications require GT2 and others require GT3.
+
+In either cases, should we have more than one testbed environments which will multiply support requirements?
+
+5. How can we specify resource allocations to guarantee resource availability to multiple applications? We want to be able to say something like "each application can take 1/3 of the nodes in each cluster", and be able to change the allocation easily from time to time.
+I found that CSF - Community Scheduler Framework for Meta-Schedulers seems to have such functionalities, but it requires GT3. Is anyone familiar with CSF? Any other ideas about the problem and solutions?
+
+As far as scheduling jobs on a Grid, there is also the suggestion of Condor. Current Condor does not have the functionalities we need for grid meta-scheduling. Also, not all applications will work under Condor.
+Should we setup a condor pool among some sites in testbed to use Condor for some applications?
+This also poses the same problem that maintaining 2 testbed environments doubles the support requirements.
+
+6. Hurng-Chun brought up that it takes too much effort and time to manually setup user accounts at all sites for each application. We need automation.
+
+I have talked to GAMA development team at SDSC, they are implementing the next version of GAMA to provide a centralized user database with all the info we need to setup an user account.
+We can write the script to do the actual account setup, feed in users info using a text file for now.
+When GAMA is ready, we can modify our script and plug them in with GAMA. I will start this soon.
+Everyone is welcome to contribute ideas and work.
+
+7. Hiroshi informed us that from his experiences during our routine-basis experiments, if system run time limit is too short, the application can't run effeciently and resources get wasted. We should respect differences in site policies. But also should suggest an approriate range for setting system run time limit in our testbed.
+
+So what is the appropriate range for system run time limit? We need to hear from application developers, what range of run time limit works best for your applications?
+Does not matter if your applications are running in our testbed or not. We want to find a range which will work for most applications, if possible.
+
+8. How to clean up died processes when application aborts? 
+Currently, we have GXP which is developed by the University of Tokyo. Maybe our applications can incorporate it in their submission scripts, to run before launching? Any other ideas and tools?
+
+9. Rajesh Chhabra suggested to deploy portal services in our testbed. This requires some work at the back-end by site admins.
+
+I think we should welcome those open source software which can help us to achieve our goal. Please feel free to email any proposal, info url to the pragma-resources list, so we can discuss each software in detail. Please let us know the person-hours required to deploy and administor a particular software, so we know how much support is required. 
+
+Hope to hear your thoughts on any of the above, or any addition issues you like to bring up.
+Even if you have made some comments at PRAGMA8, please make it again in the list for the benefit of those who did not make to PRAGMA8.
+
+Thank you for reading to the end :-), sorry for the long email :-),
+
+Cindy
+

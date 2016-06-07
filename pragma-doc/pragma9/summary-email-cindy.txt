@@ -1,0 +1,79 @@
+From: zhengc@sdsc.edu [mailto:zhengc@sdsc.edu] 
+Sent: Sunday, October 30, 2005 9:36 PM
+To: pragma-resources@pragma-grid.org
+Subject: PRAGMA9
+
+Dear friends,
+
+I had a lot of fun to met many of you in India!
+Really missed those of you who couldn't make it!
+But you can find most of PRAGMA9 presentations at http://pragma-goc.rocksclusters.org/pragma-doc/pragma9/default.html
+
+Let me share my impressions of PRAGMA9 tell you about the discussions and decisions made in resources group meeting, so all of you can join the discussion.
+
+PRAGMA is flourishing. There are not only a lot more activities within the PRAGMA community, but also a lot more collaboration activities with other scientific communities. More contacts and collaboration plans are initiated or renewed at the PRAGMA9 gathering.
+
+Many PRAGMA9 attendees commented that the amount of activities and projects going on as part of our routine-basis experiments and our testbed construction is impressive. :-) These are the results of all the hard work by our testbed supporters and application drivers. As my status report showen in the resources group meeting, the list of projects and the list of people involved in each project are very long!
+
+Our application drivers made great presentations of their applications - Yoshio for QMMD, Wilfred and Xiao-Hui Wei for iGAP and CSF, Kim Baldrige for GAMESS/APBS (which will start deployment in testbed soon). NTU Prof. Lee gave an impressive demo of MOGAS - grid accounting in our testbed, and NLARN Ronn Ritke gave an excellent demo about AMP deployment in our testbed.
+
+Many local speakers presented Grid activities in India.
+I learned that UoHyd will upgrade their network soon and UoHyd researchers have been working on some grid applications. I also learned that GEON group at SDSC has helped UoHyd setup a geon node and UoHyd is planning to run a GEON application. We welcome these applications to run in pragma grid as well.
+
+In resources group meeting, we discussed several issues:
+
+1. To establish minimum requirements for testbed systems
+   a. upgrade to GT4
+      SDSC, UoHyd, AIST and NCHC volunteered to upgrade
+      to GT4 first, to test and make sure that there is
+      no problem for our middleware and applications.
+      Schedule is set to start After SC05 and finish by
+      end of the year.
+      For all testbed sites, we want to finish the
+      upgrade by March 06 - PRAGMA10.
+     Question for everyone: Do you see any problems for
+     your site, your software, your applications? If you
+     see any problems, please let me know.
+   b. run SCMSWeb
+      We have 15 out of 22 clusters installed SCMSWeb.
+      We also due to SCMSWeb upgrade. Will need to have
+      all sites install and upgrade SCMSWeb site.
+2. MPICH-g2 jobs
+   a. Require fast communication between nodes
+      Is it suitable to run in grid?
+   b. require reservation to share resources with
+      other applications in the grid
+      - SGE does not provide reservation capability
+   c. we can try to dedicate some nodes for mpich-g2
+      jobs on AIST and SDSC's clusters and see if
+      - this type of application is suited for grid
+      - Wei-Cheng Huang (NCHC) volunteered to measure
+        mpich-g2 performance
+      - AIST requires mpich-g2 application drivers to
+        submit the purpose of their application runs
+        in order to provide dedicated nodes 3. GOC development continue
+   a. MOGAS - grid accounting
+      - need to add capability to track jobs not going
+        thru GRAM
+      - eventually have a MOGAS server in testbed
+   b. Collaboration on GOC and tools
+      - need to discuss with Hicks (Indiana), Aida
+        (APAN), Putchong (KU)
+4. PRAGMA CA
+   Early next year, SDSC will setup a PRAGMA CA server,
+   join APGrid PMA. This will enable PRAGMA CA to gain
+   trust among all members of International Grid Trust
+   Federation. We will be able to issue host and user
+   certificates to PRAGMA sites and users.
+5. Reduce software upgrade frequency in testbed to
+   reduce site admin work load.
+6. Scientists needs training on middleware and
+   middleware developers needs to learn how application
+   works. How should we organize the cross training?
+
+Welcome any questions, discussions and suggestions.
+
+Thank you for all your effort!
+
+Cindy
+

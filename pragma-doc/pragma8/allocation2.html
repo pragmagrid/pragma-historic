@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Resource Allocation Scheme 2</title>
+</head>
+<body bgcolor=white>
+
+<pre>
+-----Original Message-----
+From: Jose Luis Gordillo Ruiz
+Sent: Monday, June 13, 2005 10:27 AM
+To: Cindy Zheng
+Cc: pragma-resources list;
+Subject: Re: resource allocation scheme
+
+
+
+  Cindy,
+
+  If we want to assign a fixed number of nodes to each app,
+  with PBS we only need to setup a queue per app with a limit in the
+  number of proecessors available to that queue ( I think
+  the parameters are resources_max.nodect and resources_assigned.nodect).
+  In fact, if the number of nodes assigned to each app is equal, it
+  could be handled with just one queue, putting 1/3 (or 1/4) of the nodes 
+  as the limit.
+
+  best regards,
+
+  José Luis
+
+</pre>
+
+</body>
+</html>
