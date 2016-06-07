@@ -1,0 +1,47 @@
+From: Cindy Zheng [mailto:zhengc@sdsc.edu] 
+Sent: Monday, October 04, 2010 12:04 AM
+To: pragma-discussion@googlegroups.com
+Subject: PRAGMA 19
+
+  
+Dear all, 
+Thanks for the hard work and extra-ordinary hospitality of our host, Jilin University and its staff, thanks for the dedication and fore-sight of our PRAGMA19 organization committee, PRAGMA 19 is not only a very successful workshop but also a strategically important event in PRAGMA's history! In this workshop, we are not only engaged more collaborations, but also started laying out strategic plans for our future. All PRAGMA 19 attendees have actively participated and contributed to the success of this workshop.
+For more detail info, see PRAGMA 19 slides at http://goc.pragma-grid.net/pragma-doc/pragma19. 
+PRAGMA 19 photos are shared among PRAGMA friends on facebook. For people who don't have access to facebook, I put some photos contributed by Teri, Peter, Weicheng and many others at http://www.flickr.com/photos/31817935@N00/sets/72157624962039997/with/5049773771 and http://www.flickr.com/photos/31817935@N00/sets/72157624965763421.
+For the benefit of those who could not make to PRAGMA19, let me briefly summarize some key facts and decisions I know which resulted from PRAGMA19 workshop.  Others please add and correct.
+Table of contents: 
+1.      Steering Committee meeting summary 
+2.      Resources group decisions and goals 
+3.      Up-coming meetings 
+1. An extended Steering Committee had 2 strategic planning sessions during PRAGMA 19. It summarized our successes to-date and the challenges we are facing, thus illuminating the direction for going forward:
+         PRAGMA successfully promote 
+          - exchanges of ideas, products, people 
+          - trusts and collaborations 
+          - growth in members, projects, careers, frameworks and models 
+         Challenges 
+          - funding: need more time and resources to collaborate 
+          - diversity: balance focuses with openness; common goal for all participants 
+          - expand impact: tools, services, knowledge for outside of PRAGMA communities 
+          - stay young: agile, new ideas and people 
+2. Resources group discussions and decisions 
+   o Migrate from grid to cloud 
+         Past 8 years, built a global grid, gained experinces and insights 
+         Grid is still hard for users to use 
+         Cloud/VM allow users "build once, run everywhere" 
+   o Work plan for now to PRAGMA 20 
+         Setup VM hosting servers (AIST, UCSD, NCHC, JLU, OsakaU, IndianaU, ...) 
+         Publish more baseline images 
+          - Rocks VM/Globus/SGE baseline image (already done at UCSD, will publish) 
+          - Rocks VM/condor baseline image (lead: Phil P. UCSD) 
+          - Rocks VM/Gfarm client baseline image(lead: Tatebe-san) 
+         Automate Rocks VM image replication (lead: Mason, UCSD) 
+         Build/use Gfarm VM file systems at SDSC and AIST (lead: Tatebe-san, Utsukuba) 
+         Research on Cloud security, meta-scheduling, data ... (by each institution) 
+  
+3. Up-coming meetings: 
+   o PRAGMA 20 dates are 2-4 March 2011 in Hong Kong, March 2 will be tutorials in Geosciences. 
+   o PRAGMA 21 was proposed by AIST to be held in Sapporo Japan in late September or early October 2011. 
+PRAGMA's success so far was due to everyone's continuous hard work and ever-growing collaboration activities in and around PRAGMA community.
+Let's continue working toward an even more successful future! 
+Thank you for everyone's effort and help! 
+
