@@ -1,0 +1,124 @@
+From:	Thuan N. Tran <thuanbkit@gmail.com>
+Sent:	Thursday, January 27, 2011 9:15 PM
+To:	Cindy Zheng
+Subject:	Re: supernode2
+
+I'm fine. Thanks. 
+ 
+In the last year, the Supernode2 system was used mostly for the VN-Grid project (some further 
+information, the documents are in Vietnamese though) and its sub-projects such as: 
+. PCB design 
+. Airplane aerodynamic using CFD 
+. Parallel Tempering Monte Carlo investigation of melting KCl 
+The system was also used by students doing their dissertations and by Department of Applied 
+Physics, Faculty of Applied Sciences at our university in their researches. 
+ 
+In the next semester, we're adding a SAN to the cluster and will use it more for teaching 
+purposes. We're going to try joining our system into PRAGMA system, again. This will be done 
+after the Lunar New Year vacation around mid Feb. So I expect it to be up and running around 
+beginning of March. 
+ 
+Regards, 
+ 
+-- 
+Thuan N. Tran 
+ 
+
+On Fri, Jan 28, 2011 at 9:42 AM, Cindy Zheng <zhengc@sdsc.edu> wrote:
+Dear Thuan N. Tran,
+ 
+How are you?
+I see that Tran Vu Pham has registered for PRAGMA 20 and will present VN-grid work.
+I want to make sure to include works and plans at all sites in our summary.
+Please make sure to email me a brief summary before Monday, so I can include in our progress report.
+ 
+Thank you very much,
+ 
+Cindy
+ 
+From: Thuan N. Tran [mailto:thuanbkit@gmail.com]  
+Sent: Friday, July 16, 2010 5:49 PM 
+To: Cindy Zheng 
+Cc: sonsys@cse.hcmut.edu.vn; nam@cse.hcmut.edu.vn 
+Subject: Re: supernode2
+Hello Miss Cindy, 
+ 
+I'm the current contact and also the administrator of Supernode 2 cluster. As Mr. Son already 
+mentioned, currently our system is under reorganization and we also having some problem with 
+the cooling system in the cluster room, thus we're down to only a handful of nodes. These nodes 
+are currently dedicated to the VN-Grid project, which is near completion, for testing our 
+middleware. With these streaks of events, it's unfortunate but we have to prioritize our work 
+over here. As soon as the cooling system is backed up, I will restore the system and open access 
+to the cluster to the public again. I'm sorry for any inconvenience. 
+ 
+P.S. I have received the email from the PRIME students asking permission to use the cluster 
+some time ago. I answered them pretty much the same. 
+ 
+-- 
+Thuan N. Tran 
+Ho Chi Minh City University of Technology 
+Faculty of Computer Science and Engineering 
+High Performance Scientific Computing Center 
+A5 Building, Room 107 
+Tel: (84-8) 38.647.256 Ext: 5372 
+Email: thuantran@cse.hcmut.edu.vn 
+
+On Fri, Jul 16, 2010 at 3:01 AM, Cindy Zheng <zhengc@sdsc.edu> wrote:
+Dear Thuan N. Tran and Tran Dang Khoa, 
+ 
+I'm not sure which one of you are the current contact. 
+I'm having trouble to access supernode2 cluster. 
+See some of my test results below. 
+Could you check your host certificate and my account setup? 
+Also PRIME students needs accounts on your cluster. 
+Please see item 3 and 4 in 
+http://goc.pragma-grid.net/pragma-doc/userguide/updatelog.html. 
+You want to also make sure that item 1 is done. 
+Let me know if I can be of any help. 
+ 
+Tested ssh and globus access. Both failed: 
+ 
+[zhengc@rocks-67 ~]$ globusrun -a -r supernode2.cse.hcmut.edu.vn 
+GRAM Authentication test failure: connecting to the job manager failed. 
+Possible reasons: job terminated, invalid job contact, network problems, ... 
+[zhengc@rocks-67 ~]$ globus-url-copy -dbg 
+gsiftp://supernode2.cse.hcmut.edu.vn/etc/motd file:///tmp/motd 
+debug: starting to get gsiftp://supernode2.cse.hcmut.edu.vn/etc/motd 
+debug: connecting to gsiftp://supernode2.cse.hcmut.edu.vn/etc/motd 
+debug: response from gsiftp://supernode2.cse.hcmut.edu.vn/etc/motd: 
+220 supernode2.cse.hcmut.edu.vn GridFTP Server 2.8 (gcc32, 1217607445-63) 
+[Globus Toolkit 4.0.8] ready. 
+debug: authenticating with gsiftp://supernode2.cse.hcmut.edu.vn/etc/motd 
+debug: fault on connection to gsiftp://supernode2.cse.hcmut.edu.vn/etc/motd: 
+globus_ftp_control: gss_init_sec_context failed 
+debug: data callback, error globus_ftp_control: gss_init_sec_context failed, 
+buffer 0xb7eb9008, length 0, offset=0, eof=true 
+debug: operation complete 
+error: globus_ftp_control: gss_init_sec_context failed 
+OpenSSL Error: s3_clnt.c:842: in library: SSL routines, function 
+SSL3_GET_SERVER_CERTIFICATE: certificate verify failed 
+globus_gsi_callback_module: Could not verify credential 
+globus_gsi_callback_module: Could not verify credential: self signed 
+certificate in certificate chain 
+ 
+Your issuing CA included in our PRAGMA certificate tarball is 
+ 
+[zhengc@rocks-67 ~]$ openssl x509 -in 
+/etc/grid-security/certificates/599fc209.0 -text 
+Certificate: 
+   Data: 
+       Version: 3 (0x2) 
+       Serial Number: 0 (0x0) 
+       Signature Algorithm: md5WithRSAEncryption 
+       Issuer: O=Grid, OU=VNU-HCM, OU=HCMUT, OU=CSE, CN=EDAGRID CA 
+       Validity 
+           Not Before: Feb  5 10:40:19 2007 GMT 
+           Not After : Feb  2 10:40:19 2017 GMT 
+       Subject: O=Grid, OU=VNU-HCM, OU=HCMUT, OU=CSE, CN=EDAGRID CA 
+... 
+ 
+Thanks, 
+ 
+Cindy
+
+

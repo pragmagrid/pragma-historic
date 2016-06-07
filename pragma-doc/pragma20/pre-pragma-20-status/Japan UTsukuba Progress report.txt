@@ -1,0 +1,18 @@
+From:	Osamu Tatebe <tatebe@cs.tsukuba.ac.jp>
+Sent:	Saturday, February 12, 2011 4:11 AM
+To:	Cindy Zheng
+Subject:	Re: FW: Progress report
+
+Dear Cindy,
+
+Sorry for the very late reply.
+
+We announced the version 2.4.1 on December 30, 2010.  It supports automatic file replica creation.  The 
+number of file replicas can be specified by the extended attribte gfarm.ncopy of the ancient directory.  
+Gfarm samba plugin is also available, which enables Windows clients to access a Gfarm file system.
+
+Hadoop Gfarm plugin shows comparative performance with the HDFS. Data in the Gfarm file system can 
+be shared and accessed by POSIX applications, MPI-IO application, and Hadoop MapReduce applications.
+
+Best regards,
+Osamu

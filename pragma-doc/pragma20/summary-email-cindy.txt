@@ -1,0 +1,68 @@
+From: Cindy Zheng [mailto:zhengc@sdsc.edu] 
+Sent: Wednesday, March 09, 2011 8:25 PM
+To: 'pragma-discussion@googlegroups.com'
+Subject: PRAGMA 20 summary
+
+Dear all, 
+
+Thanks for the hard work, wonderful organizations and extraordinary hospitality of our Hong Kong University team, thanks for the dedication of our PRAGMA 20 organization committee, PRAGMA 20 has concluded as a very successful workshop. In this workshop, we have demonstrated a very good start toward the strategic plans laid out in PRAGMA 19 and ready to march full-steam ahead.  All PRAGMA 20 attendees actively participated and contributed to the success of this workshop. In addition, there was a concerted effort to deepen the involvement of Hong Kong local researchers.
+
+For more detail info, see PRAGMA 20 slides at 
+http://pragma20.pragma-grid.net/dct/page/65579 or
+http://goc.pragma-grid.net/pragma-doc/pragma20.
+
+PRAGMA 20 photos are shared among PRAGMA friends on facebook. For people who don't have access to facebook, I put some photos contributed by Teri at http://www.flickr.com/photos/31817935@N00/sets/72157626228755714 and http://www.flickr.com/photos/31817935@N00/sets/72157626231826396.
+
+For the benefit of those who could not make to PRAGMA20, let me briefly summarize some key facts and decisions I know which resulted from PRAGMA20 workshop.  Others please add and correct.
+
+Table of contents: 
+1.      Steering Committee meeting summary 
+2.      Resources group decisions and goals 
+3.      PRAGMA 21 
+
+1. The Steering Committee meeting summary:
+       PRAGMA 20
+          - Wonderful organization to help interaction with local researchers
+          - Work to sustain collaborations with HK researchers in PRAGMA 21 and beyond
+       Challenges
+          - PRAGMA 21 - Extend GeoGrid to other countries
+          - Publish work for ourselves and others
+             > Setup repository of VM images and member software links
+             > Publish special edition of journal of our accomplishments, lessons learned and future plans
+             > Setup applications portal or demonstration gallery to help prospective users
+             > Organize sessions at major meetings to engage potential collaborators
+          - Longer term thinking
+             > PRAGMA is forum for people, conduit of ideas, open experimentation and framework
+             > Strategic review for missing areas, impact, interests; use virtualization to provision resources
+             > Building future leaders/participants by encourage, inform and enable younger people involvement
+
+2. Resources group discussions and decisions 
+     Based on the 3-sites VM migration/interoperation experiments, next step forward
+     o From 3 sites to more sites
+            IU, ASTI, Monash, Osaka, Tsukuba volunteered to join, other sites welcome
+            Start with deploying F-Motif and Bloss to all VM sites
+            Each site creates their own application VM image to deploy
+     o From single-node VM to VM cluster migration/interoperation
+            Try Condor with MPI application first (AIST) 
+     o Setup VM repository to share VM images 
+            Use Gfarm as backend 
+            deploy Gfarm at San Diego by End of March (SDSC, UTsukuba, AIST)
+     o From prototyping to production
+            Maybe GeoGrid application (AIST)
+     o Contribution by HKU
+            Live VM migration (AIST and HKU)
+            Start deployment in May with HKU, AIST and SDSC
+
+3. PRAGMA 21: 
+     - Dates: 17-19 October 2011
+     - Location: Sapporo, Japan
+     - Co-location with GeoGrid Workshop and APGrid meeting
+     - Hosts: AIST, OsakaU, UTsukuba, NICT, Titech
+
+PRAGMA's success so far was due to everyone's continuous hard work and ever-growing collaboration activities in and around PRAGMA community.
+Let's continue working toward an even more successful future! 
+
+Thank you for everyone's effort and help! 
+
+Cindy
+

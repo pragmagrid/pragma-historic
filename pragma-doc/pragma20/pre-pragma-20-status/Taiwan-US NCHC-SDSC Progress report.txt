@@ -1,0 +1,12 @@
+From:	Philip Papadopoulos <philip.papadopoulos@gmail.com>
+Sent:	Tuesday, January 25, 2011 9:54 PM
+To:	Cindy Zheng
+Cc:	Mason Katz; Luke Jing Yuan; Peter Arzberger
+Subject:	Re: RE: On Testing AvianFlu VM
+
+yesterday we completed.the test of a rocks vm (xen) running on nchc kvm and an nchc (kvm) 
+running in san diego. the conversion was quite straightforward with only a small number of 
+changes needed because of guest kernel differences.
+p
+Sent from my phone 
+ppapadopoulos@ucsd.edu

@@ -1,0 +1,388 @@
+From:	Quang Minh <ankanheesun@gmail.com>
+Sent:	Thursday, January 27, 2011 8:08 PM
+To:	Cindy Zheng
+Cc:	Lê Ð?c Tùng
+Subject:	Re: Resources on pragma grid
+
+Dear Cindy 
+First of all, wish you all the happiness and success in the new year 2011 and hope that we will 
+also cooperate more in the Tan Mao year ! (follow the asia's calendar) 
+In the past year, we have deployed two projects Goodas and Linda. Because we don't have 
+enough human resources for Goodas project so we must stop this project. About Linda, we are 
+developing a new version for Linda, called LindaX. The basic difference between Linda and 
+LindaX is clear separation between grid layer and application layer. Grid only provide the 
+services and doesn't care about layer below.  
+We focus on improving interface for two basic services download and upload, create new 
+features such as Flie Manager for Grid Data with Drag and Drop, View as tree, v.v.. Back Up 
+and Data Synchronization. Our first test of LindaX is expected to run at the end of June. 
+ 
+Thanks you so much and happy lunar new year :)
+2011/1/28 Cindy Zheng <zhengc@sdsc.edu>
+Dear Le Duc Tung and Quang Minh,
+ 
+How are things going with you? 
+Wish you all the happiness and success in the new year!
+ 
+I'm trying to summarize works and plan of all PRAGMA grid sites on Monday.
+Would like to include HUT's effort.
+Could you email me a few sentences to summarize works and plan?
+ 
+Thank you very much,
+ 
+Cindy
+
+ 
+From: Quang Minh [mailto:ankanheesun@gmail.com] 
+Sent: Saturday, July 17, 2010 9:40 PM 
+To: Cindy Zheng 
+Cc: Lê Ð?c Tùng
+ 
+Subject: Re: Resources on pragma grid
+
+Dear Cindy 
+ 
+Now we have two PRAGMA-related projects are Linda and GOODAS. In this moment, we are 
+in the process personnel changes for these projects so both of them do not have the desired 
+results. 
+ 
+About GOODAS, it has developed successfully on virtual grid (make by ourself) and is in the 
+process of deploying on gird. As we said above, we are reorganizing personnel for this job. 
+ 
+About Linda: we initially deployed to the grid and we've done. Now we've researched about 
+program using grid service by Java Cog Kit. Linda is a data sharing system based on grid, we 
+developed successfully modules such as management proxy module, management data module, 
+control file transfer speed module and so on for our system. 
+ 
+What's not clear if in this letter, please mail to me or Le Duc Tung :) 
+ 
+Thanks you so much! 
+MinhDQ-HPCC 
+ 
+2010/7/16 Cindy Zheng <zhengc@sdsc.edu>
+Dear Dao Quang Minh 
+ 
+I'm trying to summarize our work and send out Monday. 
+Could you help and let me know your application status/plan? 
+Or any other PRAGMA-related projects going on or planned. 
+So I can include in the summary. 
+ 
+Thank you very much in advance,
+ 
+Cindy 
+ 
+ 
+________________________________ 
+ 
+       From: Quang Minh [mailto:ankanheesun@gmail.com]
+       Sent: Friday, January 22, 2010 12:40 AM
+       To: Cindy Zheng 
+       Cc: Le Duc Tung; Doan Trung Tung
+       Subject: Re: Resources on pragma grid 
+ 
+ 
+       Dear Cindy, 
+ 
+       My account on rocks-52.sdsc.edu <http://rocks-52.sdsc.edu/>  has no
+problem! 
+       Our website is in building and we will try to finish as soon as 
+possible :) 
+ 
+       Thanks again, 
+       MinhDQ 
+ 
+ 
+       2010/1/22 Cindy Zheng <zhengc@sdsc.edu> 
+ 
+ 
+               Dear Dao Quang Minh, 
+               Could you check the reference link in your application page? 
+               It got 404 error when I click on it. 
+               Thanks, 
+               Cindy 
+ 
+ 
+________________________________ 
+ 
+                       From: Cindy Zheng [mailto:zhengc@sdsc.edu] 
+                       Sent: Thursday, January 21, 2010 11:40 PM 
+                       To: 'Quang Minh' 
+ 
+                       Cc: 'Le Duc Tung'; 'Doan Trung Tung' 
+ 
+                       Subject: RE: Resources on pragma grid 
+ 
+ 
+                       Thank you, Dao Quang Minh! 
+                       The page looks good. 
+ 
+                       Let me know when you finish testing user setup to 
+rocks-52.sdsc.edu. 
+                       Whence confirmed that there is no problem, I'll ask 
+other sites to create your accounts. 
+ 
+                       Cindy 
+ 
+________________________________ 
+ 
+                               From: Quang Minh 
+[mailto:ankanheesun@gmail.com] 
+                               Sent: Thursday, January 21, 2010 11:26 PM 
+                               To: Cindy Zheng 
+                               Cc: Le Duc Tung; Doan Trung Tung 
+                               Subject: Re: ***SPAM*** RE: ***SPAM*** RE: 
+Resources on pragma grid 
+ 
+ 
+                               Dear Cindy, 
+ 
+                               Thanks for your guide, let me clarify 
+                               About hardware, our application can run on 
+both of x86_64 and 686 system. X86_64 system is better but 686 system is 
+enough for us. So I have removed requirement line about cpu architecture. 
+                               About software requirements, I have fixed in 
+http://goc.pragma-grid.net/wiki/index.php/Grid_Oriented_Online_Document_Anal 
+ysing_System follow your guide. 
+ 
+                               Thank you so much ! 
+ 
+ 
+                               2010/1/22 Cindy Zheng <zhengc@sdsc.edu> 
+ 
+ 
+                                       Dear Dao Quang Minh, 
+ 
+                                       Thank you for setting up the 
+application page! 
+ 
+                                       Just need to clarify a couple of 
+things: 
+ 
+                                       About the hardware requirements, 
+                                       does your application ONLY run on 
+x86_64 systems? 
+                                       We have very few x86_64 systems in 
+PRAGMA grid. 
+                                       See 
+http://goc.pragma-grid.net/pragma-doc/computegrid.html. 
+                                       Notice that bkluster (HUT node in 
+PRAGMA grid) is a i686 system. 
+                                       Majority of PRAGMA grid systems are 
+i686. 
+                                       Let me know, so I know which systems 
+will need to create your account. 
+ 
+                                       About software requirements, 
+                                       for each software that requires site 
+admin to install, 
+                                       please document it folow the 
+instructions/examples at 
+ 
+http://goc.pragma-grid.net/wiki/index.php/Application_Document_Guideline_and 
+                                       _Template. 
+                                       If you don't know any such software 
+at this time, you can leave it blank. 
+                                       If you know that none is required, 
+please put "None". 
+                                       This is to avoid any confusion to 
+site admins. 
+ 
+                                       Thanks again, 
+ 
+                                       Cindy 
+ 
+                                       > -----Original Message----- 
+                                       > From: Dao Quang Minh 
+[mailto:minhdq-hpcc@mail.hut.edu.vn] 
+                                       > Sent: Thursday, January 21, 2010 
+1:33 AM 
+                                       > To: Cindy Zheng; 'Le Duc Tung'; 
+'Doan Trung Tung' 
+                                       > Subject: Re: ***SPAM*** RE: 
+Resources on pragma grid 
+                                       > 
+                                       > 
+                                       > Dear Cindy, 
+                                       > 
+                                       > I am Dao Quang Minh, Le Duc Tung's 
+colleague, in the GOOD-AS 
+                                       > project (Grid Oriented Online 
+Document Analysing System). 
+                                       > 
+                                       > I would like to inform you that we 
+have finished step 2 in 
+                                       > "application document guideline 
+and template" in here 
+                                       > 
+http://goc.pragma-grid.net/wiki/index.php/Grid_Oriented_Online 
+                                       _Document_Analysing_System 
+                                       > and my file for access 
+non-VOMS-aware site (step 3) in 
+                                       > attachment below. 
+                                       > 
+                                       > Please let us know if everything 
+is fine! 
+                                       > 
+                                       > Best regards, 
+                                       > MinhDQ 
+                                       > -----Original Message----- 
+                                       > From: "Cindy Zheng" 
+<zhengc@sdsc.edu> 
+                                       > To: "'Le Duc Tung'" 
+<tungld@gmail.com> 
+                                       > Cc: "'Doan Trung Tung'" 
+<dttung@gmail.com>, 
+                                       > <minhdq-hpcc@mail.hut.edu.vn> 
+                                       > Date: Sat, 16 Jan 2010 01:32:06 
+-0800 
+                                       > Subject: ***SPAM*** RE: Resources 
+on pragma grid 
+                                       > 
+                                       > > Dear Le Duc Tung, 
+                                       > > 
+                                       > > Happy new year! 
+                                       > > Thank you for introduce me to 
+Doan Trung Tung, and Dao Quang Minh! 
+                                       > > I have added Doan Trung Tung, 
+and Dao Quang Minh to PRAGMA mailing 
+                                       > > list. 
+                                       > > Looking forward in working with 
+you all! 
+                                       > > 
+                                       > > Glad to hear that you are ready 
+to run applications! 
+                                       > > Please follow the user guide at 
+                                       > > 
+                                       > 
+http://goc.pragma-grid.net/pragma-doc/userguide/pragma_user_gu 
+                                       ide.html
+<http://goc.pragma-grid.net/pragma-doc/userguide/pragma_user_gu%0Aide.html>
+. 
+                                       > > Start with the step 2, document 
+your application. 
+                                       > > You can logon to 
+wiki.pragma-grid.net with username/password 
+                                       > > (hut/4hutonly). 
+                                       > > Please change the password 
+immediately when you login at 
+                                       > the wiki site. 
+                                       > > You can also concurrently doing 
+step 3 in the user guide. 
+                                       > > 
+                                       > > Let me know if you have any 
+questions. 
+                                       > > 
+                                       > > Cindy 
+                                       > > 
+                                       > >   _____ 
+                                       > > 
+                                       > > From: Le Duc Tung 
+[mailto:tungld@gmail.com] 
+                                       > > Sent: Friday, January 15, 2010 
+7:52 PM 
+                                       > > To: Cindy Zheng 
+                                       > > Cc: Doan Trung Tung; 
+minhdq-hpcc@mail.hut.edu.vn 
+                                       > > Subject: ***SPAM*** Resources on 
+pragma grid 
+                                       > > 
+                                       > > 
+                                       > > Dear Cindy, 
+                                       > > 
+                                       > > For the first mail in new year, 
+I would like to wish you a new year 
+                                       > > healthy, succeed and happiness 
+:) 
+                                       > > 
+                                       > > Relating to work, we have a 
+project to match documents on grid, so 
+                                       > > need more resources (at lease 5 
+grid node is good) to run on pragma 
+                                       > > grid. 
+                                       > > 
+                                       > > If you need any info, please let 
+us know. 
+                                       > > 
+                                       > > P/s: I am ccing this mail to my 
+colleagues in the project: 
+                                       > Doan Trung 
+                                       > > Tung, and Dao Quang Minh. 
+                                       > > 
+                                       > > Best regards, 
+                                       > > Tung, 
+                                       > > 
+                                       > > -- 
+                                       > > Le Duc Tung 
+                                       > > 
+                                       > > High Performance Computing 
+Center, Hanoi University of Technology 
+                                       > > 
+                                       > > Mobile Tel : +84-91-2329088 
+                                       > > Office Tel  : +84-4-38682355 
+                                       > > Personal Page:
+http://hpcc.hut.edu.vn/~tungld <http://hpcc.hut.edu.vn/%7Etungld>
+                                       > > 
+                                       > > 
+                                       > > 
+                                       > 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                               -- 
+ 
+------------------------------------------------ 
+                               Mr. Dao Quang Minh 
+                               -----------Personal Imformation---------- 
+                               - Mobile: +84-90-4324727 
+                               - Telephone: +84-4-38431070 
+                               - Office: +84-(4)-38682355 
+                               - Website: http://hpcc.hut.edu.vn/~minhdq
+<http://hpcc.hut.edu.vn/%7Eminhdq>
+                                   or: http://minhdq.info/ankanheesun 
+ 
+------------------------------------------------ 
+ 
+ 
+ 
+ 
+ 
+       -- 
+       ------------------------------------------------ 
+       Mr. Dao Quang Minh 
+       -----------Personal Imformation---------- 
+       - Mobile: +84-90-4324727 
+       - Telephone: +84-4-38431070 
+       - Office: +84-(4)-38682355 
+       - Website: http://hpcc.hut.edu.vn/~minhdq 
+           or: http://minhdq.info/ankanheesun 
+       ------------------------------------------------ 
+ 
+
+ 
+ 
+ 
+--  
+------------------------------------------------ 
+Mr. Dao Quang Minh 
+-----------Personal Imformation---------- 
+- Mobile: +84-90-4324727 
+- Telephone: +84-4-38431070 
+- Office: +84-(4)-38682355 
+- Website: http://hpcc.hut.edu.vn/~minhdq 
+     or: http://minhdq.info/ankanheesun 
+------------------------------------------------
+ 
+ 
+ 
+--  
+------------------------------------------------ 
+Mr. Dao Quang Minh 
+-----------Personal Imformation---------- 
+- Mobile: +84-90-4324727 
+- Telephone: +84-4-38431070 
+- Office: +84-(4)-38682355 
+- Website: http://hpcc.hut.edu.vn/~minhdq 
+------------------------------------------------

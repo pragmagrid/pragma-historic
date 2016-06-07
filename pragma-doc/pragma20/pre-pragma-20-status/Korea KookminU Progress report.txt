@@ -1,0 +1,40 @@
+From:	sthwang@cs.kookmin.ac.kr on behalf of ??? 
+<sthwang@kookmin.ac.kr>
+Sent:	Tuesday, February 01, 2011 6:24 PM
+To:	Cindy Zheng
+Cc:	???; ???
+Subject:	Re: FW: Progress report
+
+Dear Cindy
+
+Sorry for late reply.
+If it is not yet too late please include the followings in the report.
+
+- MGrid is now waiting for official service(http://mgrid.plsi.or.kr) for users on PLSI(Partnership 
+& Leadership for the nationwide Supercomputing Infrastructure), which is currently formed by 7 
+institutes in Korea and leading by KISTI. 
+- MGrid is tested on SCSD resource of PRAGMA testbed. Several clusters are registered for 
+virtual resource of MGrid(by Cindy) and the following software is tested on the resource. shell & 
+NAMD(single version)
+
+Happy New Lunar Year!
+
+Suntae Hwang
+2011/1/28 Cindy Zheng <zhengc@sdsc.edu>
+Dear Suntae, 
+ 
+Glad to see that you will be at PRAGMA 20 and presenting Mgrid work. 
+ 
+I'm composing our progress report and would like to include Kookmin's 
+works/plans. 
+Please email me a brief summary - a few sentences will do. 
+ 
+Looking forward to see you at PRAGMA 20! 
+ 
+Cindy
+ 
+--  
+Suntae Hwang, PhD
+School of Computer Science
+Kookmin University
+

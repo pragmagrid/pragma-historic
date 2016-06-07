@@ -1,0 +1,65 @@
+From:	Cindy Zheng <zhengc@sdsc.edu>
+Sent:	Tuesday, February 01, 2011 6:57 PM
+To:	zhengc@sdsc.edu
+Subject:	RE: Moving forward with GLEON/PRAGMA
+
+See the detail description of the project below.
+1.	A virtual cluster with Condor had setup in SDSC. A GLEON roll (include Matlab) has been 
+developed and tested
+2.	Now is ready to test extending the cluster with EC2-based instances
+
+From: Philip Papadopoulos [mailto:philip.papadopoulos@gmail.com]  
+Sent: Thursday, January 06, 2011 2:53 PM 
+To: Paul Hanson; Miron Livny 
+Cc: Grace S. Hong; Peter Arzberger; Cindy Zheng; Nadya Williams 
+Subject: Moving forward with GLEON/PRAGMA
+
+Paul, Miron 
+I wanted to follow up on our meeting last Month in Wisconsin.  
+#1 Is Lake Mendota Frozen over yet? :-) 
+ 
+Here are a number of activities that I think make sense -  
+ 
+1. What I'd like to do is to set up a virtual cluster running Condor on the PRAGMA testbed 
+infrastructure in San Diego. 
+On that infrastructure I'd like to capture what is needed to run some of your GLEON codes 
+(perhaps what is needed 
+to do your Kalman Filtering/Systems identification work?) in a Rocks Roll (or two or three, 
+depending on what is needed).  
+(This looks like  GLEON <---> PRAGMA activity) We use Rocks to make the complete 
+environment you need and 
+record exactly how this was done via a Roll. 
+ 
+2. When that is working (meaning your folks can easily utilize that cluster via condor FROM 
+Wisconsin) we'll look at  
+extending that cluster with EC2-based instances (We can trivially author EC2 images via 
+Rocks).   This looks like 
+a GLEON <--> PRAGMA <---> Rocks activity.  
+ 
+3. When we have that working (actually some simultaneous work), I  want to work with Condor 
+folks to get the Image 
+authoring Workflow controlled via Condor and the finish the mechanics of using Condor to 
+control it's own pool 
+expansion into EC2. This looks like a Condor <---> Rocks Activity 
+ 
+4. With various pieces in place, we do the next thing of expanding GLOW with Rocks-authored 
+instances. And then, 
+recalling what Miron and I talked about, he (Meaning Miron) wants to work on defining 
+operational policy for 
+WHEN to expand a cluster.  This looks like  Condor <--> GLEON <---> Rocks activity.  
+ 
+ 
+I believe the goal should be for us plumbers (miron, me) to help simplify what needs to be done 
+on the Applications' part 
+to run successfully.  
+ 
+ 
+Thoughts? 
+ 
+P 
+ 
+--  
+Philip Papadopoulos, PhD 
+University of California, San Diego 
+858-822-3628 (Ofc) 
+619-331-2990 (Fax)

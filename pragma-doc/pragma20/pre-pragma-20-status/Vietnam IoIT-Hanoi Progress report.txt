@@ -1,0 +1,38 @@
+From:	Huynh Thuc Cuoc <htcuoc@ioit.ac.vn>
+Sent:	Friday, January 28, 2011 12:25 AM
+To:	'Cindy Zheng'
+Subject:	RE: Progress report
+
+Dear Miss Cindy Zheng,
+Thank for your e-mail.
+
+I try several brief about our works on grid computing, so you can include in the report you are doing:
+Last year, after PRAGMA 10/2009 we had deployed 2 project:
+1. Link to PRAGMA and we are became as the member of PRAGMA.
+2. We had created one Project on GRID Computing, the VNGRID, as the State project to link IOIT at 
+Hanoi with several Universities in Vietnam:
+University of Technology Hanoi, University of Nature Sciences Hanoi, EIC Company. The grid is using for 
+Forecast problems, Bio applications and encryption/de-cryption problems.
+3. In this year we plan to study the Grid+Cloud computing. This is the project of IOIT Hanoi.
+
+Thank you for help to us.
+Several days next is the New traditional year in Vietnam and so in China, so BEST WISH to you and your 
+family.
+HTC.
+
+-----Original Message-----
+From: Cindy Zheng [mailto:zhengc@sdsc.edu]
+Sent: Friday, January 28, 2011 10:45 AM
+To: 'Huynh Thuc Cuoc'
+Subject: FW: Progress report
+
+Dear Prof. Cuoc,
+
+Hope everything is going well at ioit-hanoi.
+I'm composing our progress report and would like to include your site works/plans.
+Please email me a brief summary - a few sentences will do.
+
+Thanks in advance,
+
+Cindy
+

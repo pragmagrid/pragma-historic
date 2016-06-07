@@ -1,0 +1,50 @@
+From:	Santiago Nuñez-Corrales <snunezcr@gmail.com>
+Sent:	Tuesday, February 01, 2011 9:39 AM
+To:	Cindy Zheng
+Cc:	jose.r.castro@gmail.com; Dagoberto Arias Aguilar
+Subject:	Re: FW: Progress report
+
+Dear Cindy,
+
+This is a synopsis of progress we have had in the past 6 months.
+
+1. NG-TEPHRA
+
+The core software packages has been improved and 98.000 scenarios have been performed with 
+close collaboration with the Message Lab. There we have been able to tune the automated 
+processing of results and have generated preliminary maps displaying how data would be 
+presented to final users. Our current work is focusing on modifications to the original model in 
+order to improve accuracy and remove minor issues before running the whole set of 4.41 million 
+experiments. Also in the following couple of weeks we will be testing the our next generation 
+software, CENIZA (https://github.com/snunezcr/CENIZA) which has been funded by the 
+Citizen's Network of Meteorological Stations.
+
+2. Infrastructure Investments at TEC
+
+Thanks to PRAGMA support, three projects containing infrastructure funds were aproved at 
+TEC for the e-Science program. A tiled display wall, a cave with 3D displays and a telepresence 
+devise are being acquired. Also, thanks to followup with Microsoft a plan for a mid-size cluster 
+(approx $200.000). Additionally, the insitutional plan for the Green e-Science and 
+Supercomputing Center is being formulated with support from the Provost Office and due in the 
+following weeks.
+
+3. Advanced networks
+
+TEC has identified the main roadblocks for implementing the link to our national advanced 
+networks initiative. Resources have been dedicated to support the campus wide strategy and 
+finally connect resources to PRAGMA. Max deadline: 1 month.
+
+
+On Thu, Jan 27, 2011 at 10:01 PM, Cindy Zheng <zhengc@sdsc.edu> wrote:
+Dear Jose Luis and Santiago, 
+ 
+I know that you have been very active in forging collaborations 
+and working on projects with other PRAGMA sites/teams since PRAGMA 19. 
+ 
+I'd like to include them in the progress report, but need to be brief for 
+now. 
+Could you email me a brief summary on your major efforts and status? 
+ 
+Thanks in advance, 
+ 
+Cindy

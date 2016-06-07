@@ -1,0 +1,87 @@
+From:	??? <joongsoo@etri.re.kr>
+Sent:	Monday, December 20, 2010 11:51 PM
+To:	Cindy Zheng
+Subject:	RE: Asking to access VM images
+
+Thank you very much for your invaluable help.
+
+We will share the result if we made interesting result
+
+Best regards,
+Joongsoo Lee
+
+From: Cindy Zheng [mailto:zhengc@sdsc.edu]  
+Sent: Tuesday, December 21, 2010 2:46 PM 
+To: ??? 
+Subject: RE: Asking to access VM images
+
+Dear Joongsoo,
+ 
+I have added your ssh key in my authorized_keys file on fiji.rocksclusters.org.
+You can ssh to zhengc@fiji.rocksclusters.org.
+ 
+There are 2 VM images in vm-backup directory: rocks-185.hda.gz and afg-rocks-184.hda.gz.
+Both are Rocks 5.3 with the following rolls: base, os, area51, hpc, service pack, sge, web-server.
+The VM image is simply the hard disk image for the head node of the virtual cluster.
+Additional software installed are:
+ 
+rocks-185.hda.gz: 
+========== 
+VDT, globus, intel compilers
+ 
+afg-rocks-184.hda.gz: 
+========== 
+VDT, globus, intel compilers, MyProxy 
+(This system was built using rocks-185.hda image and it's for Avian Flu Grid applications.
+ 
+You can find more details about how the VM systems was built and 
+about the experiments we are working on with these VM images at 
+http://goc.pragma-grid.net/wiki/index.php/Rocks_VM.
+ 
+Let me know if you need anything else.
+Looking forward to learn about your analysis!
+ 
+Cindy
+
+ 
+From: ??? [mailto:joongsoo@etri.re.kr]  
+Sent: Monday, December 20, 2010 5:36 PM 
+To: zhengc@sdsc.edu 
+Subject: Asking to access VM images
+Dear Ms. Cindy Zheng,
+
+This is Joongsoo Lee. I am working for ETRI, Daejeon, Korea.
+
+I really appreciate allowing me to access VM images in PRAGMA. To make a good evaluation we 
+are trying to gather VM images as many as possible. We will not analyze user’s data for any 
+purpose. 
+
+However, some metadata is very helpful to make an analysis on the experimental result. The 
+metadata is as follows;
+1) OS type
+2) VM image format 
+3) Application area (DB, Web, etc.)
+4) Installed software
+
+If I am allowed to access metadata that I described above, I want to gather these information.
+
+Here is my public key. 
+
+ssh-rsa 
+AAAAB3NzaC1yc2EAAAABJQAAAIBK4bYs2B2APk8aLwM5Hj2FqXY9MMjXoVHGTB8kK/KVgKGLAF94
+vOjbKALuYpXmgp2hHIUnJ4YRNORHg6Kpd2HKCwRs80axqSrT35tNv8AoTwjt7+iHoCKdKWdSa6TldN
++8i1N2l8vhIsEwO2se6trNpYWMjhvGd8a+rOb7s+wEnw== joongsoo@etri.re.kr
+
+Thank you very much for your help. 
+
+Best regards,
+Joongsoo Lee
+
+-----------------------------------------------------------
+Joongsoo Lee, Ph.D.
+joongsoo@etri.re.kr
+Internet Platform Research Dept.
+Electronics and Telecommunications Research Institute (ETRI)
+Office: +82-42-860-1787
+-----------------------------------------------------------
+

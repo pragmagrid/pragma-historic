@@ -1,0 +1,125 @@
+
+On Jan 26, 2011 1:49 PM, "Cindy Zheng" <zhengc@sdsc.edu> wrote: 
+> Hi, Jing Yuan, 
+>  
+> Please ssh to zhengc@fiji.rocksclusters.org. 
+> In vm-backup directory, there are 2 images. 
+>  
+> rocks-185.hda.gz: 
+> ========== 
+> rocks 5.3, VDT, globus, intel compilers 
+>  
+> afg-rocks-184.hda.gz: 
+> ========== 
+> cloned from rocks-185, installed MyProxy 
+>  
+> You would be the first to attempt to run rocks vm on kvm system, 
+> Please document everything - a lot of us are interested to learn about any 
+> issues. 
+> It will be a very valuable experiment and we can work together. 
+> If you can run afg vm image would be the best - then  
+> we can actually demostrate with afg application runs. 
+>  
+> Thanks, 
+>  
+> Cindy 
+>  
+>> -----Original Message----- 
+>> From: Luke Jing Yuan [mailto:jyluke@mimos.my]  
+>> Sent: Tuesday, January 25, 2011 9:38 PM 
+>> To: Cindy Zheng 
+>> Subject: RE: On Testing AvianFlu VM 
+>>  
+>> Cindy, 
+>>  
+>> Please find the attached my ssh key, I am most likely going  
+>> to be accessing from 202.45.137.9. 
+>>  
+>> Regards, 
+>> Jing Yuan 
+>>  
+>> -----Original Message----- 
+>> From: Cindy Zheng [mailto:zhengc@sdsc.edu] 
+>> Sent: Wednesday, January 26, 2011 12:25 PM 
+>> To: Luke Jing Yuan; 'Philip Papadopoulos' 
+>> Subject: RE: On Testing AvianFlu VM 
+>>  
+>> Hi, Jing Yuan, 
+>>  
+>> > After some discussions with my colleagues, I guess the best way  
+>> > possibly is for us to bundle a new image of our KVM based  
+>> > infrastructure. Do you have any guidelines on what packages  
+>> and OS is  
+>> > best suited for us to do a quick test? 
+>>  
+>> I'm cc'ing Phil for suggestions - Phil is the expert in this area. 
+>>  
+>> > Or another workaround is to try to convert the existing Xen based  
+>> > image (possibly the standalone version) into a KVM based  
+>> image. Maybe  
+>> > you can share the link for me to download. 
+>> >  
+>> This is easy. Just email me your ssh public key and I'll give  
+>> you access to our rocks VM images. 
+>>  
+>> Cindy 
+>>  
+>> > Thanks and regards, 
+>> > Jing Yuan 
+>> >  
+>> > -----Original Message----- 
+>> > From: Cindy Zheng [mailto:zhengc@sdsc.edu] 
+>> > Sent: Tuesday, January 18, 2011 4:43 AM 
+>> > To: Luke Jing Yuan 
+>> > Subject: RE: On Testing AvianFlu VM 
+>> >  
+>> > Happy to hear from you, Jing Yuan! 
+>> >  
+>> > You can use the vm image to create either virtual custer or a  
+>> > standalone server. 
+>> > Currently we have only tested VM replication on Rocks VM hosting  
+>> > servers. 
+>> > So, if you have a rocks VM hosting server, you can take the  
+>> VM image  
+>> > we have tested, to create either a cluster or a single node server. 
+>> > This will save you time from building each from ground up. 
+>> > You can also use the VM image, after build a server or a  
+>> cluster, add  
+>> > other software you need and produce your own VM images to  
+>> share with  
+>> > others. 
+>> > See some of our documentations at 
+>> > http://goc.pragma-grid.net/wiki/index.php/Rocks_VM 
+>> >  
+>> > Right now, we have 2 VM images:  
+>> > - baseline system, running rocks 5.3, 
+>> > with base, kernel, os, area51, hpc, service pack, sge, web-server  
+>> > rools, also VDT, Globus, Intel compiler 
+>> > - Avian Flu Grid system, baseline system + MyProxy 
+>> >  
+>> > Let me know if this answers your question. 
+>> >  
+>> > Cindy 
+>> >  
+>> > > -----Original Message----- 
+>> > > From: Luke Jing Yuan [mailto:jyluke@mimos.my] 
+>> > > Sent: Monday, January 17, 2011 12:15 AM 
+>> > > To: Cindy Zheng 
+>> > > Subject: On Testing AvianFlu VM 
+>> > >  
+>> > > Cindy, 
+>> > >  
+>> > > Sorry for the delay in communication. Just would like to 
+>> > follow up on 
+>> > > our discussion over Facebook couple of weeks ago. Is the VM 
+>> > an image 
+>> > > to create another virtual cluster or the VM is a 
+>> > "standalone server".  
+>> > > Thanks. 
+>> > >  
+>> > > Regards, 
+>> > > Luke 
+>> > > ----------------------------------------------- 
+>> > > A strategic agency under MOSTI 
+>> > > www.mimos.my 
+>> > > ----------------------------------------------- 

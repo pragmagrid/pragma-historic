@@ -1,0 +1,76 @@
+From:	Beth Plale <plale@cs.indiana.edu>
+Sent:	Friday, January 28, 2011 5:42 AM
+To:	Cindy Zheng
+Cc:	Yuan Luo
+Subject:	Re: Progress report
+
+Hi Cindy,   here's a slight edit to Yuan's writeup with some future plans as well.  beth
+
+The Opal web service toolkit is designed to make the deployment of existing applications as web 
+services easy. It leverages, for instance, the Globus GRAM for job submission, requires a simple 
+configuration file for the location of the application, and supports command line options as 
+required. Sigiri is web service that provides a uniform abstraction layer over heterogeneous 
+compute resources.  In this demonstration the Indiana University team shows interoperability of 
+Opal and Sigiri where Opal instead of submitting jobs to Globus GRAM, submits to Sigiri 
+instead.  This is useful in a PRAGMA testbed because it could be used to enlist cloud resources, 
+for instance, as fallback when PRAGMA testbed resources are exceeded.  In future efforts we 
+hope to deploy our provenance collection tool, Karma, to our PRAGMA testbed nodes.   
+
+
+On Jan 28, 2011, at 3:24 AM, Cindy Zheng wrote:
+ 
+
+Thank you very much, Luo Yuan!
+ 
+
+ 
+From: yuanluo@umail.iu.edu [mailto:yuanluo@umail.iu.edu] On Behalf Of Yuan Luo 
+Sent: Thursday, January 27, 2011 7:51 PM 
+To: Cindy Zheng 
+Cc: Beth Plale 
+Subject: Re: FW: Progress report
+Hi Cindy,
+ 
+Thanks. We setup PRAGMA testbed nodes at Indiana University in the form of a 4-node virtual 
+cluster hosting servers. These dedicated servers equipped with a Dual AMD 2.0GHz Opteron 
+and 16GB memory on each node. The latest version of Rocks OS(v5.4) is installed, together with 
+the Xen roll. We also have AFG VC disk image (rocks-184 image downloaded from 
+fiji.rocksclusters.org) loaded. We are currently in the stage of setting up our own CA. Will let 
+you know when it's done.
+ 
+Here's the work we are going to present.
+ 
+The Opal web service toolkit is designed to make the deployment of existing applications as web 
+services easy. It leverages, for instance, the Globus GRAM for job submission, requires a simple 
+configuration file for the location of the application, and supports command line options as 
+required. Sigiri is web service that provides a uniform abstraction layer over heterogeneous 
+compute resources.  In this demonstration we show interoperability of Opal and Sigiri where 
+Opal instead of submitting jobs to Globus GRAM, submits to Sigiri instead.  This is useful in a 
+PRAGMA testbed because it could be used to enlist cloud resources, for instance, as fallback 
+when PRAGMA testbed resources are exceeded.
+Regards,
+ 
+Yuan 
+ 
+On Thu, Jan 27, 2011 at 10:03 PM, Cindy Zheng <zhengc@sdsc.edu> wrote:
+Hi, Luo Yuan, 
+ 
+I see that you will be presenting some of your work at PRAGMA 20. 
+Congratulations for the accomplishment! 
+I'd like to include them and any other works/plans at IU in our progress 
+report. 
+So, please email me a brief summary - a few sentences will do. 
+ 
+Looking forward to see you at PRAGMA 20! 
+ 
+Cindy
+ 
+
+-------------------------------------------------------------------------------------------------------------------------------------- 
+Yuan Luo
+Computer Science Program, School of Informatics and Computing, Indiana University 
+Data to Insight Center, Pervasive Technology Institute, Indiana University
+Cell: (812)272-0208   http://www.cs.indiana.edu/~yuanluo    http://www.yuanluo.net
+--------------------------------------------------------------------------------------------------------------------------------------
+
+

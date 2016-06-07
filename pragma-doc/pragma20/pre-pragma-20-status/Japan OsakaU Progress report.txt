@@ -1,0 +1,60 @@
+From:	Kei Kokubo <kokubo.kei@ais.cmc.osaka-u.ac.jp>
+Sent:	Friday, January 28, 2011 4:39 AM
+To:	Cindy Zheng
+Cc:	'Yuki FUJIWARA'; ????; Kohei Ichikawa
+Subject:	Re: FW: Progress report
+
+Dear Cindy-san,
+
+
+Sorry for the late replay.
+
+
+Here is the brief summary of our work.
+
+
+Situation:
+
+We have designed and been prototyping a solution that combines seamlessly the Rocks installation 
+mechanism with overlay technology that allows scientists to easily build virtual clusters over multiple 
+physical clusters (i.e. multi-site virtual cluster). We have verified that we can manually build a multi-site 
+virtual cluster with our solution.
+
+
+On going work:
+
+We are working on the implementation for the automation of the proposed solution in the Rocks toolkit. 
+We are coding some original rocks commands which enable administrators to build multi-site virtual 
+clusters by similar manner to building Rocks virtual clusters.
+
+
+
+If you have any question, let me know. :-)
+
+
+Sincerely yours,
+
+Kei.
+
+
+(2011/01/28 15:00), Cindy Zheng wrote:
+> Dear Yuki and Kei,
+>
+> Glad to see that Kei will be at PRAGMA 20 and presenting 
+> virtualization work.
+> I know that Yuki also collaborated at San Diego and did a lot of work too.
+>
+> I'm composing our progress report and would like to include OsakaU's 
+> works/plans.
+> Please email me a brief summary of your projects, presentations and 
+> any other works and plans you know of.
+>
+> Thank you very much in advance!
+>
+> Cindy
+
+
+--
+Kei Kokubo
+
+  e-mail?kokubo.kei@ais.cmc.osaka-u.ac.jp

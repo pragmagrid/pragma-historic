@@ -1,0 +1,80 @@
+Subject:	FW: Progress report
+
+From: David Abramson [mailto:david.abramson@monash.edu]  
+Sent: Monday, January 24, 2011 6:28 PM 
+To: Cindy Zheng 
+Cc: Peter Arzberger; Blair Bethwaite; Santiago Nuñez-Corrales 
+Subject: Re: Progress report
+
+Cindy
+
+Worth noting that we ran a series of HD video seminars from NCSA during semester II. 
+
+We currently have 4 MURPA students at UCSD/CalIT2 (working with Jurgen Schultze, Sameer Tilak, Ilkay 
+Altintas and Wilfred Li) and 2 students @ NCSA (working with Radha Nandkumar and Bill Gropp).
+
+Blair and Santiago will report on the volcano work - we published a paper in IEEE e-Science on this. (See 
+below)
+
+Papers that have appeared:
+
+https://messagelab.monash.edu.au/Publications/PrimeAnIntegratedAndSustainableUndergraduateInter
+nationalResearchProgram
+
+http://messagelab.monash.edu.au/Publications/EScience2010Nunez
+
+D
+
+-----Original Message-----
+From: Blair Bethwaite [mailto:blair.bethwaite@gmail.com] 
+Sent: Monday, January 24, 2011 5:16 PM
+To: David Abramson
+Cc: Cindy Zheng; Santiago Nuñez-Corrales
+Subject: Re: Progress report
+
+On 25 January 2011 12:08, David Abramson <david.abramson@monash.edu> wrote:
+> We (i.e. you :-) could report something about our work since - I guess the IEEE e-Science publication is 
+the most significant deliverable.
+
+Yep I'd say so. I don't think there's anything more to add from me since the PRAGMA brochure. Santiago 
+has updated the Suzuki model code some I believe, and is working on another part of the project. My 
+understanding is that we are still working towards a Nimrod/K work-flow that links all the bits together...
+
+--
+Blair Bethwaite
+Researcher, Developer, SysAdmin, Nimrod and Grid support specialist Monash eScience and Grid 
+Engineering Lab (http://www.messagelab.monash.edu.au/)
+(+613) 9903 2800
+
+-----Original Message-----
+From: David Abramson [mailto:david.abramson@monash.edu] 
+Sent: Monday, January 24, 2011 5:08 PM
+To: Cindy Zheng
+Cc: Blair Bethwaite; Santiago Nuñez-Corrales
+Subject: Re: Progress report
+
+Blair, Santiago
+
+We (i.e. you :-) could report something about our work since - I guess the IEEE e-Science publication is 
+the most significant deliverable.
+
+D
+
+-------------------------------------------------------------------------
+David Abramson
+ARC Professorial Fellow, FACM, FATSE				phone:  	(03) 9905 1183
+Science Director - Monash e-Research Centre (MERC) 	( http://www.monash.edu.au/eresearch)
+Director - MeSsAGE Lab							
+	(http://www.messagelab.monash.edu.au)
+Clayton School of Information Technology				mobile: 0417 375 635
+Faculty of Information Technology           				e-mail: 
+david.abramson@monash.edu
+Monash University									
+Clayton, Vic, 3800             								WWW:    
+http://www.csse.monash.edu.au/~davida
+Skype: davidabramson             							MSN:     
+davida@csse.monash.edu.au
+-------------------------------------------------------------------------
+
+
+

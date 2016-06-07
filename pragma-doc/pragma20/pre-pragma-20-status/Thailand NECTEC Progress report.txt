@@ -1,0 +1,24 @@
+From:	ekasit.kijsipongse@nectec.or.th
+Sent:	Tuesday, January 25, 2011 6:35 PM
+To:	Cindy Zheng
+Subject:	Re: Progress report
+
+Dear Cindy,
+
+  For NECTEC, we continue working on 2 projects as follows.
+
+(i) Simulation of Coastal Changes project which aims to discover in- depth knowledge of coastal 
+sediment transport and coastal processes in the gulf of Thailand. Currently, we study the storm surge 
+mechanism in the gulf of Thailand by focusing on the effect of meteorological and hydrological forcing 
+on storm surge hydrodynamic process. The interaction of tide and surge in the gulf of Thailand are 
+characterized using the simulation results together with hydrological and geographic information data.
+
+(ii) In the Environment Informatorium project which we have introduced a Web-based Portal to be 
+served as a one stop service for service discovery across multiple Open Geospatial Consortium (OGC) 
+service repositories.
+We currently develop the Service Registry which allows service providers to register their services for 
+the service consumers to search and browse for the required services through automatic service 
+retrieval.
+
+Looking forward to seeing you soon,
+Ekasit K.
