@@ -1,0 +1,95 @@
+From: Cindy Zheng [mailto:zhengc@sdsc.edu] 
+Sent: Thursday, December 21, 2006 2:49 PM
+To: pragma-discussion@pragma-grid.org
+Subject: summary and holiday greetings
+
+Dear all,
+
+Holidays are coming! We all have worked hard all year, now looking forward to have good time with family and friends. Let me wish you all very happy holidays and an even better year ahead!
+
+Let me also take this opportunity to give you a summary of what I know about the going on's since PRAGMA11 and the plans for the new year. Others please add and correct.
+
+Headlines:
+1.  Myproxy server is setup
+2.  First cross-site reservation is a sucess 3.  Gfarm deployment started in testbed (4 sites completed) 4.  MM5-WRF/MPICH-GX experiments continue 5.  Started Savannah application run in GIN testbed 6.  NCHC unveiled LifeRay portal 7.  CSE-Online in preparation to interface testbed 8.  Setting up a nimrod portal for PRAGMA 9.  Testbed sites continue mending and expanding 10. Big show of PRAGMA success at SC06,
+    More collaborations interests: OSG, LSU, UCGrid,
+    Cyber-environment, CAMERA
+11. More connections and plans made at CANS06 12. Peer-grids interoperation experiment starts
+
+1. Myproxy server is setup
+---------------------------
+Right after PRAGMA11, the setup of myproxy server for PRAGMA grid - myproxy.pragma-grid.net - was completed in lightening speed! Thanks for the quick actions of David Bannon and Graham Jenkins at APAC! Also thanks for the help from Phil Papadopoulos!
+
+2. First cross-site reservation is a sucess
+---------------------------
+We successfully completed our first manual reservation experiment in our testbed shortly after PRAGMA 11. It includes a draft for corss-site reservation procedure http://goc.pragma-grid.net/pragma-doc/userguide/reserve.html
+and the actual reservation schedules
+http://goc.pragma-grid.net/pragma-grid-status/schedule.htm
+This experiment was a great demostration of the team spirit among our testbed members. Thanks for everyone
+involved: Yoshio Tanaka, Hiroshi Takemiya, Weicheng Huang, Eric Huang, Colin Enticott, Kevin Dong, Sangwan Kim, Tom Roney, Shingo Takeda, Mason Katz, Cindy Zheng, Tuan Carlos Maureira, ...
+We planned to implement next reservation in January. 
+
+3. Gfarm deployment started in testbed
+---------------------------
+Gfarm 1.4 was release at sc06 and its deployment documentation was tested and verified immediately thereafter. Then 3 weeks ago, we started gfarm deployment in our our testbed. Now we already have
+4 sites (AIST, NCHC, NECTEC, UCSD) completed the gfarm installation. Thanks for the hard works by Yoshio Tanaka, Osamu Tatebe, Yusuke Tanimura, Mason Katz, Cindy Zheng, Weicheng Huang, Max Yun, Supakit Prueksaaro, Sornthep Vannarat, ...
+Many other testbed sites are working on the installation and will be ready soon.
+We are also getting ready to test gfarm with applications and middleware starting January.
+GriddLeS (Tim Ho), CSE-Online (Thanh Truong), Ninf-G (Yusuke Tanimura) and others are ready to start experiments with Gfarm in January.
+
+4. MM5-WRF/MPICH-GX experiments continue
+---------------------------
+After KISTI and CICESE successfully run MM5-WRF/MPICH-GX experiments and presented results in PRAGMA11, people inside and outside of PRAGMA communities showed a lot of interests. There are still many issues needs to be tested.
+Shortly after PRAGMA11, Daniel Garcia Gradilla (CICESE) and Oh-kyoung Kwon (KISTI) and their teams are busy at more testing again! We are looking forward to see more results from their work and hope to be able to deploy in our testbed in the future.
+Also, CICESE Grid project just recently received funding!
+Congratulations, CICESE! Looking forward to see more good work from our collaborations!
+
+5. Started Savannah application run in GIN testbed
+---------------------------
+After we have successfully run TDDFT in the Grid Interoperation Now (GIN) testbed and presented our learning in OGF and SC06, now we started to run a data-intensive application - Savannah fire simulation
+- in GIN testbed, to explore data-related interoperation issues. Colin Enticott is the lead for the application run. Many people have helped to make it work: Yoshio Tanaka, Terrence Martin(OSG), JP Navarro (TeraGrid), Oscar Koeroo (NIKHEF).
+
+6. NCHC unveiled LifeRay portal
+---------------------------
+After years of hard work, NCHC just unveiled their LifeRay portal and working to interface it with our testbed resources and enable PRAGMA grid users to run applications. Weicheng's group has also contributing all their clusters to PRAGMA testbed. Thank you Weicheng Huang, Eric Huang, Max Yun and others in the group for your contributions to our experiments in PRAGMA testbed!
+
+7. CSE-Online in preparation to interface testbed
+---------------------------
+In preparation to start interface CSE-Online with PRAGMA grid resources and testing gfarm, Prof. Thanh Truong has documented a guide for CSE-Online at http://wiki.pragma-grid.net/index.php?title=CSE-Online
+The actual interface work and testing will start in January.
+
+8. Setting up a nimrod portal for PRAGMA
+---------------------------
+With David Abramson's support, Colin Enticott and I are working on setting up a nimrod portal for PRAGMA at UCSD. We plan to get it operational in January.
+
+9. Testbed sites continue mending and expanding
+---------------------------
+Kennith Chiu, Michael Head and John Skovronski at Binhampton University is working hard to get their clusters ready to join testbed. 
+Sammy Tang at HongKong University is working on joining their cluster to our testbed and participate in gfarm testing.
+Many other new sites are also working on joining and Many existing sites, such as NCHC, MIMOS and BII are adding and upgrading their hardware and software. 
+Thank you for all the supporters and application drivers to make the testbed and our experiments work!
+
+10. SuperComputing (SC) 2006, Tampa, Florida, USA
+---------------------------
+PRAGMA member institutions and partners worked very closely this year at SC06. Many collaborative demos, talks, attracted a lot more attention of the grid community at large. PRIME and PRIUS had a good show of their projects. PRAGMA members and partners booths are always crowded with people! We connected with more partners and initiated more collaboration plans.
+One example is peer grid interoperation idea. OSG, LSU and UCGrid, all expressed interest in collaborate and interoperate with PRAGMA grid. Other ideas emerged are collaboration with CAMERA, explore cyberenvironment techonology
+(http://www.ncsa.uiuc.edu/AboutUs/Directorates/CET.html)
+and etc. Of course, SC06 was also another chance for some PRAGMA teams to get together work on issues and plans. We took a full advantage of it. SC06 was a very successful event for PRAGMA!
+
+11. Chinese-American Network Symposium (CANS) 2006, Chicago, USA
+---------------------------
+A few weeks ago, I attended CANS06 meeting. There was more focus on Grid activities in this year's CANS meeting.
+I give a talk on PRAGMA and our collaboration activities, talked to many people who are interested in collaborate with US. Also discussed with Ruth Portes and Miron Livny
+(OSG) about our peer-grid interoperation plan. (See next paragraph for details)
+  
+12. Peer-grids interoperation experiment starts
+---------------------------
+After a lot of discussions with OSG, we have agreed to start a peer-grid interoperation experiment immediately.
+PRAGMA and OSG, each will start with one application and try to run it across both grids. We will try to develop a minimum set of tools (VDT, including Condor) to enable application run on both grids. Both grids have identified the application drivers and the resource/technical supporters and ready to start the experiment in January.
+
+Thank you for reading thru another long email! :-)
+
+Happy holidays and Happy new year!
+
+Cindy
+

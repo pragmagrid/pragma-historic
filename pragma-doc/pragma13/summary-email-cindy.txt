@@ -1,0 +1,48 @@
+From: Cindy Zheng [mailto:zhengc@sdsc.edu] 
+Sent: Friday, October 05, 2007 1:53 PM
+To: pragma-grid-team@googlegroups.com
+Cc: pragma-discussion@pragma-grid.org
+Subject: PRAGMA13 and the first PRAGMA institute
+
+Dear all, 
+Thank you for Radha, PRAGMA13 organization commitee and NCSA dedicated staff that PRAGMA13 and our first PRAGMA institute has been a successful and rich learning experience! Many illuminating keynotes, excellent demos, and tutorials were presented during the 4 days. You can find the slides and materials at http://goc.pragma-grid.net/pragma-doc/pragma13/.
+For the benefit of those who could not make to Urbana Champaign, let me also briefly summarize some key facts and decisions I know which resulted from PRAGMA13 workshop. Others please add and correct.
+Table of contents: 
+A. New friends 
+B. Bioscience and resources/data working group joined session 
+        1. issue and decision on user account creation in PRAGMA grid 
+        2. issue and decision on Gfarm meta-data latency 
+        3. issue and decision on providing software info 
+C. Demos and awards 
+D. New PRAGMA institution members 
+A. We are very happy to get together with our old friends again! 
+We also meet many new friends at this 4-day gathering. 
+Among the first-timer institutions are: 
+        University of Poerto Rico at Mayaguez 
+        Fermi National Accelerator Laboratory 
+        Condor team from University of Wisconsin 
+        Virginia Tech University of Iowa National University 
+        Universidad de Antioquia, Columbia 
+B. Bioscience and resources group had a very good discussion during a joined session. The key issues and decisions are: 
+Issue 1. Too much work and problems in user account creation in pragma grid. 
+Decision 1. APAC has offered to host PRAGMA VO with their VOMS service. Cindy and Chris (APAC) will test, document, then all sites will implement auto-update grid-mapfile with APAC VOMS. Will complete this by PRAGMA14.
+Issue 2. Gfarm V1.4 meta-data latency is too high. 
+Decision 2. Gfarm V2 demostrated significant performance improvement at PRAGMA13. We will use Gfarm as shared storage, not for running applications for now. Stop deployment of Gfarm V1.4 in PRAGMA grid. As soon as Gfarm V2 file sharing functionalities are ready, we will upgrade and deploy Gfarm V2 in PRAGMA grid.
+Issue 3. Application users need to know the availability of required software and installation location at each site. 
+Decision 3. Site to provide /etc/profile.d/pragma.sh to include all software installation directories in $PATH, application users provide software requirements, and SCMSWeb implement probe to collect software info and provide a public viewable software availability matrix. Will complete this by PRAGMA14.
+In addition, Jilin University CSF team and Wisconsin University Condor team will collaborate with SCMSWeb team to develop job/resource matcher/selector for CSF and Condor-G.
+C. We had very good demo sessions. All ten demos showed great work in all working groups. Three demos won the "Best of demo" awards, one in each of three categories. They are:
+        1. Most PRAGMA softwares used 
+        The Avian Flu Grid project,  Rommie Amaro, Ph.D., Dong Xu, Ph.D. 
+        2. Most impressive 
+        3D High-Resolution GIS Taiwan Platform, Guey-Shin Chang/Whey-Fone Tsai 
+        3. Most immediately available technologies 
+        Account management using GAMA and VOMS, Yoshio Tanaka 
+Congratulations to the winners and all demo'ers for the great job done! 
+D. PRAGMA has accepted 3 new institution members. They are 
+        Monash University, Australia 
+        CSE-Online, University of Utah, USA 
+        BeSTGRID, New Zealand 
+Congratulations and welcome to our new members! 
+Cindy 
+

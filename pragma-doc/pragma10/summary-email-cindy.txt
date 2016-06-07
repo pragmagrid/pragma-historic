@@ -1,0 +1,67 @@
+From: Cindy Zheng [mailto:zhengc@sdsc.edu] 
+Sent: Wednesday, April 05, 2006 5:10 PM
+To: 'PRAGMA Grid Admin Team'
+Cc: pragma-discussion@pragma-grid.org
+Subject: PRAGMA10 and forward
+
+Dear all,
+ 
+Thanks for the effort of our Australia hosts and all PRAGMA friends,
+the PRAGMA 10 was a success! Let me tell you what I learned and 
+others please add and correct.
+ 
+PRAGMA is growing! Not only that we just gained 3 new members -
+CICESE, MIMOS and iHPC (congratulations!), but also there are 
+many more new friends at the gathering.  Just mension a few:
+JP Navarro, represent our first partner in multigrid interop - TeraGrid
+Bill Allcock, represent GLOBUS
+Terence Hung, represent iHPC, Singapore
+Tuan Anh Nguyen, represent University of Technology, Vietnam
+Supakit Prueksaaroon, representing NECTEC, Thailand
+ 
+With old friends and new friends, we had a lot of fun at Townsville! 
+Somsak has suggested to share our fun thru sharing photos within 
+our PRAGMA community. Mason, Teri, Somsak and I are trying to 
+setup and test photo sharing at flickr site. Will let you know when 
+it's ready.
+ 
+Again, the fast progress and expansion of testbed was being recognized.
+We are all impressed by all the enthusiasm of testbed site supporters,
+the diligent work by application drivers and the voluntary help our testbed 
+team members lend to each other! I'm so happy to be working with you all!
+ 
+2 key resolutions we have reached at resources group meetings:
+ 
+1. Setup PRAGMA CA by PRAGMA11. We plan to deploy the
+integrated GAMA/Naregi-CA for PRAGMA CA. To adhere to IGTF
+standard, Naregi-CA and GAMA need to make some modifications.
+Both teams have scheduled to finish these modifications and entering
+joined testing in June. We target our PRAGMA CA server setup in July.
+ 
+2. Setup Community Software Area (CSA) using gfarm. (We took this
+term from TeraGrid. JP gave a good presentation on this at PRAGMA10.)
+This means that we'll deploy gfarm to all testbed clusters. Tatebe-san plans 
+to finish some fixes by June, to enable Gfarm to work for clusters with
+backend nodes on private net only, We will setup a directory structure
+in Gfarm file system, so users can install required software there 
+themselves. These installations will be available to all testbed clusters
+and can be made available to other users as well. This also means that
+Gfarm will be a required software for our testbed systems soon.
+ 
+We want to encourage portal and meta-scheduler development and 
+testing in our testbed. Also will deploy wiki to enable collaboration on
+GOC management. We are also looking forward to include sensor and 
+GEON data resources and applications to our routine-basis experiments!
+ 
+3 institutions have pledged to join testbed during PRAGMA10 chat:
+NECTEC, Thailand
+BU (Binghamton University, New York)
+iHPC, Singapore
+ 
+Ken at BU also plans to run an application using sensor data in our testbed.
+ 
+I'm looking forward to our new experiments and to make more friends 
+in the process!
+ 
+Cindy
+
