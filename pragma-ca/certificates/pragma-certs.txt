@@ -1,0 +1,37 @@
+[root@pc-163 certificates]# tar tzvf pragma-certs.tar.gz  > pragma-certs.txt
+
+-rw-r--r-- root/root      1261 2010-06-18 09:31 035f646c.0
+-rw-r--r-- root/root      1317 2010-06-18 09:31 035f646c.signing_policy
+-rw-r--r-- root/root      1558 2009-06-16 07:41 07bf3e13.0
+-rw-r--r-- root/root      1329 2009-06-16 07:41 07bf3e13.signing_policy
+-rw-r--r-- root/root      1204 2007-02-06 18:18 0db2f004.0
+-rw-r--r-- root/root       533 2007-02-06 18:18 0db2f004.signing_policy
+-rw-r--r-- root/root      1468 2007-02-06 18:18 3deda549.0
+-rw-r--r-- root/root       344 2007-02-06 18:18 3deda549.signing_policy
+-rw-r--r-- root/root      1208 2009-01-13 01:00 5456d9ca.0
+-rw-r--r-- root/root        47 2011-05-27 14:17 5456d9ca.crl_url
+-rw-r--r-- root/root      1276 2009-01-13 01:00 5456d9ca.signing_policy
+-rw-r--r-- root/root       887 2007-07-20 16:55 599fc209.0
+-rw-r--r-- root/root      1311 2007-07-20 16:55 599fc209.signing_policy
+-rw-r--r-- root/root      2589 2008-06-26 20:38 734b4731.0
+-rw-r--r-- root/root       163 2008-06-26 20:38 734b4731.signing_policy
+-rw-r--r-- root/root      1204 2007-05-29 12:51 80f292b3.0
+-rw-r--r-- root/root      1277 2007-05-29 12:51 80f292b3.signing_policy
+-rw-r--r-- root/root       895 2011-04-20 11:01 83d6fbe4.0
+-rw-r--r-- root/root      1324 2011-04-20 11:01 83d6fbe4.signing_policy
+-rw-r--r-- root/root       904 2011-02-14 11:36 8a79491b.0
+-rw-r--r-- root/root      1335 2007-02-06 18:18 8a79491b.signing_policy
+-rw-r--r-- root/root       960 2008-05-23 00:29 90361825.0
+-rw-r--r-- root/root      1373 2008-05-23 00:29 90361825.signing_policy
+-rw-r--r-- root/root      1192 2008-05-19 13:33 9f0f4e68.0
+-rw-r--r-- root/root      1285 2008-05-19 13:33 9f0f4e68.signing_policy
+-rw-r--r-- root/root       956 2008-01-17 23:23 c0d1697f.0
+-rw-r--r-- root/root      1369 2008-01-17 23:23 c0d1697f.signing_policy
+-rw-r--r-- root/root       746 2011-10-11 21:49 d062fcc9.0
+-rw-r--r-- root/root      1274 2008-10-28 00:24 d062fcc9.signing_policy
+-rw-r--r-- root/root       854 2009-12-07 14:18 dd3ce7bf.0
+-rw-r--r-- root/root      1360 2009-12-07 14:18 dd3ce7bf.signing_policy
+-rw-r--r-- root/root      1212 2007-06-14 16:38 ecd4ae41.0
+-rw-r--r-- root/root      1281 2007-06-14 16:38 ecd4ae41.signing_policy
+-rw-r--r-- root/root      1343 2007-08-27 13:39 f06fa08b.0
+-rw-r--r-- root/root       161 2007-08-27 13:39 f06fa08b.signing_policy

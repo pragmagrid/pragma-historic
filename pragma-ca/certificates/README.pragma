@@ -1,0 +1,46 @@
+# $Id: README.pragma,v 1.9 2004/03/28 05:13:52 phil Exp $
+#
+# PRAGMA and APGrid Certificate Authorities
+#
+# $Log: README.pragma,v $
+# Revision 1.9  2004/03/28 05:13:52  phil
+# Added Australian Grid
+#
+# Revision 1.8  2003/10/15 20:03:16  mjk
+# add NPACI CAs
+#
+# Revision 1.7  2003/09/18 19:54:54  mjk
+# added new sites
+#
+# Revision 1.6  2003/06/12 18:13:49  mjk
+# removed old SDSC CA's
+#
+# Revision 1.5  2003/06/03 23:11:52  mjk
+# added official SDSC CA to list
+#
+# Revision 1.4  2003/05/31 00:39:21  mjk
+# added new SDSC CA
+#
+# Revision 1.3  2003/05/30 23:55:29  mjk
+# *** empty log message ***
+#
+# Revision 1.2  2003/05/30 22:46:58  mjk
+# added new SDSC CA
+#
+# Revision 1.1  2003/05/30 17:53:28  mjk
+# *** empty log message ***
+#
+
+18b2e19c.0	- UOHYD
+3a0abe12.0	- USM (UMA)
+42864e48.0	- Globus
+795d3882.0	- CNIC
+82da68f0.0	- KISTI
+a7792cdb.0	- NPACI (old)
+b89793e4.0	- NPACI
+c4c1901a.0 	- SDSC
+d062fcc9.0	- AIST (KU, NECTC)
+d5036d74.0	- BII
+da36fc94.0	- OSAKA
+f93666d2.0	- KISTI
+c1421828.0	- Australian Grid

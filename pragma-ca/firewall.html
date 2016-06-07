@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>Firewall Settings</title>
+</head>
+<body bgcolor=white>
+
+<p>
+<H1 align=center>Firewall Settings</H1>
+<hr>
+
+<font size=+1>
+<UL>
+<LI><b>If your site policy allow, it's best to open the ports listed below to the
+world.
+<p>
+<LI>If your site policy does not allow to open some of the ports to the world,
+then open them to </b>
+<UL>
+<LI>all pragma grid clusters. (See the list of hostnames at
+http://goc.pragma-grid.net/pragma-doc/computegrid.html and http://goc.pragma-grid.net/pragma-doc/cloud.html, just below the resources tables.)       
+<LI>other services and portals:
+<UL>
+<LI>
+Gfarm metaserver: gfarm-meta1.rocksclusters.org (rocks-96.sdsc.edu, 198.202.88.96)
+<LI>
+Nimrod portals: 130.194.70.13, 130.194.70.14, 130.194.70.17, 130.194.245.102,
+130.194.245.103
+<LI>
+PRAGMA portal: portal.pragma-grid.net (198.202.88.144)
+<LI>
+PRAGMA Grid Operation server: goc.pragma-grid.net
+</UL>
+</UL>
+<b>Note that in such case, as pragma grid grow and change,
+you will need to update your firewall settings from time to time.</b>
+</UL>
+<pre>
+Here are the ports required:
+----------------------------
+http - TCP, default 80
+https - TCP, default 443
+ldap - TCP, default 389
+gfarm - TCP and UDP, 600 and 601
+Openssh - TCP, default 22
+Iperf - TCP, default 5001 to 198.202.88.96
+gatekeeper - TCP, default 2119 and port# 40000-41000
+gridftp - TCP and UDP, default 2811 and 2812 and port# 40000-41000
+OsakaU Opal service - TCP and UDP, port# 8080-9000
+</pre>
+</font>
+</body>
+</html>

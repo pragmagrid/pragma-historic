@@ -1,0 +1,193 @@
+#!/usr/bin/perl
+#
+# Writen by Cindy Zheng, for PRAGMA, 2005
+#
+print STDOUT ("\nPRAGMA_SET_USER script will perform the following tasks:\n");
+print STDOUT ("\n- Create an UNIX user account:\n");
+print STDOUT ("- Install the user's ssh public key:\n");
+print STDOUT ("- Install the user's site CA files:\n");
+print STDOUT ("- Install the user's DN:\n");
+print STDOUT ("\nThis script requires that you have all the appropriate privileges to perform the above tasks\n\n");
+
+#
+# Check argument
+#
+if ($#ARGV != 0) {
+   print "Usage: pragma_setuser filename\n";
+   exit;
+}
+$len = length ($ARGV[0]);
+unless (substr ($ARGV[0], $len - 7, 7) eq ".tar.gz") {
+   die "Fatal error: Input file name ($ARGV[0]) is not a .tar.gz file\nAbort...\n"
+}
+unless (-r $ARGV[0]) {
+        die ("Fatal error: Cannot read $ARGV[0]\nAbort...\n");
+}   
+
+$pakname = substr ($ARGV[0], 0, $len - 7);
+
+#
+# Unzip and untar files
+#
+system ("tar -zxf $ARGV[0]") && die ("Fatal error: Cannot unzip or untar $ARGV[0]\nAbort...\n");
+
+#
+# Read user.txt file
+#
+open (userfile, "$pakname/user.txt") || die ("Fatal error: Cannot open $pakname/user.txt!\nAbort...\n");
+@userinfo = <userfile>;
+close (userfile);
+chomp (@userinfo);
+
+#
+# Get info from user.txt
+#
+foreach $line (@userinfo) {
+        if ($line =~ /^dn=/) {
+                $len = length ($line);
+                $dn = substr ($line, 3, $len - 3);
+                last;
+        }
+}
+foreach $line (@userinfo) {
+        if ($line =~ /^prefered1=/) {
+                $len = length ($line);
+                $prefered1 = substr ($line, 10, $len - 10);
+                last;
+        }
+}
+foreach $line (@userinfo) {
+        if ($line =~ /^prefered2=/) {
+                $len = length ($line);
+                $prefered2 = substr ($line, 10, $len - 10);
+                last;
+        }
+}
+foreach $line (@userinfo) {
+        if ($line =~ /^prefered3=/) {
+                $len = length ($line);
+                $prefered3 = substr ($line, 10, $len - 10);
+                last;
+        }
+}
+foreach $line (@userinfo) {
+        if ($line =~ /^fullname=/) {
+                $len = length ($line);
+                $fullname = substr ($line, 9, $len - 9);
+                last;
+        }
+}
+print "dn=$dn\n";
+
+#
+# Choose a login name
+#
+LOGINNAME:
+print STDOUT ("The prefered user login name:\n");
+print STDOUT ("\t1. $prefered1\n");
+print STDOUT ("\t2. $prefered2\n");
+print STDOUT ("\t3. $prefered3\n");
+print STDOUT ("\t4. or to specify a login name\n");
+print STDOUT ("\t0. quit\n");
+print STDOUT ("Your choice: ");
+$answer = <STDIN>;
+if ($answer =~ /^0/) {
+        print STDOUT ("\nExit per your request... Good bye!\n\n");
+        exit;
+} elsif ($answer =~ /^1/) {
+        $login = $prefered1;
+} elsif ($answer =~ /^2/) {
+        $login = $prefered2;
+} elsif ($answer =~ /^3/) {
+        $login = $prefered3;
+} elsif ($answer =~ /^4/) {
+        print STDOUT ("Enter the new login name: ");
+        $login = <STDIN>;
+        chomp ($login);
+} else {
+        print STDOUT ("\nInvalid choice, please re-enter\n\n");
+        goto LOGINNAME;
+}
+
+CONFIRM:
+print STDOUT ("The new login name will be $login. Continue? \(y\/n\): ");
+$answer = <STDIN>;
+if ($answer =~ /^[nN]/) {
+        goto LOGINNAME;
+} elsif ($answer =~ /^[yY]/) {
+# go on
+} else {
+        print STDOUT ("Invalid answer, please re-enter\n");
+        goto CONFIRM;
+}
+
+#
+# Create a new user account
+#
+system ("adduser -c '$fullname' $login") && die ("Fatal error: Cannot create new user $login\n");
+print STDOUT ("\nA new user account $login has been created.\n");
+
+#
+# Install authorized_keys file
+#
+$sshdir = "~$login/.ssh";
+if (-e $sshdir) {
+} else {
+        system ("mkdir $sshdir") && print STDOUT ("Error: Cannot create $sshdir directory\n");
+}
+system ("cp $pakname/authorized_keys $sshdir") && print STDOUT ("Error: Cannont install $sshdir/authorized_keys file");
+system ("chown -R $login $sshdir") && print STDOUT ("Error: Failed to change ownership of $sshdir directory tree\n");
+system ("chgrp -R $login $sshdir") && print STDOUT ("Error: Failed to change group of $sshdir directory tree\n");
+system ("chmod 700 $sshdir") && print STDOUT ("Error: Failed to set permission to $sshdir directory\n");
+system ("chmod 600 $sshdir/authorized_keys") && print STDOUT ("Error: Failed to set permission to authorized_keys file\n");
+print STDOUT ("authorized_keys file has been installed.\n");
+
+#
+# Install site certificates
+#
+system ("cp $pakname/*.0 /etc/grid-security/certificates") && print STDOUT ("Error: Cannont install site certificate file");
+system ("cp $pakname/*.signing_policy /etc/grid-security/certificates") && print STDOUT ("Error: Cannont install site certificate signing policy file");
+system ("chown root /etc/grid-security/certificates/*.0 /etc/grid-security/certificates/*.signing_policy") && print STDOUT ("Error: Failed to assign root ownership to certificate files\n");
+system ("chgrp root /etc/grid-security/certificates/*.0 /etc/grid-security/certificates/*.signing_policy") && print STDOUT ("Error: Failed to assign root group to certificate files\n");
+system ("chmod 644 /etc/grid-security/certificates/*") && print STDOUT ("Error: Failed to set permission to certificate files\n");
+print STDOUT ("Site certificate files have been installed.\n");
+
+#
+# Install user DN
+#
+open (mapfile, ">>/etc/grid-security/grid-mapfile") || die ("Error: Failed to open /etc/grid-security/grid-mapfile\n");
+print mapfile "$dn $login\n";
+close(mapfile);
+print STDOUT ("User DN has been added in grid-mapfile.\n");
+
+print STDOUT ("All tasks are complete.\n\n");
+
+#
+# Review the results
+#
+REVIEW:
+print STDOUT ("Would you like to review the results? \(y\/n\): ");
+$answer = <STDIN>;
+if ($answer =~ /^[nN]/) {
+        print STDOUT ("Good Bye!\n");
+        exit;
+} elsif ($answer =~ /^[yY]/) {
+	print "\n< tail /etc/passwd >\n";
+        system ("tail /etc/passwd");
+	print "\n< ls -ld $sshdir >\n";
+        system ("ls -ld $sshdir");
+	print "\n< ls -l $sshdir >\n";
+        system ("ls -l $sshdir");
+	print "\n< ls -latr /etc/grid-security/certificates | tail >\n";
+        system ("ls -latr /etc/grid-security/certificates | tail");
+	print "\n< ls -l /etc/grid-security/grid-mapfile >\n";
+        system ("ls -l /etc/grid-security/grid-mapfile");
+	print "\n< tail /etc/grid-security/grid-mapfile >\n";
+        system ("tail /etc/grid-security/grid-mapfile");
+	print "\n\nExit on completion\n\n";
+} else {
+        print STDOUT ("\nInvalid answer, please re-enter\n\n");
+        goto REVIEW;
+}
+
+exit;
