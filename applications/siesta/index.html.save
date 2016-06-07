@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<TITLE>SIESTA/Nimrod Experiment (System Requirement)</TITLE>
+	<META http-equiv=Content-Type content="text/html">
+	<style type="text/css">
+		img {float: right}
+	</style>
+</HEAD>
+<BODY>
+<H1 align=center>SIESTA-Nimrod experiment</H1>
+<HR>
+<H2>System Requirements</H2>
+<UL>
+  <LI>Software requirements</LI> 
+    <UL>
+      <LI>Globus 2.x or 3.x</LI> 
+      <LI>Nimrod/G and Nimrod/O (Not needed if using local web portal)</LI> 
+      <li>User software: (I might be able to install it myself)
+        <ul>
+           <LI>A fortran-90/95 compiler. An open-source one can be obtained 
+             <a href="http://g95.sourceforge.net/">here</a> </LI> 
+           <LI>SIESTA
+           <UL>
+              <LI><a href="http://fisica.ehu.es/ag/pragma/siesta-a.tgz">Download SIESTA source</a>
+              <LI><a href="instructions.html">Installation instructions</a></li>
+           </UL>
+	</ul>
+       </li>
+    </UL>
+  <LI>Hardware requirements</LI> 
+    <UL>
+      <LI>~40 GB of diskspace </LI>
+    </UL>
+</UL>
+<H2>User Account</H2>
+<UL>
+  <LI>Download <a href="https://pragma-goc.rocksclusters.org/secure/agarcia.tar.gz">user information</a> to setup an user account</LI>
+  <LI>If your site has a firewall, please configure it to allow Alberto access from ocikbnmd.unizh.ch. 
+  <BR>After your site is ready, please inform Alberto and Cindy (agarcia@oci.unizh.ch, zhengc@sdsc.edu). Thank you!
+</LI></UL></BODY></HTML>

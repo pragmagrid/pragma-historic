@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>TDDFT/Ninf-G Experiement (System Requirement)</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=shift_jis">
+<META content="MSHTML 6.00.2900.2604" name=GENERATOR></HEAD>
+<BODY>
+<H1 align=center>TDDFT/Ninf-G</H1>
+<HR>
+
+<BR>
+<FONT size=+1>
+<H2>System Requirement</H2>
+<UL>
+  <LI>Software requirement 
+  <UL>
+    <LI>Installation of Globus 2.x, 3.x or 4.x
+    <UL>
+      <LI>Build all SDK bundles from the source bundles, with the same flavor 
+      <LI>Install shared library on the compile node and all compute nodes </LI></UL>
+    <BR>
+    <LI>Installation of Ninf-G (Version 2.4.0, included in NMI 8.0) on the compile node
+    <UL>
+      <LI>Download <A 
+      href="http://ninf.apgrid.org/packages/welcome.shtml">Ninf-G</A> 
+      and follow the instructions in the <A 
+      href="http://ninf.apgrid.org/documents/ng2-manual/install.html">installation manual</A>. 
+      <LI>Use non-thread flavor of the Globus if it is available on your system</LI>
+      <LI>Don't have to follow these steps in installation
+      <UL>
+        <LI>Registering the host information</LI>
+        <LI>Settings for provision of Ninf-G Executable information by MDS</LI>
+      </UL>
+    </UL>
+    <BR>
+    <LI>Installation of Intel Fortran compiler version 6, 7 or 8
+    <UL>
+      <LI>Install shared library on the compile node and all compute nodes</LI>
+      <LI>If version 8 is installed, the build date must be later than May 20, 2004.
+      <LI>If version 9 has been already installed on your system, I can test TDDFT with it first.</LI></UL></UL></LI></UL>
+
+<UL>
+  <LI>Hardware requirement 
+  <UL>
+    <LI>300MB disk storage for input data on all nodes (If this is difficult, the data on frontend can be shared by NFS.)</LI></UL></LI></UL></FONT>
+
+<UL>
+  <LI>Network requirement
+  <UL>
+    <LI>Compute nodes must connect to outside the internal network via NAT or firewall.</LI></UL></LI></UL></FONT>
+
+<H2>User Account</H2><FONT size=+1>
+<UL>
+  <LI>User 1: Yusuke Tanimura
+  <UL>
+    <LI>Download <a href="https://pragma-goc.rocksclusters.org/secure/tanisuke.tar.gz">user info pak</a>
+</UL>
+<br>
+  <LI>User 2: Cindy Zheng 
+  <UL>
+    <LI>Download <a href="https://pragma-goc.rocksclusters.org/secure/zhengc.tar.gz">user info pak</a>
+  </UL>
+</UL>
+If your site has a firewall, please configure it to allow the users access from 
+  their hosts which are specified in the user info paks.
+</UL>
+  <BR><BR><B>After your site is ready, please inform <A 
+  href="mailto:yusuke.tanimura@aist.go.jp,%20yoshio.tanaka@aist.go.jp,%20zhengc@sdsc.edu">AIST 
+  users and Cindy</A>. Thank you!</B> </FONT></LI></UL></BODY></HTML>

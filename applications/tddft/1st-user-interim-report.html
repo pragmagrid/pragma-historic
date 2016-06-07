@@ -1,0 +1,182 @@
+<HTML>
+<HEAD>
+<TITLE>An Interim Report of the Routine Basis Experiments</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF" TEXT="#000000">
+
+<pre>
+Dear PRAGMA friends,
+
+I am pleased to send an interim report of the routine basis experiments.
+Thank you for all of your contributions.
+
+
+==========================================
+  PRAGMA Routine Basis Experiments
+  An interim report on July 16
+  Grid Technology Research Center, AIST
+==========================================
+
+This is an interim report on the PRAGMA routine-basis experiments
+(June 1 - 30).
+
+1. Application of User Account
+-------------------------------------
+  - I asked each site to create my account and add my entry to grid-mapfile.
+    Most sites enabled login via ssh.
+    KISTI allows only gsissh and need to ask open ports for AIST.
+
+2. Deployment of TDDFT application
+-------------------------------------
+  Technical contacts at each site installed GT2 and Intel Compiler.
+  I installed the latest version (non-released version, checked out
+  from the CVS) of Ninf-G2 by myself.
+
+  - Installation of Ninf-G & Globus
+      There are two prerequisite for Ninf-G2.
+        - All SDK bundles must be built from source bundles
+        - All SDK bundles must be built with the same flavor (either gcc32dbg or gcc32dbgpthr).
+      Globus's shared library must be available on frontend and compute nodes.
+
+  - Installation of Intel Compiler
+      Version 6.0, 7.0 and the latest 8.0 are fine.
+        (7.0 is better because we have tested enough.)
+
+  - Installation of TDDFT
+
+  - Passage of the deployment
+       May  31   KISTI got ready to run TDDFT.
+       June  1   Started the experiment on 32PEs of AIST and 16PEs of KISTI.
+       June  2   USM and KU got ready to run TDDFT.
+       June 17   SDSC got ready to run TDDFT.
+       June 24   Reported status to the mailing list
+                 (Run TDDFT on 32PEs of AIST, 16PEs of KISTI, 12PEs of SDSC,
+                  4 PEs of KU and 1PE of USM)
+       June 30   Cindy (SDSC) setup a resource monitor for the experiment.
+                 http://pragma-goc.rocksclusters.org/scmsweb/scms_home.html
+       June 30   TITECH got ready to run TDDFT.
+     ------
+       July  5   NCHC got ready to run TDDFT.
+       July  7   NCSA got ready to run TDDFT.
+
+3. Tests
+-------------------------------------
+  The following tests were made between AIST and each site.
+
+  - Globus-level test
+    - authentication test
+      % globusrun -a -r HOST
+    - use jobmanager-fork
+      % globus-job-run HOST/jobmanager-fork /bin/hostname
+    - use jobmanager-{pbs/sge/sqms}
+      % globus-job-run HOST/jobmanager-pbs -np 4 /bin/hostname (e.g.)
+
+  - Ninf-G level test (used TDDFT as a test program)
+
+4. Experiments
+-------------------------------------
+  - Runs
+    - Application:
+      - Target molecules of TDDFT:
+        - Ligand Protected Au_13
+          - Input data from client: 4.87 MB
+          - Output data to client:  3.25 MB
+      - Number of parallel tasks in each iteration: 122
+
+    - Infrastructure:
+      - 64 PEs we used at same time (on AIST, KISTI, SDSC and KU)
+          Maximum available PEs were 132 (on AIST, KISTI, SDSC, KU, USM and TITECH).
+      - A Ninf-G client ran in AIST.
+
+  - Results:
+    - Number of runs: 31
+        except short tests for debugging
+        execution time of each run: 1 hour to 20 hours
+    - Total execution time: 243 hours
+    - Number of server faults:
+        767 times of server fault because TCP session failed during run
+
+5. Lessons Learned
+-------------------------------------
+5.1 Troubles in the initiation
+  - CA or CRL was expired.
+  - Certificate of CA was not installed on the system.
+
+5.2 Troubles in the deployment of TDDFT
+  - Since version 8.0 has some bugs, it must be upgraded to the latest
+    (or later than May's).
+  - Shared library for the GT2 and Intel compiler must be available on
+    both frontend and compute nodes. 
+
+5.3 Troubles in the tests
+  - Cluster specific:
+      A job cannot be run on compute nodes via the local scheduler such as sge, pbs or sqms.
+      A job was just queued and never run.
+        - SSH or RSH problem? Daemon was dead?
+
+  - Globus specific:
+      Installation of Globus seemed to be incomplete.
+      Multiple jobs were not executed appropriately via sge.
+        - We modified jobmanager-sge.
+
+5.4 Troubles in the execution
+  - Problems due to poor network in Asia:
+      Network between AIST and KU/USM were unstable and its
+      performance is bad.  Network connection between Ninf-G client in
+      AIST and Ninf-G servers in KU/USM sometimes went down.
+      Throughput between AIST and USM was very poor.  It is about
+      several KB/sec in average.
+
+  - Problems due to instability of clusters:
+      Some clusters were down due to unexpected failure such as
+      troubles in NFS, power supply, etc.
+
+  - In average:
+      We need 2.6 day / 6 emails for resolving a problem.
+      We took 7.5 days / 12 emails for running TDDFT after getting my account.
+
+5.5 Improvements of Ninf-G2 and TDDFT
+  - Fixed bugs in Ninf-G
+      We found some bugs which were detected by running the
+      application for many hours on an unstable testbed.
+
+  - We need to modify TDDFT so that it has better fault tolerancy.
+      If Ninf-G detects that a server becomes unavailable, the
+      application retries to call the server three times.  If all
+      the calls are failed, the server is discarded.  After that,
+      the Ninf-G client pings the server in every one hour and
+      invokes the server if it becomes available.
+
+5.6 Thoughts
+  - Ninf-G can detect and report errors/faults on servers, however it
+  is not easy to know the reason of the failure (e.g. network
+  disconnection, system down, jobs are stucked in the queue, etc.).
+  Therefore, real time monitoring for both networks and clusters are
+  useful so that we can check the current status of the testbed.
+
+  - For the installation of additional software (e.g. Intel Compiler
+  in this experiment), we need to show the details of the
+  configuration (e.g. version, patches, etc.).  In our case, we should
+  explicitly request each site that the software must be available on
+  both front node and computing nodes.
+
+6. Current situation
+-------------------------------------
+We will run TDDFT on 28PEs of AIST, 16PEs of KISTI, 12PEs of SDSC,
+4PEs of KU, 3PEs of TITECH, 3PEs of NCHC, and 2PEs of NCSA shortly.
+We are running another TDDFT on AIST and USM.  Until the end of the
+experiment, we would like to find unknown problems and discuss the
+solution for the second step (execution of the real science
+application).
+
+
+
+-----------------------------------------------------
+Yusuke Tanimura <yusuke.tanimura@aist.go.jp>
+Grid Technology Research Center, National Institute of AIST
+1-1-1 Umezono, Tsukuba Central 2
+Tsukuba City 305-8568, Japan
+TEL: +81-298-61-5080 (ext. 55464) / FAX: +81-298-61-6601
+</pre>
+</BODY>
+</HTML>

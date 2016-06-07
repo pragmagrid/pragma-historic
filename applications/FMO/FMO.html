@@ -1,0 +1,252 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+                      "http://www.w3.org/TR/REC-html40/loose.dtd">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html">
+<HTML>
+<BODY>
+<H1> GridFMO </H1>
+
+<UL>
+  <LI> <A HREF="#Req" > System Requirement </A>
+  <LI> <A HREF="#User"> User Account </A>
+  <LI> <A HREF="#Dep">  What we do after the setup </A>
+  <LI> <A HREF="#App" > About GridFMO </A>
+  <LI> <A HREF="Status.html" > Current Status </A>
+</UL>
+
+
+<HR><!-- ======================================================================== -->
+<H2><A NAME="Req"> System Requirement </A></H2>
+<!-- ------------------------------------------------------------ -->
+<H3> Network/Grid </H3>
+<UL>
+
+  <LI> Free TCP/IP access among assigned computation nodes is
+       necessary.  (They need not be reachable from outside of the
+       cluster. <A HREF="#Remark">[1]</A>)
+
+  <LI> The client program is currently running on
+       p06svc000.asc.hpcc.jp (163.220.35.131).  
+  <OL>
+
+  <LI> Both in/out connection between the client and a front node
+       should be allowed. <BR>
+
+       It is not only the gatekeeper port (2119).
+
+       The Globus session uses https connections of both direction,
+       which are opened on arbitrary port.
+
+  <LI> Backend nodes should be allowed to connect the client. <BR>
+
+       NinfG processes launched on backends span callback connections
+       to the client process.
+  </OL>       
+
+  <LI> Regular update of the AIST CRL file is required.<BR>
+
+       For those CRL savvy sites, the AIST CRL file has to be updated
+       regularly, or the globus access with the AIST certificate is 
+       impossible.
+
+       The latest CRL file will be found at: <A
+       HREF="https://www.apgrid.org/CA/AIST/Production/a317c467.r0">
+       https://www.apgrid.org/CA/AIST/Production/a317c467.r0</A>.
+
+       It is updated on every 30 - alpha days, which makes the
+       requirement troublesome.
+
+       An automatic update mechanism are now under consideration.
+
+  <LI> It is desirable for a local queue system to allow exclusive use
+       of backend nodes.<BR>
+
+       The solution is mostly case-by-case, twicking both the queue
+       and jobmanager configurations.
+</UL>
+
+<!-- ------------------------------------------------------------ -->
+<H3> Hardware </H3>
+<UL>
+  <LI> 0.5 GB of memory per CPU (the more the better)
+  <LI> 1 GB of local scratch disk
+</UL>
+
+<!-- ------------------------------------------------------------ -->
+<H3> Software </H3>
+<H4> Necessities </H4>
+<UL>
+  <LI> <s> C and Fortran77 compilers </s> (I can transfer binaries from others.)
+  <LI> <s> Ninf-G (Version 2.4.0 or later) </s> (Patched version will be installed by myself.)
+</UL>  
+<H4> Desirable </H4>
+<UL>
+  <LI> <s> Lapack package (MKL, ACML, ...) </s>
+</UL>
+
+
+
+<HR><!-- ======================================================================== -->
+<H2><A NAME="User"> Create 3 User Accounts </A></H2>
+<UL>
+  <LI> Download user info paks for 
+       <A HREF="https://pragma-goc.rocksclusters.org/secure/ikegami.tar.gz">Tsutomu Ikegami</A>, 
+       <A HREF="https://pragma-goc.rocksclusters.org/secure/takami.tar.gz">Toshiya Takami</A>
+and <A HREF="https://pragma-goc.rocksclusters.org/secure/maki-j.tar.gz">Jun Maki</A>
+       <UL>
+         <LI>Please considering using the PRAGMA user account setup script 
+             <OL>
+               <LI>Download the <a href="http://pragma-goc.rocksclusters.org/secure/pragma_setuser">script</a> 
+               <LI>To run the script, make it executable, login as root and run, (for example)
+<br>
+                   # ./pragma_setuser ikegami.tar.gz 
+               <LI>You may modify the script to fit your system and site policies 
+
+             </OL>
+         <LI>If you are not going to use the PRAGMA user account setup script, please unzip and untar the user info pak and use all the info and files provided there to setup the user account.
+       </UL>
+  <LI> If your site has a firewall, please configure it to allow ssh
+       access to the front machine from p06svc000.asc.hpcc.jp
+       (163.220.35.131) and/or 150.29.148.52 (hidden behind our
+       firewall).
+  <LI> When the accounts are ready, please email <a href="mailto:ikegami@ni.aist.go.jp, takami@cc.kyushu-u.ac.jp, maki-j@cc.kyushu-u.ac.jp, yusuke.tanimura@aist.go.jp, zhengc@sdsc.edu">users and Cindy</a> and let us know. Thank you!
+</UL>
+
+
+<HR><!-- ======================================================================== -->
+<H2><A NAME="Dep"> What we do on the machine </A></H2>
+<H3> Setup </H3>
+<OL>
+
+<LI> Login the machine via ssh.
+
+<LI> Collect informations, such as machine architecture, amount of
+     memory, scratch area, batch queues, etc.
+
+<LI> Transfer source tarball and make (or just copy appropriate binaries).
+     Binaries are placed under the home directory.
+
+<LI> Submit a benchmark test, and check if the binaries work fine.
+     The computation time is also measured to evaluate the machine
+     performance, which is used for load balancing.
+
+<LI> Make pathced version of Ninf-G with Globus, and generate a stub
+     application with it.
+
+<LI> Logout.
+
+<LI> Globus-job-run a probe job to check environment variables.
+
+</OL>
+
+
+<H3> Application Run </H3>
+<OL>
+
+<LI> Contact GRAM to run a "multiple" job to launch a bunch of Ninf-G stubs.
+
+<LI> Collect information of the assigned nodes, and launches a sentinel.
+
+<LI> Transfer data (200-300 MB), and distribute it among assigned
+     nodes.
+
+<LI> Allocate a job on a subset of the nodes, where the job is
+     processed in parallel.  When finished, another job is allocated.
+
+<LI> In case of emergency (like queue timeout), the sentinel will
+     (hopefully) cleanup garbages.  (Occasionally, shared memories are
+     left over, which should be freed manually...)
+
+</OL>
+
+
+<HR><!-- ======================================================================== -->
+<H2><A NAME="App"> About GridFMO </A></H2>
+<H3> Application </H3>
+<P>
+
+GridFMO is a Grid version of the Fragment Molecular Orbital (FMO)
+calculation.
+
+FMO method enables a first-principle calculation of macromolecules
+such as proteins.
+
+Thanks to the first-principle nature of the FMO method, an energy of
+the molecules is obtained accurately (including polarization effect),
+and their chemical reactions can be described with few assumptions.
+
+The FMO method is now used to study a reaction mechanism of enzymes,
+an electronic structure of the photosynthetic systems, and so on.
+
+</P>
+
+<!-- ------------------------------------------------------------ -->
+<H3> Implementation </H3>
+<P>
+
+In the FMO method, the electronic state of the whole molecule is
+calculated by splitting it into small fragments.
+
+The electronic state of each fragment is calculated under the
+electrostatic environment posed by the other fragments.
+
+The environment is then reconstructed from the calculated electronic
+states, so that the calculation should be iterated to the
+self-consistency.
+
+To improve the accuracy, the electronic states of the fragment pairs
+are also calculated after the convergence.
+
+</P>
+<P>
+
+Each electronic state calculation can be performed independently under
+the given environment.
+
+This is the source of the "Grid" in the GridFMO calculation.
+
+Those calculation processes are spawned on remote machines by using
+Ninf-G2 (or SSH), which may run further in parallel.
+
+For the fine-grained parallel execution, the DDI library of GAMESS is
+utilized, where the free TCP/IP access among computation nodes becomes
+necessary.
+
+</P>
+
+<!-- ------------------------------------------------------------ -->
+<H3> Planned experiment </H3>
+<P>
+
+We are planning to draw potential energy curves of proteins.
+
+A number of GridFMO calculations should be run to draw a curve, which
+will be performed on the PRAGMA testbed.
+
+In order to reduce inactivity during the serial part of the GridFMO
+calculation, it will be tested to share the assigned computational
+resources among two or more GridFMO processes.
+
+GridFMO is implemented with fault-tolerance, where faults are detected
+automatically while recoveries are done manually.
+
+Feasibility of the model will also be assessed in the experiment.
+
+</P>
+
+<HR><!-- ======================================================================== -->
+<H2><A NAME="Remark"> Remarks </A></H2>
+<OL>
+<LI> In some cluster machines, each computation node has two network
+     cards, one is public and another is private.  The official
+     hostname of the node may be bound to the public IP address, which
+     is tightly gurded by a firewall.  If this is the case, please
+     tell us to use the private address.
+</OL>
+
+<BR>
+<IMG SRC="img/owl_line.gif" ALT="----------"> <BR>
+<ADDRESS> Grid Technology Research Center / AIST / IKEGAMI, Tsutomu </ADDRESS> <BR>
+<A HREF="/"> Back </A><BR>
+
+</BODY>
+</HTML>

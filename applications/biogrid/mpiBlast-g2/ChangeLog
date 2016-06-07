@@ -1,0 +1,141 @@
+Changes between 1.2.0 and 1.2.1:
+	Changes to mpiblast:
+	- Fixed a memory deallocation bug that caused crashes during result output
+	- mpiblast now prints "No hits found" for all queries without results at
+	  the end of a query set.  Previously if a query file had no results
+	  mpiblast would write an empty results file.
+
+	General changes:
+	- Added a 1000 fragments patch for the November 2003 NCBI toolbox release
+	
+	Bugs discovered:
+	- Under Windows mpiBLAST may print incorrect alignments for queries which have
+	  a large number (e.g. > 100) of results.  mpiBLAST prints the following error 
+	  message when this occurs:  
+	  "Error: Timed out waiting for biosequence from workers"
+	  This problem can be avoided by setting a more restrictive E-value cutoff
+	  using the -e command line option.
+	  This behavior has not been observed under Linux.
+
+Changes between 1.1.1 and 1.2.0:
+	New Features:
+	- When writing result alignments, mpiBLAST uses the database as 
+	  distributed on the worker nodes instead of reading the database
+	  from the shared filesystem.  This can result in significant speedups,
+	  especially when the file server is slow or loaded.
+	- mpiBLAST prints alignments for translated searches (blastx,tblastn,tblastx)
+	- Database update functionality.  New sequences can be added to an existing 
+	  mpiBLAST database.
+	- mpiBLAST has a web interface.  A script to interface mpiBLAST to NCBI's 
+	  wwwblast web service has been included.
+	- Updated the BLAST functionality to be consistent with the latest NCBI-BLAST
+	  release.  mpiBLAST now accepts the -m 10 and -m 11 output format options to
+	  write output in text or binary ASN.1 format.  Previously the -O option was 
+	  used.
+	  
+	Fixes to mpiBLAST:
+	- Fixed a crash when writing tabular format output (-m 8 and -m 9)
+	- Fixed a crash when writing XML format output (-m 7)
+	- The --removedb option will now remove the database even if a search is not
+	  being performed
+	
+	General changes:
+	- mpiBLAST 1.2.0 requires the April 2003 or later release of NCBI Toolbox
+	- getopt1.c is now included in the build for systems lacking getopt_long (AIX)
+	- MS Visual Studio 7 .NET projects are now included to assist users who would
+	  like to compile mpiBLAST under Windows.
+	
+Changes between 1.1.0 and 1.1.1:
+	General Fixes:
+	- mpiblast now correctly looks for the configuration file in the
+	  $INSTALL_PREFIX/etc/ directory if it is not at $HOME/.mpiblastrc
+	- Fixed text README to reflect that the configuration file only
+	  contains two lines
+	- mpiblast no longer prints warnings when using databases formatted
+	  without indices ( The -o F formatdb option )
+	- Numerous compiler-specific compilation error workarounds
+
+	Fixes to mpiformatdb:
+	- mpiformatdb directly outputs the database to the destination instead
+	  of trying to copy it
+	- The gcc 3.x standard c++ library has a large file bug that prevented
+	  counting the database size correctly on databases > 2GB.  A
+	  workaround using C file I/O was contributed by Cesar Delgado.
+	- mpiformatdb does a better job fragmenting the database into the
+	  requested number of fragments, thanks to a patch by Jason Gans
+	- There is a --decomp option to mpiformatdb that prints APPROXIMATE
+	  database sizes based on number of fragments (also by J.D. Gans)
+
+	Fixes to mpiblast:
+	- mpiblast now uses MPI_Abort() when exiting on an error condition
+	- Several memory leaks were corrected and memory requirements reduced
+	  by a patch contributed by Jason Gans
+
+Changes between 1.0.1 and 1.1.0:
+
+	Ported to Windows/mpich-nt
+	
+	Rewrote mpiformatdb in C++, now it directly links to the NCBI formatdb code.  As a result it is no longer necessary to install the formatdb or BLAST executables, or to specify their location in the mpiBLAST configuration file
+
+	Fixed a file copy bug when formatting protein databases with mpiformatdb
+	
+	mpiformatdb no longer needs to be run from the directory containing the unformatted database.
+	
+	The default configuration file semantics have been changed.  Under Unix both mpiblast and mpiformatdb default to ~/.mpiblastrc.  If ~/.mpiblastrc does not exist or the $HOME environment variable is not set then $INSTALL_PREFIX/etc/mpiblast.conf is used, where $INSTALL_PREFIX is the path given to ./configure for your mpiBLAST installation.  If the configuration file is specified on the command line using --config-file the defaults are overriden.
+
+	Under Windows the default configuration file location is %USERPROFILE%\.mpiblastrc.  If %USERPROFILE%\.mpiblastrc does not exist or %USERPROFILE% is not set then mpiBLAST tries %windir%\mpiblast.ini.  As in Unix, the default config file location can be overriden with the --config-file command line argument.
+
+	Some versions of the NCBI toolkit have a bug that causes mpiBLAST to print warning messages about 'taxdb.bti'.  These are harmless.  To eliminate the warning message the following line can be deleted from tools/readdb.c in the NCBI development library.  Of course you will need to recompile after the modification.
+	
+/tools/readdb.c
+--- /home/koadman/software/ncbi/tools/readdb-orig.c     2003-02-17
+12:29:30.000000000 -0800
++++ /home/koadman/software/ncbi/tools/readdb.c  2003-02-17
+12:29:51.000000000 -0800
+@@ -2497,7 +2497,6 @@
+             return buffer;
+         } else {
+             /* we cannot find directory :( */
+-            ErrPostEx(SEV_WARNING, 0, 0, "Could not find %s", filename);
+             MemFree(buffer); MemFree(buffer1);
+             return NULL;
+         }
+	
+
+
+	
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Changes between 1.0.0 and 1.0.1:
+	Fixed a bug causing a crash when the database was formatted without indexes
+	
+	Added support for up to 1000 database fragments (see README for details)
+	
+	Added support for cleaning up local storage of database fragments
+
+	Included GNU getopt in the distribution for compilation on systems such as
+AIX and Solaris that do not have getopt_long().
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Changes between 0.9.0 and 1.0.0:
+
+Dynamic database distribution:
+	This change has many implications.  Database fragments are no longer
+distributed when formatting the database with mpiformatdb.  
+Instead, database fragments are copied from shared storage to worker nodes as
+necessary in order to complete each BLAST search.  Once copied, a fragment
+remains on the worker's local storage for use by future searches.
+
+Use of NCBI library to output merged results:
+	Previously results were merged with a text file parser.  BLAST results are
+now merged by mpiBLAST and output directly using the NCBI library.  As a result,
+users can now choose to output BLAST results in most formats supported by NCBI
+BLAST, including XML and ASN.1.
+
+Corrected E-value statistics:
+	E-values are now adjusted based on the size of the entire database being
+searched.
+
+All nucleotide DB fragment index files are now copied to workers correctly
+
+mpiformatdb is now standalone and should be run without mpirun.  This is a
+side effect of the dynamic database distribution described above.

@@ -1,0 +1,325 @@
+What is mpiBLAST?
+=================
+
+mpiBLAST is a parallelization of NCBI BLAST. mpiBLAST is a pair of programs that 
+replace formatdb and blastall with versions that execute BLAST jobs in parallel 
+on a cluster of computers with MPI installed. There are two primary advantages 
+to using mpiBLAST versus traditional BLAST. First, mpiBLAST splits the database 
+across each node in the cluster. Because each node's segment of the database is 
+smaller it can usually reside in the buffer-cache, yielding a significant 
+speedup due to the elimination of disk I/O. Second, it allows BLAST users to 
+take advantage of efficient, low-cost Beowulf clusters because interprocessor 
+communication demands are low.
+
+
+This document
+=============
+1.  mpiBLAST requirements
+2.  Installation instructions (Unix)
+3.  Installation instructions (Windows)
+4.  Building and installing mpiBLAST
+5.  Creating the config file
+6.  Formatting a database
+7.  Querying the database
+8.  Using more than 100 database fragments
+9.  Updating a database with new sequences
+10. Removing a database
+11. Notes on using MPICH
+12. Notes on building the NCBI Toolbox
+13. The mpiBLAST web interface
+14. Known Bugs and Limitations of mpiBLAST 1.x
+15. Support
+
+
+mpiBLAST requirements
+=====================
+
+mpiBLAST requires that an MPI implementation is installed. See
+http://www-unix.mcs.anl.gov/mpi/
+or
+http://www.lam-mpi.org
+
+mpiBLAST also requires that the compute nodes have access to a shared storage 
+directory. This can be an NFS mount, samba share, AFS, or any other type of 
+shared network filesystem. The location of the shared directory must be 
+specified in the mpiblast.conf config file.
+
+To build mpiBLAST from source you will also need to compile the NCBI Toolbox, 
+available at ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools/
+
+
+Installation instructions (Unix)
+================================
+
+There are four steps to a successful installation of mpiblast. 
+
+1. Make sure you have MPI installed and configured correctly.
+
+2. Ensure you have downloaded the NCBI Toolbox from ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools/
+   Build the NCBI Toolbox. Refer to ncbi/README for detailed instructions, brief 
+   instructions are given below. mpiBLAST requires the NCBI libraries.
+
+3. Build and install mpiblast and mpiformatdb according to the instructions below.
+
+4. Create the config files
+
+
+Installation instructions (Windows)
+================================
+
+1. Copy mpiblast.exe and mpiformatdb.exe to a shared storage directory
+
+2. Create the mpiblast configuration file (see below)
+
+3. Get the NCBI data distribution from 
+   ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools/CURRENT/ncbi.tar.gz and copy its 
+   contents to your shared (database) storage directory
+
+4. Make sure mpich-nt is installed, mpiBLAST is ready to run.
+
+Note:  Building mpiBLAST from source under Windows requires MS Visual Studio 7.
+Also, the function BlastScoreBlkMatFill() in the file blastkar.c of the NCBI 
+toolkit must be modified to search the environment for paths to scoring matrices.
+
+
+Building and installing mpiBLAST
+================================
+
+From the mpiblast directory:
+
+> ./configure
+> make
+
+And (optionally as root):
+
+> make install
+
+
+Useful options for 'configure':
+--prefix=/path/to/install/directory	Specifies the location where mpiBLAST should 
+be installed
+--with-ncbi=/path/to/ncbi/	Specifies the path to the NCBI Toolbox
+--enable-many-fragments 	Causes mpiblast to look for 3 digit fragement 
+							identifiers instead of 2, permitting mpiBLAST to 
+							use up to 1000 database fragments.  The NCBI Toolbox 
+							must be patched for this to work.
+--enable-mpe	Causes mpiblast to use MPE logging to measure the running time of 
+				its components 
+--enable-debug	Causes mpiblast to be compiled with debug options
+
+
+Creating the config file
+========================
+
+During installation an mpiblast.conf config file is created in $INSTALL_PREFIX/etc/.  
+Upon execution, mpiBLAST will first check for a configuration file located in 
+$HOME/.mpiblastrc.  If $HOME/.mpiblastrc is not found, mpiBLAST will default to 
+using the config file that located at $INSTALL_PREFIX/etc/mpiblast.conf.  
+Alternatively a different config file location can be specified with the 
+--config-file=/path/to/config/file command line option each time mpiblast is 
+executed. Beware that if the --config-file command line option is used, all nodes 
+in the cluster will expect the configuration file to be at the path specified on 
+the command line.
+
+The config file contains 2 lines, and looks like this:
+
+/path/to/shared/storage
+/path/to/local/storage
+
+The first line designates the location of the shared storage that will be used 
+to retrieve the database fragments and queries, and to save the BLAST results.
+The second line designates the location of a directory on the node's local hard 
+drive where that node's database fragments can be stored. It is HIGHLY recommended 
+that this be a fast local disk.
+
+The NCBI Toolbox also requires a .ncbirc configuration file specifying the location 
+of the data directory where the BLOSUM and PAM substitution matrices are located.  
+This directory should be on shared storage so all mpiblast processes can access it.  
+Typically it will be the data subdirectory of your NCBI toolbox directory.  The 
+format of a typical .ncbirc file is:
+
+[NCBI]
+Data=/usr/local/ncbi/data
+
+
+Under Windows the configuration file defaults to %USERPROFILE%\.mpiblastrc.  If 
+that doesn't exist, mpiBLAST tries %windir%\mpiblast.ini.  As in Unix, the 
+--config-file command line parameter overrides the defaults.
+Under Windows, the NCBI data directory must be the shared storage directory for 
+mpiBLAST.  All BLOSUM and PAM matrices should be copied manually to this 
+directory.
+
+
+Formatting a database
+=====================
+
+Assuming you have set up MPI correctly you will be able to use mpiformatdb and 
+mpiblast.  Before processing BLAST queries the sequence database must be 
+formatted with mpiformatdb. The command line syntax looks like this:
+
+> mpiformatdb -f /path/to/mpiblast.conf -N 25 -i nt -o T -p F
+
+The above command would format the nt database into 25 fragments, ideally for 
+25 worker nodes. mpiformatdb accepts the same command line options as NCBI's 
+formatdb. See the README.formatdb file that came with your BLAST distribution 
+for more details.  The -f argument is optional and specifies the location of the 
+mpiBLAST configuration file mpiblast.conf.
+mpiformatdb reads your mpiblast.conf file and moves the created fragments to 
+the shared storage directory.
+
+
+Querying the database
+=====================
+
+mpiblast command line syntax is nearly identical to NCBI's blastall program. See 
+the README.bls file included in the BLAST distribution for details. Running a 
+query on 25 nodes would look like: 
+
+> mpirun -np 25 mpiblast --config-file=/path/to/mpiblast.conf -p blastn -d nt -i 
+blast_query.fas -o blast_results.txt
+
+The above command would query the sequences in 'blast_query.fas' against the 
+'nt' database and write out results to the 'blast_results.txt' file in the 
+current working directory.  The --config-file argument is optional and specifies 
+the location of mpiblast.conf.
+
+Extra options for mpiblast:
+--debug	Produces verbose debugging output for each node
+--log-file=/path/to/log/file	Logs any debugging output to the specified log file
+
+
+Using more than 100 database fragments
+======================================
+
+By default, NCBI formatdb segments the database into a maximum of 100 database 
+fragments.  As a result, mpiBLAST can not utilize more than 100 workers when 
+using the standard NCBI formatdb.  A patch to the December 2002 NCBI toolbox 
+release has been included that permits the creation of up to 1000 database 
+fragments.  The patch is called readdb.patch, and should be applied to 
+tools/readdb.c in the NCBI Toolbox before compiling the toolbox.  mpiBLAST should 
+then be compiled with --enable-many-fragments.
+
+
+Updating a database with new sequences
+======================================
+
+Starting with version 1.2.0 of mpiBLAST it is possible to add additional sequences
+to a database without reformatting the entire database.  Database updates are
+accomplished by executing mpiformatdb with the --update-db=<database name> option.
+For example, if the nt database has already been formatted and the monthly update
+nt.month is to be added, one would execute mpiformatdb with the following syntax:
+
+> mpiformatdb --config-file=/path/to/mpiblast.conf --frag-size=20 --update-db=nt -i nt.month -o T -p F
+
+The above command would format nt.month, splitting it into fragments at most 
+20MB in size and add the new fragments to the existing nt database.  Note that
+the values of the -o and -p options must match the options given when the nt 
+database was initially formatted.
+
+
+Removing a database
+===================
+
+The --removedb command line option will cause mpiBLAST to remove the specified 
+database from each worker node's local storage directory.  For example:
+
+> mpirun -np 16 mpiblast -p blastn -d nt -i nucleotide_query.fas -o results.txt --removedb
+
+The above command would perform a 16 node search of the nt database, writing the
+output to results.txt.  Upon completion, worker nodes would delete the nt database
+fragments from their local storage.  Databases can also be removed without performing
+a search in the following manner:
+
+> mpirun -np 16 mpiblast -d nt --removedb
+
+Under Unix mpiBLAST uses the following command to delete databases from local storage:
+rm -fv /path/to/localstore/[database_name].??*.???
+
+This feature is not implemented in the Windows mpiBLAST.
+
+
+Notes on using MPICH
+====================
+
+It is recommended that you use the serv_p4 secure server daemon that comes with 
+mpich for fastest job startup. The serv_p4 daemon must be started on each node. 
+See the MPICH documentation for more details. One caveat is that the serv_p4 
+daemon uses the ruserok library call to authenticate users. ruserok expects a 
+.rhosts file in the user's home directory on each node that gives login 
+permission for every node in the cluster. A simple solution is to create a 
+~/.rhosts file that looks like this:
+
++ username
+
+
+Notes on building the NCBI Toolbox
+==================================
+
+Once downloaded and unarchived, the NCBI Toolbox should be in a directory titled 
+'ncbi'.  In most cases the library can be built by simply executing
+
+> ./ncbi/make/makedis.csh
+
+from the directory containing the 'ncbi' directory.  It is not necessary to do 
+anything further to install the library, simply configure mpiBLAST with the path 
+to the 'ncbi' directory.
+
+Optionally you may install the readdb.c patch and/or modify the 
+ncbi/platform/[platform].mk file
+WARNING: makedis.csh does not correctly rebuild all binaries when a dependency is 
+modfied. You should manually remove the executables after making modifications 
+to any source code.
+
+
+The mpiBLAST web interface
+==========================
+
+Scripts have been included that allow mpiBLAST to interface with the
+NCBI web front-end available at 
+ftp://ftp.ncbi.nlm.nih.gov/blast/executables/LATEST-WWWBLAST
+
+The scripts are designed to queue jobs submitted through the web front-end into
+a PBS system.  The interface between the NCBI HTML pages and BLAST is a file 
+called "blast.cgi".  mpiBLAST includes a replacement blast.cgi that calls 
+mpiBLAST's WWWBlastWrap.pl job submission script.  blast.cgi and WWWBlastWrap.pl 
+should be copied into wwwblast's directory.
+You will have to manually edit WWWBlastWrap.pl to adapt it to your system.
+
+
+Known Bugs and Limitations of mpiBLAST 1.x
+==========================================
+
+- mpiBLAST 1.2.0 outputs invalid alignment results when the query set contains 
+  multiple queries with the same defline and different sequences.
+- When writing results from translated searches in XML or Tab-delimited-text 
+  format mpiBLAST may print warning messages like:
+  [blastall] ERROR: query 1;: BioseqFindFunc: couldn't uncache
+  When this happens the query sequence in the alignments may be replaced
+  with X's.
+- Translated searches (blastx, tblastn, and tblastx) in the 1.0.x and 1.1.x 
+  releases do not include alignments in the results file.  This problem was 
+  fixed in the 1.2.0 release.
+- mpiBLAST runs out of memory when formatting result output for very large query 
+  sets, causing a crash.
+- mpiBLAST 1.0.x and 1.1.x occasionally crash during result output, especially 
+  when XML or tab-delimited text output has been selected (-m 7, -m 8, or -m 9).  
+  This problem was fixed in the 1.2.0 release.
+- The current release of mpiBLAST does not print the Karlin-Altschul statistics 
+  or the database info at the bottom of each query's BLAST results.
+- mpiBLAST uses the actual number of nucleotides in the database to calculate 
+  the E-value instead of the effective number of nucleotides in the database.  In 
+  some cases this results in a discrepancy between the E-value reported by mpiBLAST 
+  and that reported by NCBI-BLAST.  For protein sequence searches the difference
+  in E-value is more pronounced due to higher variability of effective database 
+  search lengths.
+- BLAST results for a query that have the same bit score may be returned in a 
+  different order by mpiBLAST than they would by NCBI-BLAST.
+
+Support
+=======
+Questions regarding the usage of mpiBLAST should be posted to the mpiBLAST
+discussion forum at:
+http://sourceforge.net/forum/?group_id=78850
+
+Alternatively you may e-mail the radiant-software mailing list at
+radiant-software@lanl.gov

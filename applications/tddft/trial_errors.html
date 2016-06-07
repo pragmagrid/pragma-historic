@@ -1,0 +1,178 @@
+<HTML>
+<HEAD>
+<TITLE>TDDFT Tests, Errors and Sollutions</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF" TEXT="#000000">
+
+<p>
+<H1 align=center>TDDFT Tests, Errors and Solutions</H1>
+<H2 align=center>Yusuke Tanimura, AIST</H2>
+<hr>
+<p>
+
+<pre>
+Test
+------------------------------------------------------------------
+- Globus-level test
+  - authentication test
+      % globusrun -a -r HOST
+    If it failed, check HOST certificate, CA certificate and CA CRL.
+
+  - use jobmanager-fork
+      % globus-job-run HOST/jobmanager-fork /bin/hostname
+
+  - use jobmanager-{pbs/sge/sqms}
+      % globus-job-run HOST/jobmanager-pbs -np 4 /bin/hostname
+    If it failed or it was blocked, login to the server and check
+    status of the job.
+
+
+
+Troubleshooting
+-------------------------------------------------------------------
+Date: 07/21/04
+
+Problem:
+  A PBS job failed and it was queued due to unknown error.
+  Also, I could not login to agt-cn04.
+
+Cause:
+  The agt-cn04 was down.
+
+Solution:
+  Administrator rebooted agt-cn04.
+-------------------------------------------------------------------
+Date: 07/20/04
+
+Problem:
+  $ globus-job-run agt-login.ncsa.uiuc.edu/jobmanager-pbs -np 2 -q pragma /bin/hostname
+  GRAM Job submission failed because the provided RSL 'queue' parameter is invalid (error 
+
+code 37)
+
+Cause:
+  (Probably) After performing setup-globus-gram-job-manager-pbs, queue configuration of pbs
+  was modified.
+
+Solution:
+  Administrator modified /usr/local/globus/share/globus_gram_job_manager/pbs.rv file.
+   (Before)
+      Attribute: queue
+      Values: workq
+   (After)
+      Attribute: queue
+      Values: pragma
+-------------------------------------------------------------------
+Date: 07/16/04
+
+Problem: globus-job-run failed at authentication.
+
+Cause: Installed CRL of AIST GTRC CA was expired.
+
+Solution:  Adiministrator updated the CRL file.
+-------------------------------------------------------------------
+Date: 07/11/04
+
+Problem:
+  $ globus-job-run agt-login.ncsa.uiuc.edu/jobmanager-pbs -np 1 /bin/hostname
+  agt-cn07.ncsa.uiuc.edu
+  id: cannot find name for group ID 547
+
+Cause: /etc/group file was not consistent between a frontend and compute nodes.
+
+Solution: Administrator copied /etc/group file on the frontend to others.
+-------------------------------------------------------------------
+Date: 07/06/04
+
+Problem:
+  I could not login to agt-login.
+
+  $ ssh -2 -v -l tanisuke agt-login.ncsa.uiuc.edu
+  OpenSSH_3.6.1p2, SSH protocols 1.5/2.0, OpenSSL 0x009060bf
+  debug1: Reading configuration data /opt/gt2/etc/ssh/ssh_config
+  debug1: Applying options for *
+  debug1: Rhosts Authentication disabled, originating port will not be trusted.
+  debug1: Connecting to agt-login.ncsa.uiuc.edu [141.142.56.170] port 22.
+  debug1: Connection established.
+  debug1: identity file /home/tanisuke/.ssh/id_rsa type 1
+  debug1: identity file /home/tanisuke/.ssh/id_dsa type -1
+  debug1: Remote protocol version 1.99, remote software version OpenSSH_3.8p1 
+
+NCSA_GSSAPI_GPT_3.1 GSI
+  debug1: match: OpenSSH_3.8p1 NCSA_GSSAPI_GPT_3.1 GSI pat OpenSSH*
+  debug1: Enabling compatibility mode for protocol 2.0
+  debug1: Local version string SSH-2.0-OpenSSH_3.6.1p2
+  debug1: Mechanism encoded as dZuIebMjgUqaxvbF7hDbAw==
+  debug1: SSH2_MSG_KEXINIT sent
+  debug1: SSH2_MSG_KEXINIT received
+  debug1: kex: server->client aes128-cbc hmac-md5 none
+  debug1: kex: client->server aes128-cbc hmac-md5 none
+  debug1: Calling gss_init_sec_context
+  debug1: Delegating credentials
+  debug1: Received GSSAPI_CONTINUE
+  debug1: Calling gss_init_sec_context
+  debug1: Delegating credentials
+  debug1: Received Error
+  GSSAPI Error:
+  GSS Major Status: Authentication Failed
+  GSS Minor Status Error Chain: 
+  an unknown error occurred
+  Disconnecting: Protocol error: didn't expect packet type 34
+  debug1: Calling cleanup 0x8068228(0x0)
+
+Cause:
+  ssh was GSI-enabled ssh and the error occured in GSI authentication.
+  GSI-enabled ssh did not try access with ssh public key.
+
+Solution:
+  I used /usr/bin/ssh.
+  Or administrator added my DN to /etc/grid-security/grid-mapfile.
+-------------------------------------------------------------------
+Date: 07/05/04 
+
+Problem:
+  `globus-job-run ase.nchc.org.tw/jobmanager-pbs -np 2 /bin/hostname` failed.
+  I could not login to ase-1 too.
+    $ ssh ase-1
+    Connection to ase-1 closed by remote host.
+    Connection to ase-1 closed.
+
+Cause:
+  A NIS map was not updated.
+
+Solution:
+  Administrator updated the NIS map.
+-------------------------------------------------------------------
+Date: ---
+
+Problem:  `globus-job-run gsic-presto.titech.hpcc.jp/jobmanager-pbs -np 1 failed.
+          The job was left in the queue.
+
+Cause:  rcp was disabled.
+
+Solution:  A NIS map configuration was something wrong.
+-------------------------------------------------------------------
+
+Date: ---
+
+Problem:  Multiple jobs which were submitted through globus's jobmanager-sge were assigned to 
+
+the same host.
+
+Cause:  jobmanager-sge script that is included in jobmanager-setup package has some bugs.
+
+Solution:  AIST GTRC provides another jobmanager-sge script to solve the problem.
+-------------------------------------------------------------------
+Date: ---
+
+Problem:  TDDFT program compiled with ifc 8.0 failed (Segmentation fault).
+
+Cause:  Stack size was limited.
+
+Solution:  User set unlimited stack size in shell environment or in his/her program.
+             Ex. $ ulimit -s unlimited
+             Ex. call setrlimit() 
+-------------------------------------------------------------------
+</pre>
+</BODY>
+</HTML>

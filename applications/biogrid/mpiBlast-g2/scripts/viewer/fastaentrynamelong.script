@@ -1,0 +1,38 @@
+#! /bin/csh -f
+#
+# script to create an entryname index for Swissprot flat file
+#
+
+set RM = "/bin/rm -f"
+set SORT = sort
+
+#
+# LIBFILE is the name you've given to the library file
+#
+set LIBFILE = $1
+
+# get entry names
+fastaentryname1long $LIBFILE entry.list 1
+if ( $status ) goto abort
+
+# sort on entry names
+${SORT} entry.list >! entry.sorted
+if ( $status ) goto abort
+${RM} entry.list
+
+# create index file
+entryname2long entry.sorted entrynam.idx
+if ( $status ) goto abort
+${RM} entry.sorted
+
+echo "Completion successful"
+echo ""
+
+exit 0
+
+#
+# Abort
+#
+abort:
+echo "Aborted due to serious error"
+exit 2

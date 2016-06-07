@@ -1,0 +1,206 @@
+<HTML>
+<HEAD>
+<TITLE>A Final Report of the Routine Basis Experiments (Draft)</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF" TEXT="#000000">
+
+<pre>
+==========================================
+  PRAGMA Routine Basis Experiments
+  A Final Report (Draft on September 7)
+  Grid Technology Research Center, AIST
+==========================================
+
+This is a final report on the PRAGMA routine-basis experiments (June 1 - August 31).
+
+1. Application of User Account
+-------------------------------------
+  - I asked each site to create my account and add my entry to grid-mapfile.
+    Most sites enabled login via ssh.
+    KISTI allows only gsissh and need to ask open ports for AIST.
+
+2. Deployment of TDDFT application
+-------------------------------------
+  Technical contacts at each site installed GT2 and Intel Compiler.
+  I installed the latest version (non-released version, checked out
+  from the CVS) of Ninf-G2 by myself.
+ 
+  - Installation of Ninf-G & Globus
+      There are two prerequisite for Ninf-G2.
+        - All SDK bundles must be built from source bundles
+        - All SDK bundles must be built with the same flavor (either gcc32dbg or gcc32dbgpthr).
+      Globus's shared library must be available on frontend and compute nodes.
+
+  - Installation of Intel Compiler
+      Version 6.0, 7.0 and the latest 8.0 are fine.
+        (7.0 is better because we have tested enough.)
+      This shared library must be available on frontend and compute nodes.
+
+  - Installation of TDDFT
+
+  - Passage of the deployment and the experiment.
+       May  31   AIST and KISTI got ready to run TDDFT.
+       Jun   1   Started the experiment on 32PEs of AIST and 16PEs of KISTI.
+       Jun   2   USM and KU got ready to run TDDFT.
+       Jun  17   SDSC got ready to run TDDFT.
+       Jun  24   Reported status to the mailing list
+                 (Run TDDFT on 32PEs of AIST, 16PEs of KISTI, 12PEs of SDSC,
+                  4 PEs of KU and 1PE of USM)
+       Jun  30   Cindy (SDSC) setup a resource monitor for the experiment.
+                 http://pragma-goc.rocksclusters.org/scmsweb/scms_home.html
+       Jun  30   TITECH got ready to run TDDFT.
+       Jul   5   NCHC got ready to run TDDFT.
+       Jul   7   NCSA got ready to run TDDFT.
+       Aug   3   Cindy (SDSC) started the experiment as the 2nd user.
+       Aug  13   BII got ready to run TDDFT.
+       Aug  25   UNAM got ready to run TDDFT.
+       Aug  31   Finished the experiment.
+
+3. Tests
+-------------------------------------
+  The following tests were made between AIST and each site.
+
+  - Globus-level test
+    - authentication test
+      % globusrun -a -r HOST
+    - use jobmanager-fork
+      % globus-job-run HOST/jobmanager-fork /bin/hostname
+    - use jobmanager-{pbs/sge/sqms/lsf}
+      % globus-job-run HOST/jobmanager-pbs -np 4 /bin/hostname (e.g.)
+
+  - Ninf-G level test (used TDDFT with short-run parameters as a test program)
+
+4. Experiments
+-------------------------------------
+  - Runs
+    - Application:
+      - Target molecules of TDDFT:
+        - Ligand Protected Au_13
+          - Input data from client: 4.87 MB
+          - Output data to client:  3.25 MB
+      - Number of parallel tasks in each iteration: 122
+
+    - Infrastructure:
+      - A Ninf-G client ran in AIST.
+      - 10 clusters for the server were provided by AIST, KISTI, SDSC, KU, USM, TITECH, NCHC, NCSA, BII and UNAM.
+      - All resources: 106 nodes / 198 CPUs
+      - Maximum resouces that we used at the same time: 67 CPUs over 5 clusters
+                                                        7 sites which provided 64 CPUs
+  - Results:
+    - Number of major runs (except short tests and debugging): 35
+    - Execution time (Total)  : 906 hours (37.8 days)
+                     (Longest): 164 hours (6.8 days)
+                     (Average):  25 hours
+    - Total number of RPCs    : 2,006,343
+      Total number of RPC failures : more than 1,237  (except session timeout)
+      Error rate              : more than 0.0615 %
+
+5. Lessons Learned
+-------------------------------------
+5.1 Troubles in the initiation
+  - CA or CRL was expired.
+  - Certificate of CA was not installed on the system.
+  - Certificate file was broken.
+
+5.2 Troubles in the deployment of TDDFT
+  - Since Intel compiler version 8.0 had some bugs, it must be upgraded to the latest (or later than May's).
+  - Shared libraries of GT2 and Intel compiler must be available on both frontend and     compute nodes.
+  - Simple test via jobmanager-fork failed because frontend didn't have enough memory.
+
+5.3 Troubles in the tests
+  - Cluster specific:
+      A job could not run on compute nodes via the local scheduler such as sge, pbs or lsf.
+      A job was just queued and never run.
+        - UID/GID was wrong? SSH or RSH problem? Daemon was dead?
+
+  - Globus specific:
+      Installation of Globus seemed to be incomplete.
+      Multiple jobs were not executed appropriately via sge.
+        - We modified a jobmanager-sge script included in Globus.
+
+5.4 Troubles in the execution
+  - Problems due to poor network in Asia:
+      Network between AIST and KU/USM was unstable and its performance is bad. For example,
+      throughput between AIST and USM was just several KB/sec in average.  Network connection
+      between Ninf-G client in AIST and Ninf-G servers in KU/USM sometimes went down.
+
+  - Problems due to instability of clusters:
+      Some clusters were down due to unexpected failure such as
+      troubles in NFS, power supply, etc.
+
+  - In average:
+      We need 3.9 days / 4 emails for resolving one problem.
+      We took 8.3 days to run TDDFT after getting my account.
+
+5.5 Improvements of Ninf-G2 and TDDFT
+  - We fixed bugs in Ninf-G.
+      We found some bugs which were detected by running the
+      application for many hours on an unstable testbed.
+
+  - We needed to modify TDDFT so that it had better fault tolerancy.
+      If Ninf-G detects that a server becomes unavailable, the
+      application retries to call the server three times.  If all
+      the calls are failed, the server is discarded.  After that,
+      the Ninf-G client pings the server in every one hour and
+      invokes the server if it becomes available.
+
+5.6 Thoughts (by AIST)
+  - Updates of CA's certificate and grid-mapfile should be taken
+    care by the administrator team, since this troubleshooting can be
+    annoying for application users.
+
+  - For the installation of additional software (e.g. Intel Compiler
+    in this experiment), we needed to show the details of the
+    configuration (e.g. version, patches, etc.).  In our case, we should
+    have more explicit requests to each site.  For example, software
+    libraries must be available on both frontend and compute nodes.
+    Also, these specific requests might be difficult to be realized
+    before running the application in some cases.  We should learn
+    more applications and define a common resource configuration.
+
+  - Unfortunately, it might be necessary for application users to
+    do self-troubleshooting until GOC takes care of everything.
+    However, administrators should provide more documents and information
+    for their resources.
+
+  - Ninf-G can detect and report errors/faults on servers, however it
+    is not easy to know the reason of the failure (e.g. network
+    disconnection, system down, jobs are stucked in the queue, etc.).
+    Therefore, real time monitoring for both networks and clusters are
+    useful so that we can check the current status of the testbed.
+
+  - Don't expect all resources become available at the same time.
+    For example, when a site recovers, another site may stop its
+    services for system maintenance.  Application and/or middleware
+    should take care about fault-tolerance and dynamic addition of
+    resources.
+
+  - Practical information service is really necessary for both
+    administrators and users.  We always wondered, what was going on
+    each site and on networks?  How about queue status of each job
+    manager?
+
+  - Simple test suites would be helpful in some cases.  Globus-test
+    such as authentication, job submission, file copy and other
+    middleware test such as Ninf-G and APST are useful.  Also,
+    application test should be designed and executed periodically
+    as a simple benchmark.
+
+6. Other useful information
+-------------------------------------
+* Lesson learned (always being updated)
+  http://pragma-goc.rocksclusters.org/tddft/Lessons.htm
+
+* 2nd user's run
+  http://pragma-goc.rocksclusters.org/tddft/2ndrun.htm
+  http://pragma-goc.rocksclusters.org/tddft/2nd_user.html
+
+* Tests and errors
+  http://pragma-goc.rocksclusters.org/tddft/trial_errors.html  
+
+* Site monitoring
+  http://pragma-goc.rocksclusters.org/tddft/monitor.html
+
+</pre>
+</body>
+</html>

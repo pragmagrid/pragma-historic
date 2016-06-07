@@ -1,0 +1,933 @@
+#!/usr/bin/perl
+#-----------------------------------------------------------#
+# Gridified MPI BLASTALL jobs on pragma                     #
+#                                                           #
+# Requirements;                                             #
+#  1. Globus ToolKits >= 2.2                                #
+#  2. MPICH-G2 == 1.2.5                                     #
+#  3. mpiBlast >= 1.2.1                                     #
+#                                                           #
+# Language: Perl                                            #
+# Author: Hurng-Chun Lee                                    #
+# Date: 2004/10/16                                          #
+#-----------------------------------------------------------#
+use Tk;
+use Cwd;
+use Getopt::Std;
+use Getopt::Long;
+use Pod::Usage;
+
+# Set global variables
+config();
+
+# Showing program pid 
+print "Demo Program PID: ".$_blast_demo_pid."\n";
+
+$_blast_query_header = getQueryHeader();
+
+print $_blast_query_header."\n";
+
+my $mw = MainWindow->new();
+
+$mw->resizable(0,0);
+$mw->geometry("+0+0");
+
+my $option_frm = $mw->Frame(
+                  -relief => 'ridge',
+                  -borderwidth => 1
+                 );
+
+$option_frm->pack(-side => 'top',  -fill => 'both');
+
+my $step00_frm = $option_frm->Frame(
+                  -relief      => 'groove',
+                  -borderwidth =>1
+                )->pack(qw/-side top -expand 1 -fill x/);
+
+my $step01_frm = $option_frm->Frame(
+                  -relief      => 'groove',
+                  -borderwidth =>1
+                )->pack(qw/-side top -expand 1 -fill x/);
+
+my $step02_frm = $option_frm->Frame(
+                  -relief      => 'groove',
+                  -borderwidth =>1
+                )->pack(qw/-side top -expand 1 -fill x/);
+
+my $step1_frm = $option_frm->Frame(
+                  -relief      => 'groove',
+                  -borderwidth =>1
+                )->pack(qw/-side top -expand 1 -fill x/);
+
+my $step2_frm = $option_frm->Frame(
+                  -relief      => 'groove',
+                  -borderwidth =>1
+                )->pack(qw/-side top -fill x/);
+
+my $step3_frm = $option_frm->Frame(
+                  -relief      => 'groove',
+                  -borderwidth =>1
+                )->pack(qw/-side top -fill x/);
+
+my $step4_frm = $option_frm->Frame(
+                  -relief      => 'groove',
+                  -borderwidth =>1
+                )->pack(qw/-side top -fill x/);
+
+my $close_frm = $option_frm->Frame(
+                  -relief      => 'groove',
+                  -borderwidth =>1
+                )->pack(qw/-side top -fill both/);
+
+#my $step1_lab = $step1_frm->Label(
+#                 -text => 'Step 1:'
+#                )->pack(qw/-side left/);
+
+my $step00_but = $step00_frm->Button(
+                 -text    => 'Star Grid Proxy',
+                 -command => [\&passphraseDialog,$mw]
+                )->pack(qw/-side left -expand 1 -fill x/);
+
+my $step01_but = $step01_frm->Button(
+                 -text    => 'Stop Grid Proxy',
+                 -command => [\&stopProxy]
+                )->pack(qw/-side left -expand 1 -fill x/);
+
+my $step02_but = $step02_frm->Button(
+                 -text    => 'Proxy Information',
+                 -command => [\&proxyInfoDialog,$mw]
+                )->pack(qw/-side left -expand 1 -fill x/);
+
+my $step1_but = $step1_frm->Button(
+                 -text    => 'Submit mpiBLAST-g2 job',
+                 -command => [\&jobSubmitWin,$mw]
+                )->pack(qw/-side left -fill x/);
+
+#my $step2_lab = $step2_frm->Label(
+#                 -text => 'Step 2:'
+#                )->pack(qw/-side left/);
+
+my $step2_but = $step2_frm->Button(
+                 -text    => 'Display text report',
+                 #-command => [\&showTXT,$mw,'BLAST.out']
+                 -command => [\&showOut,$mw]
+                )->pack(qw/-fill x/);
+
+#my $step3_lab = $step3_frm->Label(
+#                 -text => 'Step 3:'
+#                )->pack(qw/-side left/);
+
+my $step3_but = $step3_frm->Button(
+                 -text    => 'Display graphic report',
+                # -command => [\&showOutImg,$mw,'BLAST.out.png']
+                 -command => [\&viewerDialog,$mw]
+                )->pack(qw/-fill x/);
+
+#my $step4_lab = $step4_frm->Label(
+#                 -text => 'Step 4:'
+#                )->pack(qw/-side left/);
+
+my $step4_but = $step4_frm->Button(
+                 -text    => 'Display time sequence',
+                 -command => [\&showTimeImg,$mw,'plot.png','legend.png']
+                )->pack(qw/-fill x/);
+
+my $close_but = $close_frm->Button(
+                 -text    => 'Exit',
+                 -command => sub{exit;}
+                )->pack(qw/-side left/);
+
+my $about_but = $close_frm->Button(
+                 -text    => 'About',
+                 -command => [\&aboutDialog,$mw]
+                )->pack(qw/-side left -expand 1 -fill both/);
+MainLoop;
+
+#-- About Dialog
+sub aboutDialog {
+
+    use Tk::DialogBox;
+    use Tk::Photo;
+
+    my $top = shift;
+
+    my $dialog = $top->DialogBox(-title   => 'Credit',
+                                 -buttons => ["OK"]);
+
+    $dialog->resizable(0,0);
+    $dialog->geometry("+180+0");
+    #-- PRAGMA Credit
+    my $pragma_logo = $dialog->Photo(-format => 'png',
+                                  -file   => $_blast_location."/share/pixmaps/pragma-logo.png");
+
+    my $pragma_logo_w = $dialog->add('Label', 
+                                     -background => 'white',
+                                     -image => $pragma_logo);
+    my $pragma_name_w = $dialog->add('Label',
+                           -justify => 'left',
+                           -background => 'white',
+                           -text => "PRAGMA");
+
+    #-- ASCC Credit
+    my $ascc_logo = $dialog->Photo(-format => 'png',
+                                -file   => $_blast_location."/share/pixmaps/ascc-logo.png");
+
+    my $ascc_logo_w = $dialog->add('Label',
+                           -background => 'white',
+                           -image => $ascc_logo);
+    my $ascc_name_w = $dialog->add('Label',
+                           -justify => 'left',
+                           -background => 'white',
+                           -text => "ASCC, Taiwan");
+
+    #-- AIST Credit
+    my $aist_logo = $dialog->Photo(-format => 'png',
+                                -file   => $_blast_location."/share/pixmaps/aist-logo.png");
+    my $aist_logo_w = $dialog->add('Label', 
+                           -background => 'white',
+                           -image => $aist_logo);
+    my $aist_name_w = $dialog->add('Label',
+                           -justify => 'left',
+                           -background => 'white',
+                           -text => "AIST, Japan");
+
+    #-- BII Credit
+    my $bii_logo = $dialog->Photo(-format => 'png',
+                               -file   => $_blast_location."/share/pixmaps/bii-logo.png");
+    my $bii_logo_w = $dialog->add('Label', 
+                           -background => 'white',
+                           -image => $bii_logo);
+    my $bii_name_w = $dialog->add('Label',
+                           -justify => 'left',
+                           -background => 'white',
+                           -text => "BII, Singapore");
+
+    #-- KISTI Credit
+    my $kisti_logo = $dialog->Photo(-format => 'png',
+                                 -file   => $_blast_location."/share/pixmaps/kisti-logo.png");
+    my $kisti_logo_w = $dialog->add('Label',
+                           -background => 'white',
+                           -image => $kisti_logo);
+    my $kisti_name_w = $dialog->add('Label',
+                           -justify => 'left',
+                           -background => 'white',
+                           -text => "KISTI, Korea");
+
+    #-- SDSC Credit
+    my $sdsc_logo = $dialog->Photo(-format => 'png',
+                                -file   => $_blast_location."/share/pixmaps/sdsc-logo.png");
+    my $sdsc_logo_w = $dialog->add('Label',
+                           -background => 'white',
+                           -image => $sdsc_logo);
+    my $sdsc_name_w = $dialog->add('Label',
+                           -justify => 'left',
+                           -background => 'white',
+                           -text => "SDSC, U.S.");
+
+    $pragma_logo_w->grid($ascc_logo_w, $aist_logo_w,
+                         $bii_logo_w, $kisti_logo_w, $sdsc_logo_w,
+                         -sticky=>'nsew');
+
+    $pragma_name_w->grid($ascc_name_w, $aist_name_w,
+                         $bii_name_w, $kisti_name_w, $sdsc_name_w,
+                         -sticky=>'nsew');
+    $dialog->Show();
+}
+
+
+#-- Proxyinfo Dialog
+sub proxyInfoDialog {
+
+    use Tk::DialogBox;
+    use Cog::Security::Proxy;
+
+    my $top = shift;
+
+    my $dialog = $top->DialogBox(-title   => 'Proxy Info.',
+                                 -buttons => ["OK"]);
+
+    my $text;
+    my @r = &getAll(undef);
+
+    if(@r) {
+
+        foreach $line (@r) {
+            $text.=$line."\n";
+        }
+
+    }
+    else {
+        $text = "Unable to get proxy information.\n"
+    }
+
+    $dialog->add('Label',
+                 -justify => 'left',
+                 -text => $text)->pack();
+
+    $dialog->Show();
+
+}
+
+#-- passphrase Dialog
+sub passphraseDialog {
+    use Tk::DialogBox;
+
+    my $top = shift;
+
+    my $dialog = $top->DialogBox(-title   => 'Passphrase',
+                                 -buttons => ["OK","Cancel"],
+                                 -command=> \&startProxy);
+
+    my $label = $dialog->add('Label',
+                             -text=>'Passphrase')->pack(qw/-side top -fill x -expand 1/);
+
+    my $entry = $dialog->add('Entry',
+                             -show => '*',
+                             -background => 'white',
+                             -textvariable=>\$_proxy_passphrase)->pack(qw/-side top -fill x -expand 1/);
+
+    my $button = $dialog->Show();
+}
+
+#-- startProxy
+sub startProxy {
+    use Cog::Security::Proxy;
+
+    my $r = proxyInit($_proxy_passphrase,undef,undef,undef,
+                      undef,undef,undef);
+
+    if($r !~ /ERROR/) {
+        print "Proxy start OK!\n";
+    }
+    else {
+        print "Proxy start FAIL!\n";
+    }
+}
+
+#-- stopProxy
+sub stopProxy {
+    use Cog::Security::Proxy;
+
+    my $r = proxyDestroy(undef);
+
+    if($r =~ /SUCCESS/) {
+        print "Proxy destroy OK!\n";
+    }
+    else {
+        print "Proxy destroy FAIL!\n";
+    }
+}
+
+#-- Running the job
+sub runJob {
+
+    #use File::Tail;
+
+    my $ACTWIN = shift;  #-- Action window (Scrollable Text)
+    my $cmd    = getCommand();
+
+    #- Displaying execution commands
+    $ACTWIN->insert('end',"\n>>>>> Running mpiBLAST-g2 job <<<<<\n");
+    $ACTWIN->insert('end',"Execution command:\n");
+    $ACTWIN->insert('end',$cmd."\n");
+    $ACTWIN->yviewScroll(1,"unit");
+
+    #- Processing job output (Tailing result from *.prof.0)
+    #- Only available if master runs on local site 
+    #my $profile = $ENV{'HOME'}.'/BLAST_'.$_blast_database.'.prof.0';
+    my $profile = './BLAST_'.$_blast_database.'.prof.0';
+
+    #my $result = `$cmd`; 
+
+    #backup output and profile if it already exist
+    my $output_backup  = $_blast_output.".bak";
+    my $profile_backup = $profile.".bak";
+    if( -f $_blast_output) { `mv $_blast_output $output_backup`; }
+    if( -f $profile) { `mv $profile $profile_backup`; print "check.\n"; }
+
+    my $result = system($cmd);
+    $ACTWIN->insert('end',$result."\n");
+    $ACTWIN->yviewScroll(1,"unit");
+
+    #Start an xterm to show the master profile
+    #my $prof_view_cmd = $_blast_location.'/bin/blast-g2.prof '.$profile.' '.$_blast_demo_pid.' '.$_blast_machinefile.' &';
+    my $prof_view_cmd = $_blast_location.'/bin/blast-g2.prof '.$profile.' '.$_blast_demo_pid.' &';
+
+    system($prof_view_cmd);
+}
+
+#-- Viewer Parameter Dialog
+sub viewerDialog {
+
+    use Tk::DialogBox;
+
+    my $top = shift;
+
+    my $dialog = $top->DialogBox(-title   => 'Viewer Parameters',
+                                 -buttons => ["OK","Cancel"],
+                                 -command => [\&showOutImg,$top,'BLAST.out.png']);
+
+    my $label_1 = $dialog->add('Label',
+                             -text=>'E value <= ');
+
+    my $entry_1 = $dialog->add('Entry',
+                             -background => 'white',
+                             -textvariable=>\$_viewer_pvalue);
+
+
+    my $label_2 = $dialog->add('Label',
+                             -text=>'Score >= ');
+
+    my $entry_2 = $dialog->add('Entry',
+                             -background => 'white',
+                             -textvariable=>\$_viewer_bits);
+
+    $label_1->grid($entry_1,-sticky => 'nsew');
+    $label_2->grid($entry_2,-sticky => 'nsew');
+
+    my $button = $dialog->Show();
+}
+
+#-- Generating output image
+sub genOutImg {
+
+    my $p = $_viewer_pvalue;
+    my $b = $_viewer_bits;
+
+    print $_blast_output."\n";
+    print $_viewer_pvalue."\n";
+    print $_viewer_bits."\n";
+
+    #if($p == 0 || $b == 0) { return 0;}
+    if($p eq '' || $b eq '') { return 0;}
+
+    if( -f $_blast_output) {
+        #my $cmd = $_blast_location.'/bin/blast2table.pl ';
+        my $cmd = $_blast_location.'/bin/blast2table.pl -p '.$p.' -b '.$b.' '; #For SC2004 demo
+           $cmd.= $_blast_output.' | ';
+           $cmd.= $_blast_location.'/bin/blast-imager.pl > BLAST.out.png';
+
+        my $result = `$cmd`;
+
+        return 1;
+    }
+
+    return 0;
+}
+
+#-- Generating time sequence image
+sub genTimeImg {
+
+    if( -f $_blast_output) {
+        my $cmd    = $_blast_location.'/bin/blast-g2.plot '.$_blast_output;
+        my $result = `$cmd`;
+
+        return 1;
+    }
+    return 0;
+}
+
+#-- Call back for report and visualization
+sub showQry {
+
+    my $mw = shift;
+
+    showTXT($mw,$_blast_query);
+
+}
+
+#--
+sub showOut {
+
+    my $mw = shift;
+
+    showTXT($mw,$_blast_output);
+
+}
+
+#--
+sub showMach {
+
+    my $mw = shift;
+
+    showTXT($mw,$_blast_machinefile);
+}
+
+#--
+sub showTXT {
+
+    my ($mw,$txt_filename) = @_;
+
+    if( ! -f $txt_filename) {
+        print "No such file: ".$txt_filename."\n";
+        return 0;
+    }
+
+    my $top_txt = $mw->Toplevel();
+       $top_txt->resizable(0,0);
+       $top_txt->geometry("+200+0");
+
+    #-- Menu Bar
+    my $menubar = $top_txt->Menu(-type=>'menubar');
+       $top_txt->configure(-menu => $menubar);
+       $top_txt->configure(-title=>'Blast Visualization');
+
+    #-- File Menu --#
+    my $f1=$menubar->cascade(-label => '~File', -tearoff=>0);
+       $f1->command(-label => '~Exit',-command => sub{$top_txt->destroy();});
+
+
+    #-- Help Menu --#
+    my $h=$menubar->cascade(-label => '~Help', -tearoff=>0);
+    $h->command(-label => '~Usage');
+    $h->separator;
+    $h->command(-label => '~About');
+
+    #--Job and file selection frame
+    my $FRM_B = $top_txt->Frame(
+                 -relief => 'ridge',
+                 -borderwidth => 1 
+                )->pack(qw/-side top -expand 1 -fill both/);
+
+    my $ACTWIN = $FRM_B->Scrolled('Text',
+                   -background => 'white',
+                   -foreground => 'black',
+                   -insertbackground => 'black',
+                   -relief     => 'sunken',
+                   -height     => 25,
+                   -scrollbars => 'e'
+               )->pack(qw/-side top -expand 1 -fill both/);
+
+    my $line = 0;
+    my $ACT_TXT_BUF;
+
+    if( -e $txt_filename) {
+        open TXT, "<$txt_filename";
+
+        while(<TXT>) {
+
+            chomp($_);
+
+            if($line < 25) {
+                $ACT_TXT_BUF .= $_."\n";
+                $line++;
+            }
+            else {
+                $ACTWIN->insert('end',$ACT_TXT_BUF);
+                $ACTWIN->yviewScroll(25,"unit");
+                $ACT_TXT_BUF = "";
+                $line = 0;
+            }
+        }
+        close TXT;
+
+        if($line !=0 ) { # Tails
+            $ACTWIN->insert('end',$ACT_TXT_BUF);
+            $ACTWIN->yviewScroll($line,"unit");
+        }
+    }
+
+    $ACTWIN->see("1.0");
+
+    # Add Save in menubar
+    $menubar->command(-label => '~Save',-command => [\&saveTXT,$txt_filename,$ACTWIN]);
+}
+#--
+sub saveTXT {
+    my ($txt_filename,$ACTWIN) = @_;
+
+    my $backup  = $txt_filename.".bak";
+    my $content = $ACTWIN->get('1.0','end');
+    if( -f $txt_filename) { `mv $txt_filename $backup`; } 
+
+    if( ! open TXT,"> $txt_filename") {
+        return 0;
+    }
+    else {
+        print TXT $content;
+        close TXT;
+        print "File $txt_filename has been saved!\n";
+        return 1;
+    }
+}
+
+#--
+sub showOutImg {
+
+    my ($mw,$png_filename) = @_;
+
+    my $result = genOutImg();
+
+    if( $result ){
+
+        showPNG($mw,$png_filename);
+    }
+    else {
+        print "No such output: $_blast_output\n";
+    }
+}
+
+#--
+sub showTimeImg {
+
+    my ($mw,$plot_filename,$legend_filename) = @_;
+
+    my $result = genTimeImg();
+
+    if( $result ){
+
+        showPNG($mw,$plot_filename);
+        showPNG($mw,$legend_filename);
+    }
+    else {
+        print "Time Sequence Plot Error!\n";
+    }
+}
+
+sub showPNG {
+
+    use Tk::PNG;
+
+    my ($mw,$png_filename) = @_;
+
+    my $top_png = $mw->Toplevel();
+       $top_png->resizable(0,0);
+       $top_png->geometry("+200+200");
+
+    #-- Menu Bar
+    my $menubar = $top_png->Menu(-type=>'menubar');
+       $top_png->configure(-menu => $menubar);
+       $top_png->configure(-title=>'Blast Visualization');
+
+    #-- File Menu --#
+    my $f1=$menubar->cascade(-label => '~File', -tearoff=>0);
+       $f1->command(-label => '~Exit',-command => sub{$top_png->destroy();});
+
+    #-- Help Menu --#
+    my $h=$menubar->cascade(-label => '~Help', -tearoff=>0);
+    $h->command(-label => '~Usage');
+    $h->separator;
+    $h->command(-label => '~About');
+
+    #--Job and file selection frame
+    my $FRM_B = $top_png->Frame(
+                 -relief => 'ridge',
+                 -borderwidth => 1
+                )->pack(qw/-side top -expand 1 -fill both/);
+
+    my $blast_image = $FRM_B->Photo(-format => 'png',
+                                    -file   => $png_filename);
+
+    my $canvas = $FRM_B->Scrolled("Canvas",
+                                  -scrollbars => 'e',
+                                  -height => 200,
+                                  #-height=> $blast_image->height(),
+                                  -width => $blast_image->width());
+
+       $canvas->createImage(5,5,
+                            -image => $blast_image,
+                            -anchor=> 'nw');
+
+       $canvas->configure( -scrollregion => [$canvas->bbox("all")] );
+
+       $canvas->pack(qw/-side top -expand 1 -fill both/);
+}
+
+#-- Setup global variables
+sub config {
+    $_blast_machinefile = 'machinefile';
+    $_blast_query       = 'BLAST.in';
+    $_blast_output      = 'BLAST.out';
+    $_blast_location    = $ENV{'BLASTG2_LOCATION'};
+
+    $_blast_demo_pid    = $$;
+
+    $_proxy_passphrase;
+    $_viewer_pvalue = 100;  #only display pvalue < 100
+    $_viewer_bits = 0; #only display bits > 0
+}
+
+sub getCommand {
+    my $cmd  = $_blast_location.'/bin/blast-g2.submit -compressio -debug -prof -program blastn -query ';
+       $cmd .= $_blast_query.' -database ';
+       $cmd .= $_blast_database.' -machinefile ';
+       $cmd .= $_blast_machinefile.' &';
+
+    return $cmd;
+}
+
+# -- Parsing input query header (FASTA Format)
+sub getQueryHeader {
+
+    if( ! -e $_blast_query) {
+        return "Input $_blast_query does not exist\n";
+    }
+    else {
+        open QUERY,"< $_blast_query";
+
+        while(<QUERY>) {
+            if( $_ =~ /^[\s]+>/ ) { close QUERY; return s/^[\s]+>//g ; } #Always get the first header
+        }
+
+        close QUERY;
+    }        
+}
+
+
+#-- Query sequence selection
+sub selQry {
+
+    my $mw = shift;
+    my $ftypes = [['All Files',['*']]];
+    my $qftmp  = $mw->getOpenFile(-filetypes=>$ftypes);
+
+    if($qftmp ne '') {
+        $_blast_query = $qftmp;
+    }
+}
+
+#-- Machinefile selection
+sub selMach {
+
+    my $mw = shift;
+    my $ftypes = [['All Files',['*']]];
+    my $qftmp  = $mw->getOpenFile(-filetypes=>$ftypes);
+
+    if($qftmp ne '') {
+        $_blast_machinefile = $qftmp;
+    }
+}
+
+#-- List available databases
+sub listDB {
+
+    my $top = shift;
+
+    my $top_list = $top->Toplevel();
+       $top_list->resizable(0,0);
+       $top_list->geometry("+480+280");
+       $top_list->title("DB Selection");
+
+    my $lb = $top_list->Scrolled("Listbox",
+                                 -scrollbars => 'e',
+                                 -selectmode => 'single')->pack();
+
+    my $selBut = $top_list->Button(-height => 1,
+                                   -width  => 8,
+                                   -text   => 'Select',
+                                   -command=> [\&selectSingleDB,$lb] )->pack();
+                           
+    $lb->insert('end',qw/drosoph.nt est_human/);
+}
+
+#-- Select database (Single selection) 
+sub selectSingleDB {
+
+    my $lb = shift;
+
+    my @selects = $lb->curselection();
+
+    if( @selects ) { 
+        $_blast_database = $lb->get($selects[0]);
+        $_blast_output   = 'BLAST_'.$_blast_database.'.out';
+        $lb->toplevel()->destroy();
+    }
+    else {
+        print "Please select at least on database!\n";
+    }
+}
+
+#-- Call back for job run 
+sub jobSubmitWin {
+
+    my $mw = shift;
+
+    my $top_jsub = $mw->Toplevel();
+       $top_jsub->resizable(0,0);
+       $top_jsub->geometry("+200+0");
+
+    #-- Menu Bar
+    my $menubar = $top_jsub->Menu(-type=>'menubar');
+       $top_jsub->configure(-menu => $menubar);
+       $top_jsub->configure(-title=>'Blast Visualization');
+
+    #-- File Menu --#
+    my $f1=$menubar->cascade(-label => '~File', -tearoff=>0);
+       $f1->command(-label => '~Exit',-command => sub{$top_jsub->destroy();});
+
+    #-- Help Menu --#
+    my $h=$menubar->cascade(-label => '~Help', -tearoff=>0);
+    $h->command(-label => '~Usage');
+    $h->separator;
+    $h->command(-label => '~About');
+
+    #--Job and file selection frame (Pack in grid)
+
+    my $TOP_FRM = $top_jsub->Frame(
+                   -relief => 'flat',
+                   -borderwidth => 0)->pack(qw/-side top -expand 1 -fill both/);
+
+    my $FRM_B = $TOP_FRM->Frame(
+                 -relief => 'ridge',
+                 -borderwidth => 1 
+                #)->pack(qw/-side top -fill both/);
+                )->grid(-row => 0, -column => 0, -columnspan => 2, -sticky => 'nsew');
+
+    my $FRM_SEL = $TOP_FRM->Frame(
+                   -relief => 'groove',
+                   -borderwidth => 1 
+                  )->grid(-row => 1, -column => 0, -sticky => 'nsew');
+                  #)->pack(qw/-side left -fill both/);
+
+    my $FRM_SUB = $TOP_FRM->Frame(
+                   -relief => 'groove',
+                   -borderwidth => 1 
+                  )->grid(-row => 1, -column => 1, -sticky => 'nsew');
+                  #)->pack(qw/-side left -fill both/);
+
+
+    my $FRM_INP = $FRM_SEL->Frame(
+                 -relief => 'flat',
+                 -borderwidth => 1 
+                #)->grid(-row => 1, -column => 0);
+                )->pack(qw/-expand 1 -side top -fill both/);
+
+    my $FRM_OUT = $FRM_SEL->Frame(
+                 -relief => 'flat',
+                 -borderwidth => 1 
+                #)->grid(-row => 1, -column => 0);
+                )->pack(qw/-side top -fill both/);
+
+    my $FRM_DB = $FRM_SEL->Frame(
+                 -relief => 'flat',
+                 -borderwidth => 1 
+                #)->grid(-row => 2, -column => 0);
+                )->pack(qw/-side top -fill both/);
+
+    my $FRM_MACH = $FRM_SEL->Frame(
+                   -relief => 'flat',
+                   -borderwidth => 1 
+                  #)->grid(-row => 3, -column => 0);
+                  )->pack(qw/-side top -fill both/);
+
+
+    #--ACTION WINDOW
+    my $ACTWIN = $FRM_B->Scrolled('Text',
+                     -background => 'black',
+                     -foreground => 'white',
+                     -insertbackground => 'white',
+                     -relief     => 'sunken',
+                     -height     => 10,
+                     -scrollbars => 'e'
+                 )->pack(qw/-side top -expand 1 -fill both/);
+
+    #-- For query input
+    my $Query_LAB = $FRM_INP->Label(
+                    -width=> '15',
+                    -text => 'Query');
+
+    my $Query_TXT = $FRM_INP->Entry(
+                   -textvariable => \$_blast_query,
+                   -relief => 'sunken',
+                   -width  => 20 );
+
+    my $Query_VBUT = $FRM_INP->Button(  # View button
+                      -height => 1,
+                      -width  => 8,
+                      -text   => 'View',
+                      -command=> [\&showQry,$mw]
+                    );
+
+    my $Query_SBUT = $FRM_INP->Button( # Select button
+                      -height => 1,
+                      -width  => 8,
+                      -text   => 'Select',
+                      -command=> [\&selQry,$FRM_INP]
+                    );
+
+    #-- For result output
+    my $Output_LAB = $FRM_OUT->Label(
+                    -width=> '15',
+                    -text => 'Output');
+
+    my $Output_TXT = $FRM_OUT->Entry(
+                   -textvariable => \$_blast_output,
+                   -relief => 'sunken',
+                   -width  => 20 );
+
+    my $Output_BUT = $FRM_OUT->Button(
+                      -height => 1,
+                      -width  => 8,
+                      -text   => 'View',
+                      #-command=> [\&showTXT,$mw,$_blast_output]
+                      -command=> [\&showOut,$mw]
+                    );
+
+    #-- For database selection
+    my $DB_LAB = $FRM_DB->Label(
+                   -width=> '15',
+                   -text => 'Database');
+
+    my $DB_TXT = $FRM_DB->Entry(
+                   -textvariable => \$_blast_database,
+                   -relief => 'sunken',
+                   -width  => 20 );
+
+    my $DB_BUT = $FRM_DB->Button(
+                   -height => 1,
+                   -width  => 8,
+                   -text   => 'Select',
+                   -command=> [\&listDB,$top_jsub]
+                 );
+
+    #-- For Machine list 
+    my $Mach_LAB = $FRM_MACH->Label(
+                   -width=> '15',
+                   -text => 'Machinefile');
+
+    my $Mach_TXT = $FRM_MACH->Entry(
+                   -textvariable => \$_blast_machinefile,
+                   -relief => 'sunken',
+                   -width  => 20 );
+
+    my $Mach_VBUT = $FRM_MACH->Button(
+                      -height => 1,
+                      -width  => 8,
+                      -text   => 'View',
+                      -command=> [\&showMach,$mw]
+                    );
+
+    my $Mach_SBUT = $FRM_MACH->Button(
+                      -height => 1,
+                      -width  => 8,
+                      -text   => 'Select',
+                      -command=> [\&selMach,$FRM_MACH]
+                    );
+
+    my $Sub_BUT = $FRM_SUB->Button(
+                   #-height => 1,
+                   #-width  => 8,
+                   -text   => 'Submit',
+                   -command=> [\&runJob,$ACTWIN] # Put runtime output to ACTWIN
+                 );
+
+    $Query_LAB->pack(qw/-side left/);
+    $Query_TXT->pack(qw/-side left/);
+    $Query_SBUT->pack(qw/-side left/);
+    $Query_VBUT->pack(qw/-side left -fill x -expand 1/);
+
+    $Output_LAB->pack(qw/-side left/);
+    $Output_TXT->pack(qw/-side left/);
+    $Output_BUT->pack(qw/-side left -fill x -expand 1/);
+
+    $DB_LAB->pack(qw/-side left/);
+    $DB_TXT->pack(qw/-side left/);
+    $DB_BUT->pack(qw/-side left -fill x -expand 1/);
+
+    $Mach_LAB->pack(qw/-side left/);
+    $Mach_TXT->pack(qw/-side left/);
+    $Mach_SBUT->pack(qw/-side left/);
+    $Mach_VBUT->pack(qw/-side left -fill x -expand 1/);
+
+    $Sub_BUT->pack(qw/-side top -fill both -expand 1/);
+}

@@ -1,0 +1,87 @@
+#############################################################################
+#                                                                           #
+#   This note is an instruction for mpiblast-g2. It contains all steps for  #
+#   testing a small real case by mpiblast-g2. You can follow this node to   #
+#   test your mpiblast-g2 works or not after installing it. If you want to  #
+#   know more detail about installation, please see the installation guide. #
+#   (INSTALL.mpiblast-g2)                                                   #
+#                                                                           #
+#                                Chi-Wei Wang <chiwei@gate.sinica.edu.tw>   #
+#                                Academia Sinica Computing Centre 2005/2/5  #
+#                                                                           #
+#############################################################################
+1. Get an account on which resources you want to use. For example, I want to
+   run mpiblast-g2 on ASCC pragma cluster(pragma001) and SDSC(rocks-52) rocks 
+   cluster in this case.
+
+2. install mpich-g2(mpich_1.2.5) on pragma001 and rocks-52 :
+
+   a.for pragma001 :
+      ./configure --with-arch=LINUX --with-device=globus2:--flavor=gcc32dbg 
+      -prefix=/home/cwwang/pkg/mpich_g2 --disable-f90 -c++=g++ -cc=gcc -fc=g77 
+      -opt="-O2"
+     for rocks-52  :
+      ./configure --with-arch=LINUX --with-device=globus2:--flavor=gcc32
+      -prefix=/home/cwwang/pkg/mpich_g2 --disable-f90 -c++=g++ -cc=gcc -fc=g77
+      -opt="-O2"
+   b. make >& make.log&
+   c. make install >& make_in.log &
+
+3. Install ncbi toolbox on pragma001 and rocks-52 :
+   In order to compile mpiblast, we need some libraries of ncbi toolbox.
+
+   a. ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools/old/20040204/ncbi.tar.gz
+   b. tar xzvf ncbi.tar.gz
+   c. ./ncbi/make/makedis.csh 2>&1 | tee out.makedis.txt  (bash,sh,zsh)
+      ./ncbi/make/makedis.csh |& tee out.makedis.txt      (csh,tcsh)
+   d. set environment variables ncbi toolbox
+      % export NCBI_LOCATION=<ncbi_toolbox_location>      (bash)    
+      % export LD_LIBRARY_PATH=$NCBI_LOCATION/lib         (bash)
+      % export PATH=$NCBI_LOCATION/bin:$PATH              (bash)
+
+4. Install mpiblast-g2 on pragma001 and rocks-52 :
+
+   a. Download mpiblast-g2 from CVS server or pragma webpage.
+      export CVSROOT=:pserver:cwwang@bit139.sinica.edu.tw:/data/cvsrepos
+      cvs login
+      cvs checkout -P mpiBlast-g2
+      cvs logout
+   b. ./configure --prefix=/home/cwwang/pkg/mpiblast_g2
+      --with-ncbi=/home/cwwang/pkg/ncbi
+      make
+      make install
+   c. Modify /home/cwwang/pkg/mpiblast_g2/etc/mpiblast-gasscopy.conf on
+      pragma001.
+      -------------------------------------------
+      |gsiftp://pragma001.grid.sinica.edu.tw    |
+      |/home/cwwang/blast_db/mpiblast_storage   |
+      |/tmp                                     |
+      -------------------------------------------
+      Modify /home/cwwang/pkg/mpiblast_g2/etc/mpiblast-gasscopy.conf on
+      rocks-52.
+      -------------------------------------------
+      |gsiftp://rocks-52.sdsc.edu               |
+      |/home/cwwang/blast_db/mpiblast_storage   |
+      |/state/partition1/cwwang                 |
+      -------------------------------------------
+   d. Make sure mpiblast-g2 can find globus library path(ldd mpiformatdb).
+      Or add "export LD_LIBRARY_PATH=$GLOBUS_LIB_PATH" to your ~/.bashrc file.
+      $GLOBUS_LIB_PATH means the directory which you put globus library in.
+   e. Generate database for mpiblast-g2 on pragma001 and rocks-52("-N 10"
+      means separate drosoph.nt database to 10 fragments).
+      Please see the document of mpiblast to know more detail arguments.
+      mpiformatdb -f /home/cwwang/pkg/mpiblast_g2/etc/mpiblast-gasscopy.conf 
+      -N 10 -i drosoph.nt -o T -p F
+
+   f. Prepare the machinefile which lists which and how many nodes will be used
+      in this job. For this case, I will use three nodes in pragma001 and 2
+      nodes in rocks-52 to run this job.
+      --------------------------------------------------
+      |pragma001.grid.sinica.edu.tw/jobmanager-pbs 3   |
+      |rocks-52.sdsc.edu/jobmanager-sge 2              |
+      --------------------------------------------------
+
+   g. Prepare input query sequence(BLAST.in) and job submittion file(run.sh). 
+      There are sample files in example folder.
+      You can type "./run.sh" to run this job then you will see the result
+      (BLAST_drosoph.nt.out) in the working directory after job finished.

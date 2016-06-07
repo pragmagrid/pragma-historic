@@ -1,0 +1,58 @@
+#!/bin/csh -f
+
+# global
+setenv hfile "machinefile"
+if !(-f $hfile) then
+ echo "cant find machinefile: $hfile"
+endif
+setenv out "master.out"
+setenv in  "id.tmp"
+
+set hosts=(`grep -v "#" $hfile | awk 'BEGIN{FS="/"}{print $1}'`) 
+echo "$#hosts hosts adopted for this calculation"
+
+set nodes=(`grep -v "#" $hfile | awk '{print $(NF)}'`)
+ @ i=1 ; set tot_nodes=0
+  while($i <= $#nodes)
+    set tot_nodes=`expr $tot_nodes + $nodes[$i]`
+   @ i+=1
+  end
+ echo "total no. of nodes adopted: $tot_nodes"
+ echo "1 master and `expr $tot_nodes - 1` workers"
+
+# resort the master output file
+#if(`cat id_new` == "0") then
+#  rm -f $out  
+#endif
+#if(-f $in) rm -f $in
+
+if(-f 1.sed) rm -f 1.sed
+
+#awk '{print $0}' > $in
+#cat >> 1.sed << eof
+#s/0\t/$hosts[1] /g
+#eof
+
+ @ i=1 ; @ jjj=1
+  while($i <= $#hosts)
+   echo "hosts: $hosts[$i]"
+   @ j=1
+    while($j <= $nodes[$i])
+     set jj=`expr $j - 1 + $jjj`
+     # awk '{if($6 == jj){$6=host}{print $0}}' jj=$jj host=$hosts[$i] $in >> $out ; mv $out $in ; cat $in
+     set kk=`expr $jj - 1` # NB: profile count from worker 1
+     if($kk != 0) then
+     cat >> 1.sed << eof
+s/from $kk /from $kk($hosts[$i]) /g
+eof
+     endif
+
+     endif
+     @ j+=1
+    end
+    set jjj=`expr $j + $jjj - 1`
+   @ i+=1
+  end
+  sed -f 1.sed
+  # remove tmp file
+  rm -f 1.sed

@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<TITLE>Resource Monitoring</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF" TEXT="#000000">
+
+<p>
+<H1 align=center>Resources and Jobs Monitoring</H1>
+<H2 align=center>Summary Report</H2>
+<hr>
+<p>
+
+
+<p>
+Soon after we started our first Routine-basis Experiment, we felt the need to have a centralized resources and jobs monitoring. Most sites are running either SCMSWEB or Ganglia. Since there are more sites running SCMSWEB than Ganglia and SCMSWEB can be easily added to a central site, we chose to use SCMSWEB.
+<p>
+We setup http://pragma-goc.rocksclusters.org/scmsweb/scmsweb.html as our central site and, to-date, added 5 sites and 2 more sites are in preparation. We started this effort on June 23. Throughout this experiment, SCMSWEB software has been running stable on all added sites.
+<p>
+The following sites have been added to pragma-goc:
+<pre> 
+Institution  Host                      Available Since
+-----------  ------------------------  ---------------
+PRAGMA       crayon.rocksclusters.org    06/26/04
+AIST         ume.hpcc.jp                 06/26/04
+KU           amata1.cpe.ku.ac.th         06/26/04
+KISTI        Jupiter.gridcenter.or.kr    07/02/04
+NCSA         agt-login.ncsa.uiuc.edu     07/26/04 
+
+Not able to add the following sites yet:
+	Aurora.cs.usm.my - running Ganglia
+	Viper.bii.a-star.edu.sg - running Ganglia
+	Gsic-presto.titech.hpcc.jp - network security policy prohibit web service
+	Ase.nchc.org.tw - working on SCMSWEB installation
+	Malicia.super.unam.mx - working on SCMSWEB installation
+</pre>
+
+Problems and solutions:
+<OL>
+<LI>
+Different monitoring software do not talk to each other - Cannot add sites that running Ganglia for centralized monitoring.
+<LI>
+Limited support to various job schedulers by monitoring software - Currently, SCMSWEB does not support SGE, PBS and LSF yet, so cannot monitor user jobs on systems running these job schedulers. SCMSWEB developers will provide documentation for writing new job scheduler support for SCMSWEB as a near-term solution.
+<LI>
+Different network security policies and setups among sites - Some sites cannot participate due to their security policies and some sites had to perform special setups to allow monitoring.
+<LI>
+Monitoring software versions conflict - ASE is running a older version of SCMSWEB. When added to pragma-goc, it produces a false memory graph for both itself and the total memory graph for the whole Grid. ASE is working on installing the current version of SCMSWEB.
+<LI>
+Monitoring software configuration conflict - AMATA1 was configured to be a central site for many other clusters. When AMATA1 was added to pragma-goc, cached memory on pragma-goc goes up 10 folds which causes it to lose monitoring data for all sites periodically and frequently. This problem has been resolved by removing all added sites from AMATA1.
+<LI>
+Lack of up-to-date documentation for monitoring software - In the course of experiment, some administrators found difficult to install and setup SCMSWEB without a good and up-to-date documentation. Had to resort to ask SCMSWEB developers for help. This problem is being resolved - SCMSWEB developers have updated the documentation for SCMSWEB deployment.
+<LI>
+Need organization names along side of host names for SCMSWEB data charts.
+SCMSWEB developers are working on a patch for this.
+</OL>
+</BODY>
+</HTML>

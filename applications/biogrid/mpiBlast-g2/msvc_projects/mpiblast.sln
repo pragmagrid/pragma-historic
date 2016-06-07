@@ -1,0 +1,32 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mpiblast", "mpiblast.vcproj", "{6F71CD48-B789-4FC1-8D55-F8D82B20113C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mpiformatdb", "mpiformatdb.vcproj", "{48AA1BFB-C54F-4E1B-A1F7-A0CE089657D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+		ConfigName.2 = ReleaseDLL
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{6F71CD48-B789-4FC1-8D55-F8D82B20113C}.Debug.ActiveCfg = Debug|Win32
+		{6F71CD48-B789-4FC1-8D55-F8D82B20113C}.Debug.Build.0 = Debug|Win32
+		{6F71CD48-B789-4FC1-8D55-F8D82B20113C}.Release.ActiveCfg = Release|Win32
+		{6F71CD48-B789-4FC1-8D55-F8D82B20113C}.Release.Build.0 = Release|Win32
+		{6F71CD48-B789-4FC1-8D55-F8D82B20113C}.ReleaseDLL.ActiveCfg = Release|Win32
+		{6F71CD48-B789-4FC1-8D55-F8D82B20113C}.ReleaseDLL.Build.0 = Release|Win32
+		{48AA1BFB-C54F-4E1B-A1F7-A0CE089657D1}.Debug.ActiveCfg = Release|Win32
+		{48AA1BFB-C54F-4E1B-A1F7-A0CE089657D1}.Debug.Build.0 = Release|Win32
+		{48AA1BFB-C54F-4E1B-A1F7-A0CE089657D1}.Release.ActiveCfg = Release|Win32
+		{48AA1BFB-C54F-4E1B-A1F7-A0CE089657D1}.Release.Build.0 = Release|Win32
+		{48AA1BFB-C54F-4E1B-A1F7-A0CE089657D1}.ReleaseDLL.ActiveCfg = Release|Win32
+		{48AA1BFB-C54F-4E1B-A1F7-A0CE089657D1}.ReleaseDLL.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

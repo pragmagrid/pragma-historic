@@ -1,0 +1,47 @@
+<pre>
+Installation instructions for SIESTA and the auxiliary ATOM program.
+
+A) SIESTA
+
+After unpacking the Siesta (tarred and gzipped) archive:
+
+* Go to Src and type:
+
+  configure --enable-fast
+
+(that will generate a file named 'arch.make' with basic compiler flags, and the location
+of the basic libraries. If you know where to find optimized BLAS and LAPACK libraries,
+you can use
+
+  configure --enable-fast   --with-blas=/path/to/libblas.a --with-lapack=/path/to/liblapack.a
+
+* Type "make" to compile the program.
+
+* Now go to the Src/Tests/h2o directory and type "make".
+
+  The test should run to completion (in a short time), and the results should be similar (to within
+  numerical roundoff error propagation) to the Reference/h2o.out file:
+
+  diff h2o.out ../Reference/h2o.out
+
+* The siesta executable can now be put in some standard place where I can find it.
+
+NB: If the configure process fails for some reason, you can use one of the pre-cooked arch.make files
+in the Src/Sys directory. Select (or create) an appropriate file and put it in the Src directory with
+the name "arch.make". Then do the "make" step.
+
+B) ATOM
+
+* Go to the Pseudo/atom directory and type
+
+  make FC="compiler_name" 
+
+  where "compiler_name" is the compiler you are using.  For example:
+
+  make FC=g95
+
+* The atm executable can now be put in some standard place where I can find it.
+</pre>
+
+
+

@@ -1,0 +1,24 @@
+#!/usr/bin/perl
+use FindBin qw($Bin);
+
+use lib "$Bin";
+use Common::KillZombies;
+
+$cmd = "qstat -f | awk \'{if (\$4 > 0.02) print \$1}\' | sed \'s\/[a-zA-Z.]*@\/\/g\'";
+
+$result = `$cmd`;
+
+@busyhosts = split(/[\n|\s+\n]/,$result);
+
+#print $busyhosts[0]."\n";
+
+foreach $bhost (@busyhosts)  {
+
+    killZombies($bhost);
+
+    my $tmp = getRemoteTemp($bhost);
+
+    cleanUpTemp($bhost,$tmp);
+}
+
+1;

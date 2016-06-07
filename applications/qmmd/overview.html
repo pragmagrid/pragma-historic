@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>QM-MD simulation/Ninf-G Experiement (System Requirement)</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=shift_jis">
+<META content="MSHTML 6.00.2900.2604" name=GENERATOR></HEAD>
+<BODY>
+<H1 align=center>QM-MD simulation/Ninf-G</H1>
+<HR>
+
+Requirements of the application is <a href="qmmd_requirement.html">here</a>.
+
+<h2>0. PRAGMA/TeraGrid Joint Experiment </h2>
+This application will be used for PRAGMA/TeraGrid Joint Experiment.
+The detailed information is available on the <a href="http://wiki.pragma-grid.net/index.php?title=PRAGMA/TeraGrid_Joint_Experiment">PRAGMA wiki</a> page.
+
+<h2>1. Application</h2>
+The application is a multiscale simulation that seamlessly embeds
+accurate quantum mechanical (QM) calculation to handle chemical
+reactions (below a length scale of 10^-8 m) within a molecular
+dynamics (MD) simulation to describe large-scale atomistic processes
+(up to a length scale of 10^-6 m).  Modern design of high-performance
+materials and devices focuses on controlling structures at diverse
+length scales from atomic to macroscopic, and such multiscale MD/QM
+simulations are expected to play an important role in scaling down
+engineering concepts to nanometer scales.
+
+<h2>2. Implementation</h2>
+We have implemented a multiscale MD/QM simulation scheme, in which
+atomic clusters described by QM calculation are embedded in an
+atomistic region.  The motion of atoms is described with a real-space
+multigrid-based DFT in the QM clusters and with the MD approach in the
+surrounding region.  To make the MD/QM simulation scalable and
+adaptive to a Grid, we have implemented the simulation based on a
+divide-and-concur scheme in which the QM region is a union of multiple
+QM clusters.  Each QM cluster calculation does not access the atomic
+coordinates in the other clusters and accordingly its parallel
+implementation involves no inter-QM cluster communication.  The hybrid
+MD/QM simulation has been implemented using GridRPC and MPI.  GridRPC
+is a programming model based on a Remote Procedure Call (RPC)
+mechanism tailored for the Grid.  MPI is used for extracting inner
+parallelism from both MD and QM calculations and GridRPC is used for
+calling QM calculations on clusters.  GridRPC frees us from burden of
+Grid-enabled MPI such as co-allocation, weak fault tolerance, etc.  We
+used Ninf-G version 2 (Ninf-G2) as a GridRPC programming middleware.
+Ninf-G2 is a reference implementation of the GridRPC API, a proposed
+GGF standard.  Ninf-G2 is implemented to work with basic Grid
+services, such as GSI, GRAM, and MDS in the Globus Toolkit version 2.
+Hiding the complexity of the Globus Toolkit, Ninf-G enables easy
+development and execution of Grid applications.
+
+<h2>3. Experiments and demonstration (planned)</h2>
+We plan to run the multiscale simulation on PRAGMA testbed as a sample
+application of PRAGMA routine-basis experiment.  The simulation has a
+capability for fault-tolerant.  If a cluster becomes unavailable, the
+simulation which has been running on the cluster will be migrated to
+the other cluster.  Using this capability, we plan to continue the
+simulation for about 1 month without interrupting its execution.
+
+</BODY></HTML>

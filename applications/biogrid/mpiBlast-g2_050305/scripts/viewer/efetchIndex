@@ -1,0 +1,13 @@
+#!/bin/csh -f
+
+if ( $#argv < 1 ) then
+  echo " efetchIndex - create index files (entrynam.idx & division.lkp) for efetch"
+  echo ""
+  echo " Usage: efetchIndex <db_file>"
+  echo ""
+  exit
+endif
+
+fastaentrynamelong.script $1
+
+mkdiv -f $1

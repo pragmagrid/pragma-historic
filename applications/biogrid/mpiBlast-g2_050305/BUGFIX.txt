@@ -1,0 +1,18 @@
+In mpich, the C++ compiler is mpiCC  for 1.2.5, mpicxx is for 1.2.5.3.
+We recommend user use mpich1.2.5, so modify the C++ compiler's name in these two files.
+src/Makefile.am   : CXX=mpiCC
+src/Makefile.in   : CXX=mpiCC
+                                                      2005/3/14 Chi-Wei Wang
+===============================================================================
+                                                                                
+Disable the argument "-pragma" in blast-g2.submit.pl.
+                                                                                
+For all sites besides root site(the front-end you use), change the output directory of stdout and stderr(stand out and error) to user's home directory when the argument "-debug" is used.
+Keep stdout and stderr in working directory for root site.
+                                                                                
+Add "-prof" in blast-g2.submit.pl.
+For all sites besides root site(the front-end you use), change the output directory of BLAST_xxx.prof.x to user's home directory when the argument "-prof" is used.
+Keep BLAST_xxx.prof.x in working directory for root site.
+                                                       2005/3/14 Chi-Wei Wang
+===============================================================================
+

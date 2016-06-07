@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+
+$cmd = "qstat -f | awk \'{if (\$4 > 0.02) print \$1}\' | sed \'s\/.q\/\/g\'";
+
+$result = `$cmd`;
+
+@busyhosts = split(/[\n|\s+\n]/,$result);
+
+print $busyhosts[0]."\n";
+
+foreach $bhost (@busyhosts)  {
+
+    my $sshcmd = "ssh $bhost \'killall -9 \/home\/hclee\/opt\/mpiBlast-g2\/bin\/mpiblast-g2\'";
+
+    print $sshcmd."\n";
+
+    $result = `$sshcmd`;
+}

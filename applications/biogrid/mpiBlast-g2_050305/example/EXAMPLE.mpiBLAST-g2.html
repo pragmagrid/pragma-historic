@@ -1,0 +1,584 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="StarSuite 7  (Linux)">
+	<META NAME="CREATED" CONTENT="20050207;12270600">
+	<META NAME="CHANGED" CONTENT="20050401;10593100">
+	<STYLE>
+	<!--
+		@page { size: 21cm 29.7cm; margin: 2cm }
+		TH P { margin-bottom: 0.21cm }
+		TD P { margin-bottom: 0.21cm; text-align: left }
+		P { margin-bottom: 0.21cm; text-align: left }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="zh-TW" DIR="LTR">
+<H1 ALIGN=RIGHT><A NAME="title"></A><FONT COLOR="#0000ff"><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">MPIBLAST-g2
+Example Guide</SPAN></FONT></FONT></H1>
+<HR>
+<UL>
+	<LI><H3><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><A HREF="#system architecture"><FONT FACE="Thorndale, serif">System
+	architecture</FONT></A></SPAN></FONT></H3>
+	<LI><H3><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><A HREF="#install NCBI toolbox"><FONT FACE="Thorndale, serif">Installation
+	of NCBI toolbox</FONT></A></SPAN></FONT></H3>
+	<LI><H3><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><A HREF="#install mpich-g2"><FONT FACE="Thorndale, serif">Installation
+	of MPICH-g2</FONT></A></SPAN></FONT></H3>
+	<LI><H3><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><A HREF="#install mpiblast-g2"><FONT FACE="Thorndale, serif">Installation
+	of mpiBLAST-g2</FONT></A></SPAN></FONT></H3>
+</UL>
+<UL>
+	<LI><H3><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><A HREF="#run mpiblast-g2"><FONT FACE="Thorndale, serif">Running
+	mpiBLAST-g2</FONT></A></SPAN></FONT></H3>
+</UL>
+<HR>
+<P><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">It's easy
+to understand how to install and run mpiBLAST-g2 by example. This
+guide will introduce you a real example which runs on two clusters.
+They are both build on Globus Toolkit. You can follow this guide to
+install mpiBLAST-g2 and dependent software. Then submit a job to test
+it. But this guide doesn't include how to set your grid environment
+like certificate.</SPAN></FONT></FONT></P>
+<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><FONT FACE="Thorndale, serif">[<A HREF="#title">back</A>]</FONT></SPAN></FONT></P>
+<H2><A NAME="system architecture"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">System
+architecture</SPAN></FONT></H2>
+<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">This example is
+tested on ASCC(Academia Sinica Computing Centre) and SDSC(San Diego
+Supercomputer Center). Table 1 lists some information of these two
+clusters. <FONT FACE="Thorndale">The user account in these two
+clusters is cwwang, and his home directory is /home/cwwang.</FONT></SPAN></FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=728 BORDER=1 CELLPADDING=4 CELLSPACING=0 RULES=NONE>
+		<COL WIDTH=69>
+		<COL WIDTH=67>
+		<COL WIDTH=101>
+		<COL WIDTH=163>
+		<COL WIDTH=162>
+		<COL WIDTH=116>
+		<THEAD>
+			<TR VALIGN=TOP>
+				<TH WIDTH=69 BGCOLOR="#ff8080">
+					<P><BR>
+					</P>
+				</TH>
+				<TH WIDTH=67 BGCOLOR="#ff8080">
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">name</SPAN></FONT></P>
+				</TH>
+				<TH WIDTH=101 BGCOLOR="#ff8080">
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">front-end</SPAN></FONT></P>
+				</TH>
+				<TH WIDTH=163 BGCOLOR="#ff8080">
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">operation
+					system</SPAN></FONT></P>
+				</TH>
+				<TH WIDTH=162 BGCOLOR="#ff8080">
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">scratch in
+					back-end</SPAN></FONT></P>
+				</TH>
+				<TH WIDTH=116 BGCOLOR="#ff8080">
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">globus
+					flavor</SPAN></FONT></P>
+				</TH>
+			</TR>
+		</THEAD>
+		<TBODY>
+			<TR VALIGN=TOP>
+				<TD WIDTH=69 BGCOLOR="#ccffff">
+					<P ALIGN=LEFT><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">ASCC</SPAN></FONT></P>
+				</TD>
+				<TD WIDTH=67 BGCOLOR="#ccffff">
+					<P ALIGN=LEFT><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">pragma</SPAN></FONT></P>
+				</TD>
+				<TD WIDTH=101 BGCOLOR="#ccffff">
+					<P ALIGN=LEFT><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">pragma001</SPAN></FONT></P>
+				</TD>
+				<TD WIDTH=163 BGCOLOR="#ccffff">
+					<P ALIGN=LEFT><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Scientific
+					Linux 3.0.2</SPAN></FONT></P>
+				</TD>
+				<TD WIDTH=162 BGCOLOR="#ccffff">
+					<P ALIGN=LEFT><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">/tmp</SPAN></FONT></P>
+				</TD>
+				<TD WIDTH=116 BGCOLOR="#ccffff">
+					<P ALIGN=LEFT><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">gcc32dbg</SPAN></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=69 BGCOLOR="#ccffff">
+					<P ALIGN=LEFT><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">SDSC</SPAN></FONT></P>
+				</TD>
+				<TD WIDTH=67 BGCOLOR="#ccffff">
+					<P ALIGN=LEFT><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">rocks</SPAN></FONT></P>
+				</TD>
+				<TD WIDTH=101 BGCOLOR="#ccffff">
+					<P ALIGN=LEFT><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">rocks-52</SPAN></FONT></P>
+				</TD>
+				<TD WIDTH=163 BGCOLOR="#ccffff">
+					<P ALIGN=LEFT><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Rocks
+					release 3.3.0</SPAN></FONT></P>
+				</TD>
+				<TD WIDTH=162 BGCOLOR="#ccffff">
+					<P ALIGN=LEFT><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">/state/partition1</SPAN></FONT></P>
+				</TD>
+				<TD WIDTH=116 BGCOLOR="#ccffff">
+					<P ALIGN=LEFT><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">gcc32</SPAN></FONT></P>
+				</TD>
+			</TR>
+		</TBODY>
+	</TABLE>
+</DL>
+<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">&lt;Table 1&gt;</SPAN></FONT></P>
+<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><FONT FACE="Thorndale, serif">[<A HREF="#title">back</A>]</FONT></SPAN></FONT></P>
+<H2><A NAME="install NCBI toolbox"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Installation
+of NCBI toolbox</SPAN></FONT></H2>
+<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><FONT FACE="Thorndale, serif"><FONT FACE="Thorndale">In
+order to compile mpiBLAST-g2, we need some libraries of NCBI toolbox.
+So we must install NCBI toolbox on pragma and rocks cluster at first.
+If you want to know more detail about NCBI toolbox, please refer to
+</FONT><A HREF="http://www.ncbi.nlm.nih.gov/"><FONT FACE="Thorndale">NCBI
+HOME</FONT></A></FONT></SPAN></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">Getting
+	the source tarball from NCBI </SPAN></FONT></FONT>
+	</P>
+</UL>
+<P STYLE="margin-left: 2.01cm"><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><A HREF="ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools/old/20040204/ncbi.tar.gz"><FONT FACE="Thorndale">ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools/old/20040204/ncbi.tar.gz</FONT></A></SPAN></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">Extracting
+	the source tarball</SPAN></FONT></FONT></P>
+</UL>
+<DL>
+	<DD>
+	<TABLE WIDTH=609 BORDER=1 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=599>
+		<THEAD>
+			<TR>
+				<TD WIDTH=599 VALIGN=TOP BGCOLOR="#ccffff">
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">$
+					tar xzvf ncbi.tar.gz</SPAN></FONT></FONT></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</DL>
+<UL>
+	<LI><P ALIGN=LEFT><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">Installing
+	NCBI toolbox</SPAN></FONT></FONT></P>
+</UL>
+<DL>
+	<DD>
+	<TABLE WIDTH=610 BORDER=1 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=600>
+		<THEAD>
+			<TR>
+				<TD WIDTH=600 VALIGN=TOP BGCOLOR="#ccffff">
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">$
+					./ncbi/make/makedis.csh 2&gt;&amp;1 | tee out.makedis.txt
+					(bash,sh,zsh)</SPAN></FONT></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">$
+					./ncbi/make/makedis.csh |&amp; tee out.makedis.txt (csh,tcsh)</SPAN></FONT></FONT></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</DL>
+<UL>
+	<LI><P><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">Setting
+	up environment variables(bash shell)</SPAN></FONT></FONT></P>
+</UL>
+<DL>
+	<DD>
+	<TABLE WIDTH=613 BORDER=1 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=603>
+		<THEAD>
+			<TR>
+				<TD WIDTH=603 VALIGN=TOP BGCOLOR="#ccffff">
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">$
+					export NCBI_LOCATION=&lt;ncbi_toolbox_location&gt;</SPAN></FONT></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">$
+					export LD_LIBRARY_PATH=$NCBI_LOCATION/lib</SPAN></FONT></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">$
+					export PATH=$NCBI_LOCATION/bin:$PATH</SPAN></FONT></FONT></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</DL>
+<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><FONT FACE="Thorndale">[<A HREF="#title">back</A>]</FONT></SPAN></FONT></P>
+<H2><A NAME="install mpich-g2"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Installation
+of MPICH-g2</SPAN></FONT></H2>
+<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><FONT FACE="Thorndale">In
+order to compile mpiBLAST-g2, we need mpich libraries for C and
+FRTRAN compiler on GlobusToolkit. So we must install MPICH-g2 on
+pragma and rocks cluster. If you want to know more detail about
+mpich, please refer to <A HREF="http://www-unix.mcs.anl.gov/mpi/mpich/">MPICH
+HOME</A></FONT></SPAN></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">Getting
+	the mpich-1.2.5 source tarball from ANL and extracting it</SPAN></FONT></FONT></P>
+</UL>
+<P STYLE="margin-left: 2.01cm"><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><A HREF="ftp://ftp.mcs.anl.gov/pub/mpi/old/mpich-1.2.5.tar.gz"><FONT FACE="Thorndale">ftp://ftp.mcs.anl.gov/pub/mpi/old/mpich-1.2.5.tar.gz</FONT></A></SPAN></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">Configuring
+	MPICH-g2</SPAN></FONT></FONT></P>
+</UL>
+<P STYLE="margin-left: 1.25cm"><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">for
+pragma:</SPAN></FONT></FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=614 BORDER=1 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=604>
+		<THEAD>
+			<TR>
+				<TD WIDTH=604 VALIGN=TOP BGCOLOR="#ccffff">
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">$
+					./configure --with-arch=LINUX
+					--with-device=globus2:--flavor=gcc32dbg \</SPAN></FONT></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">-prefix=/home/cwwang/pkg/mpich_g2
+					--disable-f90 -c++=g++ -cc=gcc -fc=g77 -opt=&quot;-O2&quot;</SPAN></FONT></FONT></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</DL>
+<P STYLE="margin-left: 1.25cm"><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">for
+rocks:</SPAN></FONT></FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=613 BORDER=1 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=603>
+		<THEAD>
+			<TR>
+				<TD WIDTH=603 VALIGN=TOP BGCOLOR="#ccffff">
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">$
+					./configure --with-arch=LINUX
+					--with-device=globus2:--flavor=gcc32 \</SPAN></FONT></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">-prefix=/home/cwwang/pkg/mpich_g2
+					--disable-f90 -c++=g++ -cc=gcc -fc=g77 -opt=&quot;-O2&quot;</SPAN></FONT></FONT></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</DL>
+<UL>
+	<LI><P><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">Building
+	MPICH-g2</SPAN></FONT></FONT></P>
+</UL>
+<DL>
+	<DD>
+	<TABLE WIDTH=614 BORDER=1 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=604>
+		<THEAD>
+			<TR>
+				<TD WIDTH=604 VALIGN=TOP BGCOLOR="#ccffff">
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">$
+					make &gt;&amp; make.log&amp;</SPAN></FONT></FONT></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</DL>
+<UL>
+	<LI><P><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">Installing
+	MPICH-g2</SPAN></FONT></FONT></P>
+</UL>
+<DL>
+	<DD>
+	<TABLE WIDTH=614 BORDER=1 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=604>
+		<THEAD>
+			<TR>
+				<TD WIDTH=604 VALIGN=TOP BGCOLOR="#ccffff">
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">$
+					make install &gt;&amp; make_in.log &amp;</SPAN></FONT></FONT></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</DL>
+<P ALIGN=LEFT><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><FONT FACE="Thorndale">[<A HREF="#title">back</A>]</FONT></SPAN></FONT></P>
+<H2><A NAME="install mpiblast-g2"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Installation
+of mpiBLAST-g2</SPAN></FONT></H2>
+<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Then we need to
+install mpiBLAST-g2 on pragma and rocks cluster.</SPAN></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">Getting
+	the mpiBLAST-g2 source tarball from ASCC or PRAGMA and extracting it</SPAN></FONT></FONT></P>
+</UL>
+<P STYLE="margin-left: 1.96cm"><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><FONT FACE="Thorndale, serif">ASCC
+: <A HREF="http://bits.sinica.edu.tw/en/service/index.php"><FONT FACE="Thorndale, serif">http://bits.sinica.edu.tw/en/service</FONT></A></FONT></SPAN></FONT></P>
+<P STYLE="margin-left: 2.01cm"><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><FONT FACE="Thorndale, serif">PRAGMA
+: <A HREF="http://pragma-goc.rocksclusters.org/softdepot">http://pragma-goc.rocksclusters.org/softdepot</A></FONT></SPAN></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">Configuring
+	mpiBLAST-g2</SPAN></FONT></FONT></P>
+</UL>
+<DL>
+	<DD>
+	<TABLE WIDTH=617 BORDER=1 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=607>
+		<THEAD>
+			<TR>
+				<TD WIDTH=607 VALIGN=TOP BGCOLOR="#ccffff">
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">$
+					./configure --prefix=/home/cwwang/pkg/mpiblast_g2
+					--with-ncbi=/home/cwwang/pkg/ncbi</SPAN></FONT></FONT></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</DL>
+<UL>
+	<LI><P><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">Building
+	mpiBLAST-g2</SPAN></FONT></FONT></P>
+</UL>
+<DL>
+	<DD>
+	<TABLE WIDTH=618 BORDER=1 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=608>
+		<THEAD>
+			<TR>
+				<TD WIDTH=608 VALIGN=TOP BGCOLOR="#ccffff">
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">$
+					make</SPAN></FONT></FONT></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</DL>
+<UL>
+	<LI><P><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">Installing
+	mpiBLAST-g2</SPAN></FONT></FONT></P>
+</UL>
+<DL>
+	<DD>
+	<TABLE WIDTH=620 BORDER=1 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=610>
+		<THEAD>
+			<TR>
+				<TD WIDTH=610 VALIGN=TOP BGCOLOR="#ccffff">
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">$
+					make install</SPAN></FONT></FONT></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</DL>
+<UL>
+	<LI><P><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">Modifying
+	mpiblast-gasscopy.conf</SPAN></FONT></FONT></P>
+</UL>
+<P STYLE="margin-left: 1.25cm"><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US"><B>pragma:
+/home/cwwang/pkg/mpiblast_g2/etc/mpiblast-gasscopy.conf</B></SPAN></FONT></FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=621 BORDER=1 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=611>
+		<THEAD>
+			<TR>
+				<TD WIDTH=611 VALIGN=TOP BGCOLOR="#ccffff">
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">gsiftp://pragma001.grid.sinica.edu.tw</SPAN></FONT></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">/home/cwwang/blast_db/mpiblast_storage</SPAN></FONT></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">/tmp</SPAN></FONT></FONT></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</DL>
+<P STYLE="margin-left: 1.25cm"><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US"><B>rocks:
+/home/cwwang/pkg/mpiblast_g2/etc/mpiblast-gasscopy.conf</B></SPAN></FONT></FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=621 BORDER=1 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=611>
+		<THEAD>
+			<TR>
+				<TD WIDTH=611 VALIGN=TOP BGCOLOR="#ccffff">
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">gsiftp://rocks-52.sdsc.edu</SPAN></FONT></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">/home/cwwang/blast_db/mpiblast_storage</SPAN></FONT></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US"><SPAN LANG="en-US"><FONT FACE="Thorndale, serif">/state/partition1/cwwang
+					</FONT></SPAN></SPAN></FONT></FONT>
+					</P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</DL>
+<UL>
+	<LI><P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><SPAN LANG="en-US"><FONT SIZE=3><FONT FACE="Thorndale, serif">Setting
+	up environmental variables for mpich and mpiBLAST-g2</FONT></FONT></SPAN></SPAN></FONT></P>
+</UL>
+<P STYLE="margin-left: 1.25cm"><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US"><B>pragma:</B></SPAN></FONT></FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=621 BORDER=1 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=611>
+		<THEAD>
+			<TR>
+				<TD WIDTH=611 VALIGN=TOP BGCOLOR="#ccffff">
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US"><FONT FACE="Thorndale">$
+					export  BLASTG2_LOCATION= </FONT>/home/cwwang/pkg/mpiblast_g2</SPAN></FONT></FONT></P>
+					<P><FONT FACE="Thorndale"><FONT SIZE=2><SPAN LANG="en-US">$
+					export  MPICHG2_LOCATION= /home/cwwang/pkg/mpich_g2</SPAN></FONT></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US"><FONT FACE="Thorndale">$
+					export  GLOBUS_LOCATION=</FONT> /prj/globus-2.4.3</SPAN></FONT></FONT></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</DL>
+<P STYLE="margin-left: 1.25cm"><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US"><B>rocks:</B></SPAN></FONT></FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=622 BORDER=1 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=612>
+		<THEAD>
+			<TR>
+				<TD WIDTH=612 VALIGN=TOP BGCOLOR="#ccffff">
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US"><FONT FACE="Thorndale">$
+					export  BLASTG2_LOCATION= </FONT>/home/cwwang/pkg/mpiblast_g2</SPAN></FONT></FONT></P>
+					<P><FONT FACE="Thorndale"><FONT SIZE=2><SPAN LANG="en-US">$
+					export  MPICHG2_LOCATION= /home/cwwang/pkg/mpich_g2</SPAN></FONT></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US"><FONT FACE="Thorndale">$
+					export  GLOBUS_LOCATION= /opt/nmi/bin/globusrun</FONT></SPAN></FONT></FONT></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</DL>
+<UL>
+	<LI><P><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">Make
+	sure mpiBLAST-g2 can find globus library path</SPAN></FONT></FONT></P>
+</UL>
+<P STYLE="margin-left: 1.25cm"><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">You
+can use <B><I>ldd mpiformatdb</I></B> to test it, or execute <I><B>export
+LD_LIBRARY_PATH=&lt;globus_lib_path&gt;</B>, <B>&lt;globus_lib_path&gt;</B>
+</I>means which  directory you put globus library in.</SPAN></FONT></FONT></P>
+<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><FONT FACE="Thorndale, serif"><FONT FACE="Thorndale">[</FONT><A HREF="#title"><FONT FACE="Thorndale">back</FONT></A><FONT FACE="Thorndale">]</FONT></FONT></SPAN></FONT></P>
+<H2><A NAME="run mpiblast-g2"></A><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Run
+mpiBLAST-g2</SPAN></FONT></H2>
+<UL>
+	<LI><P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Generating
+	database for mpiBLAST-g2 on pragma and rocks. </SPAN></FONT>
+	</P>
+</UL>
+<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><FONT FACE="Thorndale, serif">If
+you want to know more detail arguments about mpiformatdb or mpiblast,
+please refer to <A HREF="http://mpiblast.lanl.gov/"><FONT FACE="Thorndale">MPIBLAST
+HOME</FONT></A></FONT></SPAN></FONT></P>
+<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><FONT FACE="Thorndale, serif">If
+you want to download BLAST database from NCBI, please refer to <A HREF="ftp://ftp.ncbi.nih.gov/blast/db"><FONT FACE="Thorndale">NCBI
+BLAST db</FONT></A>, or <A HREF="ftp://ftp.ncbi.nih.gov/blast/db/FASTA"><FONT FACE="Thorndale">FASAT
+format</FONT></A></FONT></SPAN></FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=680 BORDER=1 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=670>
+		<THEAD>
+			<TR>
+				<TD WIDTH=670 VALIGN=TOP BGCOLOR="#ccffff">
+					<P><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">$
+					mpiformatdb -f
+					/home/cwwang/pkg/mpiblast_g2/etc/mpiblast-gasscopy.conf -N 10 -i
+					drosoph.nt -o T -p F</SPAN></FONT></FONT></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</DL>
+<P STYLE="margin-left: 1.25cm"><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US"><B><I>-N
+10 </I></B>means separate drosoph.nt database to 10 fragments.</SPAN></FONT></FONT></P>
+<UL>
+	<LI><P><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">Preparing
+	the machinefile.</SPAN></FONT></FONT></P>
+</UL>
+<P><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">Machinefile
+lists which cluster and how many resources will be used in this
+job.For this case, we will use three nodes in pragma and two nodes in
+rocks.</SPAN></FONT></FONT></P>
+<P STYLE="margin-left: 1.25cm"><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><A HREF="machinefile"><FONT FACE="Thorndale">machinefile</FONT></A></SPAN></FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=621 BORDER=1 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=611>
+		<THEAD>
+			<TR>
+				<TD WIDTH=611 VALIGN=TOP BGCOLOR="#ccffff">
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">pragma001.grid.sinica.edu.tw/jobmanager-pbs
+					3</SPAN></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">rocks-52.sdsc.edu/jobmanager-sge
+					2</SPAN></FONT></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</DL>
+<UL>
+	<LI><P><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">Preparing
+	input query sequence</SPAN></FONT></FONT></P>
+</UL>
+<P STYLE="margin-left: 1.25cm"><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><A HREF="BLAST.in"><FONT FACE="Thorndale">BLAST.in</FONT></A></SPAN></FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=775 BORDER=1 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=765>
+		<THEAD>
+			<TR>
+				<TD WIDTH=765 VALIGN=TOP BGCOLOR="#ccffff">
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">&gt;Test</SPAN></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC</SPAN></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">TTCTGAACTGGTTACCTGCCGTGAGTAAATTAAAATTTTATTGACTTAGGTCACTAAATACTTTAACCAA</SPAN></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">TATAGGCATAGCGCACAGACAGATAAAAATTACAGAGTACACAACATCCATGAAACGCATTAGCACCACC</SPAN></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">ATTACCACCACCATCACCATTACCACAGGTAACGGTGCGGGCTGACGCGTACAGGAAACACAGAAAAAAG</SPAN></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">CCCGCACCTGACAGTGCGGGCTTTTTTTTTCGACCAAAGGTAACGAGGTAACAACCATGCGAGTGTTGAA</SPAN></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">GTTCGGCGGTACATCAGTGGCAAATGCAGAACGTTTTCTGCGTGTTGCCGATATTCTGGAAAGCAATGCC</SPAN></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">AGGCAGGGGCAGGTGGCCACCGTCCTCTCTGCCCCCGCCAAAATCACCAACCACCTGGTGGCGATGATTG</SPAN></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">AAAAAACCATTAGCGGCCAGGATGCTTTACCCAATATCAGCGATGCCGAACGTATTTTTGCCGAACTTTT</SPAN></FONT></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</DL>
+<UL>
+	<LI><P><FONT COLOR="#000000"><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">Preparing
+	job submission file</SPAN></FONT></FONT></FONT></P>
+</UL>
+<P STYLE="margin-left: 1.25cm"><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><A HREF="run.sh"><FONT FACE="Thorndale">run.sh</FONT></A></SPAN></FONT></P>
+<DL>
+	<DD>
+	<TABLE WIDTH=777 BORDER=1 CELLPADDING=4 CELLSPACING=0>
+		<COL WIDTH=767>
+		<THEAD>
+			<TR>
+				<TD WIDTH=767 VALIGN=TOP BGCOLOR="#ccffff">
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">#!/bin/sh</SPAN></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">MPIBLAST_HOME=$HOME/pkg/mpiblast_g2</SPAN></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">$MPIBLAST_HOME/bin/blast-g2.submit
+					-compressio -debug -prof -program blastn -query BLAST.in
+					-database \</SPAN></FONT></P>
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">drosoph.nt
+					-machinefile machinefile &amp;</SPAN></FONT></P>
+				</TD>
+			</TR>
+		</THEAD>
+	</TABLE>
+</DL>
+<UL>
+	<LI><P><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">Running
+	mpiBLAST-g2</SPAN></FONT></FONT></P>
+</UL>
+<P STYLE="margin-left: 1.25cm"><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><FONT FACE="Thorndale">You
+can type <B><I>./run.sh</I></B> to run this job then you will see the
+result(<A HREF="BLAST_drosoph.nt.out">BLAST_drosoph.nt.out</A>) in
+the working directory after this job finishes.</FONT></SPAN></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.5cm"><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><FONT FACE="Thorndale">[<A HREF="#title">back</A>]</FONT></SPAN></FONT></P>
+<HR>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.5cm"><FONT FACE="Thorndale"><FONT SIZE=3><SPAN LANG="en-US">Release
+1.0, documentation updated on February 10, 2005.</SPAN></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.5cm"><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><FONT FACE="Thorndale"><A HREF="mailto:chiwei@gate.sinica.edu.tw">Chi-Wei
+Wang</A> Academia Sinica Computing Centre</FONT></SPAN></FONT></P>
+</BODY>
+</HTML>

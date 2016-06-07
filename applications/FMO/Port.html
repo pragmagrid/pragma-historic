@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+                      "http://www.w3.org/TR/REC-html40/loose.dtd">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html">
+<HTML>
+<BODY>
+<H1> GridFMO - Portability of binaries </H1>
+
+<P>
+
+The portability of GridFMO binaries is examined for the Gfarm
+deployment of executables.
+
+</P>
+
+<table border=1>
+<tr><th> Site </th><th> libc	</th><th> libpthread	</th></tr>
+<tr><td> SDSC </td><td> 2.3.4	</td><td> NPTL		</td></tr>
+<tr><td> AIST </td><td> 2.3.2	</td><td> Linux-thread	</td></tr>
+<tr><td> NCSA </td><td> 2.3.2	</td><td> NPTL		</td></tr>
+<tr><td> ASCC </td><td> 2.3.2	</td><td> NPTL		</td></tr>
+<tr><td> F32  </td><td> 2.3.2	</td><td> Linux-thread	</td></tr>
+</table>
+
+<P>
+
+F32 is a RedHat 8.0 machine with dual Xeon (3 GHz).
+
+For the test purpose, both dynamically-linked and statically-linked
+binaries are built on F32 and NCSA.
+
+Note that in building the statically linked binaries, warnings were
+emitted at link time: "warning: Using 'gethostbyname' in statically
+linked applications requires at runtime the shared libraries from the
+glibc version used for linking" and etc.
+
+<!--
+gamess.org.x (dynamic) and gamess.test.x (static) were used.
+h2o.gms was used for the test run.  (will be too light to measure performance)
+-->
+
+</P>
+
+<table border=1>
+<tr><th> binary		</th><th> SDSC </th><th> AIST </th><th> NCSA </th><th> ASCC </th><th> F32 </th></tr>
+<tr><td> F32-dynamic	</td><td> x(1) </td><td> o(3) </td><td> x(1) </td><td> x(1) </td><td> o   </td></tr>
+<tr><td> F32-static	</td><td> x(2) </td><td> o    </td><td> o    </td><td> o    </td><td> o   </td></tr>
+<tr><td> NCSA-dynamic	</td><td> o    </td><td> o(3) </td><td> o    </td><td> o    </td><td> o   </td></tr>
+<tr><td> NCSA-static	</td><td> o    </td><td> o    </td><td> o    </td><td> o    </td><td> o   </td></tr>
+</table>
+
+<OL>
+<LI> "Symbol sched_getaffinity, version GLIBC_2.3.2 not defined in
+     file libc.so.6" message is emitted on load.
+
+<LI> Failed with SIGSEGV.
+
+<LI> GAMESS kicker binary (ddikick.x) fails due to a missing library
+     (libgcc_s.so).  GAMESS body works.
+</OL>
+
+<P>
+
+If we ignore the link time warnings, NCSA-static seems to be most
+portable.
+
+The Linux-hread binaries are found to be not portable.
+
+</P>
+
+<BR>
+<IMG SRC="img/owl_line.gif" ALT="----------"> <BR>
+<ADDRESS> Grid Technology Research Center / AIST / IKEGAMI, Tsutomu </ADDRESS> <BR>
+<A HREF="Status.html"> Back </A><BR>
+
+</BODY>
+</HTML>

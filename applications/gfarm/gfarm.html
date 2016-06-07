@@ -1,0 +1,74 @@
+<html>
+<head>
+<title>Gfarm Deployment in PRAGMA Testbed</title>
+</head>
+<body bgcolor=white>
+
+<p>
+<H1 align=left>Gfarm Deployment in PRAGMA Testbed</H1>
+<hr>
+<p>
+
+<font size="+1">
+A Gfarm meta-server rocks-144.sdsc.edu has been setup for our testbed Gfarm
+system. All testbed clusters can become our Gfarm file system nodes by
+installing Gfarm file system and client software.
+<UL>
+<LI><h3>Requirements</h3>
+<UL>
+<LI> Public IP for each nodes (Gfarm developers are working on to include
+network addresss translation in future versions in order to allow private
+IP compute nodes to become Gfarm file system nodes)
+<LI> Open TCP/UDP ports 600 for both front-end and compute nodes
+<LI> OpenSSL library
+<LI> OpenLDAP library
+</UL>
+<p>
+<LI><h3>Installation</h3>
+Because most of our sites are running SCMSWeb, we need a special version of
+gfarm.spec file to build Gfarm RPMs to avoid a conflict. This means that
+we need to start with source RPM for Gfarm installation. Here are the steps:
+<OL>
+<p>
+<LI> Download the <a href="../../softdepot/gfarm-1.2-5p.src.rpm">source RPM</a>
+<p>
+<LI> Follow the <a href="http://datafarm.apgrid.org/software/binary-rpm.html">instructions</a> 
+to create binary RPMs
+<p>
+<LI>This step is for gfarm upgrade. If this is a fresh-install, skip to step 4.
+<br><br>If you are performing an upgrade on a gfarm file system node, 
+copy the binary rpm files you just created in step 2 to a location where all compute node can access,
+then do the following steps on each compute node
+<pre>
+# service gfsd stop
+# killall gfarm_agent
+# rpm -Fvh /usr/src/redhat/RPMS/i386/gfarm-gsi-*
+# service gfsd start
+</pre>
+Skip the rest of the steps - you are done.
+<p>
+<LI><a href="http://datafarm.apgrid.org/software/syscall-hook.en.html">find</a>
+and download the glibc-not-hidden for your system
+<p>
+<LI> Download the <a href="../../secure/gfarm.conf">gfarm.conf</a> file for our testbed Gfarm meta-server.
+<p>
+<LI>To install Gfarm binary RPMs you just created and the glibc-not-hidden package, follow the 
+<a href="http://datafarm.apgrid.org/software/1.1.1/INSTALL.RPM.en.txt">Gfarm installation manual</a>, 
+<font color="red">but skip directly to the session "Configuration of Gfarm file system node (and client node)" and make sure that you replace the "gfms.apgrid.org:/etc/gfarm.conf" in the scp command with the path of the gfarm.conf file you just downloaded in step 5!</font>
+<p>
+<LI>Repeat step 6 to install gfarm on all compute nodes. <font color="red">Note that do NOT use shared file systems for gfarm spool directory.</font>
+<p>
+<LI>Since Gfarm requires GSI authentication on all nodes, you need to make sure that all site certificate files and grid-mapfile are in synch among front-end and compute nodes. There are many methods can be employed to accomplish that - file replication or common file system or symbolic links etc. - feel free to choose your favorable method.
+</OL>
+<p>
+<LI><h3>Create an user account</h3> Create an user account for Osamu Tatebe with this <a href="../secure/tatebe.tar.gz">user info file</a>. <br>
+See <a href="../pragma-doc/userguide/admin.html#useraccount">how to</a> setup an user account for routine-basis experiments.<br>
+Please inform <a href="mailto:o.tatebe@aist.go.jp,zhengc@sdsc.edu">Osamu and Cindy</a> when the account is ready.
+<p>
+<LI> Any technical questions? Please email <a href="mailto:o.tatebe@aist.go.jp">Osamu Tatebe</a> and CC to <a href="mailto:zhengc@sdsc.edu">Cindy Zheng</a>.
+<p>
+</UL>
+</font>
+
+</body>
+</html>

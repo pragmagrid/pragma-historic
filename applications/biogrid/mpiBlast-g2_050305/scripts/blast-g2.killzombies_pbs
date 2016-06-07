@@ -1,0 +1,18 @@
+#!/usr/bin/perl
+
+$cmd = "pbsnodes -a | grep '^[a-zA-Z]'";
+
+$result = `$cmd`;
+
+@busyhosts = split(/[\n|\s+\n]/,$result);
+
+print $busyhosts[0]."\n";
+
+foreach $bhost (@busyhosts)  {
+
+    my $sshcmd = "ssh $bhost \'killall -9 \/home\/hclee\/opt\/mpiBlast-g2\/bin\/mpiblast-g2\'";
+
+    print $sshcmd."\n";
+
+    $result = `$sshcmd`;
+}

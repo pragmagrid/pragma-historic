@@ -1,0 +1,19 @@
+fullname=Alberto Garcia
+affiliation=Organic Chemistry Institute, University of Zurich
+address=Winterthurestrasse 190, 8050 ZURICH 
+country=Switzerland
+phone=41-446354256
+fax=41-446356812
+email=agarcia@oci.unizh.ch
+purpose=routine-basis experiments 
+contribution=work 
+prefered1=agarcia
+prefered2=albertog
+prefered3=galberto
+shell=bash 
+dn="O=University of Zurich, OU=OCI, OU=Baldridge group, OU=unizh.ch,  CN=Alberto Garcia"
+hostname=ocikbnmd.unizh.ch
+hostip=130.60.40.20
+urlcert=https://pragma-goc.rocksclusters.org/secure/certificates/e7ad98af.0
+urlcrl=NONE
+urlsign=https://pragma-goc.rocksclusters.org/secure/certificates/e7ad98af.signing_policy

@@ -1,0 +1,242 @@
+<HTML>
+<HEAD>
+<TITLE>TDDFT 2nd User Run, Errors and Sollutions</TITLE>
+</HEAD>
+<BODY bgcolor="#FFFFFF" TEXT="#000000">
+
+<p>
+<H1 align=center>TDDFT 2nd User Run</H1>
+<H2 align=center>Cindy Zheng, PRAGMA</H2>
+<hr>
+<p>
+
+<pre>
+Summary:
+-------
+All application setups are done by Yusuke. (Only AIST has access to TDDFT code.)
+Yusuke initially tried to setup TDDFT on crayon (SDSC),
+we experienced various problems (detail report below).
+There are many differences between UME (AIST) and crayon (SDSC),
+IFC versions, local ninf-g installations and environmental setups etc.
+which maybe the sources of our problems.
+Since our main objective is not porting the application,
+while we are still looking into solutions to this,
+Yusuke also setup TDDFT in my account on UME and I was able to start the run there.
+Currently, I'm running TDDFT on 6 sites:
+ume (AIST, Japan) 
+crayon (SDSC, USA) 
+amata1 (KU, Thailand)
+agt (NCSA, USA)
+jupiter (KISTI, Korea)
+ase (NCHC, Taiwan)
+
+Detail log:
+----------
+
+8/27/04 PST
+Previous run stopped output - client0824.out
+Jobs were still running on ume, agt-login, crayon, ase.
+Deleted jobs from queues.
+Cannot logon to jupiter and amata1.
+
+8/24/04 PST
+Trial:
+ninf-g servers: 
+Error:  Output stopped 8/24/04 10:40am PST
+client: ngclExecutable.c:5565: ngcllExecutableGet: Assertion `executable->nge_ID >= 0' failed.
+** Signal 134525688 **
+Note: probably due to NCSA maintenance on agt-login
+jobs still running in the queues on crayon, ume, ase, jupiter
+network connection to amata1 broke at gb-cpec4k6-cpec6k.cpe.ku.ac.th
+job killed on agt
+Solution:
+
+8/23/04 PST
+Trial: run from ume
+ninf-g servers: malicia
+Error: Tue Aug 24 11:27:02 2004 584ms 300us: Client: ume.hpcc.jp: Error: ngiCommunicationReceive: globus_io_read() failed.
+Tue Aug 24 11:27:02 2004 584ms 459us: Client: ume.hpcc.jp: Error: ngiCommunicationReceive: Connection was closed.
+Tue Aug 24 11:27:02 2004 584ms 486us: Client: ume.hpcc.jp: Error: ngiStreamManagerReceiveFull: Can't receive the data.
+Tue Aug 24 11:27:02 2004 584ms 516us: Client: ume.hpcc.jp: Error: ngiProtocolBinary_ReceiveHeader: Can't receive the Protocol Header.
+Tue Aug 24 11:27:02 2004 584ms 555us: Client: ume.hpcc.jp: Error: ngiProtocolBinary_Receive: Can't receive the Protocol Header.
+Tue Aug 24 11:27:02 2004 584ms 575us: Client: ume.hpcc.jp: Error: ngiProtocolReceive: Can't receive the Data.
+Tue Aug 24 11:27:02 2004 584ms 595us: Client: ume.hpcc.jp: Error: Context 1: Executable 1: ngcllCallbackProtocol: Receiving protocol failed.
+Tue Aug 24 11:27:09 2004  56ms  66us: Client: ume.hpcc.jp: Error: ngclSessionWaitAll: Can't wait Session.
+Tue Aug 24 11:27:09 2004  56ms 143us: Client: ume.hpcc.jp: Error: Context 1: grpc_l_wait: Session wait returned by error.
+Tue Aug 24 11:27:09 2004  56ms 203us: Client: ume.hpcc.jp: Error: Context 1: grpc_l_wait: The error occurred for session 1. (reason=26)
+Tue Aug 24 11:27:09 2004  56ms 251us: Client: ume.hpcc.jp: Error: Context 1: grpc_wait_all: Failed to Session wait.
+hpsi_queue: GRPC fails on initialization call.
+
+Note: globus authentication test and jobmanager test passed
+Solution:
+
+8/21/04 PST
+Trial: job terminated with error at ~5pm
+ninf-g servers: ume, crayon, amata1, agt-login, jupiter, ase
+Error: "Internal inconsistency detected" in stderr by application
+Note: jobs status on each systems as
+      ume: Eqw
+      crayon: Eqw
+      ase: no job
+      amata1: run
+      jupiter: no job
+      agt: no job
+Solutions: restarted on 8/23/04 PST
+
+8/20/04 PST
+Trial: changed jobmanager from fork to pbs for NCHC, 
+       restart TDDFT from ume
+ninf-g servers: ume, crayon, amata1, agt-login, jupiter, ase
+Error: job queued, not run
+Note: 
+Solutions: setup passwordless access to compute nodes
+           Julian enabled ssh1 access on ase
+
+8/18/04 PST
+Trial: added NCHC system ase to TDDFT run
+ninf-g servers: ume, crayon, amata1, agt-login, jupiter, ase
+Error: None
+Note: When kill previous runs, sometime need manually cleanup
+Solutions: 
+
+8/17/04 PST
+Trial: added KISTI system Jupiter to TDDFT run
+ninf-g servers: ume, crayon, amata1, agt-login, jupiter
+Error: None
+Note: Previously had problem to access jupiter.
+      Jupiter use non-standard port# for gsissh.
+Solution: Specify port# when run gsissh and then TDDFT connection problem went away.
+
+
+8/14/04 PST
+Trial: changed mpich allocation rule from $round_robin to $fill_up
+ninf-g servers: ume, crayon, amata1, agt-login
+Error: qstat shows TDDFT job is at the state of ewq
+Note: Yusuke cannot start TDDFT on crayon.
+      tested job start with her run, 2 succeeded and 2 failed.
+      Seems that TDDFT prefer $round_robin allocation.
+      Perhaps due to its high memory usage?
+Solution: Reset mpich allocation rule to $round_robin on crayon.
+          Restart TDDFT job.
+
+8/13/04 PST
+Trial: killed TDDFT run and restart
+ninf-g servers: ume, crayon, amata1, agt-login
+Error: hang at job initialization
+Solution: manually clean up processes on ume and manually delete jobs on amata1
+
+8/11/04 PST
+Trial: ran TDDFT from ume
+ninf-g servers: ume, crayon, amata1, agt-login
+Error: None
+Note:
+Solution:
+
+8/10/04 PST
+Trial: test NCSA server
+ninf-g servers: agt-login
+Error: Wed Aug 11 08:25:45 2004 580ms 545us: Client: ume.hpcc.jp: Error: Context
+       1: Job 1: ngcllJobCallback: GRAM Job failed because the executable does
+       not exist (error code 5)
+       Wed Aug 11 08:25:45 2004 581ms 568us: Client: ume.hpcc.jp: Error: Context
+       1: Executable 1: ngcliExecutableJobDone: Unexpected job_done was occurred.
+       Wed Aug 11 08:25:45 2004 581ms 751us: Client: ume.hpcc.jp: Error: Context
+       1: Executable 2: ngcliExecutableJobDone: Unexpected job_done was occurred.
+       Wed Aug 11 08:25:45 2004 581ms 990us: Client: ume.hpcc.jp: Error:
+       ngclSessionWaitAll: Can't wait Session.
+       Wed Aug 11 08:25:45 2004 582ms  40us: Client: ume.hpcc.jp: Error: Context
+       1: grpc_l_wait: Session wait returned by error.
+       Wed Aug 11 08:25:45 2004 582ms  70us: Client: ume.hpcc.jp: Error: Context
+       1: grpc_l_wait: The error occurred for session 1. (reason=12)
+       Wed Aug 11 08:25:45 2004 582ms 106us: Client: ume.hpcc.jp: Error: Context
+       1: grpc_l_wait: The error occurred for session 2. (reason=12)
+       Wed Aug 11 08:25:45 2004 582ms 151us: Client: ume.hpcc.jp: Error: Context
+       1: grpc_wait_all: Failed to Session wait.
+       hpsi_queue: GRPC fails on initialization call.
+Note: 
+Solution: Yusuke corrected a permission problem in his home dir on agt-login
+
+8/9/04 PST
+Trial: checked the run started on 8/5/04
+ninf-g servers: UME, crayon, amata1
+Error: Tue Aug 10 04:49:26 2004 621ms 151us: Client: ume.hpcc.jp: Error: Context 1: grpc_invoke_async_np: Failed to Session start.
+       2004/08/10 04:49:26 at hpsi_queue.c/361 : Dispatch job orb=5 to rocks10.sdsc.edu:1 with id=-1.
+       (cut)
+       hpsi_queue: Internal inconsistency detected.
+       hpsi_queue_free: 11 stubs were found to be down.      
+Note: Probably due to temporary change of .ssh/iden* files in /home/zhengc on crayon
+      and low fault tolerancy.
+Solution: Kill processes and restart
+
+8/5/04 PST
+Trial: ran TDDFT from UME
+ninf-g servers: UME, crayon, amata1
+Error:
+Note: last checked Tue Aug 10 02:26:42 JST 2004, running normally
+Solution:
+
+8/4/04 PST
+Trial: checked the run which was started yesterday on ume
+ninf-g servers: UME, crayon, amata1
+error: The job stopped writing to its output file ~14 hours after it started
+Note: qstat on all systems showed jobs running normally
+Solution: Killed the processes
+
+Trial: tested the run with additional sites 
+ninf-g servers: jupiter, aurora, agt-login
+Error: hang or errors
+Note: NCSA - job submission problem
+      USM - network or access problem
+      KISTI - network or access problem
+      TITECH - account setup problem
+      NCHC - account setup problem
+      BII - account access problem
+Solution: being worked on
+
+8/3/04 PST
+Trial: Yusuke setup TDDFT in Cindy's account on UME. Cindy ran TDDFT from UME.
+Ninf-g servers: UME, crayon, amata1
+Error: none
+Note:
+Solution:
+
+7/28/04 PST
+Trial: ran TDDFT from crayon
+Ninf-g servers: UME
+Error: segmentation fault
+Note: Tried "export KMP_STACKSIZE=500000000", did not help
+Solution: under investigation
+
+7/27/04 PST
+Trial: Yusuke made bug-fixes to ninf-g library and updated the setup on crayon.
+       Cindy ran TDDFT from crayon
+Ninf-g servers: UME
+Error: forrtl: info: Fortran error message number is 174.
+       forrtl: warning: Could not open message catalog ifcore_msg.cat.
+       forrtl: info: Check environment variable NLSPATH and protection of /usr/lib/ifcore_msg.cat.
+Note: set NLSPATH to /opt/intel_fc_80/lib/ifcore_msg.cat, did not help 
+Solution: made a symbolic link /usr/lib/ifcore_msg.cat -> /opt/intel_fc_80/lib/ifcore_msg.cat
+
+7/10-7/25 PST test halted due to Cindy's vacation
+
+7/9/04 PST
+Trial: ran TDDFT from crayon
+Ninf-g servers: crayon
+Error: Bad passphrase
+Note: Added ssh-agent/add command in .bashrc, did not help
+Solution: setup passwordless ssh
+
+7/8/04 PST
+Trial: Yusuke setup TDDFT on crayon. Cindy's first run.
+Ninf-g servers: UME
+Error: segmentation fault
+Solution: add "ulimit -s unlimit" in .bashrc
+
+Trial: ran TDDFT from crayon
+Ninf-g servers: UME
+Error: job queued with error status on UME
+Solution: UME sysadmin corrected this on 7/15/04
+
+</pre>
+</BODY>
+</HTML>

@@ -1,0 +1,86 @@
+--- readdb.bak	2003-06-18 11:50:46.000000000 -0700
++++ readdb.c	2003-06-18 11:55:54.000000000 -0700
+@@ -8080,44 +8080,44 @@
+              return 9;
+           options->volume++;
+           
+-          /* When second volume is created, add suffix .00 to all 
++          /* When second volume is created, add suffix .000 to all 
+              first volume files */
+           if (options->volume == 1)
+             {
+               Char  oldnamebuf[FILENAME_MAX], newnamebuf[FILENAME_MAX];
+-              int len = StringLen(options->base_name) + 2;
++              int len = StringLen(options->base_name) + 3;
+               sprintf(oldnamebuf, "%s.%cin", options->base_name,
+                       fdbp->options->is_protein ? 'p' : 'n');
+-              sprintf(newnamebuf, "%s.00.%cin", options->base_name, 
++              sprintf(newnamebuf, "%s.000.%cin", options->base_name, 
+                       fdbp->options->is_protein ? 'p' : 'n');
+               if (FileLength(oldnamebuf) > 0)
+                 FileRename(oldnamebuf, newnamebuf);
+-              StringCpy(oldnamebuf + len, "hr");
++              StringCpy(oldnamebuf + len-1, "hr");
+               StringCpy(newnamebuf + len + 3, "hr");
+               if (FileLength(oldnamebuf) > 0)
+                 FileRename(oldnamebuf, newnamebuf);
+-              StringCpy(oldnamebuf + len, "sq");
++              StringCpy(oldnamebuf + len-1, "sq");
+               StringCpy(newnamebuf + len + 3, "sq");
+               if (FileLength(oldnamebuf) > 0)
+                 FileRename(oldnamebuf, newnamebuf);
+-              StringCpy(oldnamebuf + len, "nd");
++              StringCpy(oldnamebuf + len-1, "nd");
+               StringCpy(newnamebuf + len + 3, "nd");
+               if (FileLength(oldnamebuf) > 0)
+                 FileRename(oldnamebuf, newnamebuf);
+-              StringCpy(oldnamebuf + len, "ni");
++              StringCpy(oldnamebuf + len-1, "ni");
+               StringCpy(newnamebuf + len + 3, "ni");
+               if (FileLength(oldnamebuf) > 0)
+                 FileRename(oldnamebuf, newnamebuf);
+-              StringCpy(oldnamebuf + len, "sd");
++              StringCpy(oldnamebuf + len-1, "sd");
+               StringCpy(newnamebuf + len + 3, "sd");
+               if (FileLength(oldnamebuf) > 0)
+                 FileRename(oldnamebuf, newnamebuf);
+-              StringCpy(oldnamebuf + len, "si");
++              StringCpy(oldnamebuf + len-1, "si");
+               StringCpy(newnamebuf + len + 3, "si");
+               if (FileLength(oldnamebuf) > 0)
+                 FileRename(oldnamebuf, newnamebuf);
+              if (options->dump_info) {
+-                 StringCpy(oldnamebuf + len, "di");
++                 StringCpy(oldnamebuf + len-1, "di");
+                  StringCpy(newnamebuf + len + 3, "di");
+                  if (FileLength(oldnamebuf) > 0)
+                      FileRename(oldnamebuf, newnamebuf);
+@@ -8141,8 +8141,8 @@
+ 
+           {
+             CharPtr ptr;
+-          ptr = options->base_name + StringLen(options->base_name) - 2;
+-          sprintf(ptr, "%02ld", (long) options->volume);
++          ptr = options->base_name + StringLen(options->base_name) - 3;
++          sprintf(ptr, "%03ld", (long) options->volume);
+           }
+           
+           if ((tmp_fdbp = FormatDBInit(options)) == NULL)
+@@ -11044,7 +11044,7 @@
+            return 9;
+         
+         if(Bases_In_Volume > 1) {
+-           sprintf(filenamebuf, "%s.%02ld", basename, (long) volume);
++           sprintf(filenamebuf, "%s.%03ld", basename, (long) volume);
+            options->base_name = StringSave(filenamebuf);
+            volume++;
+         }
+@@ -11101,7 +11101,7 @@
+        fprintf(fd, "%s", parent);
+     else {
+        for(i = 0; i < volumes; i++) {
+-          fprintf(fd, "%s.%02ld ", basename, (long) i);
++          fprintf(fd, "%s.%03ld ", basename, (long) i);
+        }
+     }
+     fprintf(fd, "\n#\n");

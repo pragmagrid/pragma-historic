@@ -1,0 +1,109 @@
+This file contains a list of projects, ideas, and bugs that need to be 
+worked on before mpiBLAST achieves total world domination.  Please check
+the mpiBLAST developer's forum or contact one of the authors before 
+starting one of these projects so we can minimize repeated work.
+
+Last Update: 1.2.0 release
+
+
+1. Exact E-Value statistics
+
+E-Values are calculated using the effective database and query lengths,
+which vary from query to query.  To calculate the correct e-value, the
+effective query and database lengths for each query should be collected
+from worker nodes and used by the master to calculate the correct e-value
+before writing out BLAST results.
+
+
+2. Query segmentation
+
+Query segmentation will allow mpiBLAST to more effectively load-balance
+the search, reduce the latency for individual queries, and reduce the
+memory requirements of the master node, allowing larger query sets to
+be processed simultaneously.  It could also eliminate the serial component
+of the algorithm by outputting some query results while still searching
+other queries.
+
+One approach to query segmentation we've come up with that achieves the
+above objectives is the following:
+
+The idea is that the query set is broken up into blocks of some user
+configurable size s (say s=10kb or at least one query).  The master keeps
+a sliding window of some number, call it k, of these blocks.  The window
+starts out at the beginning of the file and slides in block size
+increments.  The window slides whenever workers have been assigned to
+search every database fragment against the first block in the window.
+When a worker is idle, the master prefers to assign it to search the
+database fragment it has most recently searched.  The db fragment is
+searched against any block in the current window, preferably blocks near
+the beginning of the window.  There are a few other rules related to
+minimizing the overall distribution of database fragments as there are in
+the current mpiBLAST implementation.  
+
+We would like to overlap result output with the search without using
+threads.  We need
+- a completed query priority queue.  As query searches complete (searched
+against all database fragments) they are placed in this queue.
+
+- The master node loops over the following tasks:
+  - If the next query to be written is in the completed queue, write it
+    out (query results should be written out in the input order)
+  - When output completes or if the next query is not in the completed
+    queue, check for incoming communication
+  - process incoming communication (fragment requests, search results,
+    etc)  if the master now has search results for every db fragment for
+    a particular query, that query is added to the completed queue.
+  - repeat
+
+
+We also need to revise the db fragment assignment algorithm to include
+query assignment to workers.
+- All queries are initially tree broadcast to all workers (same as current
+implementation)
+
+- We break the query set up into blocks, each block contains at least b
+kilobytes worth of queries, b is user configurable.  This is done to set a
+granularity for db searching and result communication.  It is more
+efficient to process several queries at a time.
+
+- We have a sliding window that intially covers the first w blocks in the
+query set.  when the first block in w has been completely assigned to
+workers, the window can slide past that block.  The window size is
+user-configurable.  The size of the window controls the number of
+outstanding searches at any point in time.  A smaller window causes fewer
+searches to occur simultaneously and will thus reduce the number of
+results the master node will need to store in memory before writing
+results to disk.  A larger window allows for more outstanding queries,
+streamlining the search for the workers in a way that I will describe
+momentarily.
+
+The fragment assignment algorithm changes to the following:
+- The workers now request both a database fragment assignment and a query
+block assignment.  The worker searches the assigned query block against
+the assigned database fragment.
+
+- The master node assigns Worker w the DB fragment that w has on
+its local storage AND searched most recently on any query in the window
+(this should optimize buffer-cache performance)  If none of the fragments
+on w's local storage that need to be searched have been searched against
+any blocks in the current window, the master assigns the least
+distributed fragment to be searched against the earliest block in the
+window
+
+- If there are no fragments on w's local storage that need to be searched
+against blocks in the window, then w is instructed to copy a fragment to
+local storage.  The master finds the first block in the window that needs
+a fragment search assigned and assigns the least distributed db fragment
+the block still needs to be searched against.  These rules ensure that the
+blocks at the beginning of the window get searched first so that the
+window can slide without searching every block in the window against every
+fragment in the window.
+
+
+3. Further source code documentation in doxygen compatible format
+
+4. Transparent fault-tolerance
+
+5. Database updates that append to existing database fragments directly
+on the worker nodes rather than simply adding an additional fragment.
+

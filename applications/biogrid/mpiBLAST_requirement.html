@@ -1,0 +1,97 @@
+<html>
+<head><title>mpiBlast on PRAGMA (System Requirement)</title></head>
+<body>
+<pre>
+==================
+System Requirement
+==================
+1. Software requirement
+   a. gt2 version &gt;= 2.2 (gatekeeper for job execution and gsiftp for data transfer)
+      - <a href="http://www.globus.org/gt2.4/download.html">Download</a>
+      In order to use gasscopy api from all back-end to front-end, globus library is needed in all back-end. 
+      /etc/grid-security/certificates/a692434d.0 and /etc/grid-security/certificates/a692434d.signing_policy
+      are also needed in all back-end. 
+      You can download them from <a href="http://grid-deployment.web.cern.ch/grid-deployment/download/RpmDir/security/index_r1.12.html">here</a>, please choose <a href="http://grid-deployment.web.cern.ch/grid-deployment/download/RpmDir/security/ca_ASGCCA-0.28-1.noarch.rpm">ca_ASGCCA-0.28-1.noarch.rpm</a>
+   b. mpich-g2 version 1.2.5
+      - <a href="ftp://ftp.mcs.anl.gov/pub/mpi/old/mpich-1.2.5.tar.gz">Download</a>
+
+   c. ncbi est_human database (raw db, Optional)
+      - <a href="ftp://ftp.ncbi.nih.gov/blast/db/FASTA/est_human.gz">Download</a>
+      - This requirement only for the site, which wants to generate its own BLAST DB.
+
+   d. ncbi toolbox library version 20040204 (library for mpiBLAST, compiled with gcc &gt;= 3.2.1)
+      - <a href="ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools/old/20040204/ncbi.tar.gz">Download</a>
+      - Only required on frontend node for compiling mpiBlast binary.
+
+2. Hardware requirement
+   a. memory &gt;= 512 MBytes
+
+   b. ~10GB local disk for runtime database storage
+
+   c. <font color="red">public ip for each worker node</font> (p.s. We will try private ip after the public ip works)
+
+===========================
+User account setup
+===========================
+1. Please trust ASGCCA <a href="https://pragma-goc.rocksclusters.org/secure/certificates/a692434d.0">certificate</a> <a href="https://pragma-goc.rocksclusters.org/secure/certificates/a692434d.signing_policy">signing policy</a>
+
+2. Please open accounts for routine basis experiment users
+   a. For Hurng-Chun Lee
+     - Email: <a href="mailto:hclee@ccweb.sinica.edu.tw">hclee@ccweb.sinica.edu.tw</a>
+     - User account: hclee
+     - Certification DN: /C=TW/O=AS/OU=CC/CN=Hurng-Chun Lee/Email=hclee@gate.sinica.edu.tw
+     - The <a href="./routine_users/id_rsa.pub.hclee">public key</a> for SSH login
+
+   b. For Chi-Wei Wang 
+     - Email: <a href="mailto:chiwei@gate.sinica.edu.tw">chiwei@gate.sinica.edu.tw</a>
+     - User account: cwwang 
+     - Certification DN: /C=TW/O=AS/OU=CC/CN=CHI-WEI WANG/Email=chiwei@gate.sinica.edu.tw 
+     - The <a href="./routine_users/id_rsa.pub.cwwang">public key</a> for SSH login
+     - If your site has a firewall, please configure it to allow Chi-Wei access from 
+       pragma001.grid.sinica.edu.tw (140.109.98.21)
+
+   c. For Jun-Mein Wu
+     - Email: <a href="mailto:jun@gate.sinica.edu.tw">jun@gate.sinica.edu.tw</a>
+     - User account: jmwu
+     - Certificate DN:
+     - The <a href="./routine_users/id_rsa.pub.jmwu">public key</a> for SSH login
+
+==================
+Installation notes
+==================
+1. Quick installation of ncbi toolbox library
+   a. % tar xzf ncbi.tar.gz (Please read "ncbi/README" first)
+
+   b. make the source code 
+      % ./ncbi/make/makedis.csh 2&gt;&amp;1 | tee out.makedis.txt
+
+   c. set the library path for dynamic link (for bash)
+      % export NCBI_LOCATION=&lt;ncbi_toolbox_location&gt;
+      % export LD_LIBRARY_PATH=$NCBI_LOCATION/lib
+      % export PATH=$NCBI_LOCATION/bin:$PATH
+
+   d. that's all!!
+
+2. Installation of mpiBLAST-g2 package
+   a. Please refer to the <a href="http://pragma-goc.rocksclusters.org/applications/biogrid/mpiBlast-g2/INSTALL.mpiBLAST-g2.html">Installation Guide</a>
+
+===========================
+mpiBlast execution scenario
+===========================
+1. Preprocess:"mpiFormatdb" job (a sequencial program, single worker)
+   a. The worker gets raw db from ftp server
+
+   b. The worker generate multiple formatted dbs and puts them to ftp server
+
+2. BLAST query:"mpiBlastall" job (a parallel program, one integrator and multiple workers)
+   a. Database copy
+      - Each worker gets required formatted db chunks from ftp server
+      - Integrator gets db indices from ftp server
+
+   b. Alignment
+      - Communications between integrator and works
+
+   c. Integrate results from workers by integrator
+</pre>
+</body>
+</html>

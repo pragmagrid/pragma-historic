@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# Options
+# $1 : Master Profile
+# $2 : PID which is binded for tailing Master Profile (if PID killed  ... Tail will be killed)
+# $3 : Machine file 
+
+# Echo some string to make waiting visible ...
+echo -n "Waiting for master's profile."
+while [ ! -f $1 ]
+do
+    echo -n "."
+    sleep 1
+done
+echo "." 
+
+#pid=`ps | grep bash | awk {'print $1'}`
+#pid=`ps | grep blast-g2.demo | awk {'print $1'}`
+
+#xterm -e /bin/bash -l -c "tail --pid=$pid -f $1" &
+xterm -geometry 100x25+0+200 -e /bin/bash  -l -c "tail --pid=$2 -f $1 | $BLASTG2_LOCATION/bin/blast-g2.id2name" &
+#xterm -geometry +0+200 -e /bin/bash -l -c "tail --pid=$2 -f $1" &
+#xterm -e tail --pid=$pid -f $1 &

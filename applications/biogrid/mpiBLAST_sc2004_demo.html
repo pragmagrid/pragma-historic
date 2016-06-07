@@ -1,0 +1,307 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=big5">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="StarSuite 7  (Linux)">
+	<META NAME="AUTHOR" CONTENT="Hurng-Chun Lee">
+	<META NAME="CREATED" CONTENT="20041004;14441000">
+	<META NAME="CHANGEDBY" CONTENT="Hurng-Chun Lee">
+	<META NAME="CHANGED" CONTENT="20041021;21234900">
+</HEAD>
+<BODY LANG="zh-TW" DIR="LTR">
+<H2 ALIGN=CENTER><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">mpiBLAST
+demo in SC2004</SPAN></FONT></H2>
+<H3><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Requirements
+Verification</SPAN></FONT></H3>
+<OL>
+	<LI><P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Testing of
+	SSH connection</SPAN></FONT></P>
+	<LI><P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Testing of
+	globus-job-run</SPAN></FONT></P>
+</OL>
+<P STYLE="margin-left: 2cm"><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><FONT SIZE=2><FONT FACE="Courier, monospace">%
+globus-job-run '&lt;contact-string&gt;' /bin/hostname</FONT></FONT>
+from ASCC site (pragma001.grid.sinica.edu.tw)</SPAN></FONT></P>
+<OL START=3>
+	<LI><P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Testing of
+	globus-url-copy</SPAN></FONT></P>
+</OL>
+<P STYLE="margin-left: 2cm"><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><FONT SIZE=2><FONT FACE="Courier, monospace">%
+globus-url-copy file:///home/hclee/ecoli.nt</FONT></FONT>
+<FONT SIZE=2><FONT FACE="Courier, monospace">gsiftp://&lt;remote_site&gt;/tmp/ecoli.nt
+</FONT></FONT><FONT FACE="Thorndale">from ASCC globus client
+(pragma001.grid.sinica.edu.tw)</FONT></SPAN></FONT></P>
+<OL START=4>
+	<LI><P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Building
+	mpiBLAST-g2 on each site (<FONT COLOR="#ff0000">require
+	$GLOBUS_LOCATION and installation path of NCBI Toolbox</FONT>)</SPAN></FONT></P>
+</OL>
+<P STYLE="margin-left: 2cm"><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><FONT SIZE=2><FONT FACE="Courier, monospace">%
+export CVSROOT=:pserver:<A HREF="mailto:hclee@bit139.sinica.edu.tw">hclee@bit139.sinica.edu.tw</A>:/data/cvsrepos</FONT></FONT></SPAN></FONT></P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Courier, monospace"><FONT SIZE=2><SPAN LANG="en-US">%
+cvs checkout mpiBlast-g2</SPAN></FONT></FONT></P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Courier, monospace"><FONT SIZE=2><SPAN LANG="en-US">%
+cd mpiBlast-g2</SPAN></FONT></FONT></P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Courier, monospace"><FONT SIZE=2><SPAN LANG="en-US">%
+./configure --prefix=/home/hclee/opt/mpiBlast-g2
+--with-ncbi=&lt;NCBI_LOCATION&gt;; make; make install</SPAN></FONT></FONT></P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Courier, monospace"><FONT SIZE=2><SPAN LANG="en-US">%
+vi ~/opt/mpiBlast-g2/etc/mpiblast-gasscopy.conf (Edit configuration
+file)</SPAN></FONT></FONT></P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Courier, monospace"><FONT SIZE=2><SPAN LANG="en-US"><B>Config
+file example:</B></SPAN></FONT></FONT></P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Courier, monospace"><FONT SIZE=2><SPAN LANG="en-US"><B>gsiftp://pragma001.grid.sinica.edu.tw</B></SPAN></FONT></FONT></P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Courier, monospace"><FONT SIZE=2><SPAN LANG="en-US"><B>/home/hclee/db</B></SPAN></FONT></FONT></P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Courier, monospace"><FONT SIZE=2><SPAN LANG="en-US"><B>/tmp</B></SPAN></FONT></FONT></P>
+<P STYLE="margin-left: 2cm"><FONT FACE="Courier, monospace"><FONT SIZE=2><SPAN LANG="en-US">%
+mkdir ~/db (Create a database folder)</SPAN></FONT></FONT></P>
+<OL START=5>
+	<LI><P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Single site
+	mpiBLAST job submission (job submission from
+	pragma001.grid.sinica.edu.tw through <B>blast-g2.submit</B>)</SPAN></FONT></P>
+	<LI><P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Multiple
+	site mpiBLAST job submission (job submission from
+	pragma001.grid.sinica.edu.tw through <B>blast-g2.submit</B>)</SPAN></FONT></P>
+</OL>
+<H3><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Testing Status</SPAN></FONT></H3>
+<DIV ALIGN=RIGHT>
+	<TABLE WIDTH=947 BORDER=1 CELLPADDING=4 CELLSPACING=3>
+		<COL WIDTH=176>
+		<COL WIDTH=115>
+		<COL WIDTH=115>
+		<COL WIDTH=115>
+		<COL WIDTH=115>
+		<COL WIDTH=115>
+		<COL WIDTH=114>
+		<THEAD>
+			<TR VALIGN=TOP>
+				<TH WIDTH=176>
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Site</SPAN></FONT></P>
+				</TH>
+				<TH WIDTH=115>
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Test 1</SPAN></FONT></P>
+				</TH>
+				<TH WIDTH=115>
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Test 2</SPAN></FONT></P>
+				</TH>
+				<TH WIDTH=115>
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Test 3</SPAN></FONT></P>
+				</TH>
+				<TH WIDTH=115>
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Test 4</SPAN></FONT></P>
+				</TH>
+				<TH WIDTH=115>
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Test 5</SPAN></FONT></P>
+				</TH>
+				<TH WIDTH=114>
+					<P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Test 6</SPAN></FONT></P>
+				</TH>
+			</TR>
+		</THEAD>
+		<TBODY>
+			<TR VALIGN=TOP>
+				<TD WIDTH=176>
+					<P ALIGN=CENTER><FONT FACE="Thorndale"><FONT SIZE=2><SPAN LANG="en-US">ume.hpcc.jp
+					(AIST)</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><FONT FACE="Thorndale"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=114>
+					<P ALIGN=CENTER><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=176>
+					<P ALIGN=CENTER><FONT FACE="Thorndale"><FONT SIZE=2><SPAN LANG="en-US">pragma001.grid.sinica.edu.tw
+					(ASCC)</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><FONT FACE="Thorndale"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=114>
+					<P ALIGN=CENTER><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=176>
+					<P ALIGN=CENTER><FONT FACE="Thorndale"><FONT SIZE=2><SPAN LANG="en-US">marlin.bii.a-star.edu.sg
+					(BII)</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><FONT FACE="Thorndale"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><FONT FACE="Thorndale"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><FONT FACE="Thorndale"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=114>
+					<P ALIGN=CENTER><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=176>
+					<P ALIGN=CENTER><FONT FACE="Thorndale"><FONT SIZE=2><SPAN LANG="en-US">jupiter.gridcenter.or.kr
+					(KISTI)</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><BR>
+					</P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><BR>
+					</P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><BR>
+					</P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><BR>
+					</P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><BR>
+					</P>
+				</TD>
+				<TD WIDTH=114>
+					<P ALIGN=CENTER><BR>
+					</P>
+				</TD>
+			</TR>
+			<TR VALIGN=TOP>
+				<TD WIDTH=176>
+					<P ALIGN=CENTER><FONT FACE="Thorndale"><FONT SIZE=2><SPAN LANG="en-US">rocks10.sdsc.edu
+					(SDSC)</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><FONT FACE="Thorndale"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><FONT FACE="Thorndale"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><FONT FACE="Thorndale"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=115>
+					<P ALIGN=CENTER><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+				<TD WIDTH=114>
+					<P ALIGN=CENTER><FONT FACE="Thorndale, serif"><FONT SIZE=2><SPAN LANG="en-US">PASS</SPAN></FONT></FONT></P>
+				</TD>
+			</TR>
+		</TBODY>
+	</TABLE>
+</DIV>
+<P><BR><BR>
+</P>
+<H3><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Demonstration</SPAN></FONT></H3>
+<UL>
+	<LI><H4><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Small Case</SPAN></FONT></H4>
+</UL>
+<OL>
+	<LI><P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Database:
+	ecoli.nt (~5MB, 2 db fragments)</SPAN></FONT></P>
+	<LI><P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Query:
+	&gt;gi|1786181|gb|AE000111.1|AE000111 Escherichia coli K-12 MG1655
+	section 1 of 400 of the complete genome (720 bps)</SPAN></FONT></P>
+	<LI><P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Approximate
+	Elapsed Time ~ 1 min.</SPAN></FONT></P>
+</OL>
+<UL>
+	<LI><H4><FONT FACE="Thorndale, serif"><SPAN LANG="en-US"><SPAN LANG="en-US"><FONT FACE="Thorndale, serif">Medium
+	Case</FONT></SPAN></SPAN></FONT></H4>
+</UL>
+<OL>
+	<LI><P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Database:
+	drosoph.nt (~ 120MB, 32 db fragments)</SPAN></FONT></P>
+</OL>
+<OL START=2>
+	<LI><P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Query:
+	&gt;gi|24638835|ref|NC_004353.1| Drosophila melanogaster chromosome
+	4, complete sequence (1.2 Mbps)</SPAN></FONT></P>
+	<LI><P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Approximate
+	Elapsed Time ~ 10 mins.</SPAN></FONT></P>
+</OL>
+<UL>
+	<LI><H4><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Big Case</SPAN></FONT></H4>
+</UL>
+<OL>
+	<LI><P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Database:
+	est_human (~4GB, 64 db fragments)</SPAN></FONT></P>
+</OL>
+<OL START=2>
+	<LI><P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Query:
+	&gt;gi|51475310|ref|NT_029490.4|Hs21_29649 Homo sapiens chromosome
+	21 genomic contig (500 Kbps)</SPAN></FONT></P>
+	<LI><P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Approximate
+	Elapsed Time ??</SPAN></FONT></P>
+</OL>
+<UL>
+	<LI><H4><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Scenario</SPAN></FONT></H4>
+</UL>
+<OL>
+	<LI><P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Preprocess:</SPAN></FONT></P>
+</OL>
+<P STYLE="margin-left: 2cm"><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Before
+running blast alignment, raw database should be formatted for use. It
+can be done by submitting a mpiFormatdb job to Database Server.
+Unlike normal formatdb program, mpiFormatdb will split single
+database to multiple fragments (databases) and generate a spec. file
+for merging results.</SPAN></FONT></P>
+<OL START=2>
+	<LI><P><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">Running
+	mpiBlast: </SPAN></FONT>
+	</P>
+</OL>
+<P STYLE="margin-left: 2cm"><FONT FACE="Thorndale, serif"><SPAN LANG="en-US">The
+mpich-g2 job will collaborate nodes from different sites to run
+mpiBlast-g2 program. The nodes consist of one master and several
+workers. At runtime, each worker node will fetch a db fragment from
+either Database Server or local replication via gasscopy then do the
+normal blast. After returing results to master node, worker will
+iterate the &ldquo;fetch-run-return&rdquo; step until all fragments
+are done with blast alignment. Finally, the master node will merge
+resutls and return the final report to client.</SPAN></FONT></P>
+<P STYLE="margin-left: 2cm"><BR><BR>
+</P>
+<P ALIGN=CENTER><IMG SRC="mpiBLAST_sc2004_demo.png" NAME="圖形1" ALIGN=LEFT WIDTH=724 HEIGHT=507 BORDER=0><BR CLEAR=LEFT><BR><BR>
+</P>
+</BODY>
+</HTML>

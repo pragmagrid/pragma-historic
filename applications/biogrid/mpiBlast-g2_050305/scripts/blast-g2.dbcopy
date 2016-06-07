@@ -1,0 +1,287 @@
+#!/usr/bin/perl
+#-----------------------------------------------------------#
+# Gridified MPI BLASTALL jobs on pragma                     #
+#                                                           #
+# Requirements;                                             #
+#  1. Globus ToolKits >= 2.2                                #
+#  2. MPICH-G2 == 1.2.5                                     #
+#  3. mpiBlast >= 1.2.1                                     #
+#                                                           #
+# Language: Perl                                            #
+# Author: Hurng-Chun Lee                                    #
+# Date: 2004/10/16                                          #
+#-----------------------------------------------------------#
+use Cwd;
+use Getopt::Std;
+use Getopt::Long;
+use Pod::Usage;
+
+# !! The main program started here !!
+# parsing the command line options
+parseOpt();
+my $dbpath  = $opts{'dbpath'};
+my $dbname  = $opts{'dbname'};
+my $dbtype  = $opts{'dbtype'};
+my $dbfrag  = $opts{'dbfrag'};
+my $rdbBase = $opts{'rdbBase'};
+my $rdbConf = $opts{'rdbConf'};
+
+# Protocal level tool options
+my $copyopt = $opts{'copyopt'};
+
+# Global variable
+$replicate_cmd = genCopyCommand($copyopt);
+
+
+# Parse remote gsiftp URL list
+my ($ftpBasename_ref) = getFtpBasenames($rdbBase,$rdbConf);
+
+foreach $ftpBase (@$ftpBasename_ref) {
+
+    $ick = fileTransfer($dbpath,$dbname,$dbfrag,$ftpBase);
+
+    if(! $ick ) {
+        die "Exit due to error!\n";
+    }
+}
+
+# !! End of main program !!
+
+#---------------------
+# Subroutines
+#---------------------
+sub formatdbConfigure() {
+
+    my ($dbname,$dbtype) = @_;
+
+    my %fmtdbConf;
+
+    $fmtdbConf{'BLAST_HOME'}  = '$(HOME)#"/opt/mpiBlast-g2"';
+    $fmtdbConf{'FMTDB_EXEC'}  = '$(HOME)#"/opt/mpiBlast-g2/bin/mpiblast-g2"';
+    $fmtdbConf{'FMTDB_CONF'}  = '#$(HOME)#"/opt/mpiBlast-g2/etc/mpiblast-gasscopy.conf"';
+    $fmtdbConf{'FMTDB_DBNAME'} = $dbname;
+
+    return %fmtdbConf;
+}
+
+sub untgzConfigure() {
+
+    my %untgzConf;
+
+    $untgzConf{'HOME'}  = '$(HOME)#"/opt/mpiBlast-g2"';
+    $untgzConf{'EXEC'}  = '$(HOME)#"/opt/mpiBlast-g2/bin/blast-g2.tardb"';
+    $untgzConf{'DBNAME'} = $dbname;
+
+    return %untgzConf;
+}
+
+sub genUntgzRSL() {
+
+    my ($dbpath,$dbname,$dbfrag,$conf_ref) = shift;
+
+    my $rsl; 
+
+    # Compose Executable arguments
+    # The --config-file generator need to be reorganized
+    my $arg_val = "\"-untgz\" ";
+       $arg_val.= "\"-dbpath=".$dbpath."\" ";
+       $arg_val.= "\"-dbname=".$dbname."\" ";
+       $arg_val.= "\"-dbfrag=".$dbfrag." ";
+
+    return $rsl;
+}
+
+#-----------------------
+# Adding RSL Attribute 
+#-----------------------
+sub addRSLAttr {
+
+    my ($rsl_ref,$rsl_key,$rsl_val) = @_;
+
+    $$rsl_ref .= "(".$rsl_key."=".$rsl_val.")"; 
+}
+
+sub genCopyCommand {
+    my $opt = shift;
+
+    my $cmd = 'globus-url-copy '.$opt;
+
+    if($debug) {
+        print "Copy command: ".$cmd."\n";
+    }
+
+    return $cmd;
+}
+
+sub fileTransfer {
+    my ($dbpath,$dbname,$dbfrag,$ftpBase) = @_;
+
+    my $localFilename;
+    my $remoteURL;
+    my $cmd;
+    my $frag_id;
+
+    for($i=0;$i<$dbfrag;$i++) {
+
+        $frag_id   = sprintf "%02d",$i;
+
+        $localFilename = 'file://'.$dbpath.'/'.$dbname.'.'.$frag_id.'.tgz';
+        $remoteURL = $ftpBase.'/'.$dbname.'.'.$frag_id.'.tgz';
+
+        $cmd = $replicate_cmd.' ';
+        $cmd.= $localFilename.' '.$remoteURL;
+
+        if($bg) { $cmd.=' &'; }
+
+        if($debug) { print $cmd."\n"; }
+
+        # Do globus-url-copy here for db replication
+        $result = `$cmd`;
+
+        #if(! $result) { print "Copy Error!\n"; return 0;}
+    }
+
+    # The db information files 
+    $localFilename = 'file://'.$dbpath.'/'.$dbname.'.dbs';
+    $remoteURL = $ftpBase.'/'.$dbname.'.dbs';
+    $cmd = $replicate_cmd.' ';
+    $cmd.= $localFilename.' '.$remoteURL;
+    $result = `$cmd`;
+    
+    # The db fragment list files 
+    $localFilename = 'file://'.$dbpath.'/'.$dbname.'.nal';
+    $remoteURL = $ftpBase.'/'.$dbname.'.nal';
+    $cmd = $replicate_cmd.' ';
+    $cmd.= $localFilename.' '.$remoteURL;
+    $result = `$cmd`;
+
+    return 1;
+}
+
+#---------------------------
+# Command line option parser
+#---------------------------
+sub parseOpt() {
+    my $args = $#ARGV;
+
+    $ckopt = GetOptions('dbpath=s'   => \$opts{'dbpath'},
+                        'dbname=s'   => \$opts{'dbname'},
+                        'dbfrag=i'   => \$opts{'dbfrag'},
+                        'dbtype=s'   => \$opts{'dbtype'},
+                        'rdbBase=s'  => \$opts{'rdbBase'},  # gsiftp basename 
+                        'rdbConf=s'  => \$opts{'rdbConf'},  # gsiftp basename configuration file
+                        'background' => \$bg, # run each transfer in background
+                        'copyopt=s'  => \$opts{'copyopt'},  # protocal level tool options 
+                        'debug'      => \$debug,
+                        'man'        => \$man,
+                        'help|?'     => \$fmtHelp);
+
+    if ($man) {
+        pod2usage(-exitval=>1,-verbose=>2);
+    }
+
+    if(! $opts{'dbtype'}) { $opts{'dbtype'} = 'n'; }
+
+    if( ! $opts{'dbpath'} || ! $opts{'dbname'} || ! $opts{'dbfrag'}) { $ckopt = 0; }
+
+    if( $ckopt != 0) {
+        if( ! $opts{'rdbBase'} && ! $opts{'rdbConf'}) {
+            print "\n\nMust specify remote gsiftp basename!\n";
+            print "    1. Using -rdbBase to specify single remote URL basename.\n";
+            print "    2. Using -rdbConf to specify the remote URL basename list.\n\n";
+            $ckopt = 0;
+        }
+        if( ! checkDatabase($opts{'dbpath'},$opts{'dbname'},
+                            $opts{'dbfrag'},$opts{'dbtype'}) ) {
+                print "\n\nDatabase checking error!\n";
+                print "    $err_msg\n";
+                $ckopt = 0;
+        }
+    }
+
+    if (! $ckopt || $fmtHelp || $args < 0) {
+        pod2usage(-exitval=>2,-verbose=>0);
+    }
+
+}
+
+#-----------------------------------------
+# checking databases
+#-----------------------------------------
+sub checkDatabase {
+    my ($dbpath,$dbname,$dbfrag,$dbtype) = @_;
+
+    my $i;
+    my $frag_id;
+    my $frag_tgz;
+
+    if( ! -d $dbpath) { $err_msg = "DB Path ".$dbpath." does not exist!";  return 0; }
+
+    for($i = 0; $i<$dbfrag; $i++) {
+
+        $frag_id   = sprintf "%02d",$i;
+
+        $frag_tgz  = $dbpath.'/'.$dbname.'.'.$frag_id.'.tgz';
+
+        if( ! -f $frag_tgz) { $err_msg = "DB TGZ ".$frag_tgz." does not exist!";  return 0; }
+    }
+
+    return 1;
+}
+
+#-----------------------------------------------------------
+# generating remote gsiftp list from list or given variables 
+#-----------------------------------------------------------
+sub getFtpBasenames {
+                                                                                
+    my ($rdbBase, $rdbConf) = @_;
+      
+    my @ftpbase = ();
+
+    if($rdbBase) {
+
+        push(@ftpbase,$rdbBase);
+    }
+
+    if($rdbConf) {
+        open(FP,"< $rdbConf") or die "Error: $!";
+                                                                                    
+        while(<FP>) {
+ 
+           chomp($_);
+ 
+           if( ! m/^#/ ) {
+              my @data = split(/[\s]+/,$_);
+              $data[0] =~ s/\"//g;
+              push(@ftpbase,$data[0]);
+           }
+        }
+    }
+                                                                                
+    return (\@ftpbase);
+}
+
+__END__
+
+=head1 NAME
+                                                                                
+blast-g2.dbcopy - Tool for replicates dbfragments 
+
+=head1 DESCRIPTION
+                                                                                
+=head1 SYNOPSIS
+                                                                                
+blast-g2.dbcopy [options]
+                                                                                
+ Options:
+   -help        brief help message
+   -man         full documentation
+   -debug       enable debug mode 
+   -background  enable background gsiftp transfer
+   -dbpath      *dbpath*  specify the abs. path in which the db fragments are stored. 
+   -dbname      *dbname*  specify the name of database 
+   -dbtype      *dbtype*  specify the type of database  (n=Nucleotide, p=Protein)
+   -dbfrag      *dbfrag*  specify the # of fragments generated by mpiformatdb
+   -rdbBase     *rdbBase* specify single remote gsiftp basename for db transfer 
+   -rdbConf     *rdbConf* specify the file in which multiple gsiftp basenames are given.
+   -copyopt     *copyopt* specify low level data transfer tool (e.g. globus-url-copy) options.

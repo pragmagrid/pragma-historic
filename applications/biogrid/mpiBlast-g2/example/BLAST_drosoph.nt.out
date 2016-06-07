@@ -1,0 +1,3390 @@
+BLASTN 2.2.8 [Jan-05-2004]
+
+Reference: Aaron E. Darling, Lucas Carey, and Wu-chun Feng,
+"The design, implementation, and evaluation of mpiBLAST."
+In Proceedings of ClusterWorld 2003, June 24-26 2003, San Jose, CA
+
+
+Query= Test
+         (560 letters)
+
+Database: /home/cwwang/blast_db/mpiblast_storage/drosoph.nt 
+           1170 sequences; 122,655,632 total letters
+
+
+
+                                                                 Score    E
+Sequences producing significant alignments:                      (bits) Value
+
+gb|AE003698.2|AE003698 Drosophila melanogaster genomic scaffold ...    36   0.090
+gb|AE003681.2|AE003681 Drosophila melanogaster genomic scaffold ...    36   0.090
+gb|AE003493.2|AE003493 Drosophila melanogaster genomic scaffold ...    36   0.091
+gb|AE002936.2|AE002936 Drosophila melanogaster genomic scaffold ...    36   0.046
+gb|AE003740.2|AE003740 Drosophila melanogaster genomic scaffold ...    34   0.36 
+gb|AE003723.3|AE003723 Drosophila melanogaster genomic scaffold ...    34   0.36 
+gb|AE003495.2|AE003495 Drosophila melanogaster genomic scaffold ...    34   0.36 
+gb|AE003484.1|AE003484 Drosophila melanogaster genomic scaffold ...    34   0.36 
+gb|AE003525.2|AE003525 Drosophila melanogaster genomic scaffold ...    34   0.35 
+gb|AE003447.2|AE003447 Drosophila melanogaster genomic scaffold ...    34   0.36 
+gb|AE003441.1|AE003441 Drosophila melanogaster genomic scaffold ...    34   0.36 
+gb|AE003431.2|AE003431 Drosophila melanogaster genomic scaffold ...    34   0.36 
+gb|AE002615.2|AE002615 Drosophila melanogaster genomic scaffold ...    34   0.36 
+gb|AE003648.1|AE003648 Drosophila melanogaster genomic scaffold ...    34   0.36 
+gb|AE003628.1|AE003628 Drosophila melanogaster genomic scaffold ...    34   0.36 
+gb|AE002665.2|AE002665 Drosophila melanogaster genomic scaffold ...    34   0.18 
+gb|AE003673.2|AE003673 Drosophila melanogaster genomic scaffold ...    34   0.36 
+gb|AE003587.2|AE003587 Drosophila melanogaster genomic scaffold ...    34   0.35 
+gb|AE003722.2|AE003722 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003706.2|AE003706 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003778.2|AE003778 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003756.1|AE003756 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003746.2|AE003746 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003738.2|AE003738 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003735.1|AE003735 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003727.2|AE003727 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003726.2|AE003726 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003725.1|AE003725 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003565.2|AE003565 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003794.2|AE003794 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003801.2|AE003801 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003807.2|AE003807 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003813.2|AE003813 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003815.2|AE003815 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003823.2|AE003823 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003827.2|AE003827 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003831.2|AE003831 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003485.2|AE003485 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003847.2|AE003847 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003846.2|AE003846 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003530.2|AE003530 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003534.2|AE003534 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003536.2|AE003536 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003538.2|AE003538 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003541.2|AE003541 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003550.2|AE003550 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003618.1|AE003618 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003444.1|AE003444 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003434.2|AE003434 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003433.2|AE003433 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003432.2|AE003432 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003426.1|AE003426 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003653.2|AE003653 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003649.1|AE003649 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003636.2|AE003636 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003634.1|AE003634 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003630.1|AE003630 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003339.2|AE003339 Drosophila melanogaster genomic scaffold ...    32   0.71 
+gb|AE003336.2|AE003336 Drosophila melanogaster genomic scaffold ...    32   0.71 
+gb|AE003605.2|AE003605 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003790.1|AE003790 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003466.1|AE003466 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003832.2|AE003832 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003833.2|AE003833 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003836.2|AE003836 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003581.2|AE003581 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003582.2|AE003582 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003589.2|AE003589 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003479.1|AE003479 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003478.2|AE003478 Drosophila melanogaster genomic scaffold ...    32   1.4  
+gb|AE003716.2|AE003716 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003714.1|AE003714 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003704.1|AE003704 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003694.2|AE003694 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003688.1|AE003688 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003685.2|AE003685 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003683.2|AE003683 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003682.2|AE003682 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003680.2|AE003680 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003679.1|AE003679 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003677.2|AE003677 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003845.2|AE003845 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003776.1|AE003776 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003772.1|AE003772 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003771.2|AE003771 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003767.1|AE003767 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003765.2|AE003765 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003754.2|AE003754 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003753.2|AE003753 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003748.2|AE003748 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003744.1|AE003744 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003742.2|AE003742 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003739.1|AE003739 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003736.2|AE003736 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003734.1|AE003734 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003733.2|AE003733 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003732.1|AE003732 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003730.2|AE003730 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003728.2|AE003728 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003563.2|AE003563 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003791.2|AE003791 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003792.2|AE003792 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003793.2|AE003793 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003798.2|AE003798 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003799.2|AE003799 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003802.2|AE003802 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003808.2|AE003808 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003817.2|AE003817 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003818.2|AE003818 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003819.2|AE003819 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003825.2|AE003825 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003829.2|AE003829 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003422.1|AE003422 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003421.1|AE003421 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003420.1|AE003420 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003417.1|AE003417 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003513.2|AE003513 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003496.2|AE003496 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003494.2|AE003494 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003490.1|AE003490 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003486.1|AE003486 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003784.2|AE003784 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003786.2|AE003786 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003514.2|AE003514 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003518.2|AE003518 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003519.2|AE003519 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003529.2|AE003529 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003531.2|AE003531 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003532.2|AE003532 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003543.2|AE003543 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003544.2|AE003544 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003546.2|AE003546 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003555.2|AE003555 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003557.2|AE003557 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003623.1|AE003623 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003616.1|AE003616 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003613.1|AE003613 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003611.2|AE003611 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003610.2|AE003610 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003609.1|AE003609 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003446.2|AE003446 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003445.1|AE003445 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003443.1|AE003443 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003440.1|AE003440 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003425.1|AE003425 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE002630.1|AE002630 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE002612.2|AE002612 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE002601.2|AE002601 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003664.1|AE003664 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003659.1|AE003659 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003652.1|AE003652 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003650.1|AE003650 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003645.2|AE003645 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003641.1|AE003641 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003639.2|AE003639 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003637.2|AE003637 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003635.1|AE003635 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003625.1|AE003625 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003286.2|AE003286 Drosophila melanogaster genomic scaffold ...    30   2.8  
+gb|AE003284.2|AE003284 Drosophila melanogaster genomic scaffold ...    30   2.8  
+gb|AE003220.2|AE003220 Drosophila melanogaster genomic scaffold ...    30   2.8  
+gb|AE003136.2|AE003136 Drosophila melanogaster genomic scaffold ...    30   2.8  
+gb|AE003100.1|AE003100 Drosophila melanogaster genomic scaffold ...    30   2.8  
+gb|AE003058.2|AE003058 Drosophila melanogaster genomic scaffold ...    30   2.8  
+gb|AE002983.2|AE002983 Drosophila melanogaster genomic scaffold ...    30   2.8  
+gb|AE002918.2|AE002918 Drosophila melanogaster genomic scaffold ...    30   2.8  
+gb|AE002828.1|AE002828 Drosophila melanogaster genomic scaffold ...    30   2.8  
+gb|AE002743.2|AE002743 Drosophila melanogaster genomic scaffold ...    30   2.8  
+gb|AE002742.1|AE002742 Drosophila melanogaster genomic scaffold ...    30   2.8  
+gb|AE003600.2|AE003600 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003604.2|AE003604 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003606.2|AE003606 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003672.2|AE003672 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003456.1|AE003456 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003454.2|AE003454 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003568.2|AE003568 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003569.2|AE003569 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003571.2|AE003571 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003592.1|AE003592 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003591.2|AE003591 Drosophila melanogaster genomic scaffold ...    30   5.6  
+gb|AE003838.2|AE003838 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003840.2|AE003840 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003575.2|AE003575 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003578.2|AE003578 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003585.2|AE003585 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003586.2|AE003586 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003590.2|AE003590 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003482.2|AE003482 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003481.2|AE003481 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003468.1|AE003468 Drosophila melanogaster genomic scaffold ...    30   5.5  
+gb|AE003467.2|AE003467 Drosophila melanogaster genomic scaffold ...    30   5.5  
+
+>gb|AE003698.2|AE003698 Drosophila melanogaster genomic scaffold 142000013386035 section 23 of
+              105, complete sequence
+          Length = 225827
+
+ Score = 36.2 bits (18), Expect = 0.090
+ Identities = 18/18 (100%)
+ Strand = Plus / Minus
+
+                                
+Query: 107    tttattgacttaggtcac 124
+              ||||||||||||||||||
+Sbjct: 151021 tttattgacttaggtcac 151004
+
+
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 96    taaattaaaatttta 110
+             |||||||||||||||
+Sbjct: 80263 taaattaaaatttta 80277
+
+
+>gb|AE003681.2|AE003681 Drosophila melanogaster genomic scaffold 142000013386035 section 6 of
+              105, complete sequence
+          Length = 329362
+
+ Score = 36.2 bits (18), Expect = 0.090
+ Identities = 18/18 (100%)
+ Strand = Plus / Minus
+
+                                
+Query: 96     taaattaaaattttattg 113
+              ||||||||||||||||||
+Sbjct: 111644 taaattaaaattttattg 111627
+
+
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 422    ggcaggggcaggtgg 436
+              |||||||||||||||
+Sbjct: 147826 ggcaggggcaggtgg 147812
+
+
+>gb|AE003493.2|AE003493 Drosophila melanogaster genomic scaffold 142000013386053 section 10 of
+              30, complete sequence
+          Length = 308092
+
+ Score = 36.2 bits (18), Expect = 0.091
+ Identities = 18/18 (100%)
+ Strand = Plus / Minus
+
+                                
+Query: 261    acaggaaacacagaaaaa 278
+              ||||||||||||||||||
+Sbjct: 133232 acaggaaacacagaaaaa 133215
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 100    ttaaaattttattga 114
+              |||||||||||||||
+Sbjct: 270555 ttaaaattttattga 270569
+
+
+>gb|AE002936.2|AE002936 Drosophila melanogaster genomic scaffold 142000013385220, complete
+             sequence
+          Length = 48123
+
+ Score = 36.2 bits (18), Expect = 0.046
+ Identities = 18/18 (100%)
+ Strand = Plus / Minus
+
+                               
+Query: 97    aaattaaaattttattga 114
+             ||||||||||||||||||
+Sbjct: 40704 aaattaaaattttattga 40687
+
+
+>gb|AE003740.2|AE003740 Drosophila melanogaster genomic scaffold 142000013386035 section 65 of
+             105, complete sequence
+          Length = 234634
+
+ Score = 34.2 bits (17), Expect = 0.36
+ Identities = 20/21 (95%)
+ Strand = Plus / Plus
+
+                                  
+Query: 98    aattaaaattttattgactta 118
+             ||||||||||||||| |||||
+Sbjct: 80651 aattaaaattttattcactta 80671
+
+
+>gb|AE003723.3|AE003723 Drosophila melanogaster genomic scaffold 142000013386035 section 48 of
+              105, complete sequence
+          Length = 255624
+
+ Score = 34.2 bits (17), Expect = 0.36
+ Identities = 17/17 (100%)
+ Strand = Plus / Minus
+
+                               
+Query: 96     taaattaaaattttatt 112
+              |||||||||||||||||
+Sbjct: 226581 taaattaaaattttatt 226565
+
+
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                              
+Query: 102    aaaattttattgactt 117
+              ||||||||||||||||
+Sbjct: 227397 aaaattttattgactt 227412
+
+
+>gb|AE003495.2|AE003495 Drosophila melanogaster genomic scaffold 142000013386053 section 12 of
+              30, complete sequence
+          Length = 308373
+
+ Score = 34.2 bits (17), Expect = 0.36
+ Identities = 17/17 (100%)
+ Strand = Plus / Minus
+
+                               
+Query: 97     aaattaaaattttattg 113
+              |||||||||||||||||
+Sbjct: 207977 aaattaaaattttattg 207961
+
+
+>gb|AE003484.1|AE003484 Drosophila melanogaster genomic scaffold 142000013386053 section 1 of 30,
+              complete sequence
+          Length = 314087
+
+ Score = 34.2 bits (17), Expect = 0.36
+ Identities = 17/17 (100%)
+ Strand = Plus / Plus
+
+                               
+Query: 96     taaattaaaattttatt 112
+              |||||||||||||||||
+Sbjct: 291445 taaattaaaattttatt 291461
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 122   cactaaatactttaa 136
+             |||||||||||||||
+Sbjct: 32731 cactaaatactttaa 32717
+
+
+>gb|AE003525.2|AE003525 Drosophila melanogaster genomic scaffold 142000013386050 section 43 of
+              54, complete sequence
+          Length = 291829
+
+ Score = 34.2 bits (17), Expect = 0.35
+ Identities = 20/21 (95%)
+ Strand = Plus / Plus
+
+                                   
+Query: 540    acgtatttttgccgaactttt 560
+              |||||||||||||| ||||||
+Sbjct: 107262 acgtatttttgccgcactttt 107282
+
+
+>gb|AE003447.2|AE003447 Drosophila melanogaster genomic scaffold 142000013386054 section 31 of
+              35, complete sequence
+          Length = 304085
+
+ Score = 34.2 bits (17), Expect = 0.36
+ Identities = 17/17 (100%)
+ Strand = Plus / Minus
+
+                               
+Query: 377    cagaacgttttctgcgt 393
+              |||||||||||||||||
+Sbjct: 177093 cagaacgttttctgcgt 177077
+
+
+>gb|AE003441.1|AE003441 Drosophila melanogaster genomic scaffold 142000013386054 section 25 of
+              35, complete sequence
+          Length = 285272
+
+ Score = 34.2 bits (17), Expect = 0.36
+ Identities = 17/17 (100%)
+ Strand = Plus / Plus
+
+                               
+Query: 96     taaattaaaattttatt 112
+              |||||||||||||||||
+Sbjct: 206478 taaattaaaattttatt 206494
+
+
+>gb|AE003431.2|AE003431 Drosophila melanogaster genomic scaffold 142000013386054 section 15 of
+              35, complete sequence
+          Length = 311464
+
+ Score = 34.2 bits (17), Expect = 0.36
+ Identities = 17/17 (100%)
+ Strand = Plus / Plus
+
+                               
+Query: 92     tgagtaaattaaaattt 108
+              |||||||||||||||||
+Sbjct: 281362 tgagtaaattaaaattt 281378
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 18/19 (94%)
+ Strand = Plus / Plus
+
+                                
+Query: 165   aaaaattacagagtacaca 183
+             ||||||||||||| |||||
+Sbjct: 91314 aaaaattacagagcacaca 91332
+
+
+>gb|AE002615.2|AE002615 Drosophila melanogaster genomic scaffold 142000013385448, complete
+            sequence
+          Length = 3765
+
+ Score = 34.2 bits (17), Expect = 0.36
+ Identities = 17/17 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 99   attaaaattttattgac 115
+            |||||||||||||||||
+Sbjct: 1894 attaaaattttattgac 1878
+
+
+>gb|AE003648.1|AE003648 Drosophila melanogaster genomic scaffold 142000013386055 section 41 of
+              63, complete sequence
+          Length = 240520
+
+ Score = 34.2 bits (17), Expect = 0.36
+ Identities = 17/17 (100%)
+ Strand = Plus / Plus
+
+                               
+Query: 96     taaattaaaattttatt 112
+              |||||||||||||||||
+Sbjct: 230336 taaattaaaattttatt 230352
+
+
+>gb|AE003628.1|AE003628 Drosophila melanogaster genomic scaffold 142000013386055 section 21 of
+             63, complete sequence
+          Length = 270055
+
+ Score = 34.2 bits (17), Expect = 0.36
+ Identities = 17/17 (100%)
+ Strand = Plus / Plus
+
+                              
+Query: 455   ccgccaaaatcaccaac 471
+             |||||||||||||||||
+Sbjct: 93164 ccgccaaaatcaccaac 93180
+
+
+>gb|AE002665.2|AE002665 Drosophila melanogaster genomic scaffold 142000013385677, complete
+              sequence
+          Length = 111332
+
+ Score = 34.2 bits (17), Expect = 0.18
+ Identities = 17/17 (100%)
+ Strand = Plus / Plus
+
+                               
+Query: 534    tgccgaacgtatttttg 550
+              |||||||||||||||||
+Sbjct: 110852 tgccgaacgtatttttg 110868
+
+
+>gb|AE003673.2|AE003673 Drosophila melanogaster genomic scaffold 142000013386040 section 3 of 5,
+              complete sequence
+          Length = 309357
+
+ Score = 34.2 bits (17), Expect = 0.36
+ Identities = 17/17 (100%)
+ Strand = Plus / Minus
+
+                               
+Query: 97     aaattaaaattttattg 113
+              |||||||||||||||||
+Sbjct: 281695 aaattaaaattttattg 281679
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 18/19 (94%)
+ Strand = Plus / Plus
+
+                                 
+Query: 93     gagtaaattaaaattttat 111
+              |||| ||||||||||||||
+Sbjct: 281253 gagtcaattaaaattttat 281271
+
+
+>gb|AE003587.2|AE003587 Drosophila melanogaster genomic scaffold 142000013386046 section 4 of 16,
+              complete sequence
+          Length = 309156
+
+ Score = 34.2 bits (17), Expect = 0.35
+ Identities = 20/21 (95%)
+ Strand = Plus / Minus
+
+                                   
+Query: 360    tacatcagtggcaaatgcaga 380
+              ||||||||||||| |||||||
+Sbjct: 302588 tacatcagtggcacatgcaga 302568
+
+
+>gb|AE003722.2|AE003722 Drosophila melanogaster genomic scaffold 142000013386035 section 47 of
+             105, complete sequence
+          Length = 221166
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 441   cgtcctctctgccccc 456
+             ||||||||||||||||
+Sbjct: 57693 cgtcctctctgccccc 57678
+
+
+>gb|AE003706.2|AE003706 Drosophila melanogaster genomic scaffold 142000013386035 section 31 of
+              105, complete sequence
+          Length = 254961
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                              
+Query: 489    tgaaaaaaccattagc 504
+              ||||||||||||||||
+Sbjct: 137901 tgaaaaaaccattagc 137916
+
+
+>gb|AE003778.2|AE003778 Drosophila melanogaster genomic scaffold 142000013386035 section 103 of
+              105, complete sequence
+          Length = 225580
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                              
+Query: 485    tgattgaaaaaaccat 500
+              ||||||||||||||||
+Sbjct: 164390 tgattgaaaaaaccat 164405
+
+
+>gb|AE003756.1|AE003756 Drosophila melanogaster genomic scaffold 142000013386035 section 81 of
+             105, complete sequence
+          Length = 256242
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 365   cagtggcaaatgcaga 380
+             ||||||||||||||||
+Sbjct: 18586 cagtggcaaatgcaga 18601
+
+
+>gb|AE003746.2|AE003746 Drosophila melanogaster genomic scaffold 142000013386035 section 71 of
+             105, complete sequence
+          Length = 218097
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 266   aaacacagaaaaaagc 281
+             ||||||||||||||||
+Sbjct: 17853 aaacacagaaaaaagc 17868
+
+
+>gb|AE003738.2|AE003738 Drosophila melanogaster genomic scaffold 142000013386035 section 63 of
+             105, complete sequence
+          Length = 226159
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 487   attgaaaaaaccatta 502
+             ||||||||||||||||
+Sbjct: 84765 attgaaaaaaccatta 84780
+
+
+>gb|AE003735.1|AE003735 Drosophila melanogaster genomic scaffold 142000013386035 section 60 of
+              105, complete sequence
+          Length = 231849
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Minus
+
+                              
+Query: 98     aattaaaattttattg 113
+              ||||||||||||||||
+Sbjct: 122027 aattaaaattttattg 122012
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 401    atattctggaaagca 415
+              |||||||||||||||
+Sbjct: 110237 atattctggaaagca 110251
+
+
+>gb|AE003727.2|AE003727 Drosophila melanogaster genomic scaffold 142000013386035 section 52 of
+              105, complete sequence
+          Length = 242647
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Minus
+
+                              
+Query: 527    tcagcgatgccgaacg 542
+              ||||||||||||||||
+Sbjct: 232640 tcagcgatgccgaacg 232625
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 109    tattgacttaggtca 123
+              |||||||||||||||
+Sbjct: 213148 tattgacttaggtca 213162
+
+
+>gb|AE003726.2|AE003726 Drosophila melanogaster genomic scaffold 142000013386035 section 51 of
+             105, complete sequence
+          Length = 239351
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 97    aaattaaaattttatt 112
+             ||||||||||||||||
+Sbjct: 82245 aaattaaaattttatt 82260
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 407    tggaaagcaatgcca 421
+              |||||||||||||||
+Sbjct: 211371 tggaaagcaatgcca 211357
+
+
+>gb|AE003725.1|AE003725 Drosophila melanogaster genomic scaffold 142000013386035 section 50 of
+             105, complete sequence
+          Length = 254846
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 98    aattaaaattttattg 113
+             ||||||||||||||||
+Sbjct: 89576 aattaaaattttattg 89591
+
+
+>gb|AE003565.2|AE003565 Drosophila melanogaster genomic scaffold 142000013386050 section 3 of 54,
+              complete sequence
+          Length = 286583
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Minus
+
+                              
+Query: 545    tttttgccgaactttt 560
+              ||||||||||||||||
+Sbjct: 216163 tttttgccgaactttt 216148
+
+
+>gb|AE003794.2|AE003794 Drosophila melanogaster genomic scaffold 142000013386047 section 49 of
+              52, complete sequence
+          Length = 261083
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Minus
+
+                              
+Query: 97     aaattaaaattttatt 112
+              ||||||||||||||||
+Sbjct: 125511 aaattaaaattttatt 125496
+
+
+>gb|AE003801.2|AE003801 Drosophila melanogaster genomic scaffold 142000013386047 section 42 of
+              52, complete sequence
+          Length = 272650
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Minus
+
+                              
+Query: 96     taaattaaaattttat 111
+              ||||||||||||||||
+Sbjct: 182321 taaattaaaattttat 182306
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 273   gaaaaaagcccgcac 287
+             |||||||||||||||
+Sbjct: 45939 gaaaaaagcccgcac 45953
+
+
+>gb|AE003807.2|AE003807 Drosophila melanogaster genomic scaffold 142000013386047 section 36 of
+              52, complete sequence
+          Length = 260067
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Minus
+
+                              
+Query: 424    caggggcaggtggcca 439
+              ||||||||||||||||
+Sbjct: 153569 caggggcaggtggcca 153554
+
+
+>gb|AE003813.2|AE003813 Drosophila melanogaster genomic scaffold 142000013386047 section 30 of
+              52, complete sequence
+          Length = 258778
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                              
+Query: 142    ataggcatagcgcaca 157
+              ||||||||||||||||
+Sbjct: 185429 ataggcatagcgcaca 185444
+
+
+>gb|AE003815.2|AE003815 Drosophila melanogaster genomic scaffold 142000013386047 section 28 of
+             52, complete sequence
+          Length = 240495
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 156   cagacagataaaaatt 171
+             ||||||||||||||||
+Sbjct: 21890 cagacagataaaaatt 21905
+
+
+>gb|AE003823.2|AE003823 Drosophila melanogaster genomic scaffold 142000013386047 section 20 of
+              52, complete sequence
+          Length = 262731
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                              
+Query: 97     aaattaaaattttatt 112
+              ||||||||||||||||
+Sbjct: 188007 aaattaaaattttatt 188022
+
+
+>gb|AE003827.2|AE003827 Drosophila melanogaster genomic scaffold 142000013386047 section 16 of
+              52, complete sequence
+          Length = 261486
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                              
+Query: 98     aattaaaattttattg 113
+              ||||||||||||||||
+Sbjct: 243056 aattaaaattttattg 243071
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 422   ggcaggggcaggtgg 436
+             |||||||||||||||
+Sbjct: 87980 ggcaggggcaggtgg 87994
+
+
+>gb|AE003831.2|AE003831 Drosophila melanogaster genomic scaffold 142000013386047 section 12 of
+              52, complete sequence
+          Length = 260910
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Minus
+
+                              
+Query: 31     tgtctctgtgtggatt 46
+              ||||||||||||||||
+Sbjct: 172146 tgtctctgtgtggatt 172131
+
+
+>gb|AE003485.2|AE003485 Drosophila melanogaster genomic scaffold 142000013386053 section 2 of 30,
+              complete sequence
+          Length = 302350
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                              
+Query: 97     aaattaaaattttatt 112
+              ||||||||||||||||
+Sbjct: 194024 aaattaaaattttatt 194039
+
+
+>gb|AE003847.2|AE003847 Drosophila melanogaster genomic scaffold 142000013386051 section 2 of
+             2, complete sequence
+          Length = 105111
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 97    aaattaaaattttatt 112
+             ||||||||||||||||
+Sbjct: 96344 aaattaaaattttatt 96329
+
+
+>gb|AE003846.2|AE003846 Drosophila melanogaster genomic scaffold 142000013386051 section 1 of
+             2, complete sequence
+          Length = 298469
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 93    gagtaaattaaaattt 108
+             ||||||||||||||||
+Sbjct: 47049 gagtaaattaaaattt 47064
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 267   aacacagaaaaaagc 281
+             |||||||||||||||
+Sbjct: 61241 aacacagaaaaaagc 61255
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 98    aattaaaattttatt 112
+             |||||||||||||||
+Sbjct: 13753 aattaaaattttatt 13739
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                           
+Query: 100  ttaaaattttattga 114
+            |||||||||||||||
+Sbjct: 1456 ttaaaattttattga 1442
+
+
+>gb|AE003530.2|AE003530 Drosophila melanogaster genomic scaffold 142000013386050 section 38 of
+             54, complete sequence
+          Length = 279075
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 94    agtaaattaaaatttt 109
+             ||||||||||||||||
+Sbjct: 64212 agtaaattaaaatttt 64227
+
+
+>gb|AE003534.2|AE003534 Drosophila melanogaster genomic scaffold 142000013386050 section 34 of
+              54, complete sequence
+          Length = 279965
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Minus
+
+                              
+Query: 92     tgagtaaattaaaatt 107
+              ||||||||||||||||
+Sbjct: 231398 tgagtaaattaaaatt 231383
+
+
+>gb|AE003536.2|AE003536 Drosophila melanogaster genomic scaffold 142000013386050 section 32 of
+              54, complete sequence
+          Length = 341319
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Minus
+
+                              
+Query: 95     gtaaattaaaatttta 110
+              ||||||||||||||||
+Sbjct: 135560 gtaaattaaaatttta 135545
+
+
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 98     aattaaaattttatt 112
+              |||||||||||||||
+Sbjct: 328677 aattaaaattttatt 328663
+
+
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 138    caatataggcatagc 152
+              |||||||||||||||
+Sbjct: 209756 caatataggcatagc 209742
+
+
+>gb|AE003538.2|AE003538 Drosophila melanogaster genomic scaffold 142000013386050 section 30
+            of 54, complete sequence
+          Length = 303367
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 97   aaattaaaattttatt 112
+            ||||||||||||||||
+Sbjct: 4608 aaattaaaattttatt 4623
+
+
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 423    gcaggggcaggtggc 437
+              |||||||||||||||
+Sbjct: 103290 gcaggggcaggtggc 103304
+
+
+>gb|AE003541.2|AE003541 Drosophila melanogaster genomic scaffold 142000013386050 section 27 of
+              54, complete sequence
+          Length = 265536
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                              
+Query: 465    caccaaccacctggtg 480
+              ||||||||||||||||
+Sbjct: 211983 caccaaccacctggtg 211998
+
+
+>gb|AE003550.2|AE003550 Drosophila melanogaster genomic scaffold 142000013386050 section 18 of
+             54, complete sequence
+          Length = 297486
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 370   gcaaatgcagaacgtt 385
+             ||||||||||||||||
+Sbjct: 78129 gcaaatgcagaacgtt 78114
+
+
+>gb|AE003618.1|AE003618 Drosophila melanogaster genomic scaffold 142000013386055 section 11 of
+             63, complete sequence
+          Length = 268667
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 157   agacagataaaaatta 172
+             ||||||||||||||||
+Sbjct: 24278 agacagataaaaatta 24293
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 100    ttaaaattttattga 114
+              |||||||||||||||
+Sbjct: 149957 ttaaaattttattga 149943
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 96     taaattaaaatttta 110
+              |||||||||||||||
+Sbjct: 122475 taaattaaaatttta 122461
+
+
+>gb|AE003444.1|AE003444 Drosophila melanogaster genomic scaffold 142000013386054 section 28 of
+              35, complete sequence
+          Length = 300710
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 19/20 (95%)
+ Strand = Plus / Plus
+
+                                  
+Query: 365    cagtggcaaatgcagaacgt 384
+              |||||||||||||| |||||
+Sbjct: 119444 cagtggcaaatgcataacgt 119463
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 356    gcggtacatcagtgg 370
+              |||||||||||||||
+Sbjct: 155069 gcggtacatcagtgg 155083
+
+
+>gb|AE003434.2|AE003434 Drosophila melanogaster genomic scaffold 142000013386054 section 18 of
+              35, complete sequence
+          Length = 302786
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Minus
+
+                              
+Query: 97     aaattaaaattttatt 112
+              ||||||||||||||||
+Sbjct: 288613 aaattaaaattttatt 288598
+
+
+>gb|AE003433.2|AE003433 Drosophila melanogaster genomic scaffold 142000013386054 section 17
+            of 35, complete sequence
+          Length = 303411
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 340  cgagtgttgaagttcg 355
+            ||||||||||||||||
+Sbjct: 7952 cgagtgttgaagttcg 7967
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 265   gaaacacagaaaaaa 279
+             |||||||||||||||
+Sbjct: 91464 gaaacacagaaaaaa 91478
+
+
+>gb|AE003432.2|AE003432 Drosophila melanogaster genomic scaffold 142000013386054 section 16 of
+              35, complete sequence
+          Length = 319551
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                              
+Query: 98     aattaaaattttattg 113
+              ||||||||||||||||
+Sbjct: 214021 aattaaaattttattg 214036
+
+
+>gb|AE003426.1|AE003426 Drosophila melanogaster genomic scaffold 142000013386054 section 10 of
+              35, complete sequence
+          Length = 300193
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Minus
+
+                              
+Query: 159    acagataaaaattaca 174
+              ||||||||||||||||
+Sbjct: 258187 acagataaaaattaca 258172
+
+
+>gb|AE003653.2|AE003653 Drosophila melanogaster genomic scaffold 142000013386055 section 46 of
+              63, complete sequence
+          Length = 249469
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Minus
+
+                              
+Query: 78     ctggttacctgccgtg 93
+              ||||||||||||||||
+Sbjct: 229162 ctggttacctgccgtg 229147
+
+
+>gb|AE003649.1|AE003649 Drosophila melanogaster genomic scaffold 142000013386055 section 42 of
+              63, complete sequence
+          Length = 275242
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Minus
+
+                              
+Query: 438    caccgtcctctctgcc 453
+              ||||||||||||||||
+Sbjct: 128446 caccgtcctctctgcc 128431
+
+
+>gb|AE003636.2|AE003636 Drosophila melanogaster genomic scaffold 142000013386055 section 29 of
+              63, complete sequence
+          Length = 245803
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                              
+Query: 95     gtaaattaaaatttta 110
+              ||||||||||||||||
+Sbjct: 177917 gtaaattaaaatttta 177932
+
+
+>gb|AE003634.1|AE003634 Drosophila melanogaster genomic scaffold 142000013386055 section 27 of
+              63, complete sequence
+          Length = 264752
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                              
+Query: 97     aaattaaaattttatt 112
+              ||||||||||||||||
+Sbjct: 129874 aaattaaaattttatt 129889
+
+
+>gb|AE003630.1|AE003630 Drosophila melanogaster genomic scaffold 142000013386055 section 23 of
+             63, complete sequence
+          Length = 276576
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 93    gagtaaattaaaattt 108
+             ||||||||||||||||
+Sbjct: 57156 gagtaaattaaaattt 57171
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 99     attaaaattttattg 113
+              |||||||||||||||
+Sbjct: 240457 attaaaattttattg 240443
+
+
+>gb|AE003339.2|AE003339 Drosophila melanogaster genomic scaffold 142000013385303, complete
+           sequence
+          Length = 5546
+
+ Score = 32.2 bits (16), Expect = 0.71
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                           
+Query: 238 ggtaacggtgcgggct 253
+           ||||||||||||||||
+Sbjct: 181 ggtaacggtgcgggct 196
+
+
+>gb|AE003336.2|AE003336 Drosophila melanogaster genomic scaffold 142000013385800, complete
+            sequence
+          Length = 13529
+
+ Score = 32.2 bits (16), Expect = 0.71
+ Identities = 16/16 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 238  ggtaacggtgcgggct 253
+            ||||||||||||||||
+Sbjct: 7285 ggtaacggtgcgggct 7270
+
+
+>gb|AE003605.2|AE003605 Drosophila melanogaster genomic scaffold 142000013386043 section 3 of 8,
+              complete sequence
+          Length = 274001
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Minus
+
+                              
+Query: 94     agtaaattaaaatttt 109
+              ||||||||||||||||
+Sbjct: 170307 agtaaattaaaatttt 170292
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 107    tttattgacttaggt 121
+              |||||||||||||||
+Sbjct: 163418 tttattgacttaggt 163432
+
+
+>gb|AE003790.1|AE003790 Drosophila melanogaster genomic scaffold 142000013386042 section 2 of
+             2, complete sequence
+          Length = 210451
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 19/20 (95%)
+ Strand = Plus / Minus
+
+                                 
+Query: 94    agtaaattaaaattttattg 113
+             ||||||||||||| ||||||
+Sbjct: 50790 agtaaattaaaatgttattg 50771
+
+
+>gb|AE003466.1|AE003466 Drosophila melanogaster genomic scaffold 142000013386038 section 15 of
+              15, complete sequence
+          Length = 283099
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                              
+Query: 97     aaattaaaattttatt 112
+              ||||||||||||||||
+Sbjct: 196926 aaattaaaattttatt 196941
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 545    tttttgccgaacttt 559
+              |||||||||||||||
+Sbjct: 166811 tttttgccgaacttt 166825
+
+
+>gb|AE003832.2|AE003832 Drosophila melanogaster genomic scaffold 142000013386047 section 11 of
+              52, complete sequence
+          Length = 261750
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                              
+Query: 359    gtacatcagtggcaaa 374
+              ||||||||||||||||
+Sbjct: 149424 gtacatcagtggcaaa 149439
+
+
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                              
+Query: 92     tgagtaaattaaaatt 107
+              ||||||||||||||||
+Sbjct: 134808 tgagtaaattaaaatt 134823
+
+
+>gb|AE003833.2|AE003833 Drosophila melanogaster genomic scaffold 142000013386047 section 10 of
+              52, complete sequence
+          Length = 265564
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                              
+Query: 264    ggaaacacagaaaaaa 279
+              ||||||||||||||||
+Sbjct: 222796 ggaaacacagaaaaaa 222811
+
+
+>gb|AE003836.2|AE003836 Drosophila melanogaster genomic scaffold 142000013386047 section 7 of
+            52, complete sequence
+          Length = 253273
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 96   taaattaaaattttat 111
+            ||||||||||||||||
+Sbjct: 2515 taaattaaaattttat 2500
+
+
+>gb|AE003581.2|AE003581 Drosophila melanogaster genomic scaffold 142000013386046 section 10 of
+             16, complete sequence
+          Length = 306436
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 95    gtaaattaaaatttta 110
+             ||||||||||||||||
+Sbjct: 77066 gtaaattaaaatttta 77081
+
+
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 97    aaattaaaattttat 111
+             |||||||||||||||
+Sbjct: 62389 aaattaaaattttat 62375
+
+
+>gb|AE003582.2|AE003582 Drosophila melanogaster genomic scaffold 142000013386046 section 9 of 16,
+              complete sequence
+          Length = 295312
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Minus
+
+                              
+Query: 429    gcaggtggccaccgtc 444
+              ||||||||||||||||
+Sbjct: 278673 gcaggtggccaccgtc 278658
+
+
+>gb|AE003589.2|AE003589 Drosophila melanogaster genomic scaffold 142000013386046 section 2 of 16,
+              complete sequence
+          Length = 302473
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 19/20 (95%)
+ Strand = Plus / Minus
+
+                                  
+Query: 93     gagtaaattaaaattttatt 112
+              ||||||||||| ||||||||
+Sbjct: 259899 gagtaaattaatattttatt 259880
+
+
+>gb|AE003479.1|AE003479 Drosophila melanogaster genomic scaffold 142000013386045 section 13 of
+              17, complete sequence
+          Length = 309883
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Minus
+
+                              
+Query: 172    acagagtacacaacat 187
+              ||||||||||||||||
+Sbjct: 127416 acagagtacacaacat 127401
+
+
+>gb|AE003478.2|AE003478 Drosophila melanogaster genomic scaffold 142000013386045 section 12 of
+             17, complete sequence
+          Length = 317283
+
+ Score = 32.2 bits (16), Expect = 1.4
+ Identities = 16/16 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 422   ggcaggggcaggtggc 437
+             ||||||||||||||||
+Sbjct: 26593 ggcaggggcaggtggc 26578
+
+
+>gb|AE003716.2|AE003716 Drosophila melanogaster genomic scaffold 142000013386035 section 41 of
+              105, complete sequence
+          Length = 225039
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 360    tacatcagtggcaaa 374
+              |||||||||||||||
+Sbjct: 156029 tacatcagtggcaaa 156015
+
+
+>gb|AE003714.1|AE003714 Drosophila melanogaster genomic scaffold 142000013386035 section 39 of
+             105, complete sequence
+          Length = 231403
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 422   ggcaggggcaggtgg 436
+             |||||||||||||||
+Sbjct: 63285 ggcaggggcaggtgg 63299
+
+
+>gb|AE003704.1|AE003704 Drosophila melanogaster genomic scaffold 142000013386035 section 29 of
+             105, complete sequence
+          Length = 220572
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 18/19 (94%)
+ Strand = Plus / Minus
+
+                                
+Query: 91    gtgagtaaattaaaatttt 109
+             |||| ||||||||||||||
+Sbjct: 32229 gtgattaaattaaaatttt 32211
+
+
+>gb|AE003694.2|AE003694 Drosophila melanogaster genomic scaffold 142000013386035 section 19 of
+              105, complete sequence
+          Length = 226078
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 98     aattaaaattttatt 112
+              |||||||||||||||
+Sbjct: 152398 aattaaaattttatt 152384
+
+
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 96    taaattaaaatttta 110
+             |||||||||||||||
+Sbjct: 74292 taaattaaaatttta 74306
+
+
+>gb|AE003688.1|AE003688 Drosophila melanogaster genomic scaffold 142000013386035 section 13 of
+             105, complete sequence
+          Length = 224795
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 24    ggcaatatgtctctg 38
+             |||||||||||||||
+Sbjct: 73674 ggcaatatgtctctg 73660
+
+
+>gb|AE003685.2|AE003685 Drosophila melanogaster genomic scaffold 142000013386035 section 10 of
+              105, complete sequence
+          Length = 225038
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 97     aaattaaaattttat 111
+              |||||||||||||||
+Sbjct: 131295 aaattaaaattttat 131281
+
+
+>gb|AE003683.2|AE003683 Drosophila melanogaster genomic scaffold 142000013386035 section 8 of
+             105, complete sequence
+          Length = 243076
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 18/19 (94%)
+ Strand = Plus / Plus
+
+                                
+Query: 266   aaacacagaaaaaagcccg 284
+             ||||| |||||||||||||
+Sbjct: 41558 aaacaaagaaaaaagcccg 41576
+
+
+>gb|AE003682.2|AE003682 Drosophila melanogaster genomic scaffold 142000013386035 section 7 of
+              105, complete sequence
+          Length = 224400
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 121    tcactaaatacttta 135
+              |||||||||||||||
+Sbjct: 158100 tcactaaatacttta 158086
+
+
+>gb|AE003680.2|AE003680 Drosophila melanogaster genomic scaffold 142000013386035 section 5 of
+              105, complete sequence
+          Length = 242566
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 392    gtgttgccgatattc 406
+              |||||||||||||||
+Sbjct: 169408 gtgttgccgatattc 169422
+
+
+>gb|AE003679.1|AE003679 Drosophila melanogaster genomic scaffold 142000013386035 section 4 of
+              105, complete sequence
+          Length = 229277
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 330    aacaaccatgcgagt 344
+              |||||||||||||||
+Sbjct: 223253 aacaaccatgcgagt 223267
+
+
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 153    gcacagacagataaa 167
+              |||||||||||||||
+Sbjct: 181704 gcacagacagataaa 181690
+
+
+>gb|AE003677.2|AE003677 Drosophila melanogaster genomic scaffold 142000013386035 section 2 of
+              105, complete sequence
+          Length = 227894
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 267    aacacagaaaaaagc 281
+              |||||||||||||||
+Sbjct: 135593 aacacagaaaaaagc 135579
+
+
+>gb|AE003845.2|AE003845 Drosophila melanogaster genomic scaffold 142000013385266 section 1 of 3,
+              complete sequence
+          Length = 114334
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 19     caacgggcaatatgt 33
+              |||||||||||||||
+Sbjct: 100324 caacgggcaatatgt 100310
+
+
+>gb|AE003776.1|AE003776 Drosophila melanogaster genomic scaffold 142000013386035 section 101 of
+              105, complete sequence
+          Length = 225879
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 477    ggtggcgatgattga 491
+              |||||||||||||||
+Sbjct: 191007 ggtggcgatgattga 190993
+
+
+>gb|AE003772.1|AE003772 Drosophila melanogaster genomic scaffold 142000013386035 section 97 of
+             105, complete sequence
+          Length = 228448
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 457   gccaaaatcaccaac 471
+             |||||||||||||||
+Sbjct: 37096 gccaaaatcaccaac 37082
+
+
+>gb|AE003771.2|AE003771 Drosophila melanogaster genomic scaffold 142000013386035 section 96 of
+             105, complete sequence
+          Length = 235215
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 170   ttacagagtacacaa 184
+             |||||||||||||||
+Sbjct: 59868 ttacagagtacacaa 59854
+
+
+>gb|AE003767.1|AE003767 Drosophila melanogaster genomic scaffold 142000013386035 section 92 of
+             105, complete sequence
+          Length = 225155
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 91    gtgagtaaattaaaa 105
+             |||||||||||||||
+Sbjct: 54738 gtgagtaaattaaaa 54724
+
+
+>gb|AE003765.2|AE003765 Drosophila melanogaster genomic scaffold 142000013386035 section 90 of
+              105, complete sequence
+          Length = 239171
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 265    gaaacacagaaaaaa 279
+              |||||||||||||||
+Sbjct: 215101 gaaacacagaaaaaa 215115
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 99     attaaaattttattg 113
+              |||||||||||||||
+Sbjct: 101988 attaaaattttattg 102002
+
+
+>gb|AE003754.2|AE003754 Drosophila melanogaster genomic scaffold 142000013386035 section 79 of
+              105, complete sequence
+          Length = 236716
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 412    agcaatgccaggcag 426
+              |||||||||||||||
+Sbjct: 198886 agcaatgccaggcag 198900
+
+
+>gb|AE003753.2|AE003753 Drosophila melanogaster genomic scaffold 142000013386035 section 78 of
+              105, complete sequence
+          Length = 226332
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 94     agtaaattaaaattt 108
+              |||||||||||||||
+Sbjct: 186576 agtaaattaaaattt 186590
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 135    aaccaatataggcat 149
+              |||||||||||||||
+Sbjct: 121547 aaccaatataggcat 121561
+
+
+>gb|AE003748.2|AE003748 Drosophila melanogaster genomic scaffold 142000013386035 section 73 of
+              105, complete sequence
+          Length = 256608
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 28     atatgtctctgtgtg 42
+              |||||||||||||||
+Sbjct: 247062 atatgtctctgtgtg 247076
+
+
+>gb|AE003744.1|AE003744 Drosophila melanogaster genomic scaffold 142000013386035 section 69 of
+              105, complete sequence
+          Length = 239327
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 412    agcaatgccaggcag 426
+              |||||||||||||||
+Sbjct: 238607 agcaatgccaggcag 238621
+
+
+>gb|AE003742.2|AE003742 Drosophila melanogaster genomic scaffold 142000013386035 section 67 of
+             105, complete sequence
+          Length = 233747
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 421   aggcaggggcaggtg 435
+             |||||||||||||||
+Sbjct: 58107 aggcaggggcaggtg 58093
+
+
+>gb|AE003739.1|AE003739 Drosophila melanogaster genomic scaffold 142000013386035 section 64 of
+              105, complete sequence
+          Length = 223815
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 320    gtaacgaggtaacaa 334
+              |||||||||||||||
+Sbjct: 179910 gtaacgaggtaacaa 179896
+
+
+>gb|AE003736.2|AE003736 Drosophila melanogaster genomic scaffold 142000013386035 section 61 of
+             105, complete sequence
+          Length = 260252
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 18/19 (94%)
+ Strand = Plus / Minus
+
+                                
+Query: 378   agaacgttttctgcgtgtt 396
+             ||||||||||||| |||||
+Sbjct: 22088 agaacgttttctgagtgtt 22070
+
+
+>gb|AE003734.1|AE003734 Drosophila melanogaster genomic scaffold 142000013386035 section 59 of
+              105, complete sequence
+          Length = 240910
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 104    aattttattgactta 118
+              |||||||||||||||
+Sbjct: 235981 aattttattgactta 235995
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 123   actaaatactttaac 137
+             |||||||||||||||
+Sbjct: 50920 actaaatactttaac 50906
+
+
+>gb|AE003733.2|AE003733 Drosophila melanogaster genomic scaffold 142000013386035 section 58 of
+              105, complete sequence
+          Length = 230266
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 101    taaaattttattgac 115
+              |||||||||||||||
+Sbjct: 179979 taaaattttattgac 179993
+
+
+>gb|AE003732.1|AE003732 Drosophila melanogaster genomic scaffold 142000013386035 section 57 of
+              105, complete sequence
+          Length = 234369
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 1      agcttttcattctga 15
+              |||||||||||||||
+Sbjct: 117286 agcttttcattctga 117300
+
+
+>gb|AE003730.2|AE003730 Drosophila melanogaster genomic scaffold 142000013386035 section 55 of
+              105, complete sequence
+          Length = 221409
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 106    ttttattgacttagg 120
+              |||||||||||||||
+Sbjct: 113588 ttttattgacttagg 113574
+
+
+>gb|AE003728.2|AE003728 Drosophila melanogaster genomic scaffold 142000013386035 section 53 of
+              105, complete sequence
+          Length = 231883
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 97     aaattaaaattttat 111
+              |||||||||||||||
+Sbjct: 114456 aaattaaaattttat 114470
+
+
+>gb|AE003563.2|AE003563 Drosophila melanogaster genomic scaffold 142000013386050 section 5 of
+             54, complete sequence
+          Length = 277325
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 18/19 (94%)
+ Strand = Plus / Minus
+
+                                
+Query: 105   attttattgacttaggtca 123
+             |||||||||||| ||||||
+Sbjct: 25549 attttattgactaaggtca 25531
+
+
+>gb|AE003791.2|AE003791 Drosophila melanogaster genomic scaffold 142000013386047 section 52 of
+              52, complete sequence
+          Length = 260686
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 18/19 (94%)
+ Strand = Plus / Minus
+
+                                 
+Query: 96     taaattaaaattttattga 114
+              ||||||| |||||||||||
+Sbjct: 230231 taaattataattttattga 230213
+
+
+>gb|AE003792.2|AE003792 Drosophila melanogaster genomic scaffold 142000013386047 section 51 of
+              52, complete sequence
+          Length = 261900
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 96     taaattaaaatttta 110
+              |||||||||||||||
+Sbjct: 177792 taaattaaaatttta 177806
+
+
+>gb|AE003793.2|AE003793 Drosophila melanogaster genomic scaffold 142000013386047 section 50 of
+              52, complete sequence
+          Length = 263693
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 492    aaaaaccattagcgg 506
+              |||||||||||||||
+Sbjct: 211535 aaaaaccattagcgg 211549
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 479    tggcgatgattgaaa 493
+              |||||||||||||||
+Sbjct: 137766 tggcgatgattgaaa 137752
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 98    aattaaaattttatt 112
+             |||||||||||||||
+Sbjct: 52079 aattaaaattttatt 52093
+
+
+>gb|AE003798.2|AE003798 Drosophila melanogaster genomic scaffold 142000013386047 section 45 of
+              52, complete sequence
+          Length = 261090
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 98     aattaaaattttatt 112
+              |||||||||||||||
+Sbjct: 110213 aattaaaattttatt 110227
+
+
+>gb|AE003799.2|AE003799 Drosophila melanogaster genomic scaffold 142000013386047 section 44 of
+              52, complete sequence
+          Length = 277057
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 97     aaattaaaattttat 111
+              |||||||||||||||
+Sbjct: 249349 aaattaaaattttat 249363
+
+
+>gb|AE003802.2|AE003802 Drosophila melanogaster genomic scaffold 142000013386047 section 41 of
+             52, complete sequence
+          Length = 262395
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 330   aacaaccatgcgagt 344
+             |||||||||||||||
+Sbjct: 66330 aacaaccatgcgagt 66316
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 98    aattaaaattttatt 112
+             |||||||||||||||
+Sbjct: 64902 aattaaaattttatt 64916
+
+
+>gb|AE003808.2|AE003808 Drosophila melanogaster genomic scaffold 142000013386047 section 35 of
+             52, complete sequence
+          Length = 262173
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 333   aaccatgcgagtgtt 347
+             |||||||||||||||
+Sbjct: 85961 aaccatgcgagtgtt 85975
+
+
+>gb|AE003817.2|AE003817 Drosophila melanogaster genomic scaffold 142000013386047 section 26 of
+             52, complete sequence
+          Length = 262257
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 97    aaattaaaattttat 111
+             |||||||||||||||
+Sbjct: 35438 aaattaaaattttat 35452
+
+
+>gb|AE003818.2|AE003818 Drosophila melanogaster genomic scaffold 142000013386047 section 25 of
+             52, complete sequence
+          Length = 264646
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 379   gaacgttttctgcgt 393
+             |||||||||||||||
+Sbjct: 87764 gaacgttttctgcgt 87750
+
+
+>gb|AE003819.2|AE003819 Drosophila melanogaster genomic scaffold 142000013386047 section 24 of
+              52, complete sequence
+          Length = 232156
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 98     aattaaaattttatt 112
+              |||||||||||||||
+Sbjct: 172292 aattaaaattttatt 172306
+
+
+>gb|AE003825.2|AE003825 Drosophila melanogaster genomic scaffold 142000013386047 section 18 of
+              52, complete sequence
+          Length = 278196
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 96     taaattaaaatttta 110
+              |||||||||||||||
+Sbjct: 100766 taaattaaaatttta 100752
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 165   aaaaattacagagta 179
+             |||||||||||||||
+Sbjct: 19969 aaaaattacagagta 19955
+
+
+>gb|AE003829.2|AE003829 Drosophila melanogaster genomic scaffold 142000013386047 section 14 of
+              52, complete sequence
+          Length = 258463
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 91     gtgagtaaattaaaa 105
+              |||||||||||||||
+Sbjct: 184097 gtgagtaaattaaaa 184083
+
+
+>gb|AE003422.1|AE003422 Drosophila melanogaster genomic scaffold 142000013386054 section 6 of 35,
+              complete sequence
+          Length = 300739
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 430    caggtggccaccgtc 444
+              |||||||||||||||
+Sbjct: 118091 caggtggccaccgtc 118077
+
+
+>gb|AE003421.1|AE003421 Drosophila melanogaster genomic scaffold 142000013386054 section 5 of 35,
+              complete sequence
+          Length = 296497
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 176    agtacacaacatcca 190
+              |||||||||||||||
+Sbjct: 267722 agtacacaacatcca 267736
+
+
+>gb|AE003420.1|AE003420 Drosophila melanogaster genomic scaffold 142000013386054 section 4 of
+             35, complete sequence
+          Length = 302855
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 429   gcaggtggccaccgt 443
+             |||||||||||||||
+Sbjct: 58397 gcaggtggccaccgt 58383
+
+
+>gb|AE003417.1|AE003417 Drosophila melanogaster genomic scaffold 142000013386054 section 1 of 35,
+              complete sequence
+          Length = 314661
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 453    ccccgccaaaatcac 467
+              |||||||||||||||
+Sbjct: 230437 ccccgccaaaatcac 230423
+
+
+>gb|AE003513.2|AE003513 Drosophila melanogaster genomic scaffold 142000013386053 section 30 of
+              30, complete sequence
+          Length = 207521
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 526    atcagcgatgccgaa 540
+              |||||||||||||||
+Sbjct: 134649 atcagcgatgccgaa 134663
+
+
+>gb|AE003496.2|AE003496 Drosophila melanogaster genomic scaffold 142000013386053 section 13 of
+             30, complete sequence
+          Length = 299410
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 97    aaattaaaattttat 111
+             |||||||||||||||
+Sbjct: 45171 aaattaaaattttat 45185
+
+
+>gb|AE003494.2|AE003494 Drosophila melanogaster genomic scaffold 142000013386053 section 11 of
+              30, complete sequence
+          Length = 299828
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 163    ataaaaattacagag 177
+              |||||||||||||||
+Sbjct: 277337 ataaaaattacagag 277351
+
+
+>gb|AE003490.1|AE003490 Drosophila melanogaster genomic scaffold 142000013386053 section 7 of 30,
+              complete sequence
+          Length = 302752
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 325    gaggtaacaaccatg 339
+              |||||||||||||||
+Sbjct: 144553 gaggtaacaaccatg 144539
+
+
+>gb|AE003486.1|AE003486 Drosophila melanogaster genomic scaffold 142000013386053 section 3 of
+             30, complete sequence
+          Length = 303648
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 432   ggtggccaccgtcct 446
+             |||||||||||||||
+Sbjct: 93329 ggtggccaccgtcct 93343
+
+
+>gb|AE003784.2|AE003784 Drosophila melanogaster genomic scaffold 142000013386052 section 5 of 5,
+              complete sequence
+          Length = 312373
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 18/19 (94%)
+ Strand = Plus / Minus
+
+                                 
+Query: 96     taaattaaaattttattga 114
+              |||||| ||||||||||||
+Sbjct: 137288 taaatttaaattttattga 137270
+
+
+>gb|AE003786.2|AE003786 Drosophila melanogaster genomic scaffold 142000013386052 section 3 of 5,
+              complete sequence
+          Length = 316758
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 490    gaaaaaaccattagc 504
+              |||||||||||||||
+Sbjct: 233579 gaaaaaaccattagc 233593
+
+
+>gb|AE003514.2|AE003514 Drosophila melanogaster genomic scaffold 142000013386050 section 54 of
+             54, complete sequence
+          Length = 298386
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 103   aaattttattgactt 117
+             |||||||||||||||
+Sbjct: 41310 aaattttattgactt 41296
+
+
+>gb|AE003518.2|AE003518 Drosophila melanogaster genomic scaffold 142000013386050 section 50 of
+              54, complete sequence
+          Length = 279530
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 122    cactaaatactttaa 136
+              |||||||||||||||
+Sbjct: 188845 cactaaatactttaa 188831
+
+
+>gb|AE003519.2|AE003519 Drosophila melanogaster genomic scaffold 142000013386050 section 49 of
+              54, complete sequence
+          Length = 277023
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 96     taaattaaaatttta 110
+              |||||||||||||||
+Sbjct: 268753 taaattaaaatttta 268739
+
+
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 103    aaattttattgactt 117
+              |||||||||||||||
+Sbjct: 122935 aaattttattgactt 122949
+
+
+>gb|AE003529.2|AE003529 Drosophila melanogaster genomic scaffold 142000013386050 section 39 of
+              54, complete sequence
+          Length = 252370
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 169    attacagagtacaca 183
+              |||||||||||||||
+Sbjct: 210164 attacagagtacaca 210178
+
+
+>gb|AE003531.2|AE003531 Drosophila melanogaster genomic scaffold 142000013386050 section 37 of
+              54, complete sequence
+          Length = 274351
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 389    tgcgtgttgccgata 403
+              |||||||||||||||
+Sbjct: 206794 tgcgtgttgccgata 206780
+
+
+>gb|AE003532.2|AE003532 Drosophila melanogaster genomic scaffold 142000013386050 section 36 of
+              54, complete sequence
+          Length = 295377
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 155    acagacagataaaaa 169
+              |||||||||||||||
+Sbjct: 209250 acagacagataaaaa 209264
+
+
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 477    ggtggcgatgattga 491
+              |||||||||||||||
+Sbjct: 158114 ggtggcgatgattga 158128
+
+
+>gb|AE003543.2|AE003543 Drosophila melanogaster genomic scaffold 142000013386050 section 25 of
+              54, complete sequence
+          Length = 284398
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 370    gcaaatgcagaacgt 384
+              |||||||||||||||
+Sbjct: 270728 gcaaatgcagaacgt 270714
+
+
+>gb|AE003544.2|AE003544 Drosophila melanogaster genomic scaffold 142000013386050 section 24 of
+              54, complete sequence
+          Length = 281869
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 314    ccaaaggtaacgagg 328
+              |||||||||||||||
+Sbjct: 209641 ccaaaggtaacgagg 209655
+
+
+>gb|AE003546.2|AE003546 Drosophila melanogaster genomic scaffold 142000013386050 section 22 of
+             54, complete sequence
+          Length = 281602
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 422   ggcaggggcaggtgg 436
+             |||||||||||||||
+Sbjct: 96655 ggcaggggcaggtgg 96669
+
+
+>gb|AE003555.2|AE003555 Drosophila melanogaster genomic scaffold 142000013386050 section 13 of
+             54, complete sequence
+          Length = 282267
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 409   gaaagcaatgccagg 423
+             |||||||||||||||
+Sbjct: 30586 gaaagcaatgccagg 30600
+
+
+>gb|AE003557.2|AE003557 Drosophila melanogaster genomic scaffold 142000013386050 section 11 of
+              54, complete sequence
+          Length = 286418
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 490    gaaaaaaccattagc 504
+              |||||||||||||||
+Sbjct: 252463 gaaaaaaccattagc 252477
+
+
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 92    tgagtaaattaaaat 106
+             |||||||||||||||
+Sbjct: 91483 tgagtaaattaaaat 91469
+
+
+>gb|AE003623.1|AE003623 Drosophila melanogaster genomic scaffold 142000013386055 section 16 of
+              63, complete sequence
+          Length = 267547
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 98     aattaaaattttatt 112
+              |||||||||||||||
+Sbjct: 239700 aattaaaattttatt 239714
+
+
+>gb|AE003616.1|AE003616 Drosophila melanogaster genomic scaffold 142000013386055 section 9 of 63,
+              complete sequence
+          Length = 267518
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 18/19 (94%)
+ Strand = Plus / Plus
+
+                                 
+Query: 28     atatgtctctgtgtggatt 46
+              ||||||||||| |||||||
+Sbjct: 177651 atatgtctctgcgtggatt 177669
+
+
+>gb|AE003613.1|AE003613 Drosophila melanogaster genomic scaffold 142000013386055 section 6 of 63,
+              complete sequence
+          Length = 261872
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 373    aatgcagaacgtttt 387
+              |||||||||||||||
+Sbjct: 214334 aatgcagaacgtttt 214320
+
+
+>gb|AE003611.2|AE003611 Drosophila melanogaster genomic scaffold 142000013386055 section 4 of 63,
+              complete sequence
+          Length = 259973
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 96     taaattaaaatttta 110
+              |||||||||||||||
+Sbjct: 101382 taaattaaaatttta 101368
+
+
+>gb|AE003610.2|AE003610 Drosophila melanogaster genomic scaffold 142000013386055 section 3 of 63,
+              complete sequence
+          Length = 256632
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 397    gccgatattctggaa 411
+              |||||||||||||||
+Sbjct: 230136 gccgatattctggaa 230122
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 171   tacagagtacacaac 185
+             |||||||||||||||
+Sbjct: 60308 tacagagtacacaac 60322
+
+
+>gb|AE003609.1|AE003609 Drosophila melanogaster genomic scaffold 142000013386055 section 2 of 63,
+              complete sequence
+          Length = 254808
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 18/19 (94%)
+ Strand = Plus / Plus
+
+                                 
+Query: 513    tgctttacccaatatcagc 531
+              ||||||||||| |||||||
+Sbjct: 151242 tgctttacccattatcagc 151260
+
+
+>gb|AE003446.2|AE003446 Drosophila melanogaster genomic scaffold 142000013386054 section 30 of
+             35, complete sequence
+          Length = 303092
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 18/19 (94%)
+ Strand = Plus / Plus
+
+                                
+Query: 431   aggtggccaccgtcctctc 449
+             ||||||||||||| |||||
+Sbjct: 54098 aggtggccaccgttctctc 54116
+
+
+>gb|AE003445.1|AE003445 Drosophila melanogaster genomic scaffold 142000013386054 section 29 of
+             35, complete sequence
+          Length = 313965
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 160   cagataaaaattaca 174
+             |||||||||||||||
+Sbjct: 22801 cagataaaaattaca 22815
+
+
+>gb|AE003443.1|AE003443 Drosophila melanogaster genomic scaffold 142000013386054 section 27 of
+              35, complete sequence
+          Length = 302357
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 91     gtgagtaaattaaaa 105
+              |||||||||||||||
+Sbjct: 187963 gtgagtaaattaaaa 187977
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 74     tgaactggttacctg 88
+              |||||||||||||||
+Sbjct: 186966 tgaactggttacctg 186980
+
+
+>gb|AE003440.1|AE003440 Drosophila melanogaster genomic scaffold 142000013386054 section 24 of
+              35, complete sequence
+          Length = 342068
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 165    aaaaattacagagta 179
+              |||||||||||||||
+Sbjct: 115074 aaaaattacagagta 115088
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 18/19 (94%)
+ Strand = Plus / Minus
+
+                                
+Query: 385   tttctgcgtgttgccgata 403
+             |||||||||||||| ||||
+Sbjct: 52192 tttctgcgtgttgcagata 52174
+
+
+>gb|AE003425.1|AE003425 Drosophila melanogaster genomic scaffold 142000013386054 section 9 of 35,
+              complete sequence
+          Length = 300205
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 415    aatgccaggcagggg 429
+              |||||||||||||||
+Sbjct: 211323 aatgccaggcagggg 211309
+
+
+>gb|AE002630.1|AE002630 Drosophila melanogaster genomic scaffold 142000013385333, complete
+            sequence
+          Length = 12312
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                           
+Query: 101  taaaattttattgac 115
+            |||||||||||||||
+Sbjct: 4848 taaaattttattgac 4834
+
+
+>gb|AE002612.2|AE002612 Drosophila melanogaster genomic scaffold 142000013386048, complete
+             sequence
+          Length = 60654
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 100   ttaaaattttattga 114
+             |||||||||||||||
+Sbjct: 25997 ttaaaattttattga 25983
+
+
+>gb|AE002601.2|AE002601 Drosophila melanogaster genomic scaffold 142000013385253, complete
+             sequence
+          Length = 12299
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 122   cactaaatactttaa 136
+             |||||||||||||||
+Sbjct: 11190 cactaaatactttaa 11204
+
+
+>gb|AE003664.1|AE003664 Drosophila melanogaster genomic scaffold 142000013386055 section 57
+            of 63, complete sequence
+          Length = 266340
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                           
+Query: 96   taaattaaaatttta 110
+            |||||||||||||||
+Sbjct: 8424 taaattaaaatttta 8438
+
+
+>gb|AE003659.1|AE003659 Drosophila melanogaster genomic scaffold 142000013386055 section 52 of
+              63, complete sequence
+          Length = 260897
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 18/19 (94%)
+ Strand = Plus / Plus
+
+                                 
+Query: 265    gaaacacagaaaaaagccc 283
+              ||||| |||||||||||||
+Sbjct: 228317 gaaacccagaaaaaagccc 228335
+
+
+>gb|AE003652.1|AE003652 Drosophila melanogaster genomic scaffold 142000013386055 section 45 of
+              63, complete sequence
+          Length = 258166
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 96     taaattaaaatttta 110
+              |||||||||||||||
+Sbjct: 219356 taaattaaaatttta 219370
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 369   ggcaaatgcagaacg 383
+             |||||||||||||||
+Sbjct: 46681 ggcaaatgcagaacg 46695
+
+
+>gb|AE003650.1|AE003650 Drosophila melanogaster genomic scaffold 142000013386055 section 43 of
+             63, complete sequence
+          Length = 264581
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 98    aattaaaattttatt 112
+             |||||||||||||||
+Sbjct: 39690 aattaaaattttatt 39704
+
+
+>gb|AE003645.2|AE003645 Drosophila melanogaster genomic scaffold 142000013386055 section 38 of
+             63, complete sequence
+          Length = 260967
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 267   aacacagaaaaaagc 281
+             |||||||||||||||
+Sbjct: 37656 aacacagaaaaaagc 37642
+
+
+>gb|AE003641.1|AE003641 Drosophila melanogaster genomic scaffold 142000013386055 section 34 of
+              63, complete sequence
+          Length = 299556
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 96     taaattaaaatttta 110
+              |||||||||||||||
+Sbjct: 295551 taaattaaaatttta 295537
+
+
+>gb|AE003639.2|AE003639 Drosophila melanogaster genomic scaffold 142000013386055 section 32 of
+              63, complete sequence
+          Length = 261612
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 475    ctggtggcgatgatt 489
+              |||||||||||||||
+Sbjct: 251969 ctggtggcgatgatt 251955
+
+
+>gb|AE003637.2|AE003637 Drosophila melanogaster genomic scaffold 142000013386055 section 30 of
+              63, complete sequence
+          Length = 223646
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 95     gtaaattaaaatttt 109
+              |||||||||||||||
+Sbjct: 174224 gtaaattaaaatttt 174238
+
+
+>gb|AE003635.1|AE003635 Drosophila melanogaster genomic scaffold 142000013386055 section 28 of
+             63, complete sequence
+          Length = 307911
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 18/19 (94%)
+ Strand = Plus / Minus
+
+                                
+Query: 262   caggaaacacagaaaaaag 280
+             ||||||||||| |||||||
+Sbjct: 97704 caggaaacacaaaaaaaag 97686
+
+
+>gb|AE003625.1|AE003625 Drosophila melanogaster genomic scaffold 142000013386055 section 18 of
+              63, complete sequence
+          Length = 260624
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 96     taaattaaaatttta 110
+              |||||||||||||||
+Sbjct: 223793 taaattaaaatttta 223807
+
+
+>gb|AE003286.2|AE003286 Drosophila melanogaster genomic scaffold 142000013385581, complete
+            sequence
+          Length = 1629
+
+ Score = 30.2 bits (15), Expect = 2.8
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                           
+Query: 98   aattaaaattttatt 112
+            |||||||||||||||
+Sbjct: 1041 aattaaaattttatt 1027
+
+
+>gb|AE003284.2|AE003284 Drosophila melanogaster genomic scaffold 142000013385381, complete
+             sequence
+          Length = 21451
+
+ Score = 30.2 bits (15), Expect = 2.8
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 490   gaaaaaaccattagc 504
+             |||||||||||||||
+Sbjct: 12184 gaaaaaaccattagc 12170
+
+
+>gb|AE003220.2|AE003220 Drosophila melanogaster genomic scaffold 142000013385439, complete
+           sequence
+          Length = 15889
+
+ Score = 30.2 bits (15), Expect = 2.8
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                          
+Query: 544 atttttgccgaactt 558
+           |||||||||||||||
+Sbjct: 853 atttttgccgaactt 839
+
+
+>gb|AE003136.2|AE003136 Drosophila melanogaster genomic scaffold 142000013385671, complete
+           sequence
+          Length = 1469
+
+ Score = 30.2 bits (15), Expect = 2.8
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                          
+Query: 119 ggtcactaaatactt 133
+           |||||||||||||||
+Sbjct: 318 ggtcactaaatactt 304
+
+
+>gb|AE003100.1|AE003100 Drosophila melanogaster genomic scaffold 142000013385418, complete
+             sequence
+          Length = 68222
+
+ Score = 30.2 bits (15), Expect = 2.8
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 484   atgattgaaaaaacc 498
+             |||||||||||||||
+Sbjct: 14680 atgattgaaaaaacc 14666
+
+
+>gb|AE003058.2|AE003058 Drosophila melanogaster genomic scaffold 142000013385376, complete
+             sequence
+          Length = 32188
+
+ Score = 30.2 bits (15), Expect = 2.8
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 95    gtaaattaaaatttt 109
+             |||||||||||||||
+Sbjct: 13988 gtaaattaaaatttt 13974
+
+
+>gb|AE002983.2|AE002983 Drosophila melanogaster genomic scaffold 142000013385968, complete
+           sequence
+          Length = 16243
+
+ Score = 30.2 bits (15), Expect = 2.8
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                          
+Query: 324 cgaggtaacaaccat 338
+           |||||||||||||||
+Sbjct: 728 cgaggtaacaaccat 742
+
+
+>gb|AE002918.2|AE002918 Drosophila melanogaster genomic scaffold 142000013386041, complete
+            sequence
+          Length = 180638
+
+ Score = 30.2 bits (15), Expect = 2.8
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                           
+Query: 97   aaattaaaattttat 111
+            |||||||||||||||
+Sbjct: 2227 aaattaaaattttat 2241
+
+
+>gb|AE002828.1|AE002828 Drosophila melanogaster genomic scaffold 142000013386017, complete
+             sequence
+          Length = 64577
+
+ Score = 30.2 bits (15), Expect = 2.8
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 23    gggcaatatgtctct 37
+             |||||||||||||||
+Sbjct: 19619 gggcaatatgtctct 19605
+
+
+>gb|AE002743.2|AE002743 Drosophila melanogaster genomic scaffold 142000013385604, complete
+             sequence
+          Length = 83461
+
+ Score = 30.2 bits (15), Expect = 2.8
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 272   agaaaaaagcccgca 286
+             |||||||||||||||
+Sbjct: 59840 agaaaaaagcccgca 59854
+
+
+>gb|AE002742.1|AE002742 Drosophila melanogaster genomic scaffold 142000013385944, complete
+            sequence
+          Length = 37269
+
+ Score = 30.2 bits (15), Expect = 2.8
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                           
+Query: 490  gaaaaaaccattagc 504
+            |||||||||||||||
+Sbjct: 9033 gaaaaaaccattagc 9019
+
+
+>gb|AE003600.2|AE003600 Drosophila melanogaster genomic scaffold 142000013386043 section 8 of 8,
+              complete sequence
+          Length = 291545
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 97     aaattaaaattttat 111
+              |||||||||||||||
+Sbjct: 268772 aaattaaaattttat 268786
+
+
+>gb|AE003604.2|AE003604 Drosophila melanogaster genomic scaffold 142000013386043 section 4 of 8,
+              complete sequence
+          Length = 303209
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 545    tttttgccgaacttt 559
+              |||||||||||||||
+Sbjct: 181262 tttttgccgaacttt 181248
+
+
+>gb|AE003606.2|AE003606 Drosophila melanogaster genomic scaffold 142000013386043 section 2 of
+             8, complete sequence
+          Length = 300265
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 129   tactttaaccaatat 143
+             |||||||||||||||
+Sbjct: 19906 tactttaaccaatat 19920
+
+
+>gb|AE003672.2|AE003672 Drosophila melanogaster genomic scaffold 142000013386040 section 4 of 5,
+              complete sequence
+          Length = 301601
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 94     agtaaattaaaattt 108
+              |||||||||||||||
+Sbjct: 239137 agtaaattaaaattt 239151
+
+
+>gb|AE003456.1|AE003456 Drosophila melanogaster genomic scaffold 142000013386038 section 5 of
+             15, complete sequence
+          Length = 298464
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 96    taaattaaaatttta 110
+             |||||||||||||||
+Sbjct: 54077 taaattaaaatttta 54063
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 165   aaaaattacagagta 179
+             |||||||||||||||
+Sbjct: 32623 aaaaattacagagta 32609
+
+
+>gb|AE003454.2|AE003454 Drosophila melanogaster genomic scaffold 142000013386038 section 3 of 15,
+              complete sequence
+          Length = 300865
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 455    ccgccaaaatcacca 469
+              |||||||||||||||
+Sbjct: 228782 ccgccaaaatcacca 228796
+
+
+>gb|AE003568.2|AE003568 Drosophila melanogaster genomic scaffold 142000013386037 section 5 of
+             5, complete sequence
+          Length = 292911
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 155   acagacagataaaaa 169
+             |||||||||||||||
+Sbjct: 64059 acagacagataaaaa 64045
+
+
+>gb|AE003569.2|AE003569 Drosophila melanogaster genomic scaffold 142000013386037 section 4 of 5,
+              complete sequence
+          Length = 291414
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 151    gcgcacagacagata 165
+              |||||||||||||||
+Sbjct: 171253 gcgcacagacagata 171267
+
+
+>gb|AE003571.2|AE003571 Drosophila melanogaster genomic scaffold 142000013386037 section 2 of 5,
+              complete sequence
+          Length = 302303
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 484    atgattgaaaaaacc 498
+              |||||||||||||||
+Sbjct: 177732 atgattgaaaaaacc 177718
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                           
+Query: 400  gatattctggaaagc 414
+            |||||||||||||||
+Sbjct: 4175 gatattctggaaagc 4189
+
+
+>gb|AE003592.1|AE003592 Drosophila melanogaster genomic scaffold 142000013386036 section 2 of
+             9, complete sequence
+          Length = 322667
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 102   aaaattttattgact 116
+             |||||||||||||||
+Sbjct: 61392 aaaattttattgact 61378
+
+
+>gb|AE003591.2|AE003591 Drosophila melanogaster genomic scaffold 142000013386036 section 1 of 9,
+              complete sequence
+          Length = 297770
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 99     attaaaattttattg 113
+              |||||||||||||||
+Sbjct: 297003 attaaaattttattg 296989
+
+
+
+ Score = 30.2 bits (15), Expect = 5.6
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 1      agcttttcattctga 15
+              |||||||||||||||
+Sbjct: 182056 agcttttcattctga 182070
+
+
+>gb|AE003838.2|AE003838 Drosophila melanogaster genomic scaffold 142000013386047 section 5 of 52,
+              complete sequence
+          Length = 263411
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 96     taaattaaaatttta 110
+              |||||||||||||||
+Sbjct: 219353 taaattaaaatttta 219339
+
+
+>gb|AE003840.2|AE003840 Drosophila melanogaster genomic scaffold 142000013386047 section 3 of
+             52, complete sequence
+          Length = 259764
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 77    actggttacctgccg 91
+             |||||||||||||||
+Sbjct: 80156 actggttacctgccg 80142
+
+
+>gb|AE003575.2|AE003575 Drosophila melanogaster genomic scaffold 142000013386046 section 16 of
+             16, complete sequence
+          Length = 327209
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                            
+Query: 97    aaattaaaattttat 111
+             |||||||||||||||
+Sbjct: 63618 aaattaaaattttat 63632
+
+
+>gb|AE003578.2|AE003578 Drosophila melanogaster genomic scaffold 142000013386046 section 13
+            of 16, complete sequence
+          Length = 307748
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                           
+Query: 404  ttctggaaagcaatg 418
+            |||||||||||||||
+Sbjct: 2235 ttctggaaagcaatg 2249
+
+
+>gb|AE003585.2|AE003585 Drosophila melanogaster genomic scaffold 142000013386046 section 6 of
+             16, complete sequence
+          Length = 306321
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 528   cagcgatgccgaacg 542
+             |||||||||||||||
+Sbjct: 13707 cagcgatgccgaacg 13693
+
+
+>gb|AE003586.2|AE003586 Drosophila melanogaster genomic scaffold 142000013386046 section 5 of
+            16, complete sequence
+          Length = 306352
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                           
+Query: 98   aattaaaattttatt 112
+            |||||||||||||||
+Sbjct: 1187 aattaaaattttatt 1173
+
+
+>gb|AE003590.2|AE003590 Drosophila melanogaster genomic scaffold 142000013386046 section 1 of
+            16, complete sequence
+          Length = 301639
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                           
+Query: 367  gtggcaaatgcagaa 381
+            |||||||||||||||
+Sbjct: 7779 gtggcaaatgcagaa 7793
+
+
+>gb|AE003482.2|AE003482 Drosophila melanogaster genomic scaffold 142000013386045 section 16 of
+             17, complete sequence
+          Length = 301769
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                            
+Query: 98    aattaaaattttatt 112
+             |||||||||||||||
+Sbjct: 72134 aattaaaattttatt 72120
+
+
+>gb|AE003481.2|AE003481 Drosophila melanogaster genomic scaffold 142000013386045 section 15 of
+              17, complete sequence
+          Length = 319850
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 266    aaacacagaaaaaag 280
+              |||||||||||||||
+Sbjct: 269843 aaacacagaaaaaag 269829
+
+
+>gb|AE003468.1|AE003468 Drosophila melanogaster genomic scaffold 142000013386045 section 2 of 17,
+              complete sequence
+          Length = 310120
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Plus
+
+                             
+Query: 266    aaacacagaaaaaag 280
+              |||||||||||||||
+Sbjct: 122123 aaacacagaaaaaag 122137
+
+
+>gb|AE003467.2|AE003467 Drosophila melanogaster genomic scaffold 142000013386045 section 1 of 17,
+              complete sequence
+          Length = 298640
+
+ Score = 30.2 bits (15), Expect = 5.5
+ Identities = 15/15 (100%)
+ Strand = Plus / Minus
+
+                             
+Query: 419    ccaggcaggggcagg 433
+              |||||||||||||||
+Sbjct: 171630 ccaggcaggggcagg 171616
+
+

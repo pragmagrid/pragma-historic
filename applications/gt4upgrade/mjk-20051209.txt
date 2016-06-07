@@ -1,0 +1,70 @@
+From: "mason j. katz" <mjk@sdsc.edu>
+Date: December 9, 2005 6:41:36 PM PST
+To: Yusuke Tanimura <yusuke.tanimura@aist.go.jp>
+Cc: <zhengc@sdsc.edu>, yoshio.tanaka@aist.go.jp
+Subject: Re: GT4 and gfarm
+
+Yusuke,
+
+I'm attaching the sge.in file that we used based on AIST's jobmanager- 
+sge gpt bundle.  The changes for GT4/SGE6 were to place the env  
+variables related to SGE in the sge.pm (sge.in from the bundle).  I'm  
+not sure if this is related to the changes you will need since we  
+made the jump from gt2->gt4 and sge5->sge6 at the same time.  This  
+may be an SGE6 issue only.
+
+In either case, we are very interested in what your sge.pm file will  
+end up looking like, so we can make sure both of us have similar  
+configurations.  Thanks.
+
+	-mjk
+
+
+On Dec 9, 2005, at 06:35 p, Yusuke Tanimura wrote:
+
+> Hi, Cindy,
+>
+>> I notice that a few nodes of UME are having
+>> GSI problem for Gfarm:
+>>
+>> [zhengc@rocks-52 zhengc]$ gfhost -lv
+>> ume01.hpcc.jp: connection refused
+>> ume0a.hpcc.jp: connection refused
+>> ume0b.hpcc.jp: connection refused
+>> ume0c.hpcc.jp: connection refused
+>> ume0f.hpcc.jp: connection timed out
+>>
+>> We are thinking to try use Gfarm for Siesta -
+>> new applicaiton, so want to make sure our Gfarm
+>> sites are working correctly.
+>
+> Thank you for your notification to us.
+> Looks like gfsd daemon is dead on most nodes and ume0f is down.
+> We will check the causes and solve the problems in short time.
+>
+>> Also, what's your GT4 upgrade plan for ume?
+>> If you are going to upgrade soon, then I'll
+>> tell Prof. Garcia (driver of Siesta) to use
+>> ume after you upgrade, otherwise, he can use
+>> ume now to test his applications using Gfarm.
+>
+> AIST support team is working on the GT4 upgrade right now.
+> It should not take time but please be patient for a while.
+> Also, I would like to tell you that jobmanager-sge will be slightly
+> modified for GT4.  When we finish the GT4 upgrade, we can
+> provide a patch or information about this.
+>
+> It seems better that he starts his test after our upgrade
+> because we will also upgrade Gfarm at this moment.
+> I will let you know when all upgrades are completed.
+>
+> Thanks,
+>
+> -----------------------------------------------------
+> Yusuke Tanimura <yusuke.tanimura@aist.go.jp>
+> Grid Technology Research Center, National Institute of AIST
+> 1-1-1 Umezono, Tsukuba Central 2
+> Tsukuba City 305-8568, Japan
+> TEL: +81-29-862-6703  / FAX: +81-29-862-6601
+>
+

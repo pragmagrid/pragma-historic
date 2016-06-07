@@ -1,0 +1,13 @@
+#!/bin/csh -f
+
+echo ""
+echo "  blx - Call MSPcrunch and blixem in one go."
+echo ""
+
+if ($#argv != 2) then
+  echo "  Usage: blx <sequence_file> <blast_output_file>"
+  echo ""
+  exit
+endif
+
+$BLASTG2_LOCATION/bin/viewer/MSPcrunch -q $2 | $BLASTG2_LOCATION/bin/viewer/blixem $1 - &

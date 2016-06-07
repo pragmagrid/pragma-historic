@@ -1,0 +1,83 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(src/mpiblast.cpp)
+AM_INIT_AUTOMAKE(mpiBLAST, 1.2.1)
+
+AC_PREFIX_DEFAULT(/usr/local)
+
+dnl Checks for programs.
+AC_PROG_CC
+AC_PROG_CXX
+AC_PROG_RANLIB
+AC_PROG_INSTALL
+AC_PROG_LN_S 
+
+dnl Checks for header files.
+AC_HEADER_STDC
+
+AC_SYS_LARGEFILE
+
+dnl Check for getopt_long
+AC_CHECK_FUNC(getopt_long,
+[GETOPT_LONG_SYSTEM=""],
+[GETOPT_LONG_SYSTEM='getopt.$(OBJEXT) getopt1.$(OBJEXT)']
+)
+AC_SUBST([GETOPT_LONG_SYSTEM])
+
+dnl Get location of NCBI library
+AC_MSG_CHECKING(for NCBI library)
+AC_ARG_WITH(ncbi,
+  [  --with-ncbi=dir       give the directory prefix where the NCBI library source is installed.]
+  [                        [/usr/local/ncbi]],
+  NCBIdir="$withval", NCBIdir="/usr/local/ncbi")
+dnl AC_DEFINE_UNQUOTED(CONFIG_NCBIDIR, "$NCBIdir")
+CONFIG_NCBIDIR="$NCBIdir"
+AC_SUBST(CONFIG_NCBIDIR)
+AC_MSG_RESULT($NCBIdir)
+
+dnl Allow debugging compilation
+AC_ARG_ENABLE(debug,
+[  --enable-debug    Turn on debugging],
+[case "${enableval}" in
+  yes) debug=true ;;
+  no)  debug=false ;;
+  *) AC_MSG_ERROR(bad value ${enableval} for --enable-debug) ;;
+esac],[debug=false])
+AM_CONDITIONAL(DEBUG, test x$debug = xtrue)
+
+dnl Permit many fragment hack compilation
+AC_MSG_CHECKING(for many fragment option)
+AC_ARG_ENABLE(many-fragments,
+  AC_HELP_STRING([--enable-many-fragments],[Causes mpiBLAST to use 3 digit database fragment identifiers.]),
+[many_fragments=true],
+[many_fragments=false]
+)
+if ($many_fragments = "true") then
+	AC_DEFINE(MANY_FRAGMENTS_HACK)
+fi
+
+dnl Permit MPE timing compilation
+AC_MSG_CHECKING(for MPE timing option)
+AC_ARG_ENABLE(mpe-timing,
+  AC_HELP_STRING([--enable-mpe-timing],[Causes mpiBLAST to log components of its running time using MPE]),
+[mpe_timing=true],
+[mpe_timing=false]
+)
+if ($mpe_timing ="true") then
+	AC_DEFINE(MPE)
+fi
+
+
+dnl Checks for typedefs, structures, and compiler characteristics.
+AC_C_CONST
+AC_C_INLINE
+dnl AC_C_BIGENDIAN
+AC_HEADER_TIME
+
+dnl Checks for library functions.
+AC_PROG_GCC_TRADITIONAL
+
+dnl SAVE_LIBRARY_VERSION
+AC_SUBST(LIBTOOL_VERSION_INFO)
+
+
+AC_OUTPUT(Makefile src/Makefile)

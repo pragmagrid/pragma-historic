@@ -1,0 +1,126 @@
+<html>
+<head>
+<title>GAMESS June 2005 Binaries</title>
+<link rel=stylesheet href="http://agave.wustl.edu/apbs/css/apbs.css">
+</head>
+
+<body bgcolor="#ffffff">
+
+<h1 align="center">GAMESS June 2005 Binaries</h1>
+
+<hr width="100%">
+
+<p>
+
+<h3 align="center">Available binaries</h3>
+<p>
+<table width="100%" align="center" border="1">
+<tr>
+  <th>Architechture</th>
+  <th>Operating system</th>
+  <th>Compiler</th>
+  <th>Files</th>
+</tr>
+
+<tr>
+  <td>Intel Itanium (ia64)</td>
+  <td>RedHat Enterprise <br> Linux 2.4</td>
+  <td>Intel C/FORTRAN 8.1</td>
+  <td>
+     <a href="/softdepot/gamess-2005.10.18-1.ia64.rpm">gamess-2005.10.18-1.ia64.rpm</a>
+  </td>
+</tr>
+<tr>
+  <td>AMD Opteron 64</td>
+  <td>RedHat Enterprise <br> Linux 2.6</td>
+  <td>Portland C/FORTRAN 6.1-1</td>
+  <td>
+     <a href="/softdepot/gamess-2005.10.18-1.x86_64.rpm">gamess-2005.10.18-1.x86_64.rpm</a>
+  </td>
+</tr>
+<tr>
+  <td>Intel Pentium III and above</td>
+  <td>RedHat Enterprise <br> Linux 2.4</td>
+  <td>GNU  C/FORTRAN 3.2.3 </td>
+  <td>
+     <a href="/softdepot/gamess-2005.10.18-1.i386.rpm">gamess-2005.10.18-1.i386.rpm</a>
+  </td>
+</tr>
+<tr>
+  <td>SUN SPARC v9</td>
+  <td>SunOS 5.9 sun4u</td>
+  <td>SUN FORTRAN 95 v7.1/SUN C v5.1 </td>
+  <td>
+     <a href="/softdepot/gamess-sunsparcv9-june-2005.tgz">gamess-sunsparcv9-june-2005.tgz</a>
+  </td>
+</tr>
+</table>
+</center>
+<br>
+<H2>
+ <center>
+INSTALLATION
+</center>
+</h2>
+<p>
+<h3>For Linux i386 or ia64 clusters</h3>
+<OL>
+<LI>Download the corresponding RPM file (above)
+<LI>Install the RPM file on all nodes in your cluster
+<br>The default installation path is /opt/gamess. If you want to install to a different path, specify it using RPM options.
+<LI>Edit $GMSPATH/bin/rungms and $GMSPATH/machines/rungms
+<br>Set the scratch directory for users in the line 
+<br>set SCR=/state/partition1/$USER 
+<LI>Inform users the installation path
+<LI>Instruct users to create their own scratch directories in the correct path.
+</OL>
+<p>
+<h3>For Solaris clusters</h3> 
+(Substitute $GMSPATH with the path of gamess installation directory)
+<OL>
+<LI>  Edit the $GMSPATH/gamess file
+<OL type=a>
+<LI>  change the line "default=/work/jpg/gamess" (line 7) to $GMSPATH
+</OL>
+<LI>  Edit the $GMSPATH/rungms file
+<OL type=a>
+<LI>  change the line "setenv ERICFMT /work/jpg/gamess/ericfmt.dat" (line 107) to $GMSPATH
+<LI>  change the line "setenv MCPPATH /work/jpg/gamess/mcpdata" (line 108) to $GMSPATH
+<LI>  change the line " if ($os == SunOS) set GMSPATH=/work/jpg/gamess" (line 287) to $GMSPATH. Its also useful to have GMSPATH set in your environment.
+</OL>
+</OL>
+<br>
+<h2><center>
+VERIFICATION
+</center>
+</h2>
+You can run gamess either interactively or through a local job scheduler, such as SGE, PBS, LSF, SQMS etc.<p>
+Before you run gamess for the first time, you need to create a srach directory on all nodes. For example, on a Rocks cluster, you can run<p>
+<pre>	cluster-fork mkdir /state/partition1/$USER</pre><p>
+To run interactively on a single processor (on linux), execute:
+<br>
+/opt/gamess/bin/rungms file_prefix 00 1 2>&1 > file_prefix.out
+<br>
+<br>
+To run interactively (on SUN), execute:
+<br>
+$GMSPATH/rungms file_prefix 00 1 >& file_prefix.out
+<br>
+<br>
+where "file_prefix" is the file prefix of the gamess input file "gamess_prefix.inp"
+</p>
+<sp>
+<sp>
+<p>
+To run through the queue, run the script "gamess" (/opt/gamess/bin/gamess on linux or $GMSPATH/gamess
+on sun's).
+<br>
+At the prompt, type:
+<br>
+<br>
+gamess -n PROCS file_prefix
+<br>
+<br>
+where PROCS is the number of gamess processes you want.
+</body>
+</html>

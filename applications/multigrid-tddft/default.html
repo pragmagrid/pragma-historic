@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>MultiGrid Interoperation TDDFT</title>
+</head>
+<body bgcolor=white>
+
+<p>
+<H1 align=left>MultiGrid Interoperation TDDFT/Ninf-G Experiment</H1>
+<hr>
+<p>
+<font size=+1>
+<UL>
+<LI><a href="http://www.gridforum.org/GGF14/documents/Apps/tanimura_paper.pdf">TDDFT/Ninf-G Overview</a>
+<p>
+<LI>TDDFT <a href="./requirement.html">Requirements</a>
+<p>
+<LI><a href="http://pragma-goc.rocksclusters.org/pragma-doc/multigrid.html">MultiGrid Resources</a>
+<p>
+<LI>Account application
+<OL>
+<LI>The user had have a PRAGMA account before the Multi-Grid experiment. 
+<LI>The user requested a TeraGrid account on the Web.
+<LI>The account was creaated on only UC/ANL site for the demo without the formal process.
+</OL>
+<p>
+<LI>Deployment
+<OL>
+<LI>The user wrote a system requirement for the application.
+<LI>The GOC sent the requirement to the PRAGMA sites and the UC/ANL.
+<LI>After notification, the user confirmed the requirement is met on the site.
+<LI>The user upload an input data file (212 MB) to each site.
+<LI>The user upload an application program written in Fortran 90.
+<LI>The user compiled the program on the site.
+</OL>
+<p>
+<LI>Test on each site
+<OL>
+<LI>Application level test
+<UL>
+   <LI>The user checked if the program works normally on a signle node.
+</UL>
+<LI>Local scheduler level test
+<UL>
+   <LI>The user tested a simple job submission to a local scheduler.
+</UL>
+<LI>Globus level test
+<UL>
+   <LI>The user tested a simple GRAM job submission from the client node to the cluster.
+</UL>
+<LI>Ninf-G level test
+<UL>
+   <LI>The user tested the TDDFT/Ninf-G/Globus application using the client node on AIST and a single node on the site.
+</UL>
+</OL>
+<p>
+<LI>Experiments</H3>
+<UL>
+  <LI>The client always runs on ume.hpcc.jp (AIST).
+  <LI>Target molecules of TDDFT: Ligand-protected Au_13
+  <UL>
+    <LI>122 tasks in one loop
+    <LI>Input data per task: 4.87 MB
+    <LI>Ouput data per task: 3.25 MB
+  </UL>
+  <BR>
+  <LI>2/10 10:34 JST - 10:56 (22 minutes)
+  <UL>
+    <LI>6 servers: 4 SDSC, 2 UC/ANL, 2 AIST
+    <LI>1220 successful RPCs and 2 errors
+    <LI>The server programs on UC/ANL went down after 15 minutes because max_wall_time was not set by the user.
+  </UL>
+  <BR>
+  <LI>2/11 00:06 JST - 2/16 01:13 (5 days and 1 hour and 7 minutes)
+  <UL>
+    <LI>14 servers: 6 SDSC, 6 UC/ANL, 2 AIST
+    <LI>464162 successful RPCs and 6 errors
+    <LI>UC/ANL servers was queued for 3 and half hours in the beginning.
+    <UL><LI>job_startTimout of Ninf-G was disabled.</UL>
+    <LI>The server programs on UC/ANL went down after 50-hours-running because of max_wall_time.
+  </UL>
+  <BR>
+  <LI>8/16 17:44 JST - 8/17 02:11 (8 hours and 27 minutes)
+  <UL>
+    <LI>4 servers: 4 OSG
+    <LI>1220 successful RPCs and no error
+    <LI>This was a test run on the OSG cluster and the result was successful.
+  </UL>
+</UL>
+
+
+</font>
+</body>
+</html>

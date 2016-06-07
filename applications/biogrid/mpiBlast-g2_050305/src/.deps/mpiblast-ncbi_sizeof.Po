@@ -1,0 +1,255 @@
+mpiblast-ncbi_sizeof.o mpiblast-ncbi_sizeof.o: ncbi_sizeof.c \
+  ncbi_sizeof.h /home/cwwang/pkg/ncbi/include/objseq.h \
+  /home/cwwang/pkg/ncbi/include/asn.h \
+  /home/cwwang/pkg/ncbi/include/ncbi.h \
+  /home/cwwang/pkg/ncbi/include/ncbilcl.h /usr/include/sys/types.h \
+  /usr/include/features.h /usr/include/sys/cdefs.h \
+  /usr/include/gnu/stubs.h /usr/include/bits/types.h \
+  /usr/include/bits/wordsize.h \
+  /usr/lib/gcc-lib/i386-redhat-linux/3.2.3/include/stddef.h \
+  /usr/include/bits/typesizes.h /usr/include/time.h \
+  /usr/include/bits/pthreadtypes.h /usr/include/bits/sched.h \
+  /usr/lib/gcc-lib/i386-redhat-linux/3.2.3/include/limits.h \
+  /usr/lib/gcc-lib/i386-redhat-linux/3.2.3/include/syslimits.h \
+  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
+  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
+  /usr/include/bits/posix2_lim.h /usr/include/bits/xopen_lim.h \
+  /usr/include/bits/stdio_lim.h /usr/include/sys/stat.h \
+  /usr/include/bits/stat.h /usr/include/stdio.h /usr/include/libio.h \
+  /usr/include/_G_config.h /usr/include/wchar.h /usr/include/bits/wchar.h \
+  /usr/include/gconv.h \
+  /usr/lib/gcc-lib/i386-redhat-linux/3.2.3/include/stdarg.h \
+  /usr/include/bits/sys_errlist.h getopt.h /usr/include/bits/stdio.h \
+  /usr/include/ctype.h /usr/include/endian.h /usr/include/bits/endian.h \
+  /usr/include/string.h /usr/include/bits/string.h \
+  /usr/include/bits/string2.h /usr/include/stdlib.h /usr/include/malloc.h \
+  /usr/include/memory.h /usr/include/bits/waitflags.h \
+  /usr/include/bits/waitstatus.h /usr/include/alloca.h \
+  /usr/include/math.h /usr/include/bits/huge_val.h \
+  /usr/include/bits/mathdef.h /usr/include/bits/mathcalls.h \
+  /usr/include/bits/mathinline.h /usr/include/errno.h \
+  /usr/include/bits/errno.h /usr/include/linux/errno.h \
+  /usr/include/asm/errno.h \
+  /usr/lib/gcc-lib/i386-redhat-linux/3.2.3/include/float.h \
+  /usr/include/unistd.h /usr/include/bits/posix_opt.h \
+  /usr/include/bits/environments.h /usr/include/bits/confname.h \
+  /home/cwwang/pkg/ncbi/include/ncbistd.h \
+  /home/cwwang/pkg/ncbi/include/ncbiopt.h \
+  /home/cwwang/pkg/ncbi/include/connect/ncbi_core.h \
+  /home/cwwang/pkg/ncbi/include/connect/ncbi_types.h \
+  /home/cwwang/pkg/ncbi/include/connect/connect_export.h \
+  /usr/include/assert.h /home/cwwang/pkg/ncbi/include/ncbimem.h \
+  /home/cwwang/pkg/ncbi/include/ncbimsg.h \
+  /home/cwwang/pkg/ncbi/include/ncbierr.h \
+  /home/cwwang/pkg/ncbi/include/ncbimisc.h \
+  /home/cwwang/pkg/ncbi/include/ncbistr.h \
+  /home/cwwang/pkg/ncbi/include/ncbibs.h \
+  /home/cwwang/pkg/ncbi/include/ncbitime.h /usr/include/bits/time.h \
+  /home/cwwang/pkg/ncbi/include/ncbifile.h \
+  /home/cwwang/pkg/ncbi/include/ncbimath.h \
+  /home/cwwang/pkg/ncbi/include/ncbiprop.h \
+  /home/cwwang/pkg/ncbi/include/ncbisgml.h \
+  /home/cwwang/pkg/ncbi/include/ncbienv.h \
+  /home/cwwang/pkg/ncbi/include/ncbiwww.h \
+  /home/cwwang/pkg/ncbi/include/ncbimain.h \
+  /home/cwwang/pkg/ncbi/include/objgen.h \
+  /home/cwwang/pkg/ncbi/include/objloc.h \
+  /home/cwwang/pkg/ncbi/include/objbibli.h \
+  /home/cwwang/pkg/ncbi/include/objfeat.h \
+  /home/cwwang/pkg/ncbi/include/objpub.h \
+  /home/cwwang/pkg/ncbi/include/objmedli.h \
+  /home/cwwang/pkg/ncbi/include/objpubd.h \
+  /home/cwwang/pkg/ncbi/include/objalign.h \
+  /home/cwwang/pkg/ncbi/include/objres.h \
+  /home/cwwang/pkg/ncbi/include/objblock.h \
+  /home/cwwang/pkg/ncbi/include/objcode.h
+
+ncbi_sizeof.h:
+
+/home/cwwang/pkg/ncbi/include/objseq.h:
+
+/home/cwwang/pkg/ncbi/include/asn.h:
+
+/home/cwwang/pkg/ncbi/include/ncbi.h:
+
+/home/cwwang/pkg/ncbi/include/ncbilcl.h:
+
+/usr/include/sys/types.h:
+
+/usr/include/features.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/wordsize.h:
+
+/usr/lib/gcc-lib/i386-redhat-linux/3.2.3/include/stddef.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/time.h:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/bits/sched.h:
+
+/usr/lib/gcc-lib/i386-redhat-linux/3.2.3/include/limits.h:
+
+/usr/lib/gcc-lib/i386-redhat-linux/3.2.3/include/syslimits.h:
+
+/usr/include/limits.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/bits/posix2_lim.h:
+
+/usr/include/bits/xopen_lim.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/sys/stat.h:
+
+/usr/include/bits/stat.h:
+
+/usr/include/stdio.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/include/bits/wchar.h:
+
+/usr/include/gconv.h:
+
+/usr/lib/gcc-lib/i386-redhat-linux/3.2.3/include/stdarg.h:
+
+/usr/include/bits/sys_errlist.h:
+
+getopt.h:
+
+/usr/include/bits/stdio.h:
+
+/usr/include/ctype.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/endian.h:
+
+/usr/include/string.h:
+
+/usr/include/bits/string.h:
+
+/usr/include/bits/string2.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/malloc.h:
+
+/usr/include/memory.h:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/alloca.h:
+
+/usr/include/math.h:
+
+/usr/include/bits/huge_val.h:
+
+/usr/include/bits/mathdef.h:
+
+/usr/include/bits/mathcalls.h:
+
+/usr/include/bits/mathinline.h:
+
+/usr/include/errno.h:
+
+/usr/include/bits/errno.h:
+
+/usr/include/linux/errno.h:
+
+/usr/include/asm/errno.h:
+
+/usr/lib/gcc-lib/i386-redhat-linux/3.2.3/include/float.h:
+
+/usr/include/unistd.h:
+
+/usr/include/bits/posix_opt.h:
+
+/usr/include/bits/environments.h:
+
+/usr/include/bits/confname.h:
+
+/home/cwwang/pkg/ncbi/include/ncbistd.h:
+
+/home/cwwang/pkg/ncbi/include/ncbiopt.h:
+
+/home/cwwang/pkg/ncbi/include/connect/ncbi_core.h:
+
+/home/cwwang/pkg/ncbi/include/connect/ncbi_types.h:
+
+/home/cwwang/pkg/ncbi/include/connect/connect_export.h:
+
+/usr/include/assert.h:
+
+/home/cwwang/pkg/ncbi/include/ncbimem.h:
+
+/home/cwwang/pkg/ncbi/include/ncbimsg.h:
+
+/home/cwwang/pkg/ncbi/include/ncbierr.h:
+
+/home/cwwang/pkg/ncbi/include/ncbimisc.h:
+
+/home/cwwang/pkg/ncbi/include/ncbistr.h:
+
+/home/cwwang/pkg/ncbi/include/ncbibs.h:
+
+/home/cwwang/pkg/ncbi/include/ncbitime.h:
+
+/usr/include/bits/time.h:
+
+/home/cwwang/pkg/ncbi/include/ncbifile.h:
+
+/home/cwwang/pkg/ncbi/include/ncbimath.h:
+
+/home/cwwang/pkg/ncbi/include/ncbiprop.h:
+
+/home/cwwang/pkg/ncbi/include/ncbisgml.h:
+
+/home/cwwang/pkg/ncbi/include/ncbienv.h:
+
+/home/cwwang/pkg/ncbi/include/ncbiwww.h:
+
+/home/cwwang/pkg/ncbi/include/ncbimain.h:
+
+/home/cwwang/pkg/ncbi/include/objgen.h:
+
+/home/cwwang/pkg/ncbi/include/objloc.h:
+
+/home/cwwang/pkg/ncbi/include/objbibli.h:
+
+/home/cwwang/pkg/ncbi/include/objfeat.h:
+
+/home/cwwang/pkg/ncbi/include/objpub.h:
+
+/home/cwwang/pkg/ncbi/include/objmedli.h:
+
+/home/cwwang/pkg/ncbi/include/objpubd.h:
+
+/home/cwwang/pkg/ncbi/include/objalign.h:
+
+/home/cwwang/pkg/ncbi/include/objres.h:
+
+/home/cwwang/pkg/ncbi/include/objblock.h:
+
+/home/cwwang/pkg/ncbi/include/objcode.h:
