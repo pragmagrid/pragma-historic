@@ -1,0 +1,44 @@
+From: Cindy Zheng [mailto:zhengc@sdsc.edu] 
+Sent: Sunday, March 14, 2010 6:01 PM
+To: pragma-discussion@googlegroups.com
+Subject: PRAGMA 18
+
+Dear all, 
+Thanks for the extra-ordinary effort of UCSD host team, the vision and ingenuity of PRAGMA18 organization committee and the collaborative spirit of all PRAGMA 18 participants, PRAGMA 18 is another very successful workshop, and also the start of very successful Implementation Institute - a new and efficient way of working together on key projects. 
+For the benefit of those who could not make to PRAGMA18, here is a brief summary on some key facts and decisions of PRAGMA 18.  All PRAGMA 18 attendees, please add and correct.
+PRAGMA 18 presentation slides can be found at 
+http://goc.pragma-grid.net/pragma-doc/pragma18 or http://pragma18.pragma-grid.net/dct/Wiki.jsp?page=WorkshopAgenda. 
+Table of contents: 
+1.      Implementation Institute is a success 
+2.      Future focus on cloud computing 
+3.      Resources group decisions and goals 
+4.      Education initiative 
+5.      Think/implement green 
+1. Implementation Institute is an idea of getting people together for a day, to learn about and work on implementation aspects of key projects. Two projects were planned this time: virtualization and kepler. The results are impressive! After a short half day of work, (half day of learning), these project teams, formed at the institute, were able to construct a Nimrod roll for virtual Rocks cluster with interface to EC2 and Condor, to complete a Gfarm roll for a virtual cluster, and also to get Nimrod/K and Kepler work using Opal docking service. Detailed and concrete follow up worklist for each project also resulted from these activities. The steering committee has decided to continue this practice in future PRAGMA workshops. Host institutions are encouraged to lead and organize Implementation Institute.
+2. Steering committee has further clarified our future focus on cloud computing. 
+   o Short term: capture, publish, maintain virtual system image, Rocks VM and Amason EC2 
+   o Long term: define, build hpc cloud through international teams, work on interoperability and based on open architecture
+   o Challenges: data scalability, diversity of ideas and role of commercial clouds 
+3. Resources group has made the following decisions and set goals to be accomplished by PRAGMA 19 (September 13-15, 2010; ChangChun, China) 
+   o Virtualization 
+         SDSC will setup gfarm meta server and storage, release gfarm roll 
+(Mason):  
+         Complete and release Nimrod roll (Blair, Phil and Mason) 
+         VM move and replication among AIST and SDSC (AIST and SDSC teams) 
+         Add more VM sites in PRAGMA grid (Cindy will solicit, Phil and Mason will help on rocks VM questions) 
+         Osaka University (PIAX+OpenVPN+Xen), if continue (Date-san), can work with Rocks VM sites on interoperability.
+   o Tsukuba-GAMA 
+         Auto-user-registration to VOMRS (Vlad to contact Sam, Yamamoto-san to implement)  
+         Sync CRL between front-end and compute node (Cindy) 
+       Continue to collaborate with and accommodate GEO working group needs 
+
+4. Education Initiative 
+   o Build on joint conference with HD 
+   o Create courses/contents for multiple universities at grad/undergrad level 
+   o Start with biology (Gabriele Wienhausen, UCSD) and e-science/e-research 
+   o Contact David Abramson 
+5. Larry Smarr's keynote at PRAGMA 18 reminded us to think/implement green in our daily work. The steering committee encourages everyone to increase efficiency of meetings, such as virtual Implementation Institutes, also to reduce travel, leverage investment in HDC/VTC.
+We are off in a very good start toward new direction. 
+Let's continue working together! 
+Thank you for everyone's effort and help! 
+
