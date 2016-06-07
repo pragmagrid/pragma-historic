@@ -1,0 +1,421 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+xmlns:oa="urn:schemas-microsoft-com:office:activation"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 10">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="multigrid_learned_files/filelist.xml">
+<title>Lessons Learned</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="PersonName"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="date"/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>cindy</o:Author>
+  <o:LastAuthor>cindy</o:LastAuthor>
+  <o:Revision>19</o:Revision>
+  <o:TotalTime>203</o:TotalTime>
+  <o:Created>2006-02-12T08:31:00Z</o:Created>
+  <o:LastSaved>2006-02-13T07:15:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1000</o:Words>
+  <o:Characters>5701</o:Characters>
+  <o:Company>SDSC</o:Company>
+  <o:Lines>47</o:Lines>
+  <o:Paragraphs>13</o:Paragraphs>
+  <o:CharactersWithSpaces>6688</o:CharactersWithSpaces>
+  <o:Version>10.2625</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:TrackRevisions/>
+  <w:DoNotShowRevisions/>
+  <w:DoNotPrintRevisions/>
+  <w:DoNotShowMarkup/>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:SimSun;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:\5B8B\4F53;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:1627421319 -2147483648 8 0 66047 0;}
+@font-face
+	{font-family:"\@SimSun";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:SimSun;}
+p.MsoFootnoteText, li.MsoFootnoteText, div.MsoFootnoteText
+	{mso-style-noshow:yes;
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:SimSun;}
+span.MsoFootnoteReference
+	{mso-style-noshow:yes;
+	vertical-align:super;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+pre
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:SimSun;
+	color:black;}
+ /* Page Definitions */
+ @page
+	{mso-footnote-separator:url("multigrid_learned_files/header.html") fs;
+	mso-footnote-continuation-separator:url("multigrid_learned_files/header.html") fcs;
+	mso-endnote-separator:url("multigrid_learned_files/header.html") es;
+	mso-endnote-continuation-separator:url("multigrid_learned_files/header.html") ecs;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";}
+</style>
+<![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:14.0pt'>Start Multi-Grid Interoperation
+Experiment with TDDFT Run<o:p></o:p></span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:14.0pt'>Lessons Learned<o:p></o:p></span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><st1:date Year="2006"
+Day="11" Month="2">2/11/2006</st1:date></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Many scientists work across different grid projects and
+their applications should not be restricted by grid boundaries. Expanding
+collaborations among grids is important and beneficial to global scientific
+communities. But how can different grids interoperate and how can we make it
+easier for scientists to use multiple grids? To learn the issues and solutions,
+PRAGMA and TeraGrid initiated the first step in Multi-grid interoperation
+experiment, under the umbrella of the Multi-grid Interoperation <span
+style='font-size:11.0pt'><a href="https://forge.gridforum.org/projects/mgi">https://forge.gridforum.org/projects/mgi</a>
+[Charter document by C. Catlett and M. Satsuoka]</span> activity in the Global
+Grid Forum.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>As a principle within PRAGMA, we let applications drive
+interoperation. After some discussions between PRAGMA and TeraGrid, we selected
+the TDDFT (Time Dependent Density Functional Theory - a quantum chemistry
+application) as the first application to run across PRAGMA Grid and TeraGrid.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Within a week, we were able to start TDDFT run on 4
+heterogeneous sites across both grids, thus achieving interoperations. Our
+experiences show that a level of interoperability is neither automatic nor unattainable.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>Through this experiment, we have learned many valuable
+lessons as grid infrastructure supporters and grid application users. We also
+gained useful insights as middleware developers which will help to improve and
+advance future grid middleware development. In addition, Multi-Grid Testbed brought
+different grids together to work and learn from each other. All grids involved benefit
+greatly from this experiment.</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal>We summarize our experiences and lessons learned in 3
+sections below: People Involved, Process and Time, and Lessons Learned. For
+more details about the Multi-Grid Interoperation testbed and experiment, please
+see <a href="http://pragma-goc.rocksclusters.org/pragma-doc/multigrid.html">http://pragma-goc.rocksclusters.org/pragma-doc/multigrid.html</a>.<span
+style='mso-bidi-font-size:14.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal>We envision this as the first step to broader interoperation
+experiences with production grids involved in the Multi-grid Interoperation activity.
+We believe that the lessons we learned in this first step will help us more
+easily engage other grids.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt'>People Involved<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='text-indent:.25in'><b style='mso-bidi-font-weight:
+normal'>PRAGMA Grid<o:p></o:p></b></p>
+
+<p class=MsoNormal style='margin-left:.5in'>UCSD/SDSC, USA:<b style='mso-bidi-font-weight:
+normal'> </b>Peter Arzberger, Phil Papadopoulos, Mason Katz, <st1:PersonName>Cindy
+ Zheng</st1:PersonName></p>
+
+<p class=MsoNormal style='margin-left:.5in'>AIST, Japan: Yoshio Tanaka, Yusuke Tanimura</p>
+
+<p class=MsoNormal style='margin-left:.5in'>KU, Thailand: Putchong Uthayopas,
+Somsak Sriprayoonsakul<b style='mso-bidi-font-weight:normal'><o:p></o:p></b></p>
+
+<p class=MsoNormal style='text-indent:.25in'><b style='mso-bidi-font-weight:
+normal'>TeraGrid: <o:p></o:p></b></p>
+
+<p class=MsoNormal style='text-indent:.5in'><b style='mso-bidi-font-weight:
+normal'>ANL, USA: </b>Charlie Catlett, Dane Skow, JP Navarro</p>
+
+<p class=MsoNormal style='text-indent:.5in'><b style='mso-bidi-font-weight:
+normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt'>Process and Time<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:Arial;color:black'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal>How did we start and conducted this experiment? Here are the
+steps and time frames:</p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><st1:date Year="2005" Day="17" Month="11">11/17/05</st1:date>
+- <st1:date Year="2006" Day="20" Month="1">01/20/06</st1:date>: High-level
+discussions and commitment to the Multi-Grid Interoperation experiment</p>
+
+<p class=MsoNormal><st1:date Year="2006" Day="20" Month="1">01/20/06</st1:date>
+- <st1:date Year="2006" Day="26" Month="1">01/26/06</st1:date>: Select and
+agree on the first application</p>
+
+<p class=MsoNormal><st1:date Year="2006" Day="26" Month="1">01/26/06</st1:date>
+- <st1:date Year="2006" Day="3" Month="2">02/03/06</st1:date>: Each grid
+allocates resources and designates technical support/contact and application
+drivers</p>
+
+<p class=MsoNormal>01/27/06 - 01/31/06: Application drivers prepare and publish
+application requirements</p>
+
+<p class=MsoNormal>02/03/06 - 02/04/06: Application drivers apply for user
+accounts on each grid</p>
+
+<p class=MsoNormal>01/31/06 - 02/04/06: each site setup user accounts</p>
+
+<p class=MsoNormal>01/31/06 - 02/08/06: each site implements the application
+requirements</p>
+
+<p class=MsoNormal>02/01/06 - 02/08/06: Application drivers test user account
+access on each site</p>
+
+<p class=MsoNormal>02/01/06 - 02/08/06: Application drivers deploy then test
+the application on each site</p>
+
+<p class=MsoNormal>02/09/06 - 02/09/06: Application drivers start the application
+run**** (Interoperation)</p>
+
+<p class=MsoNormal>02/09/06 - : Start discussion and deployment of grid
+monitoring software - SCMSWeb, for cross grid monitoring<span style='font-size:
+14.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><o:p>&nbsp;</o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt'>Lessons Learned<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Human Communication<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Issues: </b>Team numbers
+reside in 3 different time zones with up to 17 hours time difference, real-time
+communication is difficult and costly.<b style='mso-bidi-font-weight:normal'><o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Solutions: </b>Change
+working hours - U.S. team members work at night. Use skype and email as main
+communication tools.<b style='mso-bidi-font-weight:normal'><o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Trust and Access<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Issues: </b>Trust
+between different certificate authorities are not readily established and may
+take time to formally change the policy.<b style='mso-bidi-font-weight:normal'><o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Solution: </b>Temporary
+solution to establish localized trust.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Lessons: </b>IGTF needs
+to take effect for all the major grid operations. Not just to have trust
+agreements at high-level, but actually provide easy way for all trusting
+entities to install all IGTF trusted certificates. A grid is interested in
+interoperate with other grid should make sure that its trust policy and
+practice allow the trust of the other grid.<b style='mso-bidi-font-weight:normal'><o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Application
+requirements<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Issues:</b> Software
+stack and versions are different amongst grids and from application
+requirements. As the pool of interoperable grids grows, we are likely to run
+into conflicting requirements between grid applications.<o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Solution:</b> Applicatioins
+should minimize assumptions and prerequisites, or include pre-requisites as
+much as possible.<o:p></o:p></p>
+
+<p class=MsoNormal>On the other hand, software stack providers need to adapt
+their stacks to multi-grid environments: not assume Linux, RPM, and only one
+version of package at a time, try to meet as many requirements as possible.<o:p></o:p></p>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Issues:</b> For new
+applications, users may learn new details about what their applications really
+need during deployment process. New grid environment may require modification
+and clarification to application requirements.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Solution:</b>
+Provided committed support, ready to install and upgrade software as needed.
+Keep close communications between the system administrators and users, to
+understand how the application would work in a different grid environment in
+order to deploy software correctly. <o:p></o:p></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span
+style='font-size:14.0pt'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Differences among
+Grids<o:p></o:p></b></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Issues:</b> Different
+system configurations and software stack/configuration present difficulties for
+users and middleware developers alike, and may cause problem to some
+applications.</p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Sample cases: <o:p></o:p></b></p>
+
+<p class=MsoNormal style='margin-left:.5in'>&quot;job_type = multiple&quot;
+behaves differently (solved via testing)<b style='mso-bidi-font-weight:normal'><o:p></o:p></b></p>
+
+<p class=MsoNormal style='margin-left:.5in'>Calculation results are different
+(under investigation)</p>
+
+<p class=MsoNormal style='margin-left:.5in'>Different count attributes are
+required on different grids (modify middleware code - we have the middleware
+developer in the team) </p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Solution:</b> Timely
+help/support to aid user with application deployment and execution.</p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><b
+style='mso-bidi-font-weight:normal'>Lessons Learned:</b> Users need help
+initially to learn the main differences. Further collaborative research and
+development is required to extend and to standardize grid interfaces to meet
+broader requirements and to enable interoperations among different grids.<o:p></o:p></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Courier New"'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'>Issues:</b> Different
+grid monitoring software and lack of interfaces among them prevent easy
+cross-grid monitoring.</p>
+
+<p class=MsoNormal style='mso-layout-grid-align:none;text-autospace:none'><b
+style='mso-bidi-font-weight:normal'>Lessons Learned:</b> Further collaborative research
+and development is required to build and to standardize grid monitoring interface,
+in order to bridge different grid monitoring software and to enable
+interoperations among different grids.</p>
+
+</div>
+
+</body>
+
+</html>
