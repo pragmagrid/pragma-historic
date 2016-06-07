@@ -1,0 +1,64 @@
+From: Cindy Zheng [mailto:zhengc@sdsc.edu] 
+Sent: Sunday, March 30, 2008 2:29 PM
+To: pragma-discussion@googlegroups.com
+Subject: PRAGMA14
+
+Dear all, 
+Thanks for Taiwan National Science Council, National Applied Research Laboratory, National Museum of Natural Science, NCHC, PRAGMA14 organization commitee and NCHC dedicated staff, for your hard work and hospitalities, PRAGMA14 has been a very successful and enjoyable collaboration experience!
+To get a glimpse of what's like during PRAMGA14, see the slideshow made by Teri Simas at http://goc.pragma-grid.net/pragma-doc/pragma14/slideshow.ppt.
+There were enlightening keynotes, presentations, demos, and tutorials given in the 3 days. You can find the slides and materials at http://www.nchc.org.tw/event/2008/pragma/program.php and http://goc.pragma-grid.net/pragma-doc/pragma14/.
+For the benefit of those who could not make to PRAGMA14, let me briefly summarize some key facts and decisions I know which resulted from PRAGMA14 workshop. Others please add and correct.
+Table of contents: 
+A. New friends 
+B. Bioscience and resources working groups discussions and decisions 
+   5 issues: VOMS, datagrid, software catalog, network bandwidth, applications. 
+C. Geoscience and telescience working groups proposed joined session for PRAGMA15 
+D. New working group for education 
+E. Demos awards 
+F. New PRAGMA institution members 
+A. We are very happy to get together with many our old friends again! 
+We also meet many new friends at this 3-day gathering. 
+Among the first-timer institutions are: 
+        Advanced Science and Technology Institute, Philippines 
+        Hanoi University of Technology, Vietnam 
+        The University of Hong Kong 
+        
+B. Bioscience and resources working groups discussions and decisions Bioscience and resources group had a joined session again and continued discussion on 5 issues:
+   Issue 1. user account/access to pragma grid. 
+   Updates - VOMS server has been setup at SDSC. 
+   Decision - migrate to VOMS in 3 steps before PRAGMA15: 
+      - BeSTGrid and SDSC will work together to test/document the use of VOMS/VOMRS. 
+      - Extend the testing for 2 application areas: Avian Flu Grid and Nimrod. 
+      - Setup/implement VOMS for other use cases. 
+   Issue 2. Datagrid 
+   Updates - meta-data latency has been improved in gfarm v2. 
+   Decision: 
+      - setup datagrid with 2 separate storage domains: gfarm and gridftp/rft. 
+      - setup 3 data centers at UTsukuba, AIST and UCSD before PRAGMA15, with gfarm meta-server at Utsukuba. 
+      - Utsukuba team will work on new version of gfarm with distributed meta-servers. This may take an year. 
+   Issue 3. Software catalogging. 
+   Updates - this has been implemented as software catalog in scmsweb. 
+   Decision - enable software installation paths for the software catalogging at all PRAGMA grid sites. Thaigrid team will continue to improve software catalogging and other SCMSWeb functionalities, focus on interface with Jilin University CSF team and Wisconsin University Condor team, to develop job/resource matcher/selector for CSF and Condor-G before PRAGMA15.
+   Issue 4. Network bandwidth. 
+   Updates - Network bandwidth matrix has been implemented in SCMSWeb. 
+   Decision - need to enable bandwidth measurements at all PRAGMA grid sites. Now we know the end-to-end bandwidth, still need to find bottleneck and routes, to make sure we are taking advantage of any available high speed network, such as LAMBDA, and locate and resolve any problems.
+   Issue 5. Applications. 
+   Decision - we need more applications. We need to urge all PRAGMA grid sites to run applications in PRAGMA grid. 
+C. Geoscience and telescience working groups proposed joined session for PRAGMA15. 
+Geoscience and telescience groups found that they have many common interests. 
+They have proposed to have joined session in next PRAGMA meeting for closer collaborations and sharing. 
+D. New working group and expanding effort for education. 
+David Abramson has proposed for a new working group for education. Similar to PRIUS by Osaka University, Monash University is also starting an educational program in collaboration with PRAGMA. An education working group will help to focus and expand PRAGMA's effort in education. Interested parties should contact David.
+E. We had 13 demos. All showed good work in all working groups. Two demos won the "Best of demo" awards, one in each of two categories. They are:
+        1. Most immediately applicable 
+        Software cataloging, Putchong Uthayopas/Nopparat Nopkuat, ThaiGrid 
+        2. Most well presented 
+        GPFS nodes massive deployment, Rock Kuo/Waue Chen/Che-Yuan Tu/Barz Hsu, NCHC 
+Congratulations to the winners and all demo'ers for the great job done! 
+F. PRAGMA has accepted 3 new institution members. They are 
+        Advanced Science and Technology Institute, Philippines 
+        Hanoi University of Technology, Vietnam 
+        HCMC Institute of Information Technology, Vietnam 
+Congratulations and welcome our new members! 
+Cindy 
+
