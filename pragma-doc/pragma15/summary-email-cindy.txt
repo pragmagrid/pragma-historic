@@ -1,0 +1,60 @@
+From: Cindy Zheng [mailto:zhengc@sdsc.edu] 
+Sent: Thursday, November 06, 2008 3:00 PM
+To: pragma-discussion@googlegroups.com
+Subject: PRAGMA15
+
+Dear all, 
+Thanks for Malaysia Minitry of Science, Technology and Innovation, Universiti Sains Malaysia, PRAGMA15 organization commitee and USM dedicated staff, for your hard work and hospitalities, the 3rd PRAGMA Institute and PRAGMA15 have been a very successful collaboration and education experience!
+There were many keynotes, presentations, demos, and tutorials given during the 4 days. You can find the slides and materials at http://pragma15.usm.my/piSlides.php
+http://goc.pragma-grid.net/pragma-doc/pragma-institute3/ 
+http://goc.pragma-grid.net/pragma-doc/pragma15/ 
+http://pragma15.usm.my/pragmaSlides.php. 
+Also, our annual brochure - PRAGMA Collaboratie Overview 2008-2009 has been completed. See http://goc.pragma-grid.net/pragma-doc/overview/2008.pdf.
+For the benefit of those who could not make to PRAGMA15, let me briefly summarize some key facts and decisions I know which resulted from
+PRAGMA15 workshop. Others please add and correct. 
+Table of contents: 
+A. New friends 
+B. Steering Committee meeting summary 
+C. Resources working groups discussions and decisions 
+D. Extending education outreach - help kids' educational needs in remote areas 
+A. We are very happy to get together with many our old friends again! 
+We also meet many new friends at this 4-day gathering. 
+Among the first-timer institutions are the Universitay of Indonesia and many Malaysia universities and research institutions. (Too many to list here.
+See attendees list at http://pragma15.usm.my/listofparticipants.php.) 
+        
+B. Steering Committee has discussed many critical issues regarding PRAGMA future directions and near term focuses: 
+ - An education working group has been formed to focus our effort on education 
+ - Deploy HD video network in PRAGMA. One usage can be that to create seminars/courses and deliver them via HD video network
+ - Work on resource vitualization 
+ - Addressing data challenges 
+ - Accepted Institution of Information Technology, Vietnam as a new PRAGMA institution member (Welcome!) 
+ - PRAGMA 17 will be held at Hanoi, Vietnam, schedule for October 2009. 
+ - The 4th PRAGMA institute will be held in Taichung, Taiwan in December 
+1-5 2008 
+For the full summary, please see 
+http://goc.pragma-grid.net/pragma-doc/pragma15/Steering-Committee-summary.ppt 
+C. The resources working groups discussions and decisions 
+   Issue 1. VOMS - server (SDSC) client (BeSTGrid) ready. 
+   Decision a. To create groups for each application under PRAGMA VO. 
+Group manager manage memberships of own group. 
+   Decision b. Requirements for VOMS-aware resources are GUMS, PRIMA and GSISSH. 
+   Decision c: Cindy and Vladimir will continue to lead the documentation effort 
+   Decision d: AIST, SDSC, Zurich, IHPC will deploy GUMS, PRIMA and GSISSH by Christmas. 
+   Issue 2. Datagrid - currently has about 3TB storage! 
+   Decision a. Test with Avian Flu (Wilfred group) 
+   Decision b. More application proposals wanted! 
+   Issue 3. Future directions - need more discussion in pragma-grid list about supporting GEO/Telesciece applications, virtualization, portals etc.
+For the full summary, please see 
+http://goc.pragma-grid.net/pragma-doc/pragma15/Yoshio-Tanaka_Resource-summary.ppt 
+D. Extending education outreach - help kids' educational needs in remote areas Championed by Peter, Habibah and Teri, we have started a new effort to extend our outreach.
+At PRAGMA 15, we learned about the heroic effort by Tuan Haji Romli Abu Bakar and USM staff to help kids' educational needs at a remote village.
+Many PRAGMA attendees donated money, brought school supplies and books from home to help. 
+Some visited the village, vitnessed the amazing results from USM's effort, and also saw that still more help is needed. 
+Many many villages, kids around the world need help. 
+Education is the root cause and the key solution to many problems we are facing. 
+PRAGMA as an international organization is broadening our impact with education outreach like this. 
+Congratulations to all organizers and attendees for the successful 3rd PRAGMA Institute and PRAGMA 15! 
+Let's continue the dicussions and work on implementing our decisions. 
+  
+Cindy 
+

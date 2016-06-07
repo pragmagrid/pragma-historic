@@ -1,0 +1,51 @@
+From: Cindy Zheng [mailto:zhengc@sdsc.edu] 
+Sent: Monday, November 09, 2009 11:59 PM
+To: pragma-discussion@googlegroups.com
+Subject: PRAGMA 17
+
+Dear all, 
+Thanks for the hard work and extra-ordinary hospitality of our host, IoIT, Vietnam and its staff, thanks for the dedication and fore-sight of our PRAGMA17 organization committee, PRAGMA 17 is not only another very successful workshop and but may also be a strategically important event in PRAGMA's history! In this workshop, we are not only engaged more collaborative activities, but also organized serious discussions about our future directions and focuses. All PRAGMA 17 attendees have actively participated in working together in all our working groups and helped to arrive to our decisions and goals.
+For more detail info, see PRAGMA 17 slides at http://goc.pragma-grid.net/pragma-doc/pragma17 . 
+For the benefit of those who could not make to PRAGMA17, let me briefly summarize some key facts and decisions I know which resulted from PRAGMA17 workshop.  Others please add and correct.
+Table of contents: 
+1.      More friends and more collaborations 
+2.      Steering Committee meeting summary 
+3.      Resources group decisions and goals 
+4.      Up-coming meetings 
+1. PRAGMA snowball continues to roll, more people are involved, and 
+more collaborations and tighter bonds continue to develop among existing and new projects and groups. We were very happy to see many old friends again!  Also very happy to make many new friends!  A lot of researchers from Vietnam universities and research institutions attended for the first time. Countless photos of PRAGMA 17 activities have been posted in PRAGMA group on facebook. Please join PRAGMA group in facebook to view and contribute. 
+2. Steering Committee meeting summary captured the key results of PRAGMA 17 
+   o Future Directions 
+         Application: focus on a few but important, have impact at the right stage of development 
+         Technology: focus on Virtualization but consider data 
+         Education: build content and focus on areas to develop bi- or multi- directions 
+         People: allow others to build virtual communities and focus on training 
+   o Strategies 
+         Integration of areas (focus on only what we can do) 
+         Maintain the uniqueness of PRAGMA 
+         Focus on Pacific Rim 
+   o Strive for greater social impact 
+3. Resources group has made the following decisions and set goals to be accomplished by PRAGMA 18  ( March 3-5, 2010;  San Diego, USA) 
+   o VM next steps 
+         SDSC will replace rocks-52 by VM-based Rocks by January (Mason):  
+         NCHC will create a VM for WebOS and run on VC at SDSC by February (Weicheng, Phil and Mason will visit Taichung and work on this February) 
+         Create VM for applications, start with Avian Flu (Wilfred) 
+         Not a cluster but a single node system which automatically join Avian Flu Grid 
+         Issues: Automatic generation of host cert. etc. 
+         Document the processes 
+   o Deploy Gfarm 
+         Increase Gfarm storage in SDSC (Mason, Cindy)  
+         Deploy Gfarm 2.3 to more PRAGMA grid sites (Tatebe, Cindy) 
+   o Collaboration with Geoscience working group on GeoGrid 
+         AIST complete development of Tsukuba-GAMA and distribute by SC09 (Yamamoto) 
+         Yoshio and Ryosuke will summarize procedures for issuing certificates, draft cp/cps by Dec 09 
+         SDSC setup, host and operate Tsukuba-GAMA service (Cindy) 
+4. Up-coming meetings: 
+   o Proposal by University of Hong Kong to host PRAGMA 20 has been approved by the Steering Committee 
+   o The Steering Committee has designated SEAIP meeting, organized by NCHC, as a 5th PRAGMA institute, 30 November - 4 December, 2009 
+   o The Eighth International Conference on Creating, Connecting and Collaborating through Computing (C52010) will be held at UCSD January 25-28. Paper submission deadline has been extended to November 13, 2009. See http://www.cm.is.ritsumei.ac.jp/c5-10/index.php?Home.
+   O We hope to see more PRAGMA members and friends at Supercomputing 09, November 16-20, at Portland, Oregon. PRAGMA dinner Wednesday night November 18, 2009. Please visit the following PRAGMA member booths: AIST, KISTI, NBCR, NCHC, NiCT, Osaka U., Pacific Wave etc. More information will be posted in pragma-discussion list.
+PRAGMA's success so far was due to everyone's continuous hard work and ever-growing collaboration activities in and around PRAGMA community.
+Let's continue working toward an even more successful future! 
+Thank you for everyone's effort and help! 
+

@@ -1,0 +1,37 @@
+From: Cindy Zheng [mailto:zhengc@sdsc.edu] 
+Sent: Wednesday, April 15, 2009 11:40 PM
+To: PRAGMA
+Subject: PRAGMA 16
+
+Dear all,
+Thanks for the hard work and extra-ordinary hospitality of our host, KISTI and  its staff, thanks for the dedication of our PRAGMA16 organization committee,  PRAGMA 16 is another very successful and memorable event!
+You can find some summary slides at http://goc.pragma-grid.net/pragma-doc/pragma16. 
+For the benefit of those who could not make to PRAGMA16, let me briefly summarize  some key facts and decisions I know which resulted from PRAGMA16 workshop.  Others please add and correct.
+Table of contents: 
+1.	New friends and new collaborations
+2.	Synergies among working groups
+3.	New institution member
+4.	Resources group decisions and goals
+
+1.	PRAGMA is like a snowball - each meeting, more people are involved, and more collaborations and tighter bonds are formed among projects and groups.  As Kum Won said, there were more than 200 attendees.  We were very happy to see many old friends again!  Also we were very happy to make many new friends!   A lot researchers from Korea universities and research institutions attended for the first time. Among first timers are also GLEON members from University of Waikato in New Zealand who will be working with us in PRAGMA grid. More collaboration projects with Korean researchers were formed and started. For example, Dr. Soonwook Hwang and Hangi Kim (KISTI) have started work on  EGEE and PRAGMA grid interoperability thru running applications.
+2.	Synergies are emerging among all working groups goals and activities. All groups feel more needs to work with other groups. Resource and bio groups have been working together closely for years. Geo and telescience groups found many common interests and started working together the past year. The 2 groups had a joined session again this time.  Geo and telescience group also requested application, grid resources and  authentication/authorization/accounting (AAA) support from resources group.  Geosciences and resources groups plan to have joined sessions in  the future to further our collaborations.  This trend is definitely growing wider and stronger among all groups. We will try to work on and present joined demos among groups for PRAGMA 17 to drive our work and collaboration.
+3.	Hong Kong University has been accepted as a PRAGMA institution member. Congratulations!
+4.	Resources group has made the following decisions and set goals to be accomplished by PRAGMA 17 (October, 2009; Hanoi, Vietnam):
+	Finalize VOMS policy, expand deployment and services (in collaboration with bio, geo, telescience groups)
+o	Will set mapping rule in PRAGMA grid after resolving 2 issues:
+	if shared account violates IGTF requirements
+	If a mapping to pool account is permanent or not
+o	Find out and advice against inappropriate CA profiles
+o	Expand VOMS client sites in PRAGMA grid
+o	Provide AAA services for Geosciences and telesciences group
+	Test virtual cluster with application (in collaboration with bio, geo, telescience group) 
+o	Deploy virtual cluster at UCSD
+o	Identify applications to use/test virtual cluster
+o	Attempt virtual cluster extension over PRAGMA grid (Rocks clusters)
+	EGEE/PRAGMA interoperation experiment (in collaboration with KISTI, bioscience group) 
+	Test gfarm, CSF (in collaboration with bioscience group)
+
+Seems to me that things are coming together more and more and getting concrete more and more each year. These advances are built upon everyone's continuous hard work and ever-growing collaborative spirit.
+Let's continue! On to Hanoi next! :-)
+Thank you for everyone's effort and help!
+
