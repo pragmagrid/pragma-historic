@@ -1,0 +1,72 @@
+From:	Susumu Date <date@ais.cmc.osaka-u.ac.jp>
+Sent:	Thursday, July 21, 2011 6:29 PM
+To:	zhengc@sdsc.edu
+Cc:	sky.y.0079@gmail.com; kokubo.kei@ais.cmc.osaka-u.ac.jp; 
+ichikawa@ais.cmc.osaka-u.ac.jp
+Subject:	Re: applications run in last 12 months
+
+Dear Cindy,
+
+I am sorry. I have just found this e-mail.
+Is this helpful to you?
+
+>> Could you let me know the work by Osaka teams?(including
+>> PRIME/PRIUSstudents)
+>>
+>> Please briefly state
+>>
+>> -Application names, descriptions
+>>
+
+multi-site virtual cluster:  we have been prototyping a virtual cluster toolkit that allows scientists to build 
+a virtual cluster over multiple administrative domains.
+
+>> -Codes, hardware used
+>>
+
+Rocks, N2N overlay network tool
+
+>> -Results (technical or application)
+>>
+
+Currently, still working for development.
+
+>> -Publications
+>>
+
+Journal:
+
+Christopher D. Lau, Marshall J. Levesque, Shu Chien, Susumu Date, and Jason H. Haga, "ViewDock TDW: 
+High-throughput Visualization of Virtual Screening Results", Bioinformatics, Vol.26, No. 15, pp. 1915-
+1917, 2010.
+
+International Conference.
+
+Wen-Wai Yim, Shu Chien, Yasuyuki Kusumoto, Susumu Date and Jason Haga, "Grid Heterogeneity in In-
+silico Experiments: An Exploration of Drug Screening Using DOCK on Cloud Environments", Healthgrid 
+Applications and Core Technologies (Proceedings of HealthGrid 2010), IOS Press, pp.181-190, Paris, June 
+2010.
+
+
+Yuki Fujiwara, Susumu Date, Kohei Ichikawa and Haruo Takemura, "A Multi-Application Controller for 
+Tiled Display Wall for Wide-area Distributed Computing", The 3rd International Conference on Human-
+centric Computing (HumanCom-10), CDROM, Aug. 2010.
+
+
+Bu-Sung Lee, Yu Shyang, Tan, Atsushi Narishige, Susumu Date, "Availability and Effectiveness of Root 
+DNS servers: A long term study",
+2010 IEEE/IFIP Network Operations and Management Symposium, 2010.
+
+
+>> Peter needs these info by Thursday.
+>>
+>> So, if you could send me by tomorrow would be great.
+
+I hope this helps you.
+Again, i am sorry for late response.
+
+
+with best regards,
+
+S Date
+

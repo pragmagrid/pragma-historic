@@ -1,0 +1,79 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD>
+<META content="text/html; charset=utf-8" http-equiv=Content-Type>
+<META name=GENERATOR content="MSHTML 8.00.6001.18928"></HEAD>
+<BODY><B>From:</B> Thuan N. Tran [thuanbkit@gmail.com]<BR><B>Sent:</B> Friday, 
+July 16, 2010 5:49 PM<BR><B>To:</B> Cindy Zheng<BR><B>Cc:</B> 
+sonsys@cse.hcmut.edu.vn; nam@cse.hcmut.edu.vn<BR><B>Subject:</B> Re: 
+supernode2<BR>Hello Miss Cindy,<BR><BR>I'm the current contact and also the 
+administrator of Supernode 2 cluster. As Mr. Son already mentioned, currently 
+our system is under reorganization and we also having some problem with the 
+cooling system in the cluster room, thus we're down to only a handful of nodes. 
+These nodes are currently dedicated to the VN-Grid project, which is near 
+completion, for testing our middleware. With these streaks of events, it's 
+unfortunate but we have to prioritize our work over here. As soon as the cooling 
+system is backed up, I will restore the system and open access to the cluster to 
+the public again. I'm sorry for any inconvenience.<BR><BR>P.S. I have received 
+the email from the PRIME students asking permission to use the cluster some time 
+ago. I answered them pretty much the same.<BR><BR clear=all>--<BR>Thuan N. 
+Tran<BR>Ho Chi Minh City University of Technology<BR>Faculty of Computer Science 
+and Engineering<BR>High Performance Scientific Computing Center<BR>A5 Building, 
+Room 107<BR>Tel: (84-8) 38.647.256 Ext: 5372<BR>Email: <A 
+href="mailto:thuantran@cse.hcmut.edu.vn">thuantran@cse.hcmut.edu.vn</A><BR><BR><BR>
+<DIV class=gmail_quote>On Fri, Jul 16, 2010 at 3:01 AM, Cindy Zheng <SPAN 
+dir=ltr>&lt;<A href="mailto:zhengc@sdsc.edu">zhengc@sdsc.edu</A>&gt;</SPAN> 
+wrote:<BR>
+<BLOCKQUOTE 
+style="BORDER-LEFT: rgb(204,204,204) 1px solid; MARGIN: 0pt 0pt 0pt 0.8ex; PADDING-LEFT: 1ex" 
+class=gmail_quote>Dear Thuan N. Tran and Tran Dang Khoa,<BR><BR>I'm not sure 
+  which one of you are the current contact.<BR>I'm having trouble to access 
+  supernode2 cluster.<BR>See some of my test results below.<BR>Could you check 
+  your host certificate and my account setup?<BR>Also PRIME students needs 
+  accounts on your cluster.<BR>Please see item 3 and 4 in<BR><A 
+  href="http://goc.pragma-grid.net/pragma-doc/userguide/updatelog.html" 
+  target=_blank>http://goc.pragma-grid.net/pragma-doc/userguide/updatelog.html</A>.<BR>You 
+  want to also make sure that item 1 is done.<BR>Let me know if I can be of any 
+  help.<BR><BR>Tested ssh and globus access. Both 
+  failed:<BR><BR>[zhengc@rocks-67 ~]$ globusrun -a -r <A 
+  href="http://supernode2.cse.hcmut.edu.vn" 
+  target=_blank>supernode2.cse.hcmut.edu.vn</A><BR>GRAM Authentication test 
+  failure: connecting to the job manager failed.<BR>Possible reasons: job 
+  terminated, invalid job contact, network problems, ...<BR>[zhengc@rocks-67 ~]$ 
+  globus-url-copy -dbg<BR>gsiftp://<A 
+  href="http://supernode2.cse.hcmut.edu.vn/etc/motd" 
+  target=_blank>supernode2.cse.hcmut.edu.vn/etc/motd</A> 
+  file:///tmp/motd<BR>debug: starting to get gsiftp://<A 
+  href="http://supernode2.cse.hcmut.edu.vn/etc/motd" 
+  target=_blank>supernode2.cse.hcmut.edu.vn/etc/motd</A><BR>debug: connecting to 
+  gsiftp://<A href="http://supernode2.cse.hcmut.edu.vn/etc/motd" 
+  target=_blank>supernode2.cse.hcmut.edu.vn/etc/motd</A><BR>debug: response from 
+  gsiftp://<A href="http://supernode2.cse.hcmut.edu.vn/etc/motd" 
+  target=_blank>supernode2.cse.hcmut.edu.vn/etc/motd</A>:<BR>220 <A 
+  href="http://supernode2.cse.hcmut.edu.vn" 
+  target=_blank>supernode2.cse.hcmut.edu.vn</A> GridFTP Server 2.8 (gcc32, 
+  1217607445-63)<BR>[Globus Toolkit 4.0.8] ready.<BR>debug: authenticating with 
+  gsiftp://<A href="http://supernode2.cse.hcmut.edu.vn/etc/motd" 
+  target=_blank>supernode2.cse.hcmut.edu.vn/etc/motd</A><BR>debug: fault on 
+  connection to gsiftp://<A href="http://supernode2.cse.hcmut.edu.vn/etc/motd" 
+  target=_blank>supernode2.cse.hcmut.edu.vn/etc/motd</A>:<BR>globus_ftp_control: 
+  gss_init_sec_context failed<BR>debug: data callback, error globus_ftp_control: 
+  gss_init_sec_context failed,<BR>buffer 0xb7eb9008, length 0, offset=0, 
+  eof=true<BR>debug: operation complete<BR>error: globus_ftp_control: 
+  gss_init_sec_context failed<BR>OpenSSL Error: s3_clnt.c:842: in library: SSL 
+  routines, function<BR>SSL3_GET_SERVER_CERTIFICATE: certificate verify 
+  failed<BR>globus_gsi_callback_module: Could not verify 
+  credential<BR>globus_gsi_callback_module: Could not verify credential: self 
+  signed<BR>certificate in certificate chain<BR><BR>Your issuing CA included in 
+  our PRAGMA certificate tarball is<BR><BR>[zhengc@rocks-67 ~]$ openssl x509 
+  -in<BR>/etc/grid-security/certificates/599fc209.0 
+  -text<BR>Certificate:<BR>&nbsp; &nbsp;Data:<BR>&nbsp; &nbsp; &nbsp; 
+  &nbsp;Version: 3 (0x2)<BR>&nbsp; &nbsp; &nbsp; &nbsp;Serial Number: 0 
+  (0x0)<BR>&nbsp; &nbsp; &nbsp; &nbsp;Signature Algorithm: 
+  md5WithRSAEncryption<BR>&nbsp; &nbsp; &nbsp; &nbsp;Issuer: O=Grid, OU=VNU-HCM, 
+  OU=HCMUT, OU=CSE, CN=EDAGRID CA<BR>&nbsp; &nbsp; &nbsp; 
+  &nbsp;Validity<BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Not Before: Feb 
+  &nbsp;5 10:40:19 2007 GMT<BR>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Not 
+  After : Feb &nbsp;2 10:40:19 2017 GMT<BR>&nbsp; &nbsp; &nbsp; &nbsp;Subject: 
+  O=Grid, OU=VNU-HCM, OU=HCMUT, OU=CSE, CN=EDAGRID 
+  CA<BR>...<BR><BR>Thanks,<BR><FONT 
+color=#888888><BR>Cindy<BR><BR></FONT></BLOCKQUOTE></DIV><BR></BODY></HTML>

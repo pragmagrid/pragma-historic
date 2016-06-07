@@ -1,0 +1,72 @@
+From:	Wilfred Li <wilfredli01@gmail.com>
+Sent:	Tuesday, July 19, 2011 6:55 PM
+To:	zhengc@sdsc.edu
+Cc:	nadya williams; Jane Ren; Peter W. Arzberger
+Subject:	Re: applications run in last 12 months
+
+Hi, Cindy,
+
+The main applications we ran in the past year are APBS, PDB2PQR, AutoDock, and NAMD. 
+
+APBS and PDB2PQR: A suite of programs for making protein electrostatics calculations. APBS 
+and PDB2PQR are primarily run on NBCR/PRAGMA resources.
+
+AutoDock: A suite of programs for automated docking to predict the binding affinity of small 
+molecules to a receptor of known 3D structure. AutoDock is primarily run on NBCR/PRAGMA 
+resources and SDSC/PRAGMA, and Indiana University/PRAGMA resources. 
+
+NAMD: A parallel molecular dynamics code for high performance simulation of large 
+biomolecular systems. NAMD is mostly run on NBCR/PRAGMA resources, and TeraGrid 
+resources. 
+
+Results:
+
+We have used the NBCR Opal toolkit, and the CSF metascheduler from JLU to build a platform 
+for submitting jobs to different PRAGMA resources through a user friendly Opal interface 
+accessible both programmatically as SOAP Web services, and through web pages, as well as 
+advanced workflow environments such as Vision, Kepler, Vistrails and Taverna. In addition, we 
+have developed a hierarchical map-reduce execution framework for cross-cluster scheduling of 
+data parallel applications such as AutoDock. 
+
+The publications are as follows:
+
+1. Ren J, Xie L, Li WW and Bourne PE: SMAP-WS: A Parallel Web Service for Structural Proteome-wide 
+Ligand Binding Site Comparison. Nucleic Acids Res, 2010, 38:W441-444.  
+
+2. Ren J, Williams N, Clementi L, Krishnan S and Li WW: Opal Web Services for Biomedical Applications. 
+Nucleic Acids Res, 2010, 38:W724-731.
+
+3.  Unni, S, Huang, Y, Hanson, R, Tobias M, Krishnan, S, Li, WW, Nielsen, JE, Naker, NA. Web Servers 
+and Services for Electrostatics Calculations with APBS and PDB2PQR. J Comp Chem. 32(7): 1488-1491, 
+2010.
+
+4. Yuan, L.; Guo, Z.; Sun, Y.; Plale, B.; Qiu, J.; Li, W. W. A Hierarchical Framework for Cross-Domain MapReduce 
+Execution, The Second International Emerging Computational Methods for the Life Sciences Workshop; co-located 
+with the 20th International ACM Symposium on High-Performance Parallel and Distributed Computing, San Jose, CA, 
+June 8-11, 2011. 
+ 
+Best regards, 
+ 
+Wilfred 
+
+2011/7/20 Cindy Zheng <zhengc@sdsc.edu>
+Hi, Wilfred, Nadya and Jane,
+ 
+Peter just told me that we need to report PRAGMA progress to NSF and 
+asked for applications ran in the last 12 months using PRAGMA resources.
+Could you let me know the applications ran by your team?
+Please briefly state
+-          Application names, descriptions
+-          Codes, hardware used
+-          Results (technical or application)
+-          Publications 
+Peter needs these info by Thursday.
+So, if you could send me by tomorrow would be great.
+ 
+Nadya – if you know any apps by UZH, let me know too.
+ 
+Thank you very much in advance!
+ 
+Cindy
+ 
+

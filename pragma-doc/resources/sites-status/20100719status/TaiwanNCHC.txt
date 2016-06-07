@@ -1,0 +1,25 @@
+From: Pan Yi-Lun [c00ser00@nchc.org.tw]
+Sent: Monday, July 26, 2010 1:19 AM
+To: zhengc@sdsc.edu; whuang; Serena Pan
+Subject: Re: [Fwd: Summary]
+
+Dear Cindy,
+
+  This is Serena Pan in NCHC. NARL/NCHC is working on virtualization research. 
+1. Use the WebOS to generate and customize a VM image that called on-demaned virtual cluster 
+2.Deploy and monitor a virtual cluster.
+
+  If you have and problem, please let me know! Thank you.
+
+Serena
+
+On Thu, 22 Jul 2010 10:29:41 +0800, whuang wrote
+> Please provide it ASAP.
+> 
+> I will send you a reference they have sum up so far.
+> 
+> W.
+
+
+--
+National Center High-performance Computing (http://www.nchc.org.tw/)

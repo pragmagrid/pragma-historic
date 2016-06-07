@@ -1,0 +1,57 @@
+From:	nadya williams <nadya@sdsc.edu>
+Sent:	Wednesday, July 20, 2011 10:34 AM
+To:	zhengc@sdsc.edu
+Cc:	Wilfred Li; Jane Ren
+Subject:	Re: applications run in last 12 months
+
+Dear Cindy,
+
+At UZH the applications include DOCK6,  a docking  application release by the UCSF.
+
+The features of DOCK 6 include: additional scoring options during minimization; DOCK 3.5 scoring-
+including Delphi electrostatics, ligand conformational entropy corrections, ligand desolvation, receptor 
+desolvation; Hawkins-Cramer-Truhlar GB/ SA solvation scoring with optional salt screening; PB/SA 
+solvation scoring; and AMBER scoring-including receptor flexibility, the full AMBER molecular mechanics 
+scoring function with implicit solvent, conjugate gradient minimization, and molecular dynamics 
+simulation capabilities.
+
+This program was run by the prime students and if there are any reports/publications  it should have 
+been referenced in the last year results. I do not have any record of prime students reports, sorry.
+
+Hardware is Intel, Intel(R) Xeon(TM) 2 CPU 2.80 GHz / 2 GB RAM and
+Intel(R) Xeon(R) 2 CPU 1.60 GHz / 2 GB RAM Cluster management is rocks 5.3
+
+Please let me know what else is needed.
+Nadya
+
+
+
+On Jul 19, 2011, at 5:53 PM, Cindy Zheng wrote:
+
+> Hi, Wilfred, Nadya and Jane,
+>
+> Peter just told me that we need to report PRAGMA progress to NSF and 
+> asked for applications ran in the last 12 months using PRAGMA 
+> resources.
+> Could you let me know the applications ran by your team?
+> Please briefly state
+> -          Application names, descriptions
+> -          Codes, hardware used
+> -          Results (technical or application)
+> -          Publications
+> Peter needs these info by Thursday.
+> So, if you could send me by tomorrow would be great.
+>
+> Nadya – if you know any apps by UZH, let me know too.
+>
+> Thank you very much in advance!
+>
+> Cindy
+>
+
+Nadya Williams                 University of California, San Diego
+nadya@sdsc.edu             9500 Gilman Dr. MC 0446
++1 858 534 1820 (ofc)      La Jolla, CA 92093-0446
++1 858 822 1619 (fax)      USA
+
+

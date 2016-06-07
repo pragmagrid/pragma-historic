@@ -1,0 +1,37 @@
+From: Cindy Zheng [zhengc@sdsc.edu]
+Sent: Wednesday, June 16, 2010 2:12 PM
+To: 'pragma-grid-team@googlegroups.com'
+Subject: VC replication testing, then with application setup
+
+Dear all,
+
+While continue our effort in expanding grid applications and usages, we also opened a  virtualization front and made a lot of progress during the PRAGMA 18 Implementation Institute. Now we continue on.
+
+Mason and I have tested the replication of a Rocks VM image on a Rocks VM hosting server. Basically, we created a new cluster from a disk image of an existing virtual cluster with all the software and setup intact and functional, but take on different hostname, ip and number of compute nodes. See some testing notes at http://goc.pragma-grid.net/wiki/index.php/VC-replication-1.
+
+What we are really interested in is to be able to replicate a Rocks VM image on a different VM hosting server which could be Rocks VM server or non-Rocks VM server. This will enable applications to setup once then easily replicate and use compute resources at multiple VM hosting sites.
+
+We plan to do the replication tests in 3 steps.
+This is the first step - replication on a Rocks VM hosting server.
+Second - replication to different Rocks VM hosting servers (preferably at different sites). We hope to start this soon.
+Third - replication to non-Rocks VM hosting servers. (One PRIME team this summer is working on this between Rocks VM and OsakaU's PIAX VM.)
+
+The testing starts with a VC include some common software setup, such as Globus, SGE, which are hostname sensitive.
+But ultimately we want to test VC replications with real application setup.
+All application drivers are welcome to run your applications on our VMs.
+If your application requires no special setup, please try to run it on rocks-200.sdsc.edu.
+If your application requires special software and setup, let me know. 
+We can setup a VC for you. Then later on, we can try to replicate it to multiple VM hosting sites.
+
+This is to report and share our virtualization plan, work status and testing results.
+You can find VM-related notes at
+http://goc.pragma-grid.net/wiki/index.php/Rocks_VM_setup.
+Everyone is welcome to get involved and to share experiences.
+Let me know if you'd like to join the testing or have any suggestions and ideas.
+Please feel free to add your documents/urls to the above page, or email to me.
+
+Thank you for everyone's support and help, as always!
+
+Cindy
+
+ 

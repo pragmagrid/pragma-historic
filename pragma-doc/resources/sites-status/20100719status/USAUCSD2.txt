@@ -1,0 +1,17 @@
+From: Jane Ren [j2ren@ucsd.edu]
+Sent: Monday, July 19, 2010 5:55 PM
+To: Cindy Zheng
+Subject: Update
+
+Hi Cindy,
+
+I set up an Autodock Virtual Screening web service here http://oolitevm.calit2.optiputer.net:8080/opal2/dashboard?command=serviceList
+
+The Autodock VS web service uses CSF as the scheduler and rocks-184 as a remote host.  Right now we just have one remote hosts, but if we had more, then we can run jobs on different remote hosts concurrently.
+
+I don't know if you are familiar with Autodock VS, but basically one of the inputs is a set of ligand files, and each sub-job will deal with one of the ligand files.  So on rocks-184 each compute node runs one autodock job (one for each ligand file).
+
+There seems to be a little bug somewhere in one of my scripts, but I do get all correct outputs on the remote server.  I expect to fix this little problem soon.
+
+Thanks
+Jane

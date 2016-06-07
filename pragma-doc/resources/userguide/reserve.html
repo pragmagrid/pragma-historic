@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Cross-site Reservation</title>
+</head>
+
+<body lang=EN-US link="#0000CC" vlink=purple style='tab-interval:.5in'>
+
+<H1 align=center>Cross-site Reservation</H1>
+<hr>
+<p>
+<font size="+1">
+Some special events may require dedicated resources
+among certain sites in PRAGMA testbed. Before we have a
+meta-scheduler to handle reservations automatically, we
+will try to follow a tentative manual procedure as below.
+<p>
+To keep things simple, we will dedicate resources at
+cluster level - which means that if a site decided to
+allow a cluster be used in a dedicated run, all nodes 
+in the cluster should be made available to the dedicated 
+run during the scheduled time. As how to accomplish this,
+each site is free to implement their own way. For those
+sites who like to know what's been done and worked, 
+AIST has used a very simple and effective way on their 
+clusters - make an alternate passwd file to include only 
+the dedicated user (of course, all system accounts) and switch the passwd file during the 
+dedicated time.
+
+<p>
+Here are the steps:
+<OL>
+   <LI>Testing for access and application requirements on candidate clusters should be done before the dedicated run time
+<LI>Requester sends a request to <a href="mailto:zhengc@sdsc.edu">PRAGMA Grid administrator</a>
+   <UL>
+   <LI>Spedify the purpose and the application for the dedicated run
+   <LI>Specify the desired dates of the reservation
+   <LI><strong>Must</strong> name each cluster you wish to be reserved
+   <LI>The request <strong>must be made at least 10 days before the reservation starting date</strong>
+   <LI>Minor change to the request <strong>must be made at least 48 hours before the reservation starting date</strong>
+   <LI>Any major change to the request will need to go through the approval process as a brand new request</strong>
+   </UL>
+<LI>The PRAGMA Grid administrator forwards the request to the named sites administrators within 24 hours.
+<LI>Each site will decide on approve or reject, and should notify the <a href="mailto:zhengc@sdsc.edu">PRAGMA Grid administrator</a> of their decision <strong>at least 5 days before the reservation starting date</strong>.
+<LI>The PRAGMA Grid administrator then inform the requester about the response from the sites and fix a schedule.
+<LI>The PRAGMA Grid administrator then email to pragma-grid-admin list, inform all application drivers and site administrators the scheduled duration, reserved sites and the application driver for the dedicated run
+<LI>One or two days before the reservation time, the PRAGMA Grid administrator will remind all application drivers and site administrators about this resource dedication.
+<LI>When the dedication time comes, the administrators of the dedicated sites should make the resources available for the dedicated user
+<LI>When the reservation period is over, or when the dedicated run is done before the dedicated ending time, the driver of the dedicated run should inform pragma-grid-admin list that the dedicated use is over.
+<LI>The administrators of the dedicated sites should open-up these dedicated resources to all PRAGMA testbed users again.
+</OL>
+<p>
+</font>
+
+</body>
+
+</html>

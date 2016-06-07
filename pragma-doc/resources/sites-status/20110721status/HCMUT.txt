@@ -1,0 +1,56 @@
+From:	hoaitv@gmail.com on behalf of Van Hoai Tran 
+<hoai@cse.hcmut.edu.vn>
+Sent:	Thursday, July 21, 2011 12:47 AM
+To:	Cindy Zheng
+Cc:	Nam Thoai; Pham Tran Vu
+Subject:	application on PRAGMA cluster
+
+Dear Cindy,
+
+Dr. Nam just forwarded your mail to me requesting brief report on application of
+PRAGMA clusters. Here below is some, and if you need more, please feel free
+to contact me.
+
+1. Star3D: this is a three-dimensional Euler solver using finite volume method on 
+   multiblock structured grid. The application is developed by a research group
+   in Department of Aeronautical Engineering, Faculty of Transportation.
+   
+   Code: GNU Fortran 90, developed for Intel-based system. The code has been
+   tested on SuperNodeII cluster of Intel-based computers.
+
+   Result & publications:
+   - T.T. Tinh, D.T. Son, N.A. Thi, "Development of three dimensional Euler solver using
+     finte volume method on multiblock structured grid, submitted to proceedings of
+    "4th International conference on High Performance Scientific Computing", 3-6 Mar 2009,
+    Hanoi, Vietnam.
+ 
+2. Genetic Algorithm with artificial neural network (ANN) for aerodynamic shape optimization. 
+This is a 
+   joint-work between Department of Aeronautical Engineering and High Performance Scientific
+    Computing group at Faculty of Computer Science & Engineering. CFD simulation
+    using Star3D is applied to estimate the fitness function within a GA framework. In
+    addition, ANN is also incorporated into the framework to reduce the very time-consuming
+     CFD simulation (normally take 7 hours of sequential simulation).
+ 
+   Code: GNU C++, Fortran 90. developed for Intel-based system. The code has been
+   tested on SuperNodeII cluster of Intel-based computers.
+
+   Result & publications: 
+   - T.Q. Khai, T.V. Hoai, N.A. Thi, "Application of online-trained ANN and parallel computing 
+in 
+     2D Airfoil optimization", submitted to ACOMP2011 - International Conference on Advanced
+     Computing and Applications, 19-21 Oct 2011, Ho Chi MInh City, Vietnam.
+
+Hope those information helpful to you.
+
+Best regards, 
+Hoai
+ 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+Dr. Tran, Van Hoai 
+Faculty of Computer Science and Engineering 
+HCMC University of Technology 
+Phone: (84) (8) 38647256 - ext: 5840 
+Fax: (84) (8) 38645137 
+E-mail: hoai@cse.hcmut.edu.vn, hoaitv@gmail.com 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

@@ -1,0 +1,97 @@
+<html>
+<head>
+<title>Site Administrators Guide</title>
+</head>
+
+<body lang=EN-US link="#0000CC" vlink=purple>
+
+<H1 align=center>Site Administrators Guide</H1>
+<hr>
+<p>
+<H2>Table Of Contents</H2>
+<a href="#useraccount">Create an User Account for a Remote User</a><br>
+<a href="#interrupt">Site System Interrupt Handling</a><br>
+<a href="#leave">Site Technical Contact Leave of Absence</a><br>
+<p>
+<hr>
+<H2><a name="useraccount">Create an User Account for a Remote User</a></H2>
+<font size=+1>
+Most of our testbed users require both SSH and Globus authentication for access.
+For a better security, you want to avoid having to email password after you create an account for an user.
+Here is how:
+<OL>
+<LI>If you are provided with a tar.gz file of the user info
+<UL>
+<LI>if you have written a script to automatically create the user account,
+run the script. If you like to write a script to do so, see <a href="http://pragma-goc.rocksclusters.org/softdepot/setuser.html">documentation and sample input and script</a>.
+<LI>to manually setup an user account, unpack the tar.gz file and read the user.txt file to get the info you need. The authorize_keys and CA files are all
+included in the tar.gz file.
+</UL>
+<LI>If you have not provided any user info, ask the user to email you
+<UL>
+<LI>His site CA files (.o and .signing_policy)
+<br>The user should be able to find them on a system he already has access via globus authentication, usually they reside in /etc/grid-security/certificates directory.
+<br>If the user has never used globus before, ask him to contact their site CA administrator to get his user/host certificates setup and obtain their CA files.
+<LI>His DN string
+<br>The user should be able to find it on a system he already has access via globus authentication, usually it's in file /etc/grid-security/grid-mapfile.
+<LI>His SSH public key
+<br>Should be the .pub file in the subdirectory .ssh under his home directory on the system where the user will run ssh to access your testbed systems.
+<br>If the user does not have a ssh key yet, ask him to run ssh-keygen on his system to generate a SSH key.
+</UL>
+<LI>Create a new user account on your system
+<br>For example, run adduser
+<LI>Append the user's DN string in /etc/grid-security/grid-mapfile on your system
+<br>The line format should look like
+<br>"the-user's-DN-string" new-user-name
+<LI>Save the user's site CA files in /etc/grid-security/certificates directory on your system
+<br>The files should be owned by root and permissions should be 644
+<LI>Append the user's SSH public key to the-user's-home-dir/.ssh/authorized_keys file
+<br>Should be one key per line
+<br>The file should be owned by the new user and the file permission should be 644
+<LI>Email the user and CC to Cindy Zheng, to inform them that the account setup is done.
+</OL>
+The user should be able to ssh to your system with his own password.
+</font>
+<p>
+<br>
+<H2><a name="interrupt">Site System Interrupt Handling</a></H2>
+<font size=+1>
+<UL>
+<LI><b>When scheduling a downtime</b>
+<br>especially a long downtime, if your site schedule is flexible, the technical contact should try to work with the testbed coordinator to schedule around any major events
+<p>
+<LI><b>When a site system maintenance is scheduled</b>
+<br>the technical contact for the site should email the pragma-grid-support lists
+at least 2 days prior to the scheduled downtime, to inform all users
+<UL> 
+<LI>the name of the system
+<LI>the start downtime scheduled
+<LI>estimated downtime duration
+<LI>reasons and system changes may impact applications
+</UL>
+<p>
+<LI><b>When an unscheduled interrupt (system crash) occurred</b>
+<br>the site technical contact should email the pragma-grid-support list
+as soon as possible, to inform all users
+<UL>
+<LI>the name of the system
+<LI>the time interrupt occurred
+<LI>estimated downtime duration
+<LI>reasons and system changes may impact applications
+</UL>
+</UL>
+</font>
+<H2><a name="leave">Site Technical Contact Leave of Absence</a></H2>
+<font size=+1>
+Whenever a site technical contact cannot perform his/her duty for more than 2 days, either due to illness, leave, holiday, travel or vacation, he/she should email pragma-grid-support list to inform all supporters and users
+<UL>
+<LI>the date and duration of his/her absence
+<LI>the name and email of the substitute
+</UL>
+The site technical contact or the substitute administrator should also keep both lists informed of any update to the leave and substitution status.
+</font>
+<p>
+
+</body>
+
+</html>

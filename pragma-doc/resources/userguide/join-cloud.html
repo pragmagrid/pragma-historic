@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>Preparation Guide for New Site</title>
+</head>
+
+<body lang=EN-US link="#0000CC" vlink=purple style='tab-interval:.5in'>
+
+<H1 align=center>Preparation Guide for New PRAGMA Cloud Site</H1>
+<hr>
+<p>
+<font size="+1">
+All <a href="http://www.pragma-grid.net/">PRAGMA</a> member institutions are encouraged to contribute their systems and technical support to <a
+href="http://wiki.pragma-grid.net">Routine-basis experiments</a> in <a
+href="http://goc.pragma-grid.net/">PRAGMA <span class=SpellE>testbed</span></a>.
+<p>
+<o:p>&nbsp;</o:p>Non-member institutions may be able to participate as well. You may email to <a
+href="pragma-cloud-admin@googlegroups.com">PRAGMA Cloud Admin</a> for initial contact.
+<p>
+<o:p>&nbsp;</o:p>All <span
+class=SpellE>participating</span> sites are committed to a close collaboration within PRAGMA resources working group with their resources and technical expertise.
+<p>
+Here is the procedure for join PRAGMA Cloud:
+<OL>
+<LI>Identify one or more VM hosting server(s) which can be shared in PRAGMA Cloud and satisfy the following minimum requirements:
+<OL type="a"> 
+<LI>at least one internet connection to the frond-end node
+<LI>at least 8GB RAM 
+<LI>at least 500GB disk space
+<LI>modern processor that supports hardware virtualization (2010 or later)
+<LI>running UNIX flavored virtualization system
+<LI>running <a href="http://sourceforge.net/projects/gfarm/files/gfarm_v2/2.4.2/"><span class=SpellE>Gfarm 2.4.2</span></a>
+   <UL>
+   <LI>Must be GSI-enabled
+   <LI>Preferably to setup your VM hosting server as a Gfarm file system server
+      <UL>
+      <LI>If you run Rocks/Xen, see the <a href="http://goc.pragma-grid.net/wiki/index.php/PRAGMA_Cloud_Rocks/Xen_site_setup">guide</a>
+      <LI>For other platforms, see <a href="http://goc.pragma-grid.net/wiki/index.php/SDSC_Gfarm_file_server">a Gfarm file system server setup example</a>
+      </UL>
+   <LI>Must install and enable Gfarm client on your VM hosting server. See <a href="http://goc.pragma-grid.net/wiki/index.php/SDSC_Gfarm_client">a Gfarm client setup example</a>
+   </UL>
+<LI>has an users guide on how to deploy an application VM from Gfarm storage. Here is an <a href="http://goc.pragma-grid.net/wiki/index.php/Auto-deploy_on_Rocks/Xen">example for Rocks Xen platform</a>
+</OL>
+<LI>Identify one or more technical supporter for your system
+<LI>Email the following info to <a href="mailto:mailto:pragma-cloud-admin@googlegroups.com">PRAGMA Cloud Admin</a>
+   <OL type="a">
+   <LI>your site contact (management) name and email address
+   <LI>technical supporter(s) name(s) and email address(es)
+   <LI>your VM hosting server hostname / IP address
+   <LI>if your clusters backend nodes are on a public network, the IP address range
+   <LI><a href="http://goc.pragma-grid.net/pragma-doc/cloud.html">specifications</a> of your VM hosting server
+   <LI>your CA certificate and signing policy files (if your CA is IGTF approved, skip this item, mark it as "in IGTF distribution")
+   <br>If your institution does not have a certificate authority service yet and/or you are still using SimpleCA, you can:
+      <UL>
+      <LI>Use PRAGMA experimental CA as short term solution (send request to Cindy), or
+      <LI>Setup your own certificate authority service. You may want try <a href="http://www.naregi.org/download">Naregi-CA</a> or <a href="http://www.openca.org">OpenCA</a>, both are free and IGTF-compliant CA software.
+      </UL>
+   <LI>URL to your system's users guide
+   </OL>
+<LI>Setup certificates update on your VM hosting server. See <a href="http://goc.pragma-grid.net/wiki/index.php/Setup_Certificates_Update">some "how-to's"</a>
+<LI>Implement <a href="https://goc.pragma-grid.net/secure/firewall.html">firewall settings</a>
+<LI>Test Gfarm access and VM deployment on your VM hosting server
+</OL>
+<LI>Uppon receiving all the info specified above, Cindy will 
+<UL>
+<LI>add your site contact and technical supporter to the appropriate PRAGMA mailing lists
+<LI>grant you access to wiki and setup your site status page
+<LI>help verify access to your VM hosting server 
+<LI>then introduce your site and supporters to PRAGMA resources group
+</UL>
+</OL>
+From there on, you will be a part of the PRAGMA Cloud and working closely with PRAGMA friends on our Routine-basis experiments.
+<p>
+</font>
+
+</body>
+
+</html>

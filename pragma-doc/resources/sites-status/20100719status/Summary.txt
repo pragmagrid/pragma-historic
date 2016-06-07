@@ -1,0 +1,165 @@
+From: Cindy Zheng [zhengc@sdsc.edu]
+Sent: Tuesday, July 20, 2010 10:50 PM
+To: 'pragma-grid-team@googlegroups.com'
+Subject: Progress since PRAGMA 18, plans toward PRAGMA 19
+
+Dear all,
+
+Thanks for everyone's diligent work and status/plan reports, 
+I'm very happy to learn that a lot of progress have been made 
+since PRAGMA 18!
+We are only less than 2 months away from PRAGMA 19!
+Please plan your time wisely in order to accomplish all the 
+goals set for PRAGMA 19.
+
+Before I summarize some key projects status and plans 
+let me first thank all sites admins who have been 
+working year afater year, to maintain and improve 
+their site systems and to help users to use PRAGMA grid!
+Now, here is a short content list, then the list of brief summaries.
+Everyone, please feel free to add and correct.
+
+Content list
+============
+
+Applications
+1. ITCR-MU, Volcanic simulation
+2. UChile, CATT-BRAMS
+3. HKU, Large-Eddy Simulation
+4. KISTI, eAIRS globalization
+5. KISTI-NCSA Science Gateway
+6. KISTI-KangwonU, KLEON
+7. CNIC, Ducking
+8. LZU, molecular dynamic simulation
+9. HUT, Linda and GOODAS
+10. NECTEC, typhone simulation and environment informatorium
+
+Infrastructure
+1. SDSC-AIST-NARL/NCHC-ASTI, Virtualization
+2. AIST-SDSC, GEO infrastructure for GLEON
+3. JLU-UCSD, CSF, Opal, NAMD and AutoDock integration
+4. UTsukuba-SDSC, Gfarm and Gfarm storage
+5. AIST-NECTEC-NARL/NCHC-VAST, Asia GEO Grid Initiative
+6. ITCR, TDW and network upgrade
+7. KookminU-KISTI, Mgrid development
+8. ASTI, PSciGrid launch
+9. HKU, regional grid launch
+
+Education: 
+MU-CNIC-UoHyd-OsakaU-NICT-USM-UAuckland-NARL, PRIME
+
+Other
+1. JLU, PRAGMA 19
+2. SDSC-LZU, site visit
+3. HKU, PRAGMA 20
+
+Brief summary
+=============
+
+Applications
+------------
+1. ITCR, Costa Rica team and Monash, Australia team have 
+been working together and completed 100K simulations of 
+volcanic ash dispersion modelling using Nimrod and PRAGMA 
+grid and cloud resources. A paper resulted from the work 
+has been accepted by FCST2010, China. The teams are 
+currently working on benchmarking of clustered and cloud 
+resources, and plan to run 4.5 million scenarios simlation 
+with EC2 and EAST, and to develop quantum chemistry 
+simulation application. 
+2. Uchile team has successfully completed the porting of 
+CATT-BRAMS application in PRAGMA grid.
+3. HongKong University Mechanical Engineering research 
+group is working on a Large-Eddy Simulation of urban air 
+pollutant transports and dispersion.
+4. KISTI, Korea e-AIRS application (utilize PRAGMA grid 
+resources) are used by 7 classes in 3 universities. 
+KISTI team is working to globalize e-AIRS to Japan and UK.
+5. KISTI and NCSA teams are working together and developing 
+a KISTI-NCSA Science Gateway, to provide a user-friendly 
+enviroment for building stand-alone HPC applications and 
+using HPC resources. 
+https://wiki.ncsa.illinois.edu/display/KNSG/SAGE+Documentation.
+6. As a part of Korea Lake Ecological Observatory Network 
+and in collaboration with GLEON, KISTI and Kangwon University 
+teams worked to connect data resources, develop data management, 
+sensor and sampling applications.
+7. CNIC has released Conference Service Platform (CSP) 
+(Duckling version2.0 - based) and deployed/supports PRAGMA19.
+8. Lanzhou University is working on a new application - 
+Exploring membrane transport mechanisms using molecular 
+dynamics simulations (NAMD based).
+9. Hanoi University of Technology team is working on 2 
+applications: Linda and GOODAS.
+10. NECTEC team has successfully simulated typhone Linda
+and tidal processes and also built a web portal to serve
+both environmental information providers and consumers.
+
+Infrastructure
+--------------
+1. SDSC/AIST/NBCR continue their virtualization research effort. 
+SDSC and NBCR worked together and setup a VM for Avian Flu Grid 
+application. This VM has been replicated and tested succefully 
+within the same VM hosting server. The procedure is documented 
+at http://goc.pragma-grid.net/wiki/index.php/VC-replication-3. 
+AIST and NBCR are working on replicate the Avian Flu Grid VM to
+their Rocks VM hosting servers. 
+AIST is also working on virtual cluster evaluation, very fast 
+live-migration of VM images, cloud security and high-performance 
+GSI, etc. 
+NARL/NCHC is working on virtualization research: use WebOS to 
+generate and customize a VM image that called on-demaned
+virtual cluster, also deploy and monitor a virtual cluster.
+Our Phillipine team at ASTI plan to join the VM testing soon.
+2. AIST/SDSC teams are providing PRAGMA GEO science 
+infrastructure for GLEON users to access ASTER data and are 
+ready to add more data resources to the system.
+3. JLU and NBCR/UCSD teams worked together and installed CSF4
+server at UCSD with production access to TeraGrid, PRAGMA grid, 
+Amazon EC2 and NBCR Rocks clusters. They also setup a new Opal 
+Web services for NAMD, using CSF4 as the metascheduler, and
+developed a visual programming workflows that invokes Opal-CSF4 
+Web services for NAMD and AutoDock.
+4. UTsukuba has released Gfarm 2.3.2 and 2.4.0 in July 2010.
+The most stable version 2.3.2 supports automatic replica creation.
+The version 2.4.0 is a major update that supports update-based
+replica consistency management that keeps the number of file replicas.
+SDSC team has setup a 38TB storage and is performing some 
+final testing. This storage will be used mainly for PRAGMA and 
+Gfarm.
+5. Asia GEO Grid Initiative has been accepted and started on 
+July 1. The participanting institutions are AIST, NECTEC, 
+NARL/NCHC and VAST.
+6. ITCR, Costa Rica has completed the building of a TDW, 
+plan to upgrade network to Internet2 and connect ITCR resources 
+to PRAGMA grid, implement HD visualization.
+7. In collaboration with KISTI, Kookmin University team is
+continuing Mgrid development, final testing wsrf based services, 
+developing Gfarm support, and implemented many new features and 
+interfaces to enable users easily utilize PRAGMA grid resources.
+8. ASTI, Phillipine team has just successfully launched their 
+regional Grid - PSciGrid, and it's working to join PRAGMA grid.
+9. Already a PRAGMA grid site, HongKong University team has 
+been working on and about to launch their regional grid 
+infrastructure, plans to join PRAGMA VOMS and virtualization 
+effort in the near future.
+
+Education
+---------
+Many sites are hosting/advise PRIME students this summer:
+Monash University, CNIC, University of Hyderabad, Osaka 
+University, NICT, USM, University of Auckland, NARL.
+
+Other PRAGMA activities
+-----------------------
+1. Jilin University team is working feverishly on PRAGMA 19 
+preparation
+2. Phil and Cindy visited Lanzhou University in May and 
+discussed plans to expand collaborations with LZU.
+3. HongKong University is working on early preparation of 
+PRAGMA 20
+
+Keep up the good work!
+Looking forward to see more success at PRAGMA 19!
+
+Cindy

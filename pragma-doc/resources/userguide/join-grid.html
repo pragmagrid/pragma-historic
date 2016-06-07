@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>Preparation Guide for New Site</title>
+</head>
+
+<body lang=EN-US link="#0000CC" vlink=purple style='tab-interval:.5in'>
+
+<H1 align=center>Preparation Guide for New PRAGMA Testbed Site</H1>
+<hr>
+<p>
+<font size="+1">
+All <a href="http://www.pragma-grid.net/">PRAGMA</a> member institutions are encouraged to contribute their systems and technical support to <a
+href="http://wiki.pragma-grid.net">Routine-basis experiments</a> in <a
+href="http://goc.pragma-grid.net/">PRAGMA <span class=SpellE>testbed</span></a>.
+<p>
+<o:p>&nbsp;</o:p>Non-member institutions may be able to participate as well. You may email to <a
+href="mailto:pragma-cloud-admin@googlegroups.com">PRAGMA Cloud Admin</a> for initial contact.
+<p>
+<o:p>&nbsp;</o:p>All <span
+class=SpellE>participating</span> sites are committed to a close collaboration within PRAGMA resources working group with their resources and technical expertise.
+<p>
+Here is the procedure for join PRAGMA testbed Grid:
+<OL>
+<LI>Identify one or more computer (or cluster) system(s) which can be shared with PRAGMA grid and satisfy the following minimum requirements:
+<OL type="a"> 
+<LI>at least one front-end node
+<LI>at least one compute node (Most applications prefer 8 or more nodes or CPUs)
+<LI>at least one internet connection to the frond-end node
+<LI>at least 256MB RAM on each node
+<LI>at least 20GB disk space on each node
+<LI>running UNIX flavor operating system 
+<LI>running <a href="http://www.globus.org/"><span class=SpellE>Globus</span></a> 4.x with all SDK bundles (data, GRAM, Info) built with the same flavor, <span
+class=SpellE>Globus</span> libraries are available on both front-end and compute nodes. (Globus 3.x and 2.x is ok, can be upgraded to Globus 4.x later.)
+<LI>running a job scheduler, such as <a href="http://gridengine.sunsource.net/">SGE</a>, <a
+href="http://www.doesciencegrid.org/public/pbs/homepage.html">PBS</a>, <a
+href="http://www.opensce.org/doc/SQMS%20Configuration">SQMS</a> or <a
+href="http://www.platform.com/products/LSF/">LSF</a>
+<LI>has an users guide (<a href="http://goc.pragma-grid.net/pragma-doc/userguide/default.html">sample guide</a>) for the system published on the system's web site.  See <a href="http://www.apgrid.org/documents/Asia%20Pacific%20Grid%20Middleware%20Deployment%20Guide.doc">Asia Pacific Grid Middleware Deployment Guide</a>. 
+</OL>
+<LI>Identify one or more technical supporter for your system
+<LI> If you are building a new Rocks cluster, install the most current rocks system, this includes all required rolls and area51, hpc, java, web-server rolls, also sge or torque rolls.
+<LI>Email the following info to <a href="mailto:mailto:pragma-cloud-admin@googlegroups.com">PRAGMA Cloud Admin</a>
+   <OL type="a">
+   <LI>your site contact (management) name and email address
+   <LI>technical supporter(s) name(s) and email address(es)
+   <LI>your cluster's hostname / IP address
+   <LI>if your clusters backend nodes are on a public network, the IP address range
+   <LI>the info of the user account you just created for PRAGMA testbed monitoring
+   <LI><a href="http://goc.pragma-grid.net/pragma-doc/resources.html">specifications</a> of your cluster
+   <LI>your CA certificate and signing policy files (if your CA is IGTF approved, skip this item, mark it as "in IGTF distribution")
+   <br>If your institution does not have a certificate authority service yet and/or you are still using SimpleCA, you can:
+      <UL>
+      <LI>Use PRAGMA experimental CA as short term solution (send request to Cindy), or
+      <LI>Setup your own certificate authority service. You may want try <a href="http://www.naregi.org/download">Naregi-CA</a> or <a href="http://www.openca.org">OpenCA</a>, both are free and IGTF-compliant CA software.
+      </UL>
+   <LI>URL to your system's users guide
+   </OL>
+<LI>Implement <a href="http://goc.pragma-grid.net/wiki/index.php/Site_system_requirements">site system requirements</a>
+<LI> <a href="http://goc.pragma-grid.net/wiki/index.php/Test_Essential_Services">Test services on your system</a>
+</OL>
+<LI>Cindy will 
+<UL>
+<LI>add your site contact and technical supporter to the appropriate PRAGMA mailing lists
+<LI>link your system user guide and <span class=SpellE>SCMSWeb</span> monitoring page to goc.pragma-grid.net web site.
+<LI>grant you access to wiki and setup your site status page
+<LI>help verify access to your cluster
+<LI>then introduce your site and supporters to PRAGMA resources group
+</UL>
+</OL>
+From there on, you will be a part of the PRAGMA <span
+class=SpellE>testbed</span> and working closely with PRAGMA friends on our Routine-basis experiments.
+<p>
+</font>
+
+</body>
+
+</html>

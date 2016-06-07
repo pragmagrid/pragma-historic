@@ -1,0 +1,42 @@
+--------------------------------------------------------
+  X Cluster Specification (Updated on January 10, 2007)
+--------------------------------------------------------
+
+* General Information
+  X Cluster consists of a frontend node and 30 compute nodes which have global
+  IP addresses.
+
+  Frontend node:  xsvc.asc.hpcc.jp (163.220.54.100)
+                  dual Intel(R) PentiumIII(TM) 1.4GHz, 2 Gbytes Memory
+  Compute node:   xcmp0[01-30].asc.hpcc.jp (163.220.54.[101-130])
+                  dual Intel(R) Xeon(TM) CPU 2.80GHz, 1 Gbytes Memory
+
+  Host Certificate:        C=JP,O=AIST,OU=GRID,CN=host/xsvc.asc.hpcc.jp
+  Host Certificate Issuer: C=JP,O=AIST,OU=GRID,CN=Certificate Authority 
+  url     = https://www.apgrid.org/CA/AIST/Production/
+  crl_url = https://www.apgrid.org/CA/AIST/Production/a317c467.r0
+
+  (Note)
+  Job submission for the PRAGMA routine-basis experiment is limited to the
+  specific nodes (xcmp0[01-24]) but those nodes are dedicated to the experiment.
+
+* Primitive Software
+  OS: CentOS release 4.4 
+  GNU GCC (Version 3.4.6): /usr/bin/gcc 
+  Intel C++ compiler (Ver.9.1): /opt/intel/cc/9.1.045/
+  Intel Fortran compiler  (Ver.9.1): /opt/intel/fc/9.1.040/
+
+* Grid and Cluster Software
+  Globus Toolkit (Ver.4.0.3): /usr/local/gt4  (compiled with gcc 3.4.6)
+                              /usr/local/GT/gt-4.0.3-intel-9.1
+                              (compiled with Intel C++ compiler 9.1)
+    The Jobmanager of PreWS GRAM is "jobmanager-sge".
+       (you can use globus-job-run and globusrun as is)
+    The Jobmanager of WS GRAM is SGE.
+       (you can use globusrun-ws -factory-type SGE)
+
+  Grid Engine, version 6.0: /usr/local/SGE/6.0u9
+  Ninf-G4 (Ver. 4.2.1): /usr/local/ngv4 (compiled with "flavor=gcc32dbgpthr")
+  GridMPI (Ver. 1.1): /usr/local/gridmpi (compiled with gcc 3.4.6)
+                      /usr/local/MPI/gridmpi-1.1-intel-9.1/ (compiled with
+  Intel Compiler 9.1)

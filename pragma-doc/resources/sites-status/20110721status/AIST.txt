@@ -1,0 +1,59 @@
+From:	Yoshio Tanaka <yoshio.m.tanaka@gmail.com> on behalf of Yoshio Tanaka 
+<yoshio.tanaka@aist.go.jp>
+Sent:	Wednesday, July 20, 2011 8:46 AM
+To:	zhengc@sdsc.edu
+Subject:	Re: applications run in last 12 months
+
+
+Hi Cindy,
+
+We haven't been using PRAGMA Grid resources routinely in these few years.
+But I think the use of NCHC and SDSC resources after the earthquake in March 11 can be considered as a 
+part of PRAGMA activities.
+It's up to Peter if this will be included or not.
+
+> Please briefly state
+> -          Application names, descriptions
+
+Activities by GEO Grid Disaster Response Task Force.
+After the earthquake on March 11, AIST faced a problem to provide GEO Grid's services due to lack of 
+resources.  From April 21, GEO Grid started providing services using SDSC and NCHC's resources.
+A part of the services and results are provided on the following web
+site:
+http://disaster-e.geogrid.org/
+
+> -          Codes, hardware used
+
+Codes:
+- Quick Estimation System for Earthquake Maps (QuakeMap)
+  http://qq.ghz.geogrid.org/QuakeMap/index.en.html
+- Processing of ASTER (satellite) data
+- WMS server providing satellite data
+
+Hardware:
+NCHC's Naruto cluster : 16+1 nodes
+    CPU : 4-core 2.0 GHz Intel Xeon E5335 * 2 (8 cores/node)
+    Memory : total 32*16 GB = 512GB
+    Disk : 2TB
+    interconnect : DDR InfiniBand +1GE
+
+SDSC's Triton
+    http://tritonresource.sdsc.edu/
+
+> -          Results (technical or application)
+These resources are being used routinely.
+
+> -          Publications 
+
+- Oral presentation
+M. Matsuoka and S. Sekiguchi,
+"GEO Grid Disaster Response Task Force Activity on the 2011 Tohoku - Pacific Ocean Earthquake", OGC 
+TC/PC Meeting, Jun 2011.
+
+We have some Japanese publications, but no English publications at this moment.  Sorry...
+
+Any comments and questions are welcome.
+Best Regards,
+
+--
+Yoshio Tanaka (yoshio.tanaka@aist.go.jp) http://ninf.apgrid.org/ http://www.apgridpma.org/

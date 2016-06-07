@@ -1,0 +1,188 @@
+<html><head><title>CNIC Grid Testbed Users Guide</title></head>
+<body bgcolor="white">
+
+<p>
+</p><h1 align="center">CNIC Grid Testbed Users Guide</h1>
+<b><h4 align="center">April 28, 2005
+<br>
+<a href="mailto:kevin@cnic.ac.cn">Kevin Dong</a>
+<br>
+Network Technology Application Research Laboratory
+<br>
+Computer Network Information Center
+</h4></b>
+<hr>
+<p>
+</p><ol>
+<li>About this document
+<br>
+Computer Network Information Center (CNIC) is contributing a cluster system to the PRAGMA Testbed.
+This document is a users' guide for CNIC Grid Testbed and includes 
+<ol type="a">
+<li>requirements for users
+</li><li>procedures for getting an account
+</li><li>hardware specifications and available Grid software
+</li><li>resource utilization policy
+</li><li>support staff available and mailing lists provided to users
+</li></ol>
+According to future administrative decisions, CNIC may modify this document and distribute the revised version through <a href="http://sdb6800.sdg.ac.cn/html/pragma-doc/userguide.html">its web site</a>.
+<p> 
+</p></li><li>Requirements for users
+<br>
+CNIC requests all users to fulfill the following conditions.
+<ol type="a">
+<li>All users must belong to one of member organizations of either PRAGMA, CNIC or SDB.
+</li><li>All users participating in SDB must comply with the operating principles of CNIC.
+</li><li>All users participating in PRAGMA must comply with the operating principles of PRAGMA.
+</li><li>All users must have concrete purposes for using CNIC resources.
+</li><li>All users must contribute to CNIC/PRAGMA through the use of CNIC/PRAGMA resources.
+</li><li>All users must have a user certificate issued by a PRAGMA trusted CA.
+</li></ol>
+PRAGMA trusts the following CAs: AIST, AusGrid, BMG, DOEGrids, ESnet, KISTI, NCSA, NPACI, ThaiGrid, USM.
+<br>
+Procedures for obtaining a user certificate are available on the PRAGMA-GOC home page.
+<p>
+</p></li><li>How to obtain an account
+<br>
+In order to obtain an account for using CNIC resources, send the following information to <a href="mailto:kevin@cnic.ac.cn">Kevin Dong</a>.
+<ol type="a">
+<li>Full Name
+</li><li>Affiliation
+</li><li>Address
+</li><li>Country
+</li><li>Phone number
+</li><li>Email address
+</li><li>Purpose for using CNIC Grid Testbed
+</li><li>Desired account name (1st:  2nd :  3rd choices:)
+</li><li>Shell (bash, csh, tcsh, etc.)
+</li><li>ssh public key * **
+</li><li>User certificate issued by a PRAGMA Trusted CA. ** ***
+</li></ol>
+The application will be reviewed by the administrators of CNIC resources within a few days of receipt of the application.
+The administrators will verify whether the applicant fulfills the requirements described in Section 2. 
+If the application is approved, CNIC will create an account and send the necessary information to the applicant. 
+Otherwise, the applicant will be notified that the request is rejected. 
+<p>
+* You can login to CNIC Grid Testbed via an ssh command using RSA
+authentication. CNIC will NOT inform you of your initial UNIX password.
+<br>
+** An ssh public key and your user certificate should be sent as attachments to your application.
+<br>
+*** A mapping of your subject name to your local account will be added to the grid-mapfile on the CNIC Grid Testbed.
+</p><p>
+</p></li><li>Resource information
+<br>
+CNIC is providing a Linux cluster, called CNIC Grid Testbed with the hostname pragma.sdg.ac.cn.
+<br>CNIC Grid Testbed is a 8-nodes Linux Cluster whose interconnection is
+Quodrix Network. Each node has 4 IaitumnII 1.3GHz and 8GB memory. Users'
+home directories are shared among all nodes by NFS.
+<br>On CNIC Grid Testbed, the Globus gatekeeper is running on User Service
+Nodes and computing nodes can be utilized via the Globus jobmanager
+(jobmanager).
+<p>
+</p><ul>
+<li>CNIC Grid Testbed
+<br>
+  CNIC Grid Testbed is available to users and projects approved by PRAGMA resources group.
+<br>
+<pre>  User Service Node:  pragma.sdg.ac.cn/c2202
+  Computing Nodes:    c2401
+                      :
+                      c2408
+                      8 nodes / 32 cpus
+</pre>
+</li><li>[Primitive Software]
+<br>
+The operating system used on CNIC Grid Testbed is RedHat Linux Advanced Server 2.1, and general GNU tools are also installed.
+<ul>
+<li>GCC version 2.96
+</li><li>Intel(R) C++/Fortran Compiler version 8.0 
+<br>These are NON-COMMERCIAL version. You need a valid license to use
+these products. If you don't have a valid license, see below sites.
+<br>
+<ul>
+<li>C++ Compiler: http://www.intel.com/software/products/compilers/clin/noncom.htm
+</li><li>Fortran Compiler: http://www.intel.com/software/products/compilers/flin/noncom.htm
+</li></ul>
+If you have a valid license, set INTEL_LICENSE_FILE environment variable to point license file or directory.
+Version 8.0 is installed in /export/compiler/intel.
+<p>
+</p></li></ul>
+</li><li>[Grid Software]
+<ul>
+<li>Globus Toolkit 2.4.3
+</li><li>GLOBUS_LOCATION = /usr/local/gt2.4.3
+<p>
+</p></li><li>jobmanager-sge is available on User Service Nodes
+<p>
+</p></li><li>Globus Packaging Toolkit 3.0.1
+</li><li>GPT_LOCATION = /usr/local/gt2.4.3/gpt
+<p>
+</p></li><li>Jobmanager
+<br>
+Lenovo Job & Resource Management System (LJRS) (based on OpenPBS)
+<ul>
+<li>LJRS_ROOT = /export/ljrs
+</li><li>master node: User Service Node 
+</li></ul>
+<p>
+</p></li><li>Ninf-G version 2.3.0
+<br>
+NG_DIR = /usr/local/ng
+<p>A Globus-based GridRPC middleware suites, called Ninf-G, which was
+developed by GTRC/PRAGMA, is also available on the CNIC Grid Testbed.
+</p></li></ul>
+</li></ul>
+</li><li>Resource utilization policy
+<ol type="a">
+<li>Resource Reservation
+<br>
+CNIC Grid Testbed is intended to be used for development and testing of Grid middleware and Grid applications in PRAGMA.
+<p>
+You must apply exclusive use at least five business days before you intend to use CNIC Grid Testbed.  Please send your application to <a href="mailto:grid-admin@grid.cn">grid-admin</a>. The application should indicate
+</p><ul>
+<li>Your name
+</li><li>Your account
+</li><li>Number of CPUs/nodes which you would like to occupy
+</li><li>the start time / end time (time zone must be indicated)
+<br>
+(you are allowed to occupy, at most, 24 hours for benchmarking)
+</li><li>the purpose of the experiments
+</li></ul>
+<p>Your application will be reviewed by the administrators and you will
+be notified of the decision within a few business days of your
+application.
+<br>
+CNIC will announce the schedule of the reservation via the users mailing list (grid-users@grid.cn).
+<br>CNIC will provide the dedicated resources during the specified (or
+permitted) period. Other users will not be able to use (login) the
+dedicated resources during the period.
+</p><p>
+</p></li><li>Installation of additional software
+<br>CNIC Grid Testbed can be used for R&amp;D of Grid middleware and
+applications. You can install, test and evaluate your software on CNIC 
+Grid Testbed. Since CNIC Grid Testbed are shared by many users, you are
+requested to test and debug your software thoroughly before installing
+it on CNIC Grid Testbed so that it will not damage the systems. If you need
+supervisor privilege for installing your software, please contact the
+support staff.
+</li></ol>
+<p>
+</p></li><li>Support staff and mailing lists
+<p>CNIC Grid Testbed is maintained by support staff. Your requests will be
+processed in a best-effort manner by the staff. CNIC provides the
+following mailing list for users:
+</p><p>
+</p><ul>
+<li>grid-users@grid.cn
+<br>This mailing list is used mainly for announcements from
+administrators and support staff. All users are automatically included
+in the list.
+<p>
+</p></li><li>grid-admin@grid.cn
+<br>System administrators of CNIC Grid Testbed are on this mailing
+list. This mailing list is used for correspondence from all users. Any
+requests, questions, and comments should be sent to this mailing list.
+</li></ul>
+</li></ol>
+</body></html>

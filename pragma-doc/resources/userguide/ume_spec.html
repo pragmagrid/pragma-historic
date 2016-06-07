@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>UME Users Guide</title>
+</head>
+
+<body lang=EN-US link="#0000CC" vlink=purple style='tab-interval:.5in'>
+<pre>
+--------------------------------------------------------
+  UME Cluster Specification (Updated on July 24, 2006)
+--------------------------------------------------------
+
+* General Information
+  UME Cluster is 21 nodes dual Pentium-III 1.4GHz CPUs and has a global
+  IP address.
+
+  Frontend node:  ume.hpcc.jp (163.220.30.64)
+  Compute node:   ume0[0-f].hpcc.jp
+                  ume1[0-3].hpcc.jp
+                  (concated the prefix 'ume' and a serial 2-digit hex number)
+
+  Host Certificate:        C=JP,O=AIST,OU=GRID,CN=host/ume.hpcc.jp
+  Host Certificate Issuer: C=JP,O=AIST,OU=GRID,CN=Certificate Authority 
+  url     = https://www.apgrid.org/CA/AIST/Production/
+  crl_url = https://www.apgrid.org/CA/AIST/Production/a317c467.r0
+
+  (Note)
+  Job submission for the PRAGMA routine-basis experiment is limited to the
+  specific nodes (ume[00-10]) but those nodes are dedicated to the experiment.
+   
+
+* Primitive Software
+  OS: Linux RedHat 7.3
+
+  GNU GCC: /usr/local/GCC/redhat73/2.95.3
+           /usr/local/GCC/redhat73/3.2.2
+           /usr/local/GCC/redhat73/3.3
+  If you set APG_GCCVER variable, your specified gcc will be enabled.
+    e.g. $ export APG_GCCVER=3.3
+         $ gcc -v
+
+  Intel C++ and Fortran compilers (Ver.7.0): /usr/local/intel
+
+
+* Grid and Cluster Software
+
+  Globus Toolkit (Ver.4.0.1): /usr/local/gt4  (compiled with gcc 2.95.3)
+    The Jobmanager of PreWS GRAM is "jobmanager-sge".
+       (you can use globus-job-run and globusrun as is)
+    The Jobmanager of WS GRAM is SGE.
+       (you can use globusrun-ws -factory-type SGE)
+
+  Grid Engine, version 6.0: /usr/local/sge_root_6.0u1
+
+  Ninf-G4 (Ver. 4.1.0): /usr/local/ngv4 (compiled with "flavor=gcc32dbgpthr")
+  Ninf-G2 (Ver. 2.3.0): /usr/local/ngv2 (compiled with "flavor=gcc32dbgpthr")
+
+  Gfarm (Ver. 1.2-6): /usr (installed from RPM)
+
+  GridMPI (Ver. 0.11): /usr/local/gridmpi (compiled with gcc 3.3)
+
+  MPICH-P4 (Ver. 1.2.5-1a): /usr/local/mpich/ch_p4/bin
+
+  MPICH-G2 (Ver. 1.2.5.2): 
+    /usr/local/MPICH/mpich-1.2.5.2/g2-gcc-2.95.3 (compiled with gcc 2.95.3)
+    /usr/local/MPICH/mpich-1.2.5.2/g2-intel-7.0  (compiled with intel 7.0)
+
+
+* For Bio-Grid experiment
+  ncbi est_human database (raw db):  /work/pragma/est_human
+  ncbi toolbox library (compiled with gcc 3.3):  /usr/local/ncbi
+
+  (Note)
+  Please set the following variables in the initialization file for your shell.
+    NCBI_LOCATION=/usr/local/ncbi
+    LD_LIBRARY_PATH=$NCBI_LOCATION/lib
+    PATH=$NCBI_LOCATION/bin:$PATH
+
+
+* For Savannah/Nimrod Experiment
+  /work/cme is 195 GB diskspace for runtime checkpoint storage.
+
+
+* For GAMESS-APBS experiment
+  APBS 0.3.2 Binaries: /usr/local/bin/apbs
+    examples: /usr/local/apbs-0.3.2/examples
+    doc: /usr/share/doc/apbs-0.3.2
+  MALOC (Minimal Abstraction Layer for Object-oriented C)
+    include: /usr/local/maloc
+    lib: /usr/local/lib
+    doc: /usr/share/doc/maloc-0.1
+  GAMESS June 2005 Binaries: /opt/gamess
+
+  (Note)
+  Please set the following variable in the initialization file for your shell.
+    LD_LIBRARY_PATH=/usr/local/GCC/redhat73/3.2.2/lib
+     or LD_LIBRARY_PATH=/usr/local/GCC/redhat73/3.3/lib 
+</pre>
+</body>
+</html>

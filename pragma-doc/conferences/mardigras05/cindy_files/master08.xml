@@ -1,0 +1,138 @@
+<xml xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+ xmlns:oa="urn:schemas-microsoft-com:office:activation">
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="220"/>
+ </o:shapelayout><p:colorscheme
+  colors="#FFFFFF,#000000,#808080,#000000,#BBE0E3,#333399,#009999,#99CC00"/>
+ <v:background id="_x0000_s225281" o:bwmode="white" fillcolor="white [0]">
+  <v:fill color2="#339 [5]"/>
+ </v:background><p:shaperange id="_x0000_s225282">
+  <v:shapetype id="_x0000_t75" coordsize="21600,21600" o:spt="75"
+   o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+   <v:stroke joinstyle="miter"/>
+   <v:formulas>
+    <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+    <v:f eqn="sum @0 1 0"/>
+    <v:f eqn="sum 0 0 @1"/>
+    <v:f eqn="prod @2 1 2"/>
+    <v:f eqn="prod @3 21600 pixelWidth"/>
+    <v:f eqn="prod @3 21600 pixelHeight"/>
+    <v:f eqn="sum @0 0 1"/>
+    <v:f eqn="prod @6 1 2"/>
+    <v:f eqn="prod @7 21600 pixelWidth"/>
+    <v:f eqn="sum @8 21600 0"/>
+    <v:f eqn="prod @7 21600 pixelHeight"/>
+    <v:f eqn="sum @10 21600 0"/>
+   </v:formulas>
+   <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" aspectratio="t"/>
+  </v:shapetype><v:shape id="_x0000_s225282" type="#_x0000_t75" style='position:absolute;
+   left:0;top:0;width:10in;height:480pt' fillcolor="#bbe0e3 [4]" strokecolor="black [1]">
+   <v:fill color2="white [0]"/>
+   <v:imagedata src="master08_image001.png" o:title=""/>
+   <v:shadow color="gray [2]"/>
+  </v:shape><o:OLEObject Type="Embed" ProgID="MSPhotoEd.3"
+   ShapeID="_x0000_s225282" DrawAspect="Content" ObjectID="570">
+   <p:oleclientdata menuname="Photo Editor Photo"
+    clipboardname="Microsoft Photo Editor 3.0 Photo"/>
+  </o:OLEObject>
+ </p:shaperange>
+ <p:shaperange id="_x0000_m225283">
+  <v:shapetype id="_x0000_m225283" style='position:absolute;left:36pt;top:21.625pt;
+   width:9in;height:90pt;v-text-anchor:middle' coordsize="21600,21600"
+   o:master="" o:spt="1" path="m,l,21600r21600,l21600,xe" filled="f"
+   fillcolor="#bbe0e3 [4]" stroked="f" strokecolor="black [1]">
+   <v:fill color2="white [0]" o:detectmouseclick="t"/>
+   <v:stroke joinstyle="miter" o:forcedash="t"/>
+   <v:shadow color="gray [2]"/>
+   <v:path gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" grouping="t"/>
+   <p:placeholder type="title"/>
+  </v:shapetype></p:shaperange>
+ <p:shaperange id="_x0000_m225284">
+  <v:shapetype id="_x0000_m225284" style='position:absolute;left:36pt;top:126pt;
+   width:9in;height:356.375pt' coordsize="21600,21600" o:master="" o:spt="1"
+   path="m,l,21600r21600,l21600,xe" filled="f" fillcolor="#bbe0e3 [4]"
+   stroked="f" strokecolor="black [1]">
+   <v:fill color2="white [0]" o:detectmouseclick="t"/>
+   <v:stroke joinstyle="miter" o:forcedash="t"/>
+   <v:shadow color="gray [2]"/>
+   <v:path gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" grouping="t"/>
+   <p:placeholder type="body" position="1"/>
+  </v:shapetype></p:shaperange>
+ <p:shaperange id="_x0000_s225285">
+  <v:shapetype id="_x0000_s225285" style='position:absolute;left:36pt;top:491.75pt;
+   width:168pt;height:37.5pt' coordsize="21600,21600" o:master="" o:spt="1"
+   path="m,l,21600r21600,l21600,xe" filled="f" fillcolor="#bbe0e3 [4]"
+   stroked="f" strokecolor="black [1]">
+   <v:fill color2="white [0]" o:detectmouseclick="t"/>
+   <v:stroke joinstyle="miter" o:forcedash="t"/>
+   <v:shadow color="gray [2]"/>
+   <v:path gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" grouping="t"/>
+   <p:placeholder type="dateTime" position="2" size="half"/>
+  </v:shapetype></p:shaperange>
+ <p:shaperange id="_x0000_s225286">
+  <v:shapetype id="_x0000_s225286" style='position:absolute;left:246pt;top:491.75pt;
+   width:228pt;height:37.5pt' coordsize="21600,21600" o:master="" o:spt="1"
+   path="m,l,21600r21600,l21600,xe" filled="f" fillcolor="#bbe0e3 [4]"
+   stroked="f" strokecolor="black [1]">
+   <v:fill color2="white [0]" o:detectmouseclick="t"/>
+   <v:stroke joinstyle="miter" o:forcedash="t"/>
+   <v:shadow color="gray [2]"/>
+   <v:path gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" grouping="t"/>
+   <p:placeholder type="footer" position="3" size="quarter"/>
+  </v:shapetype></p:shaperange>
+ <p:shaperange id="_x0000_s225287">
+  <v:shapetype id="_x0000_s225287" style='position:absolute;left:516pt;top:491.75pt;
+   width:168pt;height:37.5pt' coordsize="21600,21600" o:master="" o:spt="1"
+   path="m,l,21600r21600,l21600,xe" filled="f" fillcolor="#bbe0e3 [4]"
+   stroked="f" strokecolor="black [1]">
+   <v:fill color2="white [0]" o:detectmouseclick="t"/>
+   <v:stroke joinstyle="miter" o:forcedash="t"/>
+   <v:shadow color="gray [2]"/>
+   <v:path gradientshapeok="t" o:connecttype="rect"/>
+   <o:lock v:ext="edit" grouping="t"/>
+   <p:placeholder type="slideNumber" position="4" size="quarter"/>
+  </v:shapetype></p:shaperange>
+ <p:shaperange id="_x0000_s225288">
+  <v:shape id="_x0000_s225288" type="#_x0000_t75" alt="National Science Foundation logo with rotating globe"
+   style='position:absolute;left:642pt;top:482.125pt;width:78pt;height:57.875pt'>
+   <v:imagedata src="master08_image002.gif" o:title="nsf01"/>
+   <o:lock v:ext="edit" cropping="t"/>
+  </v:shape></p:shaperange>
+ <p:shaperange id="_x0000_s225289">
+  <v:shape id="_x0000_s225289" type="#_x0000_t75" style='position:absolute;
+   left:0;top:479.625pt;width:78pt;height:60.375pt'>
+   <v:imagedata src="master08_image003.jpg" o:title="PRAGMA_logo"/>
+  </v:shape></p:shaperange>
+ <p:shaperange id="_x0000_s225290">
+  <v:shape id="_x0000_s225290" type="#_x0000_t75" style='position:absolute;
+   left:0;top:0;width:10in;height:480pt' o:userdrawn="t" fillcolor="#bbe0e3 [4]"
+   strokecolor="black [1]">
+   <v:fill color2="white [0]"/>
+   <v:imagedata src="master08_image001.png" o:title=""/>
+   <v:shadow color="gray [2]"/>
+  </v:shape><o:OLEObject Type="Embed" ProgID="MSPhotoEd.3"
+   ShapeID="_x0000_s225290" DrawAspect="Content" ObjectID="571">
+   <p:oleclientdata menuname="Photo Editor Photo"
+    clipboardname="Microsoft Photo Editor 3.0 Photo"/>
+  </o:OLEObject>
+ </p:shaperange>
+ <p:shaperange id="_x0000_s225291">
+  <v:shape id="_x0000_s225291" type="#_x0000_t75" alt="National Science Foundation logo with rotating globe"
+   style='position:absolute;left:642pt;top:482.125pt;width:78pt;height:57.875pt'
+   o:userdrawn="t">
+   <v:imagedata src="master08_image002.gif" o:title="nsf01"/>
+   <o:lock v:ext="edit" cropping="t"/>
+  </v:shape></p:shaperange>
+ <p:shaperange id="_x0000_s225292">
+  <v:shape id="_x0000_s225292" type="#_x0000_t75" style='position:absolute;
+   left:0;top:479.625pt;width:78pt;height:60.375pt' o:userdrawn="t">
+   <v:imagedata src="master08_image003.jpg" o:title="PRAGMA_logo"/>
+  </v:shape></p:shaperange>
+</xml>

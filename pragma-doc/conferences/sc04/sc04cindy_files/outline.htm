@@ -1,0 +1,746 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 10">
+<link id=Main-File rel=Main-File href="../sc04cindy.htm">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = GetObj("Main-File")
+	parent.location.href=obj.href
+}
+var gOtlHiliteClr="#ffffff",gOtlNormalClr="#000000",gOtlActiveClr="#ffff00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( g_supportsPPTHTML ) {
+		if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+		if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+	}
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+	if( parent.frames["PPTNts"] )
+		notesBtn.style.display = ""
+	if( parent.gHasNarration )
+		nb_voiceBorder.style.display = ""
+}
+function LoadOtl()
+{
+	var otl=GetObj("OtlObj")
+	otl.style.display="block"
+	otl.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr
+	InitArray()
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		}
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	var list=GetTags(document,"DIV");
+	for(ii=0; ii<list.length; ii++) {
+		obj=list.item(ii)
+		if( obj.id == null ) continue
+		if( obj.id.indexOf("PPTC") >= 0 )
+			gChildEntryTable[count++]=obj
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=GetObj("PPTL"+idx)
+	obj.style.color=fgColor
+	obj=GetObj("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( src ){ ChgClr(GetLink(src),gOtlActiveClr) }
+function Out( src ){ ChgClr(GetLink(src),gOtlHiliteClr) }
+function Follow(src){ window.location.href = GetLink(src).href; }
+function ObjExists( ii ) { obj=GetObj("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+function GetLink(src)
+{
+   if(src.tagName=="A") return src
+   else return GetTags(src,"A").item(0)
+}
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].SetEnabled()
+	gBtnArr["nb_nts"].SetFlag( parent.gHasNts )
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+//--></script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:2px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+ul
+	{color:white;
+	margin-bottom:0px;
+	margin-left:20px;}
+.sldNum
+	{margin-top:5px;
+	color:white;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()" style='margin:2px'>
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="_KPH()" style='display:none;visibility:hidden'>
+<table id="notesBtn" style='position:absolute;display:none;width:70px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" align=center style='position:relative;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt'><img src="notes_flag.gif"
+ border=0 id="notes_flag" style='display:none'><span
+style='mso-spacerun:yes'>  </span>Notes</div>
+ <div title="Show/Hide Notes" id="nb_nts" style='position:absolute;top:0%;
+ left:0%;width:100%;height:100%'></div>
+ </td>
+</table>
+
+<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_sldshwText" title="Full
+Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+Show</div>
+ <div id="nb_sldshwBorder" title="Full Screen Slide Show" style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="_KPH()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
+ <td nowrap><div title="Show/Hide
+Outline" id="nb_otl"
+ style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt'>Outline</div></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden;'>
+
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>1</font></div>
+  </td>
+  <td width="100%">
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0001.htm');" id=PPTL1>Building a Production
+  Global Grid<br>
+    Through Routine-basis Experiments</a></font></div>
+  <div id=PPTC1 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>Cindy Zheng, SDSC</li>
+   <li>PRAGMA Resources Group</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>2</font></div>
+  </td>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0038.htm');" id=PPTL2>Pacific <br>
+    Rim <br>
+    Application and<br>
+    Grid <br>
+    Middleware <br>
+    Assembly</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>3</font></div>
+  </td>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0034.htm');" id=PPTL3>PRAGMA</a></font></div>
+  <div id=PPTC3 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Open</li>
+   <li>Institutional-based</li>
+   <li>Global collaboration</li>
+   <li>Grid application and middleware</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>4</font></div>
+  </td>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0035.htm');" id=PPTL4>PRAGMA Resources Group</a></font></div>
+  <div id=PPTC4 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Grid testbed</li>
+   <ul>
+    <li>Middleware</li>
+    <li>Applications</li>
+    <li>Easy to use production grid</li>
+   </ul>
+   <li>Voluntary contribution</li>
+   <ul>
+    <li>Clusters (Linux, Rocks)</li>
+    <li>software</li>
+    <li>Expertise</li>
+   </ul>
+   <li>Collaboration, coordination, consensus</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>5</font></div>
+  </td>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0008.htm');" id=PPTL5>Grid Testbed
+  Participation</a></font></div>
+  <div id=PPTC5 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>USA - UCSD/SDSC (Mason Katz, Cindy Zheng)</li>
+   <li>USA - NCSA (Radha Nandkumar, Tom Roney)</li>
+   <li>Japan - AIST (Yoshio Tanaka, Yusuke Tanimura)</li>
+   <li>Japan - TITECH (Satoshi Matsuoka, Shirose Ken'ichiro)</li>
+   <li>Korea - KISTI (Jysoo Lee, Jae-Hyuck Kwak)</li>
+   <li>Thailand - KU (Sugree Phatanapherom, Somsak Sriprayoonsakul)</li>
+   <li>Malaysia - USM (Habibah Wahab, Bukhary Ikhwan Ismail)</li>
+   <li>Taiwan - NCHC (WeiCheng Huang, Yu-Chung Chen)</li>
+   <li>Taiwan - ASCC (Hurng-Chun Lee, Mike Chiang)</li>
+   <li>Singapore - BII (Stephen Wong, Nigel Teow)</li>
+   <li>Mexico - UNAM (Jose Luis Gordillo Ruiz, Eduardo Murrieta Leon)</li>
+   <li>India - UoHyd (Arun Agarwal)</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>6</font></div>
+  </td>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0047.htm');" id=PPTL6><span
+  style='mso-spacerun:yes'> </span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>7</font></div>
+  </td>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0042.htm');" id=PPTL7>Building a Production
+  Grid Thru Running Applications</a></font></div>
+  <div id=PPTC7 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Routine-basis experiments</li>
+   <ul>
+    <li>Ninf-G based TDDFT, http://pragma-goc.rocksclusters.org/tddft/default.html</li>
+    <li>BioGrid, http://pragma-goc.rocksclusters.org/biogrid/default.html</li>
+    <li>iGAP over Gfarm</li>
+   </ul>
+   <li>Learn requirements/issues</li>
+   <li>Research/implement solutions</li>
+   <li>Improve middleware integrations</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>8</font></div>
+  </td>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0029.htm');" id=PPTL8>Lessons Learned</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Information sharing</li>
+   <li>Trust and access</li>
+   <li>Resource requirements</li>
+   <li>User/application environment</li>
+   <li>Job submission</li>
+   <li>Resource/job monitoring</li>
+   <li>Resource/job accounting</li>
+   <li>Fault tolerance</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>9</font></div>
+  </td>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0033.htm');" id=PPTL9>Information Sharing</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Problems</li>
+   <ul>
+    <li>Lack of info, documentation</li>
+    <li>Different time zones, admin domains, procedures…</li>
+   </ul>
+   <li>What we have done</li>
+   <ul>
+    <li>Grid Operation Center: users guides, system info, status… http://pragma-goc.rocksclusters.org</li>
+    <li>Site technical contacts, mailing lists, VTCs</li>
+   </ul>
+   <li>What we plan to do</li>
+   <ul>
+    <li>Create/implement/improve procedures, policies for production grid</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>10</font></div>
+  </td>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0002.htm');" id=PPTL10>Trust and Access</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Problems</li>
+   <ul>
+    <li>Different requirements, policies and software</li>
+   </ul>
+   <li>What we have done</li>
+   <ul>
+    <li>Site: trust each other’s CA</li>
+    <li>Do whatever is required to allow necessary access for PRAGMA projects</li>
+    <li>User: CA files, DN, SSH public key</li>
+   </ul>
+   <li>What we plan to do</li>
+   <ul>
+    <li>Setup PRAGMA CA</li>
+    <li>Automate CA management tasks</li>
+    <li>Automate users management tasks</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>11</font></div>
+  </td>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0003.htm');" id=PPTL11>Resource Requirements</a></font></div>
+  <div id=PPTC11 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Problems: unforeseen requirement details</li>
+   <li>What we are doing</li>
+   <ul>
+    <li>Develop resource requirements thru running popular applications</li>
+    <ul>
+     <li>Hardware (cpu, memory, disk space, network)</li>
+     <li>System configuration (public ip)</li>
+     <li>Software (versions, flavors, front-end/compute-notes)</li>
+    </ul>
+    <li>Check resource requirements</li>
+    <ul>
+     <li>NCSA grid status test, every 4 hours</li>
+     <li>	http://rocks-52.sdsc.edu/pragma-grid-status.html</li>
+    </ul>
+   </ul>
+   <li>What we plan to do</li>
+   <ul>
+    <ul>
+     <li>INCA http://tech.teragrid.org/inca/www/documentation.html</li>
+    </ul>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>12</font></div>
+  </td>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0006.htm');" id=PPTL12>User/Application
+  Environment</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Problems</li>
+   <ul>
+    <li>Setup/test on each system</li>
+    <li>Different security policies/setups, software, version, path …</li>
+   </ul>
+   <li>What we plan to do</li>
+   <ul>
+    <li>Provide common user environment setup files</li>
+    <li>Automate setup/replication</li>
+    <ul>
+     <li>Gfarm, http://datafarm.apgrid.org/testbed</li>
+    </ul>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>13</font></div>
+  </td>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0011.htm');" id=PPTL13>Job Submission</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Problems:</li>
+   <ul>
+    <li>Resource selection</li>
+    <li>Test/implement for each system</li>
+    <li>Different schedulers, queues/PEs …</li>
+   </ul>
+   <li>What we have done</li>
+   <ul>
+    <li>Find common requirements thru running applications</li>
+   </ul>
+   <li>What we plan to do</li>
+   <ul>
+    <li>Easy user interface and automation for resource selection and job
+        submission: GridPort, Grid Service…</li>
+    <li>Middleware wrap some resource differences</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>14</font></div>
+  </td>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0014.htm');" id=PPTL14>Resource/Job Monitoring</a></font></div>
+  <div id=PPTC14 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Problems:</li>
+   <ul>
+    <li>Different monitoring software don't work togather for centralized
+        monitoring (SCMSWeb, Ganglia)</li>
+    <li>No centralized job monitoring</li>
+    <li>No job status change notification</li>
+   </ul>
+   <li>What we are doing:</li>
+   <ul>
+    <li>Standardize with SCMSWeb (Kasetsart University)</li>
+    <li>	http://pragma-goc.rocksclusters.org/scmsweb/scms_home.html</li>
+   </ul>
+   <li>What we plan to do:</li>
+   <ul>
+    <li>Add SGE, PBS and LSF support in SCMSWeb</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>15</font></div>
+  </td>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0043.htm');" id=PPTL15>Resource/Job Accounting</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Problems:</li>
+   <ul>
+    <li>Usage data is at each system/node</li>
+    <li>No Grid-enabled accounting</li>
+   </ul>
+   <li>What we have done:</li>
+   <ul>
+    <li>Middleware collect some data</li>
+   </ul>
+   <li>What we plan to do:</li>
+   <ul>
+    <li>GridBank, http://www.gridbus.org</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>16</font></div>
+  </td>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0016.htm');" id=PPTL16>Fault Tolerance</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Problems:</li>
+   <ul>
+    <li>Many possible causes for faults</li>
+    <li>Crash jobs</li>
+    <li>Leave defunc processes and jobs</li>
+   </ul>
+   <li>What we have done:</li>
+   <ul>
+    <li>Middleware improvement (Ninf-G)</li>
+    <ul>
+     <li>Better error reporting</li>
+     <li>Fault detection and recovery</li>
+    </ul>
+    <li>Easy clean-up utility (GXP)</li>
+   </ul>
+   <li>What we plan to do:</li>
+   <ul>
+    <li>More improvements and solutions thru middleware</li>
+    <ul>
+     <li>Dynamically add/remove sites</li>
+    </ul>
+   </ul>
+   <br>
+   <ul>
+    <br>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>17</font></div>
+  </td>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0017.htm');" id=PPTL17>The Central Issue</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <br>
+   <li>Collaborations -</li>
+   <br>
+   <br>
+   <li>The foundation for global Grid</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>18</font></div>
+  </td>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0046.htm');" id=PPTL18><span
+  style='mso-spacerun:yes'> </span></a></font></div>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+
+<div style='display:none'><a href=master257.htm></a><a href=master257.xml></a><a
+href=preview.wmf></a><a href=master258.htm></a><a href=master258.xml></a><a
+href=master259.htm></a><a href=master259.xml></a><a href=pres.xml></a><a
+href=slide0001.htm></a><a href="master258_image001.gif"></a><a
+href=slide0038.htm></a><a href="slide0038_image002.jpg"></a><a
+href="slide0038_image003.jpg"></a><a href="slide0038_image004.gif"></a><a
+href=slide0034.htm></a><a href="master257_image005.gif"></a><a
+href="master257_image006.gif"></a><a href="master257_image007.gif"></a><a
+href="master257_image008.gif"></a><a href=slide0035.htm></a><a
+href=slide0008.htm></a><a href=slide0047.htm></a><a
+href="slide0047_image009.gif"></a><a href=slide0042.htm></a><a
+href=slide0029.htm></a><a href=slide0033.htm></a><a href=slide0002.htm></a><a
+href=slide0003.htm></a><a href=slide0006.htm></a><a href=slide0011.htm></a><a
+href=slide0014.htm></a><a href=slide0043.htm></a><a href=slide0016.htm></a><a
+href=slide0017.htm></a><a href=slide0046.htm></a><a
+href="slide0046_image010.gif"></a><a href="slide0046_image011.gif"></a><a
+href="slide0046_image012.gif"></a><a href="slide0046_image013.gif"></a><a
+href="slide0046_image014.gif"></a><a href="slide0046_image015.gif"></a><a
+href="slide0046_image016.gif"></a><a href="slide0046_image017.gif"></a><a
+href="slide0046_image018.gif"></a><a href="slide0046_image019.gif"></a><a
+href="slide0046_image020.gif"></a><a href=master01.htm></a><a
+href="master257_stylesheet.css"></a><a href="master259_stylesheet.css"></a><a
+href=script.js></a><a href="../sc04cindy.htm"></a><a href=fullscreen.htm></a><a
+href="notes_flag.gif"></a><a href=buttons.gif></a><a href=frame.htm></a><a
+href=outline.htm></a></div>
+
+</body>
+
+</html>

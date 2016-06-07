@@ -1,0 +1,16 @@
+From:	yang zhang <zy.lzuhpc@gmail.com>
+Sent:	Wednesday, July 20, 2011 10:35 PM
+To:	zhengc@sdsc.edu
+Subject:	Re: applications run in last 12 months
+
+ 
+Hi Cindy:
+ 
+   New application: compare the simulation typhoon path to the real ,use MPICH2 and The 
+Advanced Regional Prediction System (ARPS)  (going).
+ 
+   Join the VM test
+ 
+zhang yang
+
+

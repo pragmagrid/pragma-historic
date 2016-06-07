@@ -1,0 +1,132 @@
+From: Yoshio Tanaka [yoshio.tanaka@aist.go.jp]
+Sent: Sunday, July 18, 2010 4:27 PM
+To: zhengc@sdsc.edu
+Cc: yusuke.tanimura@aist.go.jp; naotaka@ni.aist.go.jp;
+yoshio.tanaka@aist.go.jp
+Subject: Re: Help with summary
+
+
+Cindy,
+
+I forgot to note...
+Please feel free to edit the draft.
+
+--
+Yoshio Tanaka (yoshio.tanaka@aist.go.jp) http://ninf.apgrid.org/ http://www.apgridpma.org/
+
+
+From: Yoshio Tanaka <yoshio.tanaka@aist.go.jp>
+Subject: Re: Help with summary
+Date: Mon, 19 Jul 2010 08:25:53 +0900 (JST)
+Message-ID: <20100719.082553.68535375.yoshio.tanaka@aist.go.jp>
+
+> 
+> Cindy,
+> 
+> I found a typo.
+> 
+> > > AIST, NECTED, NARL/NCHC, and VAST are participating in this
+> 
+> AIST, NECTEC, NARL/NCHC, and VAST are participating in this
+> 
+> Thanks,
+> 
+> --
+> Yoshio Tanaka (yoshio.tanaka@aist.go.jp) http://ninf.apgrid.org/ 
+> http://www.apgridpma.org/
+> 
+> 
+> From: "Cindy Zheng" <zhengc@sdsc.edu>
+> Subject: RE: Help with summary
+> Date: Sun, 18 Jul 2010 13:07:10 -0700
+> Message-ID: <323CA00E29224C46B36D6BD920216DE8@zhengclaptop>
+> 
+> > Thank you very much, Yoshio! 
+> > 
+> > > -----Original Message-----
+> > > From: Yoshio Tanaka [mailto:yoshio.tanaka@aist.go.jp]
+> > > Sent: Sunday, July 18, 2010 5:45 AM
+> > > To: zhengc@sdsc.edu
+> > > Cc: yusuke.tanimura@aist.go.jp; naotaka@ni.aist.go.jp; 
+> > > yoshio.tanaka@aist.go.jp
+> > > Subject: Re: Help with summary
+> > > 
+> > > 
+> > > Dear Cindy,
+> > > 
+> > > I have two updates and one input.
+> > > # Please add more if you have. > Tanimura-san and Yamamoto-san
+> > > 
+> > > (1) PRAGMA GEO Science Infrastructure has been available for  GLEON
+> > >     members
+> > > PRAGMA GEO Science Infrastructure which is accessible via PRAGMA 
+> > > GEO Grid Portal has been available for GLEON users.
+> > > Yoshio attended GLEON 10 meeting in Brazil in May and introduced 
+> > > GLEON folks how to access PRAGMA GEO Science Infrastructure.  
+> > > Account management using Tsukuba-GAMA allows GLEON users to access 
+> > > remote sensing data (e.g. ASTER data) through PRAGMA GEO Science 
+> > > Infrastructure without the knowledge of Grid Security and 
+> > > management of X.509 certificates.
+> > > The next step is to include more data sources into PRAGMA GEO 
+> > > Science Infrastructure.
+> > > 
+> > > (2) Asia GEO Grid Initiative
+> > > The proposal for the Ministry of Education, Sports, Culture, 
+> > > Science and Technologies entitled "Asia GEO Grid Initiative"
+> > > has been accepted and the project started on July 1st, 2010.  
+> > > AIST, NECTED, NARL/NCHC, and VAST are participating in this 
+> > > project.  The main objective of this joint research is to 
+> > > establish a Network of Excellence which promotes and supports 
+> > > construction of a cyber infrastructure in Asia for Earth Science.  
+> > > In this research, we will (1) hold international workshops and 
+> > > forums to provide opportunities for collaboration, (2) support 
+> > > researchers in Asian countries to travel for attending the 
+> > > workshops and forums, (3) develop Asia GEO Grid Infrastructure 
+> > > which federates satellite databases, field sensor databases, and 
+> > > simulation programs, etc.  Collaborating with AsiaFlux Network, 
+> > > one of expected outcomes is to support and accelerate the 
+> > > establishment of a framework and a network for sharing flux data 
+> > > in Asia.  This project is tightly related to activities in PRAGMA 
+> > > GEO Science Working Group the Asia GEO Grid Infrastructure is 
+> > > shared with PRAGMA GEO Science Infrastructure.
+> > > 
+> > > (3) Towards next-generation Cloud infrastructure Some research 
+> > > activities related to next-generation cloud infrastructure are 
+> > > ongoing in AIST.  Such activities include experiments and 
+> > > evaluation of on virtual clusters, very fast live-migration of VM 
+> > > images, cloud security, and high-performance GIS.
+> > > Please be noted that these are all ongoing...
+> > > 
+> > > Best regards,
+> > > 
+> > > --
+> > > Yoshio Tanaka (yoshio.tanaka@aist.go.jp) http://ninf.apgrid.org/ 
+> > > http://www.apgridpma.org/
+> > > 
+> > > 
+> > > 
+> > > From: "Cindy Zheng" <zhengc@sdsc.edu>
+> > > Subject: Help with summary
+> > > Date: Wed, 14 Jul 2010 20:35:20 -0700
+> > > Message-ID: <3D0BCE680410441AB584738FFEC0303D@zhengclaptop>
+> > > 
+> > > > Dear Yoshio, Yusuke and Yamamoto-san,
+> > > > 
+> > > > I'm trying to summarize our work and send out Monday.
+> > > > Could you help and let me know the status/plan of all
+> > > PRAGMA-related
+> > > > work you are involved in?
+> > > > For example, it seems that you have helped many GLEON/CREON
+> > > users to
+> > > > use tsukuba-gama and geogrid portal.
+> > > > But I don't know the details.
+> > > > There are might be many other projects going on or planned.
+> > > > Please let me know all status and plans.
+> > > > So I can include in the summary.
+> > > > 
+> > > > Thank you very much in advance,
+> > > > 
+> > > > Cindy
+> > > > 
+> > > 
+> > 

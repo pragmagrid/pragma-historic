@@ -1,0 +1,33 @@
+From: Osamu Tatebe [tatebe@cs.tsukuba.ac.jp]
+Sent: Tuesday, July 27, 2010 9:42 AM
+To: Cindy Zheng
+Subject: Re: summary
+
+Hi Cindy,
+
+Sorry for the delayed response.
+
+We released the version 2.3.2 on July 1, and the version 2.4.0 on July 22.  The version 2.3.2 is the most stable version and it supports automatic replica creation.  The version 2.4.0 is a major update that supports update-based replica consistency management that keeps the number of file replicas.  We do not ensure complete backward compatibility for the version 2.4.0.
+For incremental update, we suggest the version 2.3.2.
+
+Thanks,
+Osamu
+
+On Mon, 19 Jul 2010 17:11:36 -0700
+"Cindy Zheng" <zhengc@sdsc.edu> wrote:
+
+> Dear Tatebe-san,
+> 
+> Could you give me a brief summary in few sentences about Gfarm 
+> development status and plans?
+> Would be great if you can send to me today :-) Sorry for such short 
+> notice.
+> 
+> Also want to let you know that Phil and Mason is working on the 
+> storage here for gfarm use.
+> Should be ready soon.
+> I'll let you know as soon as it's ready.
+> 
+> Thanks,
+> 
+> Cindy

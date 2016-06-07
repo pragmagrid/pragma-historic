@@ -1,0 +1,56 @@
+From:	blair.bethwaite@gmail.com on behalf of Blair Bethwaite 
+<blair.bethwaite@monash.edu>
+Sent:	Thursday, July 21, 2011 1:32 AM
+To:	zhengc@sdsc.edu
+Cc:	David Abramson; Colin.Enticott@mail.csse.monash.edu.au
+Subject:	Re: applications run in last 12 months
+
+Hi Cindy,
+
+I'm ridiculously stretched for time as it is sorry, so this is going to be brief.
+
+On 20 July 2011 10:01, Cindy Zheng <zhengc@sdsc.edu> wrote:
+> Peter just told me that we need to report PRAGMA progress to NSF and 
+> asked for applications ran in the last 12 months using PRAGMA resources.
+> Could you let me know the work by MU teams? (including PRIME students)
+
+I think we already reported on last year's PRIME students, right?
+
+To be honest I don't think I've run anything on PRAGMA-Grid in the last year, the overhead of 
+application deployment, execution debugging and so forth is too high to justify when most sites only 
+offer very limited resources, maybe the cloud can help here. :-P
+
+> Please briefly state
+> -          Application names, descriptions
+> -          Codes, hardware used
+> -          Results (technical or application)
+> -          Publications
+
+But we should count PRAGMA affiliated work running locally too...
+
+Our 2011 PRIME students (Jenny, Jerry and Andy) are all running sweeps or optimisations via Nimrod on 
+Monash and possibly other clusters. I don't have any titles or abstracts of their work though, I'd suggest 
+asking them directly, unless David has something? Jenny is looking at optimal pacemaker lead 
+placement for damaged hearts, using Continuity to model the mechanics and electrophysiology with 
+Nimrod sweeping across placement scenarios. Jerry is trying to figure out where calcium channels are in 
+cardiac myocytes (I think) using the package Subcell and Nimrod sweeping across possible scenarios. 
+Andy is looking for possible therapeutic drug treatments for some disease (can't remember what), I 
+think the rough approach is to identify similar proteins and drugs that act on them, then looks at binding 
+potentials with further simulations.
+
+We did some work on NG-TEPHRA, with Santiago, presented at e-Science 2010. See 
+http://messagelab.monash.edu.au/Publications/EScience2010Nunez
+for abstract and reference. That used the Monash East cluster and Amazon EC2, via Nimrod/G. The 
+important thing to note there is that that work grew from initial discussions at the PRAGMA workshop 
+and meetings at UCSD.
+
+David, can you think of anything else?
+
+Hope that helps,
+~Blair
+
+--
+Blair Bethwaite
+Researcher, Developer, SysAdmin, Nimrod and Grid support specialist Monash eScience and Grid 
+Engineering Lab (http://www.messagelab.monash.edu.au/)
++61 3-9903-2800

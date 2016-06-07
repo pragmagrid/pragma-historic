@@ -1,0 +1,221 @@
+<html>
+<head>
+<title>Rocks-52 Cluster Users Guide</title>
+</head>
+<body bgcolor=white>
+
+<p>
+<H1 align=center>Rocks-52 Cluster Users Guide</H1>
+<b><H4 align=center>September 3, 2004
+</br>
+<a href="mailto:zhengc@sdsc.edu">Cindy Zheng</a>
+</br>
+Pacific Rim Applications and Grid Middleware Assembly
+</H4></b>
+<hr>
+<p>
+<OL>
+<LI>About this document
+<br>
+The San Diego Supercomputer Center (SDSC) is contributing a cluster system to the PRAGMA Testbed.
+This document is a users' guide for Pacific Rim Applications and Grid Middleware Assembly resources and includes 
+<OL type=a>
+<LI>requirements for users
+<LI>procedures for getting an account
+<LI>hardware specifications and available Grid software
+<LI>resource utilization policy
+<LI>support staff available and mailing lists provided to users
+</OL>
+According to future administrative decisions, SDSC may modify this document and distribute the revised version through <a href="http://pragma-goc.rocksclusters.org">its web site</a>.
+<p> 
+<LI>Requirements for users
+<br>
+SDSC requests all users to fulfill the following conditions.
+<OL type=a>
+<LI>All users must belong to one of member organizations of either NPACI, SDSC or PRAGMA.
+<LI>All users participating in NPACI/SDSC must comply with the operating principles of NPACI/SDSC.
+<LI>All users participating in PRAGMA must comply with the operating principles of PRAGMA.
+<LI>All users must have concrete purposes for using SDSC resources.
+<LI>All users must contribute to SDSC/PRAGMA through the use of SDSC/PRAGMA resources.
+<LI>All users must have a user certificate issued by a PRAGMA trusted CA.
+</OL>
+PRAGMA trusts the following CAs: AIST, AusGrid, BMG, DOEGrids, ESnet, KISTI, NCSA, NPACI, ThaiGrid, USM.
+<br>
+Procedures for obtaining a user certificate are available on the PRAGMA-GOC home page.
+<p>
+<LI>How to obtain an account
+<br>
+In order to obtain an account for using SDSC resources, send the following information to <a href="mailto:zhengc@sdsc.edu">Cindy Zheng</a>.
+<OL type=a>
+<LI>Full Name
+<LI>Affiliation
+<LI>Address
+<LI>Country
+<LI>Phone and facsimile number
+<LI>Email address
+<LI>Purpose for using SDSC resources
+<LI>Contribution to NPACI/SDSC and/or PRAGMA
+<LI>Desired account name (1st:  2nd :  3rd choices:)
+<LI>Shell (bash, csh, tcsh, etc.)
+<LI>ssh public key * **
+<LI>User certificate issued by a PRAGMA Trusted CA. ** ***
+</OL>
+The application will be reviewed by the administrators of SDSC resources within a few days of receipt of the application.
+The administrators will verify whether the applicant fulfills the requirements described in Section 2. 
+If the application is approved, SDSC will create an account and send the necessary information to the applicant. 
+Otherwise, the applicant will be notified that the request is rejected. 
+Basically, a newly created account will be valid until the end of May. 
+You are expected to move your files from SDSC resources to your resources by the expiration of your account. 
+If you want to keep your account and files, you are required to renew your account every May. 
+SDSC will remind all users to renew accounts and inform them of the procedures required when the expiration date gets close.
+<p>
+* You can login to SDSC resources via an ssh command using RSA authentication.  SDSC will NOT inform you of your initial UNIX password.
+<br>
+** An ssh public key and your user certificate should be sent as attachments to your application.
+<br>
+*** A mapping of your subject name to your local account will be added to the grid-mapfile on the SDSC resources.
+<p>
+<LI>Resource information
+<br>
+SDSC is providing a Linux cluster, called rocks-52.
+<br>
+Rocks-52 is a 15-nodes Linux Cluster whose interconnection is Giga-bit Ethernet. Each node has 4 Xeon 3.06GHz and 4GB memory. Users' home directories are shared among all nodes by NFS.
+<br>
+On rocks-52, the Globus gatekeeper is running on User Service Nodes and computing nodes can be utilized via the Globus jobmanager (jobmanager-sge).
+<p>
+<UL>
+<LI>Rocks-52
+<br>
+  Rocks-52 is available to users and projects approved by PRAGMA resources group.
+<br>
+<pre>
+  User Service Node:  rocks-52.sdsc.edu
+  Computing Nodes:    compute-0-0
+                      :
+                      compute-0-14
+                      15 nodes / 60 cpus
+</pre>
+<LI>[Primitive Software]
+<br>
+The operating system used on rocks-52 is Rocks 3.3.0 (based on RedHat 8.0), and general GNU tools are also installed.
+<UL>
+<LI>GCC version 3.2.3
+<LI>Intel(R) C++/Fortran Compiler version 8.0 
+<br>
+These are NON-COMMERCIAL version. You need a valid license to use these products. If you don't have a valid license, see below sites.
+<br>
+<UL>
+<LI>C++ Compiler: http://www.intel.com/software/products/compilers/clin/noncom.htm
+<LI>Fortran Compiler: http://www.intel.com/software/products/compilers/flin/noncom.htm
+</UL>
+If you have a valid license, set INTEL_LICENSE_FILE environment variable to point license file or directory.
+Version 8.0 is installed in /opt/intel_cc_80 and /opt/intel_fc_80.
+<p>
+</UL>
+<LI>[Grid Software]
+<UL>
+<LI>Globus Toolkit 2.4.3
+<LI>GLOBUS_LOCATION = /opt/nmi (GT 2.4.3)
+<p>
+<LI>MDS is running on port 2135, on User Service Nodes
+<LI>jobmanager-sge is available on User Service Nodes
+<p>
+<LI>Globus Packaging Toolkit 3.0.1
+<LI>GPT_LOCATION = /opt/gpt
+<p>
+<LI>Jobmanager
+<br>
+Sun Grid Engine 5.3
+<UL>
+<LI>SGE_ROOT = /opt/gridengine
+<LI>master node: User Service Node 
+</UL>
+<p>
+<LI>Ninf-G version 2 (developmental version)
+<br>
+NG_DIR = /home/tanisuke/local/ngv2
+<p>
+A Globus-based GridRPC middleware suites, called Ninf-G, which was developed by GTRC/PRAGMA, is also available on the rocks-52 cluster.
+<p>
+<LI>MPICH version 1.2.5..12
+<UL>
+<LI>ch_p4 device
+<UL>
+<LI>/opt/mpich
+<LI>/opt/mpich/gnu (same as above)
+<LI>/opt/mpich/intel
+<LI>/opt/mpich/myrinet
+</UL>
+<LI>globus2 device
+<UL>
+<LI>/opt/mpich2
+<LI>/opt/mpich2/gnu (same as above)
+<LI>/opt/mpich2/intel
+</UL>
+</UL>
+<p>
+MPICH globus2 device ver. (a.k.a. MPICH-G2) uses GT 2.4.3 for
+now. Please do following procedure BEFORE you use,
+<UL>
+<LI>B-shell)
+<br>
+    $ GLOBUS_LOCATION=/opt/nmi; export GLOBUS_LOCATION
+<br>
+    $ . ${GLOBUS_LOCATION}/etc/globus-user-env.sh
+<p>
+<LI>C-shell)
+<br>
+    % setenv GLOBUS_LOCATION /opt/nmi
+<br>
+    % source ${GLOBUS_LOCATION}/etc/globus-user-env.csh
+<p>
+</UL>
+</UL>
+</UL>
+<LI>Resource utilization policy
+<OL type=a>
+<LI>Resource Reservation
+<br>
+Rocks-52 is intended to be used for development and testing of Grid middleware and Grid applications in PRAGMA.
+<p>
+You must apply exclusive use at least three business days before you intend to use rocks-52.  Please send your application to <a href="mailto:crayon-admin@sdsc.edu">crayon-admin</a>. The application should indicate
+<UL>
+<LI>Your name
+<LI>Your account
+<LI>Number of CPUs/nodes which you would like to occupy
+<LI>the start time / end time (time zone must be indicated)
+<br>
+(you are allowed to occupy, at most, 24 hours for benchmarking)
+<LI>the purpose of the experiments
+</UL>
+<p>
+Your application will be reviewed by the administrators and you will be notified of the decision within a few business days of your application.
+<br>
+SDSC will announce the schedule of the reservation via the users mailing list (crayon-users@sdsc.edu).
+<br>
+SDSC will provide the dedicated resources during the specified (or permitted) period. Other users will not be able to use (login) the dedicated resources during the period.
+<p>
+<LI>Installation of additional software
+<br>
+SDSC clusters can be used for R&D of Grid middleware and applications. 
+You can install, test and evaluate your software on SDSC clusters. 
+Since SDSC clusters are shared by many users, you are requested to test and debug your software thoroughly before installing it on SDSC clusters so that it will not damage the systems. 
+If you need supervisor privilege for installing your software, please contact the support staff.
+</OL>
+<p>
+<LI>Support staff and mailing lists
+<p>
+SDSC clusters are maintained by support staff.  Your requests will be processed in a best-effort manner by the staff. SDSC provides the following mailing list for users:
+<p>
+<UL>
+<LI><a href="MAILTO:crayon-users@sdsc.edu">crayon-users</a>
+<br>
+This mailing list is used mainly for announcements from administrators and support staff. All users are automatically included in the list.
+<p>
+<LI><a href="MAILTO:crayon-admin@sdsc.edu">crayon-admin</a>
+<br>
+System administrators of SDSC Rocks-52 Cluster are on this mailing list. This mailing list is used for correspondence from all users. Any requests, questions, and comments should be sent to this mailing list.
+</UL>
+</OL>
+</body>
+</html>

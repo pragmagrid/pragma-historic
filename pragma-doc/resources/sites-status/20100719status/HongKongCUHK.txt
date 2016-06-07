@@ -1,0 +1,73 @@
+From: Sammy Tang (ITSC) [Sammy@itsc.cuhk.edu.hk]
+Sent: Sunday, July 18, 2010 6:56 PM
+To: Cindy Zheng
+Cc: Jimmy Cheung (ITSC)
+Subject: RE: Plan and PRAGMA 18
+
+Dear Cindy,
+
+Thanks very much for your message and the reminder.
+
+I may not be able to come (still need to wait for a family schedule) but my teammate Jimmy is trying to, as he would like to pick up some ideas on the CS4 and cluster gateway, so in case we could not meet, please do help me to take care of him and I shall see you at HK the next PRAGMA workshop.
+
+Take care and my best regards
+
+-----Original Message-----
+From: Cindy Zheng [mailto:zhengc@sdsc.edu]
+Sent: Thursday, July 15, 2010 1:10 PM
+To: Sammy Tang (ITSC)
+Subject: RE: Plan and PRAGMA 18
+
+Dear Sammy,
+
+I hope you still planning to come to PRAGMA 19.
+Let me know if there is anything I can help you.
+
+Cindy 
+
+> -----Original Message-----
+> From: Sammy Tang (ITSC) [mailto:Sammy@itsc.cuhk.edu.hk]
+> Sent: Wednesday, January 27, 2010 5:27 PM
+> To: Cindy Zheng
+> Subject: RE: Plan and PRAGMA 18
+> 
+> Dear Cindy,
+> 
+> Thanks for the message and the kind reminder.
+> 
+> The testbed does out for quite a while, we are sort of staff working 
+> on it and as we are fully occupied by other tasks too.
+> 
+> I hope that we could have a bit of the time left for upgrading it and 
+> making it works to all our friends again.
+> 
+> I have a very tight schedule this year and I think I will join the 19 
+> workshop in ChangChun. Hopefully I can go with the ISEIS team for 
+> reporting some of our works with the Grid and PRAGMA testbed.
+> 
+> Meanwhile, happy lunar new year too you and your family, do take care.
+> 
+> Rgds,
+> Sammy
+> 
+> -----Original Message-----
+> From: Cindy Zheng [mailto:zhengc@sdsc.edu]
+> Sent: Thursday, January 28, 2010 5:56 AM
+> To: Sammy Tang (ITSC)
+> Subject: Plan and PRAGMA 18
+> 
+> Dear Sammy,
+> 
+> Is server1 is still available to PRAGMA users?
+> Our monitoring (probe) to server1 has been failing for a while.
+> Let me know the situation there and any plan.
+> 
+> Also PRAGMA 18 will be held in San Diego in March.
+> I hope you and others at CUHK can attend.
+> PRAGMA 19 will be in Changchun.
+> Looking forward to to and to see you there as well.
+> 
+> Best wishes to you in the new year!
+> 
+> Cindy
+> 

@@ -1,0 +1,35 @@
+From: Blair Bethwaite [blair.bethwaite@gmail.com]
+Sent: Sunday, July 18, 2010 7:01 PM
+To: Cindy Zheng; David Abramson
+Cc: Colin Enticott
+Subject: Re: Summary
+
+Hi Cindy,
+
+I'm guessing David is planning on replying to this but in brief for me, the major items are:
+- currently have a batch of PRIME students with us doing various projects involving use of Nimrod Toolkit to do distributed processing;
+- working with Santiago Nuñez-Corrales et al. from Costa Rica on volcanic ash dispersion modelling on grid and cloud resources with Nimrod tools.
+
+Cheers,
+~Blair
+
+On 16 July 2010 06:45, Cindy Zheng <zhengc@sdsc.edu> wrote:
+> Dear David, Colin and Blair,
+>
+> I'm trying to summarize our work since March and send out Monday.
+> Could you help and let me know the status/plan of all PRAGMA-related 
+> work you are involved in?
+> So I can include in the summary.
+>
+> Thank you very much in advance,
+>
+> Cindy
+>
+>
+
+
+
+--
+Blair Bethwaite
+Researcher, Developer, SysAdmin, Nimrod and Grid support specialist Monash eScience and Grid Engineering Lab (http://www.messagelab.monash.edu.au/)
+(+613) 9903 2800

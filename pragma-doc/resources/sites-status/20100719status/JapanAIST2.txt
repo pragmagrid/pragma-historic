@@ -1,0 +1,39 @@
+From: Yusuke Tanimura [yusuke.tanimura@aist.go.jp]
+Sent: Friday, July 16, 2010 9:50 PM
+To: Cindy Zheng
+Subject: Re: Help with summary
+
+Hi Cindy,
+
+We keep providing compute resources (SAKURA cluster) and storage resources (gfsd node over Lustre fs).  For former one, we plan to switch it to virtual machine based resources.  We are now trying the Rock's VM roll to confirm if it satisfies both users'
+and operators' requirements.  For VM replication, I guess you and Yoshio may have some communications but I don't know much about the plan and status.
+
+For data resources, I really don't know who is using it now.
+If someone uses and gives some requests, we are willing to arrange the resources as much as we can.
+
+I don't know much about GEO related project.  I hope you already got the information from Yoshio or Naotaka.
+
+Thanks,
+
+
+> Dear Yoshio, Yusuke and Yamamoto-san,
+> 
+> I'm trying to summarize our work and send out Monday.
+> Could you help and let me know the status/plan of all PRAGMA-related 
+> work you are involved in?
+> For example, it seems that you have helped many GLEON/CREON users to 
+> use tsukuba-gama and geogrid portal.
+> But I don't know the details.
+> There are might be many other projects going on or planned.
+> Please let me know all status and plans.
+> So I can include in the summary.
+> 
+> Thank you very much in advance,
+> 
+> Cindy
+
+-----------------------------------------------------
+Yusuke Tanimura <yusuke.tanimura@aist.go.jp> Information Technology Research Institute, AIST
+1-1-1 Umezono, Tsukuba Central 2
+Tsukuba City 305-8568, Japan
+TEL: +81-29-862-6703  / FAX: +81-29-862-6601

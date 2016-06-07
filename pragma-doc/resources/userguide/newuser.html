@@ -1,0 +1,63 @@
+<html>
+<head>
+<title>PRAGMA User Account Application</title>
+</head>
+
+<body lang=EN-US link="#0000CC" vlink=purple style='tab-interval:.5in'>
+
+<H1 align=center>PRAGMA User Account Application</H1>
+<hr>
+<br>
+<br>
+<font size="+1">
+To apply for a user account in PRAGMA Grid, please email the following information and files to <a href="mailto:pragma-cloud-admin@googlegroups.com">PRAGMA Cloud Admin</a>. 
+<br>
+</font>
+<b>(If you do not have a user certificate, you can apply for PRAGMA experimental certificate. In that case, answer "need to apply for PRAGMA experimental certificate" for items 14-17. Cindy will let you know how to get the certificate.)</b>
+<font size="+1">
+<OL>
+<LI> Your full name
+<LI> Institution name
+<LI> Address of the institution
+<LI> Country of the institution
+<LI> Your phone number
+<LI> Your fax number
+<LI> Your email address
+<LI> The purpose of using PRAGMA grid
+<LI> Your/your institution's contribution to PRAGMA (can be work, resources)
+<LI> Prefered login names (1st, 2nd, 3rd, but may or may not be granted)
+<LI> Prefered UNIX shell (may or may not be granted)
+<LI> Hostname(s) and IP address(es) of the system(s) which you launch your applications
+<br>(This is required for PRAGMA grid site systems to open their firewalls in order to allow you access.)
+<LI> Your ssh <b>PUBLIC</b> key (<b>NEVER and NEVER give anyone your private key file!! Nor your ssh password!!</b>) <br>(Have not used ssh key before? See <a href="http://www.suso.org/docs/shell/ssh.sdf">SSH tutorial</a>, read the chapter "What is SSH?" and the chapter "Generating a key". We recommend rsa key for backward compatibility. Please choose a secure password to generate the ssh key. After the ssh key is generated, make sure that you make a backup copy of your ssh public key and private key files.)
+<LI> Your DN string <br>(Distinguished Name is a string which usually reside in /etc/grid-security/grid-mapfile file)
+<LI> Url or attach your site certificate file <br>(It usually resides in /etc/grid-security/certificates directory on your UNIX system, with suffix .0)
+<LI> Url or attach your site certificate signing_policy file <br>(It usually resides in the same directory as above, with suffix .signing_policy)
+<LI> Url or attach your site certificate revocation list (CRL) file, if exist <br>(Some sites may not have such list. If your site has such list, the file usually resides in the same directory as site certificate file, with suffix .r0)
+</OL>
+<p>
+Here is an example:
+<OL>
+<LI> Your full name: Cindy Zheng
+<LI> Institution name: San Diego Supercomputer Center
+<LI> Address of the institution: 9500 Gilman Dr. La Jolla, CA 92093-0505
+<LI> Country of the institution: USA
+<LI> Your phone number: 858-534-5048
+<LI> Your fax number: 858-822-5407
+<LI> Your email address: zhengc at sdsc.edu
+<LI> The purpose of using PRAGMA grid: routine-basis experiment
+<LI> Your/your institution's contribution to PRAGMA: work
+<LI> Prefered login names: cindyz, cindyxz, NONE
+<LI> Prefered UNIX shell: bash 
+<LI> Hostname(s) and IP address(es) of the system(s) which you launch your applications: rocks-52.sdsc.edu, 198.202.88.52.
+<LI> Your ssh public key: ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAIEA0UZMhFsGGrjOC9ZsUrBaCrTuOo/rJb6McM8jL3FRUGTNJGFvI6iZ4nyD856XwzgH9QNg08vpmqzzl6H5uxdtmiuhbuAP2A7cTWv8orVzp+6tl8AFS3bMWkCZzdmc8LR0wSu03ulQFVrbY3RnLsYJwcunY4y2LNDnLrTMdbmCR3c= zhengc@rocks-52.sdsc.edu
+<LI> Your DN string: "/C=US/O=NPACI/OU=SDSC/CN=Cindy Zheng/USERID=zhengc"
+<LI> Url or attach your site certificate file: https://pragma-goc.rocksclusters.org/secure/certificates/b89793e4.0
+<LI> Url or attach your site certificate signing_policy file: https://pragma-goc.rocksclusters.org/secure/certificates/b89793e4.0signing_policy
+<LI> Url or attach your site certificate revocation list (CRL) file, if exist: NONE
+</OL>
+</font>
+
+</body>
+
+</html>
